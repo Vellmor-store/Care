@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discover Your Skin Type — Vellmor</title>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Almarai', sans-serif; background: #F8F6EE; min-height: 100vh; padding: 40px 20px; }
+
+  .wrap { max-width: 600px; margin: 0 auto; }
+
+  .header { text-align: center; margin-bottom: 36px; }
+  .header-badge { font-size: 11px; font-weight: 700; color: #5C6B4A; letter-spacing: 3px; text-transform: uppercase; display: block; margin-bottom: 10px; }
+  .header-title { font-size: 28px; font-weight: 800; color: #1a1a1a; margin-bottom: 8px; }
+  .header-sub { font-size: 14px; color: #888780; font-weight: 300; }
+  .header-line { width: 40px; height: 2px; background: #3D4A30; margin: 14px auto 0; }
+
+  .progress-label { font-size: 12px; color: #888780; text-align: center; margin-bottom: 8px; }
+  .progress-bar { background: #e0ddd6; border-radius: 6px; height: 6px; margin-bottom: 28px; }
+  .progress-fill { background: #3D4A30; border-radius: 6px; height: 6px; transition: width 0.4s ease; }
+
+  .card { background: #fff; border-radius: 16px; border: 1px solid #C8B89A; padding: 36px 28px; }
+  .card-icon { font-size: 42px; text-align: center; margin-bottom: 16px; }
+  .card-q { font-size: 17px; font-weight: 700; color: #1a1a1a; text-align: center; margin-bottom: 28px; line-height: 1.7; }
+
+  .options { display: flex; flex-direction: column; gap: 10px; }
+  .opt { background: #F8F6EE; border: 1.5px solid #C8B89A; border-radius: 12px; padding: 14px 18px; font-size: 14px; color: #1a1a1a; cursor: pointer; text-align: left; font-family: 'Almarai', sans-serif; line-height: 1.6; transition: all 0.2s; width: 100%; }
+  .opt:hover { border-color: #3D4A30; background: #EEF2E8; color: #3D4A30; }
+  .opt.selected { border-color: #3D4A30; background: #EEF2E8; color: #3D4A30; font-weight: 700; }
+
+  .nav { display: flex; justify-content: space-between; align-items: center; margin-top: 24px; }
+  .btn-back { background: transparent; border: 1.5px solid #C8B89A; border-radius: 30px; padding: 11px 24px; font-size: 13px; font-weight: 700; color: #888780; cursor: pointer; font-family: 'Almarai', sans-serif; }
+  .btn-back:hover { border-color: #888780; }
+  .btn-next { background: #3D4A30; border: none; border-radius: 30px; padding: 11px 28px; font-size: 13px; font-weight: 700; color: #fff; cursor: pointer; font-family: 'Almarai', sans-serif; opacity: 0.35; pointer-events: none; transition: opacity 0.2s; }
+  .btn-next.active { opacity: 1; pointer-events: all; }
+
+  .result { background: #fff; border-radius: 16px; border: 2px solid #3D4A30; padding: 40px 28px; }
+  .result-icon { font-size: 56px; text-align: center; margin-bottom: 14px; }
+  .result-badge { font-size: 10px; font-weight: 700; color: #5C6B4A; letter-spacing: 3px; text-transform: uppercase; display: block; text-align: center; margin-bottom: 8px; }
+  .result-type { font-size: 28px; font-weight: 800; color: #3D4A30; text-align: center; margin-bottom: 16px; }
+  .result-desc { font-size: 14px; color: #555; font-weight: 300; line-height: 1.9; margin-bottom: 24px; }
+
+  .tip-box { background: #EEF2E8; border-radius: 12px; padding: 18px 20px; margin-bottom: 20px; }
+  .tip-title { font-size: 13px; font-weight: 700; color: #3D4A30; margin-bottom: 8px; }
+  .tip-text { font-size: 13px; color: #5C6B4A; font-weight: 300; line-height: 1.8; }
+
+  .routine-box { background: #F8F6EE; border-radius: 12px; padding: 18px 20px; margin-bottom: 20px; border: 1px solid #e0ddd6; }
+  .routine-title { font-size: 13px; font-weight: 700; color: #1a1a1a; margin-bottom: 14px; }
+  .routine-step { font-size: 13px; color: #555; font-weight: 300; line-height: 1.7; padding-left: 14px; border-left: 2px solid #C8B89A; margin-bottom: 10px; padding-bottom: 10px; }
+  .routine-step:last-child { margin-bottom: 0; padding-bottom: 0; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+  .tag { font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; background: #EEF2E8; color: #27500A; border: 1px solid #C8B89A; }
+
+  .btn-shop { display: block; background: #3D4A30; color: #fff; font-size: 14px; font-weight: 700; padding: 14px 28px; border-radius: 30px; text-decoration: none; text-align: center; font-family: 'Almarai', sans-serif; margin-bottom: 12px; }
+  .btn-shop:hover { background: #5C6B4A; }
+  .btn-retry { display: block; background: transparent; border: 1.5px solid #C8B89A; border-radius: 30px; padding: 11px 24px; font-size: 13px; font-weight: 700; color: #888780; cursor: pointer; font-family: 'Almarai', sans-serif; text-align: center; width: 100%; }
+  .btn-retry:hover { border-color: #888780; }
+
+  .hidden { display: none; }
+
+  .footer { text-align: center; margin-top: 32px; font-size: 12px; color: #C8B89A; }
+  .footer a { color: #5C6B4A; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <span class="header-badge">VELLMOR — SKIN GUIDE</span>
+    <h1 class="header-title">Discover Your Skin Type</h1>
+    <p class="header-sub">5 quick questions — your personalized skincare routine in 1 minute</p>
+    <div class="header-line"></div>
+  </div>
+
+  <div id="quizSection">
+    <p class="progress-label" id="progressLabel">Question 1 of 5</p>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:20%"></div></div>
+
+    <div class="card">
+      <div class="card-icon" id="qIcon">🪞</div>
+      <p class="card-q" id="qText">How does your skin feel 2 hours after cleansing?</p>
+      <div class="options" id="optionsWrap"></div>
+    </div>
+
+    <div class="nav">
+      <button class="btn-back" id="btnBack" onclick="goBack()">← Back</button>
+      <button class="btn-next" id="btnNext" onclick="goNext()">Next →</button>
+    </div>
+  </div>
+
+  <div id="resultSection" class="hidden">
+    <div class="result">
+      <div class="result-icon" id="rIcon"></div>
+      <span class="result-badge">Your Skin Type</span>
+      <div class="result-type" id="rType"></div>
+      <div class="result-desc" id="rDesc"></div>
+      <div class="tip-box">
+        <div class="tip-title">💡 Golden Tip</div>
+        <div class="tip-text" id="rTip"></div>
+      </div>
+      <div class="routine-box">
+        <div class="routine-title">🗓 Your Recommended Routine</div>
+        <div id="rRoutine"></div>
+      </div>
+      <div class="tags" id="rTags"></div>
+      <a id="rLink" href="#" class="btn-shop"></a>
+      <button class="btn-retry" onclick="resetQuiz()">Retake the Quiz</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    <a href="https://vellmor.store">vellmor.store</a> &nbsp;|&nbsp; © 2026 VÉLLMOR. All rights reserved.
+  </div>
+
+</div>
+
+<script>
+
+/* ============================================================
+   🔗 EDIT THESE 4 LINKS — Replace with your actual collection URLs
+   ============================================================ */
+var LINKS = {
+  dry:       "https://vellmor.store/collections/dry-skin",
+  oily:      "https://vellmor.store/collections/oily-skin",
+  combo:     "https://vellmor.store/collections/combination-skin",
+  sensitive: "https://vellmor.store/collections/sensitive-skin"
+};
+/* ============================================================ */
+
+var questions = [
+  {
+    icon: "🪞",
+    text: "How does your skin feel 2 hours after cleansing?",
+    options: [
+      { text: "Dry, tight — sometimes showing fine lines", scores: { dry:3, oily:0, combo:1, sensitive:1 } },
+      { text: "Shiny and oily, especially on forehead and nose", scores: { dry:0, oily:3, combo:1, sensitive:0 } },
+      { text: "Dry cheeks but a shiny T-zone", scores: { dry:1, oily:1, combo:3, sensitive:0 } },
+      { text: "Burning, red, or irritated", scores: { dry:0, oily:0, combo:0, sensitive:3 } }
+    ]
+  },
+  {
+    icon: "💄",
+    text: "What happens to your makeup after a few hours?",
+    options: [
+      { text: "It flakes, cracks and looks unnatural", scores: { dry:3, oily:0, combo:1, sensitive:0 } },
+      { text: "It melts, gets shiny and slides off", scores: { dry:0, oily:3, combo:1, sensitive:0 } },
+      { text: "Holds on cheeks but melts on the T-zone", scores: { dry:1, oily:1, combo:3, sensitive:0 } },
+      { text: "It causes irritation or redness", scores: { dry:0, oily:0, combo:0, sensitive:3 } }
+    ]
+  },
+  {
+    icon: "🌞",
+    text: "How does your skin react to the UAE heat and humidity?",
+    options: [
+      { text: "It gets even drier and tighter", scores: { dry:3, oily:0, combo:1, sensitive:1 } },
+      { text: "It gets noticeably shinier and oilier", scores: { dry:0, oily:3, combo:1, sensitive:0 } },
+      { text: "T-zone shines more, cheeks dry out more", scores: { dry:1, oily:1, combo:3, sensitive:0 } },
+      { text: "It gets irritated, red and uncomfortably warm", scores: { dry:0, oily:0, combo:0, sensitive:3 } }
+    ]
+  },
+  {
+    icon: "✋",
+    text: "If you press a tissue to your face in the morning, what do you see?",
+    options: [
+      { text: "Almost nothing — very little residue", scores: { dry:3, oily:0, combo:0, sensitive:1 } },
+      { text: "Clear oily marks across the whole face", scores: { dry:0, oily:3, combo:1, sensitive:0 } },
+      { text: "Oily marks only on the T-zone, cheeks are clean", scores: { dry:0, oily:1, combo:3, sensitive:0 } },
+      { text: "Normal but skin feels very sensitive to touch", scores: { dry:0, oily:0, combo:0, sensitive:3 } }
+    ]
+  },
+  {
+    icon: "🧴",
+    text: "What is your biggest daily skin concern?",
+    options: [
+      { text: "Dryness, rough texture, and early fine lines", scores: { dry:3, oily:0, combo:1, sensitive:1 } },
+      { text: "Shine, enlarged pores, and breakouts", scores: { dry:0, oily:3, combo:1, sensitive:0 } },
+      { text: "Managing two different zones on the same face", scores: { dry:1, oily:1, combo:3, sensitive:0 } },
+      { text: "Redness, irritation, and reactions to products", scores: { dry:0, oily:0, combo:0, sensitive:3 } }
+    ]
+  }
+];
+
+var results = {
+  dry: {
+    icon: "💧",
+    type: "Dry Skin",
+    desc: "Your skin lacks sufficient natural oils to protect its moisture barrier, making it feel tight and dry — especially in the UAE's harsh climate. Dry skin is less prone to breakouts but needs consistent daily care to prevent early fine lines and rough texture.",
+    tip: "Use a creamy cleanser that doesn't strip your skin, then apply a rich hyaluronic acid moisturizer immediately after cleansing while your skin is still slightly damp — this locks moisture in far more effectively.",
+    routine: [
+      "☀️ Morning: Creamy cleanser → Hydrating toner → Hyaluronic acid serum → Rich moisturizer → SPF",
+      "🌙 Evening: Gentle cleanser → Nourishing serum → Rich night cream with natural oils or shea butter",
+      "📅 Weekly: Intensive hydrating mask for 15 minutes — 1 to 2 times per week"
+    ],
+    tags: ["Deep Hydration", "Barrier Repair", "Hyaluronic Acid", "Alcohol-Free", "Nourishing"]
+  },
+  oily: {
+    icon: "✨",
+    type: "Oily Skin",
+    desc: "Your skin produces more oil than average. The good news: you're less prone to early wrinkles! But you need products that control sebum without over-drying — because dryness actually triggers even more oil production.",
+    tip: "Never skip moisturizer! Use a lightweight, oil-free formula. Cleanse only twice a day — over-washing increases oil production. Target pores with products containing Niacinamide or Salicylic Acid.",
+    routine: [
+      "☀️ Morning: Gentle foaming cleanser → Pore-refining toner → Oil-free lightweight moisturizer → Gel SPF",
+      "🌙 Evening: Double cleanse → Niacinamide serum → Lightweight moisturizer",
+      "📅 Weekly: Clay mask once a week to deep-clean pores and remove impurities"
+    ],
+    tags: ["Oil-Free", "Sebum Control", "Niacinamide", "Pore-Refining", "Lightweight"]
+  },
+  combo: {
+    icon: "⚖️",
+    type: "Combination Skin",
+    desc: "Your skin lives in two different worlds — an oily T-zone and dry or normal cheeks. The key is treating each zone with what it actually needs rather than applying one product all over your face.",
+    tip: "Don't use the same product all over! Apply a lightweight moisturizer everywhere, then add an oil-control product only on the T-zone. Use a balanced cleanser that doesn't dry cheeks or over-nourish the T-zone.",
+    routine: [
+      "☀️ Morning: Balanced cleanser → Light toner → Lightweight moisturizer all over → Oil-control gel on T-zone only → SPF",
+      "🌙 Evening: Double cleanse → Balancing serum → Light moisturizer all over + richer cream on cheeks only",
+      "📅 Weekly: Clay mask on T-zone + hydrating mask on cheeks at the same time"
+    ],
+    tags: ["Balancing", "Dual-Action", "Multi-Zone", "Niacinamide", "Lightweight"]
+  },
+  sensitive: {
+    icon: "🛡️",
+    type: "Sensitive Skin",
+    desc: "Your skin is delicate and quick to react to products, weather changes, and environmental factors. Its barrier needs continuous support — especially in the UAE's harsh climate. With the right products, you can significantly strengthen it over time.",
+    tip: "Always patch test any new product on your inner forearm for 24 hours before applying to your face. Avoid fragrances and alcohol. Look for: Ceramides, Centella Asiatica, Aloe Vera, and Niacinamide.",
+    routine: [
+      "☀️ Morning: Fragrance-free creamy cleanser → Soothing aloe vera toner → Ceramide serum → Calming moisturizer → Mineral SPF",
+      "🌙 Evening: Micellar water to remove makeup gently → Gentle cleanser → Barrier-repairing serum → Ceramide night cream",
+      "📅 Weekly: Soothing aloe vera mask once only — avoid harsh physical scrubs"
+    ],
+    tags: ["Fragrance-Free", "Calming", "Ceramides", "Dermatologist-Tested", "Hypoallergenic"]
+  }
+};
+
+var current = 0;
+var answers = [];
+var scores = { dry:0, oily:0, combo:0, sensitive:0 };
+
+function render() {
+  var q = questions[current];
+  var pct = ((current + 1) / questions.length * 100) + "%";
+
+  document.getElementById("progressLabel").textContent = "Question " + (current + 1) + " of " + questions.length;
+  document.getElementById("progressFill").style.width = pct;
+  document.getElementById("qIcon").textContent = q.icon;
+  document.getElementById("qText").textContent = q.text;
+
+  var wrap = document.getElementById("optionsWrap");
+  wrap.innerHTML = "";
+  q.options.forEach(function(opt, i) {
+    var btn = document.createElement("button");
+    btn.className = "opt" + (answers[current] === i ? " selected" : "");
+    btn.textContent = opt.text;
+    btn.onclick = function() { selectOption(i); };
+    wrap.appendChild(btn);
+  });
+
+  var btnNext = document.getElementById("btnNext");
+  var btnBack = document.getElementById("btnBack");
+  btnNext.className = "btn-next" + (answers[current] !== undefined ? " active" : "");
+  btnNext.textContent = current === questions.length - 1 ? "Show My Skin Type ✨" : "Next →";
+  btnBack.style.visibility = current === 0 ? "hidden" : "visible";
+}
+
+function selectOption(i) {
+  answers[current] = i;
+  document.querySelectorAll(".opt").forEach(function(btn, idx) {
+    btn.className = "opt" + (idx === i ? " selected" : "");
+  });
+  document.getElementById("btnNext").className = "btn-next active";
+}
+
+function goNext() {
+  if (answers[current] === undefined) return;
+  var s = questions[current].options[answers[current]].scores;
+  Object.keys(s).forEach(function(k) { scores[k] += s[k]; });
+  current++;
+  if (current >= questions.length) { showResult(); return; }
+  render();
+}
+
+function goBack() {
+  if (current === 0) return;
+  current--;
+  render();
+}
+
+function showResult() {
+  document.getElementById("quizSection").className = "hidden";
+  var winner = Object.keys(scores).reduce(function(a, b) { return scores[a] > scores[b] ? a : b; });
+  var r = results[winner];
+
+  document.getElementById("rIcon").textContent = r.icon;
+  document.getElementById("rType").textContent = r.type;
+  document.getElementById("rDesc").textContent = r.desc;
+  document.getElementById("rTip").textContent = r.tip;
+
+  var routineEl = document.getElementById("rRoutine");
+  routineEl.innerHTML = "";
+  r.routine.forEach(function(step) {
+    var div = document.createElement("div");
+    div.className = "routine-step";
+    div.textContent = step;
+    routineEl.appendChild(div);
+  });
+
+  var tagsEl = document.getElementById("rTags");
+  tagsEl.innerHTML = "";
+  r.tags.forEach(function(tag) {
+    var span = document.createElement("span");
+    span.className = "tag";
+    span.textContent = tag;
+    tagsEl.appendChild(span);
+  });
+
+  var linkEl = document.getElementById("rLink");
+  linkEl.href = LINKS[winner];
+  linkEl.textContent = "Shop " + r.type + " Products →";
+
+  document.getElementById("resultSection").className = "";
+  window.scrollTo(0, 0);
+}
+
+function resetQuiz() {
+  current = 0;
+  answers = [];
+  scores = { dry:0, oily:0, combo:0, sensitive:0 };
+  document.getElementById("resultSection").className = "hidden";
+  document.getElementById("quizSection").className = "";
+  render();
+}
+
+render();
+</script>
+</body>
+</html>
