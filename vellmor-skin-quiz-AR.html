@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مستشارتكِ الشخصية للعناية بالبشرة — Vellmor</title>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Almarai', sans-serif; background: #F8F6EE; min-height: 100vh; padding: 40px 20px; }
+.wrap { max-width: 600px; margin: 0 auto; }
+.header { text-align: center; margin-bottom: 36px; }
+.header-badge { font-size: 11px; font-weight: 700; color: #5C6B4A; letter-spacing: 3px; text-transform: uppercase; display: block; margin-bottom: 10px; }
+.header-title { font-size: 26px; font-weight: 800; color: #1a1a1a; margin-bottom: 8px; line-height: 1.3; }
+.header-sub { font-size: 14px; color: #888780; font-weight: 300; line-height: 1.7; }
+.header-line { width: 40px; height: 2px; background: #3D4A30; margin: 14px auto 0; }
+.progress-label { font-size: 12px; color: #888780; text-align: center; margin-bottom: 8px; }
+.progress-bar { background: #e0ddd6; border-radius: 6px; height: 6px; margin-bottom: 28px; }
+.progress-fill { background: #3D4A30; border-radius: 6px; height: 6px; transition: width 0.4s ease; }
+.card { background: #fff; border-radius: 16px; border: 1px solid #C8B89A; padding: 36px 24px; }
+.card-icon { font-size: 42px; text-align: center; margin-bottom: 16px; }
+.card-q { font-size: 17px; font-weight: 700; color: #1a1a1a; text-align: center; margin-bottom: 28px; line-height: 1.7; }
+.options { display: flex; flex-direction: column; gap: 10px; }
+.opt { background: #F8F6EE; border: 1.5px solid #C8B89A; border-radius: 12px; padding: 14px 18px; font-size: 14px; color: #1a1a1a; cursor: pointer; text-align: right; font-family: 'Almarai', sans-serif; line-height: 1.6; transition: all 0.2s; width: 100%; }
+.opt:hover { border-color: #3D4A30; background: #EEF2E8; color: #3D4A30; }
+.opt.selected { border-color: #3D4A30; background: #EEF2E8; color: #3D4A30; font-weight: 700; }
+.nav { display: flex; justify-content: space-between; align-items: center; margin-top: 24px; }
+.btn-back { background: transparent; border: 1.5px solid #C8B89A; border-radius: 30px; padding: 11px 24px; font-size: 13px; font-weight: 700; color: #888780; cursor: pointer; font-family: 'Almarai', sans-serif; }
+.btn-next { background: #3D4A30; border: none; border-radius: 30px; padding: 11px 28px; font-size: 13px; font-weight: 700; color: #fff; cursor: pointer; font-family: 'Almarai', sans-serif; opacity: 0.35; pointer-events: none; transition: opacity 0.2s; }
+.btn-next.active { opacity: 1; pointer-events: all; }
+.result { background: #fff; border-radius: 16px; border: 2px solid #3D4A30; padding: 40px 24px; }
+.result-icon { font-size: 56px; text-align: center; margin-bottom: 14px; }
+.result-badge { font-size: 10px; font-weight: 700; color: #5C6B4A; letter-spacing: 3px; text-transform: uppercase; display: block; text-align: center; margin-bottom: 8px; }
+.result-type { font-size: 28px; font-weight: 800; color: #3D4A30; text-align: center; margin-bottom: 16px; }
+.result-desc { font-size: 14px; color: #555; font-weight: 300; line-height: 1.9; margin-bottom: 24px; text-align: right; }
+.tip-box { background: #EEF2E8; border-radius: 12px; padding: 18px 20px; margin-bottom: 20px; }
+.tip-title { font-size: 13px; font-weight: 700; color: #3D4A30; margin-bottom: 8px; text-align: right; }
+.tip-text { font-size: 13px; color: #5C6B4A; font-weight: 300; line-height: 1.8; text-align: right; }
+.routine-box { background: #F8F6EE; border-radius: 12px; padding: 18px 20px; margin-bottom: 20px; border: 1px solid #e0ddd6; }
+.routine-title { font-size: 13px; font-weight: 700; color: #1a1a1a; margin-bottom: 14px; text-align: right; }
+.routine-step { font-size: 13px; color: #555; font-weight: 300; line-height: 1.7; padding-right: 14px; border-right: 2px solid #C8B89A; margin-bottom: 10px; padding-bottom: 10px; text-align: right; }
+.routine-step:last-child { margin-bottom: 0; padding-bottom: 0; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; justify-content: center; }
+.tag { font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; background: #EEF2E8; color: #27500A; border: 1px solid #C8B89A; }
+.btn-shop { display: block; background: #3D4A30; color: #fff; font-size: 14px; font-weight: 700; padding: 14px 28px; border-radius: 30px; text-decoration: none; text-align: center; font-family: 'Almarai', sans-serif; margin-bottom: 12px; }
+.btn-shop:hover { background: #5C6B4A; }
+.btn-retry { display: block; background: transparent; border: 1.5px solid #C8B89A; border-radius: 30px; padding: 11px 24px; font-size: 13px; font-weight: 700; color: #888780; cursor: pointer; font-family: 'Almarai', sans-serif; text-align: center; width: 100%; }
+.hidden { display: none; }
+.footer { text-align: center; margin-top: 32px; font-size: 12px; color: #C8B89A; }
+.footer a { color: #5C6B4A; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <span class="header-badge">VELLMOR — دليل العناية</span>
+    <h1 class="header-title">مستشارتكِ الشخصية للعناية بالبشرة</h1>
+    <p class="header-sub">مش عارفة ما تحتاجه بشرتكِ؟ أجيبي على 5 أسئلة واحصلي على روتين مصمم خصيصاً لكِ</p>
+    <div class="header-line"></div>
+  </div>
+
+  <div id="quizSection">
+    <p class="progress-label" id="progressLabel">السؤال ١ من ٥</p>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:20%"></div></div>
+    <div class="card">
+      <div class="card-icon" id="qIcon"></div>
+      <p class="card-q" id="qText"></p>
+      <div class="options" id="optionsWrap"></div>
+    </div>
+    <div class="nav">
+      <button class="btn-next" id="btnNext" onclick="goNext()">التالي ←</button>
+      <button class="btn-back" id="btnBack" onclick="goBack()">→ السابق</button>
+    </div>
+  </div>
+
+  <div id="resultSection" class="hidden">
+    <div class="result">
+      <div class="result-icon" id="rIcon"></div>
+      <span class="result-badge">نوع بشرتكِ</span>
+      <div class="result-type" id="rType"></div>
+      <div class="result-desc" id="rDesc"></div>
+      <div class="tip-box">
+        <div class="tip-title">💡 النصيحة الذهبية</div>
+        <div class="tip-text" id="rTip"></div>
+      </div>
+      <div class="routine-box">
+        <div class="routine-title">🗓 روتين العناية الموصى به</div>
+        <div id="rRoutine"></div>
+      </div>
+      <div class="tags" id="rTags"></div>
+      <a id="rLink" href="#" class="btn-shop"></a>
+      <button class="btn-retry" onclick="resetQuiz()">أعيدي الاختبار من البداية</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    <a href="https://vellmor.store">vellmor.store</a> &nbsp;|&nbsp; © 2026 VÉLLMOR. جميع الحقوق محفوظة.
+  </div>
+
+</div>
+<script>
+var LINKS = {
+  dry:       "https://vellmor.store/collections/dry-skin",
+  oily:      "https://vellmor.store/collections/oily-skin",
+  combo:     "https://vellmor.store/collections/combination-skin",
+  sensitive: "https://vellmor.store/collections/sensitive-skin"
+};
+
+var nums = ["١","٢","٣","٤","٥"];
+
+var questions = [
+  { icon:"🪞", text:"كيف تشعرين ببشرتكِ بعد ساعتين من الغسيل؟", options:[
+    {text:"جافة ومشدودة وأحياناً تظهر خطوط دقيقة", scores:{dry:3,oily:0,combo:1,sensitive:1}},
+    {text:"لامعة ودهنية خاصة في الجبهة والأنف", scores:{dry:0,oily:3,combo:1,sensitive:0}},
+    {text:"الخدان جافان لكن منطقة T لامعة", scores:{dry:1,oily:1,combo:3,sensitive:0}},
+    {text:"تشعر بحرقة أو احمرار أو حساسية", scores:{dry:0,oily:0,combo:0,sensitive:3}}
+  ]},
+  { icon:"💄", text:"ماذا يحدث لمكياجكِ بعد بضع ساعات؟", options:[
+    {text:"يتفتت ويجف ويبدو غير طبيعي", scores:{dry:3,oily:0,combo:1,sensitive:0}},
+    {text:"يذوب ويلمع ويختفي من الوجه", scores:{dry:0,oily:3,combo:1,sensitive:0}},
+    {text:"يثبت في الخدين ويذوب في منطقة T", scores:{dry:1,oily:1,combo:3,sensitive:0}},
+    {text:"يسبب تهيجاً أو احمراراً أحياناً", scores:{dry:0,oily:0,combo:0,sensitive:3}}
+  ]},
+  { icon:"🌞", text:"كيف تتفاعل بشرتكِ مع حرارة الإمارات؟", options:[
+    {text:"تجف أكثر وتشعر بشد شديد", scores:{dry:3,oily:0,combo:1,sensitive:1}},
+    {text:"تزداد لمعاناً ودهوناً بشكل واضح", scores:{dry:0,oily:3,combo:1,sensitive:0}},
+    {text:"منطقة T تلمع والخدان يجفان أكثر", scores:{dry:1,oily:1,combo:3,sensitive:0}},
+    {text:"تتهيج وتحمر وتشعر بحرارة مزعجة", scores:{dry:0,oily:0,combo:0,sensitive:3}}
+  ]},
+  { icon:"✋", text:"إذا ضغطتِ منديلاً على وجهكِ صباحاً ماذا يظهر؟", options:[
+    {text:"لا شيء تقريباً — أثر خفيف جداً", scores:{dry:3,oily:0,combo:0,sensitive:1}},
+    {text:"آثار دهنية واضحة في كل مناطق الوجه", scores:{dry:0,oily:3,combo:1,sensitive:0}},
+    {text:"آثار دهنية في منطقة T فقط — الخدان نظيفان", scores:{dry:0,oily:1,combo:3,sensitive:0}},
+    {text:"البشرة طبيعية لكنها حساسة جداً للمس", scores:{dry:0,oily:0,combo:0,sensitive:3}}
+  ]},
+  { icon:"🧴", text:"ما أكبر مشكلة تواجهينها مع بشرتكِ يومياً؟", options:[
+    {text:"الجفاف والخشونة وظهور التجاعيد المبكرة", scores:{dry:3,oily:0,combo:1,sensitive:1}},
+    {text:"اللمعان والمسامات الواسعة والبثور", scores:{dry:0,oily:3,combo:1,sensitive:0}},
+    {text:"إدارة منطقتين مختلفتين في نفس الوجه", scores:{dry:1,oily:1,combo:3,sensitive:0}},
+    {text:"الاحمرار والتهيج والحساسية من المنتجات", scores:{dry:0,oily:0,combo:0,sensitive:3}}
+  ]}
+];
+
+var results = {
+  dry:{icon:"💧",type:"بشرة جافة",
+    desc:"بشرتكِ تفتقر إلى الدهون الطبيعية الكافية لحماية حاجزها الرطوبي، مما يجعلها تشعر بالشد والجفاف خاصةً في مناخ الإمارات الحار. البشرة الجافة أقل عرضة للبثور لكنها تحتاج عناية يومية منتظمة لمنع التجاعيد المبكرة.",
+    tip:"استخدمي غسولاً كريمياً لا يجفف البشرة، ثم طبّقي مرطباً غنياً بالهيالورونيك أسيد فوراً بعد الغسيل وبشرتكِ لا تزال رطبة قليلاً — هذا يحبس الرطوبة بداخلها بشكل أفضل بكثير.",
+    routine:["☀️ الصباح: غسول كريمي لطيف ← تونر مرطّب ← سيروم هيالورونيك أسيد ← مرطّب غني ← واقي شمس","🌙 المساء: غسول لطيف ← سيروم مغذّي ← كريم ليلي غني بالزبدة أو الزيوت الطبيعية","📅 أسبوعياً: ماسك ترطيب مكثف 15 دقيقة — مرة إلى مرتين في الأسبوع"],
+    tags:["ترطيب عميق","إصلاح الحاجز","هيالورونيك أسيد","بدون كحول","مغذّيات طبيعية"]},
+  oily:{icon:"✨",type:"بشرة دهنية",
+    desc:"بشرتكِ تنتج دهوناً أكثر من المعدل الطبيعي. الخبر الجيد: أنتِ أقل عرضة للتجاعيد المبكرة! لكن تحتاجين منتجات تتحكم في الإفرازات دون أن تُجففي البشرة — لأن الجفاف يحفّز إنتاج مزيد من الدهون.",
+    tip:"لا تتجنّبي المرطب أبداً! استخدمي مرطباً خفيفاً بدون زيت. نظّفي وجهكِ مرتين فقط يومياً — الإفراط في الغسيل يزيد الدهون. وطوّقي المسامات بمنتجات تحتوي على النياسيناميد.",
+    routine:["☀️ الصباح: غسول رغوي لطيف ← تونر منظّم للمسامات ← مرطّب خفيف بدون زيت ← واقي شمس جيل","🌙 المساء: غسول مزدوج ← سيروم نياسيناميد ← مرطّب خفيف","📅 أسبوعياً: ماسك طيني مرة واحدة لتنظيف المسامات"],
+    tags:["خالٍ من الزيوت","تحكم في الدهون","نياسيناميد","تضييق المسامات","خفيف الملمس"]},
+  combo:{icon:"⚖️",type:"بشرة مختلطة",
+    desc:"بشرتكِ تعيش في عالمين — منطقة T الدهنية والخدان الجافان. المفتاح هو معالجة كل منطقة بما تحتاجه فعلاً بدلاً من استخدام منتج واحد على الوجه كله.",
+    tip:"لا تستخدمي نفس المنتج على الوجه كاملاً! طبّقي مرطباً خفيفاً على الوجه كله، وأضيفي منتجاً للتحكم في الدهون فقط على منطقة T. استخدمي غسولاً متوازناً.",
+    routine:["☀️ الصباح: غسول متوازن ← تونر خفيف ← مرطّب خفيف للوجه كله ← جيل على منطقة T فقط ← واقي شمس","🌙 المساء: غسول مزدوج ← سيروم متوازن ← مرطّب خفيف للوجه + كريم أغنى للخدين فقط","📅 أسبوعياً: ماسك طيني على T + ماسك ترطيب على الخدين في نفس الوقت"],
+    tags:["موازن","ثنائي المفعول","متعدد المناطق","نياسيناميد","خفيف الملمس"]},
+  sensitive:{icon:"🛡️",type:"بشرة حساسة",
+    desc:"بشرتكِ رقيقة وسريعة التأثر بالمنتجات والبيئة. حاجزها الجلدي يحتاج دعماً مستمراً خاصةً في مناخ الإمارات. مع المنتجات الصحيحة يمكنكِ تقوية هذا الحاجز بشكل ملحوظ مع الوقت.",
+    tip:"دائماً اختبري أي منتج جديد على باطن ذراعكِ 24 ساعة قبل وضعه على الوجه. تجنّبي العطور والكحول. ابحثي عن: Ceramides، Centella Asiatica، Aloe Vera، Niacinamide.",
+    routine:["☀️ الصباح: غسول كريمي خالٍ من العطور ← تونر مهدّئ بالألوفيرا ← سيروم سيراميد ← مرطّب مهدّئ ← واقي شمس معدني","🌙 المساء: ميسيلار ووتر ← غسول لطيف ← سيروم مرمّم للحاجز ← كريم ليلي بالسيراميد","📅 أسبوعياً: ماسك مهدّئ بالألوفيرا مرة واحدة — تجنّبي الـ Scrub القاسي"],
+    tags:["خالٍ من العطور","مهدّئ","سيراميد","مختبر جلدياً","hypoallergenic"]}
+};
+
+var cur=0, ans=[], sc={dry:0,oily:0,combo:0,sensitive:0};
+
+function render(){
+  var q=questions[cur];
+  document.getElementById("progressLabel").textContent="السؤال "+nums[cur]+" من ٥";
+  document.getElementById("progressFill").style.width=((cur+1)/questions.length*100)+"%";
+  document.getElementById("qIcon").textContent=q.icon;
+  document.getElementById("qText").textContent=q.text;
+  var w=document.getElementById("optionsWrap"); w.innerHTML="";
+  q.options.forEach(function(o,i){
+    var b=document.createElement("button");
+    b.className="opt"+(ans[cur]===i?" selected":"");
+    b.textContent=o.text; b.onclick=function(){pick(i);};
+    w.appendChild(b);
+  });
+  var nb=document.getElementById("btnNext");
+  var bb=document.getElementById("btnBack");
+  nb.className="btn-next"+(ans[cur]!==undefined?" active":"");
+  nb.textContent=cur===questions.length-1?"أرِيني نوع بشرتي ✨":"التالي ←";
+  bb.style.visibility=cur===0?"hidden":"visible";
+}
+
+function pick(i){
+  ans[cur]=i;
+  document.querySelectorAll(".opt").forEach(function(b,idx){b.className="opt"+(idx===i?" selected":"");});
+  document.getElementById("btnNext").className="btn-next active";
+}
+
+function goNext(){
+  if(ans[cur]===undefined)return;
+  var s=questions[cur].options[ans[cur]].scores;
+  Object.keys(s).forEach(function(k){sc[k]+=s[k];});
+  cur++; if(cur>=questions.length){showResult();return;} render();
+}
+
+function goBack(){ if(cur===0)return; cur--; render(); }
+
+function showResult(){
+  document.getElementById("quizSection").className="hidden";
+  var w=Object.keys(sc).reduce(function(a,b){return sc[a]>sc[b]?a:b;});
+  var r=results[w];
+  document.getElementById("rIcon").textContent=r.icon;
+  document.getElementById("rType").textContent=r.type;
+  document.getElementById("rDesc").textContent=r.desc;
+  document.getElementById("rTip").textContent=r.tip;
+  var re=document.getElementById("rRoutine"); re.innerHTML="";
+  r.routine.forEach(function(s){var d=document.createElement("div");d.className="routine-step";d.textContent=s;re.appendChild(d);});
+  var te=document.getElementById("rTags"); te.innerHTML="";
+  r.tags.forEach(function(t){var s=document.createElement("span");s.className="tag";s.textContent=t;te.appendChild(s);});
+  var le=document.getElementById("rLink"); le.href=LINKS[w]; le.textContent="تسوقي منتجات "+r.type+" ←";
+  document.getElementById("resultSection").className="";
+  window.scrollTo(0,0);
+}
+
+function resetQuiz(){
+  cur=0;ans=[];sc={dry:0,oily:0,combo:0,sensitive:0};
+  document.getElementById("resultSection").className="hidden";
+  document.getElementById("quizSection").className="";
+  render();
+}
+
+render();
+</script>
+</body>
+</html>
