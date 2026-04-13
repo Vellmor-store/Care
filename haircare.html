@@ -153,23 +153,19 @@ body{
   margin-bottom:18px;
   border:1px solid rgba(61,74,48,.15);
 }
-.intro h1{
-  font-size:clamp(22px,5.5vw,32px);
-  font-weight:800;
-  color:var(--olive);
-  line-height:1.35;
-  margin-bottom:14px;
+.intro h1 {
+  font-size: clamp(20px, 4.5vw, 30px); /* حجم خط مرن يتصغير حسب الشاشة */
+  font-weight: 800;
+  color: var(--olive);
+  line-height: 1.2;
+  margin-bottom: 16px;
+  white-space: nowrap; /* إجبار النص على البقاء في سطر واحد */
 }
-.intro h1 em{font-style:normal;color:var(--olive-pale)}
-.intro-sub{
-  font-size:14px;
-  color:var(--text-soft);
-  font-weight:300;
-  margin-bottom:28px;
-  max-width:380px;
-  margin-left:auto;
-  margin-right:auto;
-  line-height:1.8;
+
+/* لضمان بقاء كلمة "روتين شعرك" بنفس اللون الجمالي */
+.intro h1 em {
+  font-style: normal;
+  color: var(--olive-pale); /* يحافظ على اللون الذي اخترته سابقاً */
 }
 .intro-pills{
   display:flex;
@@ -643,7 +639,7 @@ body{
 <div class="screen active" id="s-intro">
   <div class="intro">
     <span class="intro-eyebrow">✨ اختبار مجاني · دقيقتان فقط</span>
-    <h1>اكتشفي <em>روتين شعرك</em><br>المثالي الآن</h1>
+   <h1>اكتشفي <em>روتين شعرك</em> المثالي الآن</h1>
     <p class="intro-sub">7 أسئلة بسيطة وستحصلين على توصية مخصصة بالمنتجات التي يحتاجها شعرك فعلاً — وليس توصية عامة لأي أحد</p>
     <div class="intro-pills">
       <span class="pill"><span class="pill-icon">⚡</span>دقيقتان فقط</span>
@@ -651,7 +647,7 @@ body{
       <span class="pill"><span class="pill-icon">🌿</span>منتجات طبيعية</span>
       <span class="pill"><span class="pill-icon">💳</span>دفع عند الاستلام</span>
     </div>
-    <button class="btn-primary btn-gold" onclick="startQuiz()"> لنبدأ الإختبار معاً 🌿</button>
+    <button class="btn-primary btn-gold" onclick="startQuiz()"> ← لنبدأ الإختبار الآن 🌿</button>
     <p style="font-size:11px;color:var(--text-muted);margin-top:10px;font-weight:300">+5,000 عميلة اكتشفن روتينهن المثالي</p>
   </div>
 </div>
