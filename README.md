@@ -1,2 +1,2 @@
-# skin-quiz
+# skin-care
 Your Personalized Skin Consultant
