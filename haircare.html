@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>اكتشفي روتين شعرك المثالي — Vellmor</title>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   DESIGN TOKENS
+============================================================ */
+:root {
+  --olive:        #3D4A30;
+  --olive-light:  #5C6B4A;
+  --olive-pale:   #7A8F68;
+  --gold:         #C8B89A;
+  --gold-light:   #EDE0CE;
+  --bg:           #F8F6EE;
+  --white:        #ffffff;
+  --text:         #1a1a1a;
+  --text-soft:    #555;
+  --text-muted:   #888780;
+  --green-light:  #EEF2E8;
+  --border:       #e0ddd6;
+  --warm:         #fff8f0;
+  --danger-bg:    #fff5f0;
+  --danger-border:#f0c4a8;
+  --danger-text:  #92400e;
+  --radius-card:  18px;
+  --radius-btn:   50px;
+}
+
+/* ============================================================
+   RESET & BASE
+============================================================ */
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Almarai',sans-serif;
+  direction:rtl;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ============================================================
+   HEADER
+============================================================ */
+.site-header{
+  background:var(--olive);
+  padding:14px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 2px 12px rgba(0,0,0,.15);
+}
+.site-logo{
+  font-size:20px;
+  font-weight:800;
+  color:var(--gold);
+  letter-spacing:4px;
+  text-transform:uppercase;
+}
+.site-tagline{
+  font-size:10px;
+  color:rgba(200,184,154,.6);
+  font-weight:300;
+  letter-spacing:2px;
+  display:none;
+}
+@media(min-width:480px){.site-tagline{display:block}}
+
+/* ============================================================
+   TRUST BAR
+============================================================ */
+.trust-bar{
+  background:var(--green-light);
+  border-bottom:1px solid var(--border);
+  padding:8px 20px;
+  text-align:center;
+  font-size:11px;
+  font-weight:700;
+  color:var(--olive);
+  letter-spacing:.5px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  flex-wrap:wrap;
+}
+.trust-item{display:flex;align-items:center;gap:4px}
+
+/* ============================================================
+   PROGRESS
+============================================================ */
+.progress-wrap{
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+  padding:12px 20px;
+}
+.progress-label{
+  display:flex;
+  justify-content:space-between;
+  font-size:11px;
+  color:var(--text-muted);
+  margin-bottom:7px;
+  font-weight:700;
+}
+.progress-bar{height:5px;background:var(--border);border-radius:10px;overflow:hidden}
+.progress-fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--olive-pale),var(--olive));
+  border-radius:10px;
+  transition:width .45s cubic-bezier(.4,0,.2,1);
+}
+
+/* ============================================================
+   CONTAINER & SCREENS
+============================================================ */
+.container{
+  max-width:580px;
+  margin:0 auto;
+  padding:0 18px 120px;
+}
+.screen{display:none;animation:fadeUp .35s ease}
+.screen.active{display:block}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(18px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ============================================================
+   INTRO
+============================================================ */
+.intro{text-align:center;padding:44px 0 32px}
+.intro-eyebrow{
+  display:inline-block;
+  background:var(--green-light);
+  color:var(--olive);
+  font-size:10px;
+  font-weight:700;
+  padding:5px 14px;
+  border-radius:30px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:18px;
+  border:1px solid rgba(61,74,48,.15);
+}
+.intro h1{
+  font-size:clamp(22px,5.5vw,32px);
+  font-weight:800;
+  color:var(--olive);
+  line-height:1.35;
+  margin-bottom:14px;
+}
+.intro h1 em{font-style:normal;color:var(--olive-pale)}
+.intro-sub{
+  font-size:14px;
+  color:var(--text-soft);
+  font-weight:300;
+  margin-bottom:28px;
+  max-width:380px;
+  margin-left:auto;
+  margin-right:auto;
+  line-height:1.8;
+}
+.intro-pills{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:30px;
+}
+.pill{
+  display:flex;
+  align-items:center;
+  gap:5px;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:30px;
+  padding:6px 14px;
+  font-size:11px;
+  font-weight:700;
+  color:var(--text-soft);
+}
+.pill-icon{font-size:13px}
+
+/* ============================================================
+   QUESTIONS
+============================================================ */
+.question-wrap{padding:32px 0 20px}
+.q-num{
+  font-size:10px;
+  font-weight:700;
+  color:var(--olive-pale);
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:10px;
+  display:block;
+}
+.q-title{
+  font-size:clamp(17px,4vw,21px);
+  font-weight:800;
+  color:var(--olive);
+  line-height:1.45;
+  margin-bottom:6px;
+}
+.q-sub{
+  font-size:12px;
+  color:var(--text-muted);
+  font-weight:300;
+  margin-bottom:24px;
+}
+.options{display:flex;flex-direction:column;gap:10px}
+.option{
+  background:var(--white);
+  border:2px solid var(--border);
+  border-radius:var(--radius-card);
+  padding:14px 18px;
+  cursor:pointer;
+  transition:all .2s ease;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.option:hover{border-color:var(--olive-pale);background:var(--green-light);transform:translateX(-2px)}
+.option.selected{border-color:var(--olive);background:var(--green-light)}
+.opt-icon{
+  font-size:22px;
+  flex-shrink:0;
+  width:42px;height:42px;
+  background:var(--bg);
+  border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s;
+}
+.option.selected .opt-icon{background:var(--olive)}
+.opt-body{flex:1;text-align:right}
+.opt-label{font-size:13px;font-weight:700;color:var(--text);display:block;margin-bottom:1px}
+.opt-desc{font-size:11px;color:var(--text-muted);font-weight:300}
+.opt-check{
+  width:20px;height:20px;
+  border:2px solid var(--border);
+  border-radius:50%;
+  flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;
+  transition:all .2s;
+}
+.option.selected .opt-check{background:var(--olive);border-color:var(--olive);color:#fff}
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+.btn-primary{
+  display:block;width:100%;
+  background:var(--olive);color:var(--white);
+  font-family:'Almarai',sans-serif;
+  font-size:15px;font-weight:800;
+  padding:15px 24px;
+  border-radius:var(--radius-btn);
+  border:none;cursor:pointer;
+  transition:all .25s;
+  text-align:center;
+  margin-top:20px;
+}
+.btn-primary:hover{background:var(--olive-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(61,74,48,.2)}
+.btn-primary:disabled{background:var(--border);color:var(--text-muted);cursor:not-allowed;transform:none;box-shadow:none}
+.btn-gold{background:var(--gold);color:var(--olive)}
+.btn-gold:hover{background:#d4c4a6}
+.btn-back{
+  display:block;width:100%;
+  background:none;border:1.5px solid var(--border);
+  color:var(--text-muted);
+  font-family:'Almarai',sans-serif;
+  font-size:12px;font-weight:700;
+  padding:11px;border-radius:var(--radius-btn);
+  cursor:pointer;transition:all .2s;
+  margin-top:8px;
+}
+.btn-back:hover{border-color:var(--olive-pale);color:var(--olive)}
+
+/* ============================================================
+   LOADING
+============================================================ */
+.loading-wrap{text-align:center;padding:64px 20px}
+.spinner{
+  width:56px;height:56px;
+  border:4px solid var(--border);
+  border-top:4px solid var(--olive);
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+  margin:0 auto 22px;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-title{font-size:17px;font-weight:800;color:var(--olive);margin-bottom:6px}
+.loading-sub{font-size:12px;color:var(--text-muted);font-weight:300}
+.loading-steps{
+  margin-top:28px;
+  display:flex;flex-direction:column;gap:10px;
+  max-width:260px;margin-left:auto;margin-right:auto;
+}
+.loading-step{
+  display:flex;align-items:center;gap:10px;
+  font-size:12px;color:var(--text-muted);font-weight:300;
+  opacity:0;animation:fadeUp .5s ease forwards;
+}
+.loading-step:nth-child(1){animation-delay:.4s}
+.loading-step:nth-child(2){animation-delay:.9s}
+.loading-step:nth-child(3){animation-delay:1.4s}
+.step-dot{width:7px;height:7px;border-radius:50%;background:var(--olive-pale);flex-shrink:0}
+
+/* ============================================================
+   RESULT PAGE
+============================================================ */
+.result-wrap{padding:28px 0 20px}
+
+/* RESULT HEADER */
+.result-ribbon{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--olive);color:var(--gold);
+  font-size:10px;font-weight:700;
+  padding:5px 14px;border-radius:30px;
+  letter-spacing:1px;margin-bottom:14px;
+}
+.result-headline{
+  font-size:clamp(19px,5vw,25px);
+  font-weight:800;color:var(--olive);
+  line-height:1.4;margin-bottom:14px;
+}
+
+/* PERSONALIZATION CARD */
+.personal-card{
+  background:var(--olive);
+  border-radius:var(--radius-card);
+  padding:18px;
+  margin-bottom:20px;
+}
+.personal-label{
+  font-size:9px;font-weight:700;
+  color:var(--gold);
+  letter-spacing:2px;text-transform:uppercase;
+  display:block;margin-bottom:7px;
+}
+.personal-card p{
+  font-size:13px;color:rgba(232,220,198,.9);
+  font-weight:300;line-height:1.95;
+}
+.personal-card strong{color:#fff;font-weight:700}
+
+/* TRUST STRIP */
+.trust-strip{
+  display:flex;align-items:center;gap:10px;
+  background:var(--warm);border:1px solid var(--gold);
+  border-radius:14px;padding:12px 14px;margin-bottom:20px;
+}
+.trust-avatars{display:flex}
+.t-avatar{
+  width:30px;height:30px;border-radius:50%;
+  border:2px solid var(--white);
+  background:var(--gold);color:var(--olive);
+  font-size:11px;font-weight:800;
+  display:flex;align-items:center;justify-content:center;
+  margin-left:-7px;
+}
+.t-avatar:first-child{margin-left:0}
+.trust-copy{flex:1}
+.trust-copy strong{font-size:12px;color:var(--olive);display:block}
+.trust-copy span{font-size:11px;color:var(--text-muted);font-weight:300}
+
+/* TIMELINE */
+.timeline-card{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--radius-card);
+  padding:18px;margin-bottom:20px;
+}
+.section-title{
+  font-size:13px;font-weight:800;color:var(--olive);
+  margin-bottom:14px;display:flex;align-items:center;gap:7px;
+}
+.tl-row{display:flex;gap:12px;align-items:flex-start;margin-bottom:13px}
+.tl-row:last-child{margin-bottom:0}
+.tl-dot{
+  width:34px;height:34px;border-radius:50%;
+  background:var(--green-light);border:2px solid var(--olive-pale);
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;flex-shrink:0;margin-top:2px;
+}
+.tl-body{flex:1}
+.tl-when{
+  font-size:10px;font-weight:700;color:var(--olive-pale);
+  letter-spacing:1px;text-transform:uppercase;
+  display:block;margin-bottom:1px;
+}
+.tl-what{font-size:13px;font-weight:700;color:var(--text);display:block}
+.tl-detail{font-size:11px;color:var(--text-muted);font-weight:300}
+
+/* SECTION LABEL */
+.sec-lbl{
+  font-size:10px;font-weight:700;color:var(--olive-pale);
+  letter-spacing:2px;text-transform:uppercase;
+  display:block;margin-bottom:10px;
+}
+
+/* ROUTINE CHOICE */
+.routine-choice{
+  display:grid;grid-template-columns:1fr 1fr;gap:8px;
+  margin-bottom:18px;
+}
+.choice-btn{
+  padding:10px 14px;border-radius:12px;
+  border:2px solid var(--border);
+  background:var(--white);
+  cursor:pointer;transition:all .2s;
+  text-align:center;
+}
+.choice-btn.active,
+.choice-btn:hover{border-color:var(--olive);background:var(--green-light)}
+.choice-label{font-size:12px;font-weight:800;color:var(--olive);display:block}
+.choice-sub{font-size:10px;color:var(--text-muted);font-weight:300}
+
+/* PRODUCT CARD */
+.product-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius-card);
+  padding:18px;
+  margin-bottom:12px;
+  transition:box-shadow .2s;
+}
+.product-card:hover{box-shadow:0 4px 20px rgba(61,74,48,.1)}
+.product-card.featured{border-color:var(--olive);border-width:2px}
+.prod-top{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px}
+.prod-icon{
+  width:48px;height:48px;background:var(--green-light);
+  border-radius:13px;display:flex;align-items:center;
+  justify-content:center;font-size:21px;flex-shrink:0;
+}
+.prod-meta{flex:1}
+.prod-badges{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:3px}
+.badge-hot{font-size:9px;font-weight:700;background:#fff0e8;color:#c05621;padding:2px 7px;border-radius:20px;border:1px solid #f0c4a8}
+.badge-fav{font-size:9px;font-weight:700;background:#eef2e8;color:#3d4a30;padding:2px 7px;border-radius:20px;border:1px solid #b8c8a8}
+.badge-new{font-size:9px;font-weight:700;background:#e8f0ff;color:#334acc;padding:2px 7px;border-radius:20px;border:1px solid #b0c0f0}
+.badge-lim{font-size:9px;font-weight:700;background:#fff5dc;color:#92400e;padding:2px 7px;border-radius:20px;border:1px solid #f0d080}
+.prod-name{font-size:13px;font-weight:800;color:var(--olive);display:block;margin-bottom:3px}
+.prod-stars{color:#f5a623;font-size:12px;margin-bottom:1px}
+.prod-reviews{font-size:10px;color:var(--text-muted)}
+.prod-why{
+  font-size:11px;font-weight:700;color:var(--olive);
+  background:var(--green-light);
+  padding:7px 11px;border-radius:8px;
+  margin-bottom:9px;
+  border-right:3px solid var(--olive);
+  line-height:1.6;
+}
+.prod-desc{font-size:12px;color:var(--text-soft);font-weight:300;margin-bottom:12px;line-height:1.75}
+.btn-buy{
+  display:block;width:100%;
+  background:var(--gold);color:var(--olive);
+  font-family:'Almarai',sans-serif;
+  font-size:13px;font-weight:800;
+  padding:12px;border-radius:12px;
+  border:none;cursor:pointer;
+  transition:all .2s;
+  text-decoration:none;text-align:center;
+}
+.btn-buy:hover{background:#d4c4a6;transform:translateY(-1px)}
+.btn-buy-secondary{
+  background:var(--green-light);color:var(--olive);
+  border:1.5px solid var(--olive-pale);
+}
+.btn-buy-secondary:hover{background:var(--border)}
+
+/* BUNDLE */
+.bundle-card{
+  background:var(--white);border:2px solid var(--olive);
+  border-radius:var(--radius-card);
+  padding:18px;margin-bottom:20px;
+}
+.bundle-title{font-size:13px;font-weight:800;color:var(--olive);margin-bottom:7px}
+.bundle-desc{font-size:12px;color:var(--text-soft);font-weight:300;line-height:1.9;margin-bottom:12px}
+.bundle-items{display:flex;flex-direction:column;gap:7px;margin-bottom:12px}
+.bundle-row{display:flex;align-items:center;gap:9px;font-size:12px;color:var(--text);font-weight:300}
+.bundle-ico{font-size:15px;width:26px;text-align:center}
+.bundle-result{
+  font-size:12px;font-weight:700;color:var(--olive);
+  background:var(--green-light);
+  padding:9px 12px;border-radius:9px;text-align:center;
+}
+
+/* HOW TO USE */
+.how-card{
+  background:var(--green-light);
+  border:1px solid rgba(61,74,48,.15);
+  border-radius:var(--radius-card);
+  padding:18px;margin-bottom:20px;
+}
+.how-row{display:flex;gap:11px;align-items:flex-start;margin-bottom:11px}
+.how-row:last-child{margin-bottom:0}
+.how-num{
+  width:24px;height:24px;
+  background:var(--olive);color:#fff;
+  border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;
+}
+.how-body{flex:1}
+.how-action{font-size:12px;font-weight:700;color:var(--olive);display:block}
+.how-detail{font-size:11px;color:var(--text-muted);font-weight:300}
+
+/* PAIN */
+.pain-card{
+  background:var(--danger-bg);
+  border:1px solid var(--danger-border);
+  border-right:4px solid #d97706;
+  border-radius:0 var(--radius-card) var(--radius-card) 0;
+  padding:16px 15px;margin-bottom:20px;
+}
+.pain-title{font-size:12px;font-weight:800;color:var(--danger-text);margin-bottom:9px}
+.pain-list{list-style:none}
+.pain-list li{
+  font-size:12px;color:#78350f;font-weight:300;
+  line-height:1.8;padding-right:17px;position:relative;margin-bottom:5px;
+}
+.pain-list li::before{content:'⚠️';position:absolute;right:0;font-size:10px}
+
+/* FINAL CTA */
+.final-cta-card{
+  background:var(--olive);border-radius:20px;
+  padding:22px 18px;margin-bottom:14px;text-align:center;
+}
+.cta-eyebrow{
+  font-size:10px;font-weight:700;color:var(--gold);
+  letter-spacing:2px;text-transform:uppercase;
+  display:block;margin-bottom:7px;
+}
+.final-cta-card h3{font-size:17px;font-weight:800;color:#fff;margin-bottom:5px;line-height:1.4}
+.final-cta-card p{font-size:12px;color:rgba(200,184,154,.8);font-weight:300;margin-bottom:14px}
+.btn-final{
+  display:block;
+  background:var(--gold);color:var(--olive);
+  font-family:'Almarai',sans-serif;
+  font-size:14px;font-weight:800;
+  padding:15px;border-radius:var(--radius-btn);
+  border:none;cursor:pointer;
+  text-decoration:none;text-align:center;
+  transition:all .2s;
+  box-shadow:0 4px 14px rgba(0,0,0,.2);
+}
+.btn-final:hover{background:#d4c4a6;transform:translateY(-2px)}
+.cta-sub{
+  font-size:10px;color:rgba(200,184,154,.6);
+  font-weight:300;margin-top:8px;display:block;
+}
+
+/* GUARANTEE BAR */
+.guarantee-bar{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:8px;margin:20px 0;
+}
+.g-item{
+  text-align:center;background:var(--white);
+  border:1px solid var(--border);border-radius:12px;
+  padding:11px 7px;
+}
+.g-icon{font-size:16px;display:block;margin-bottom:3px}
+.g-txt{font-size:10px;color:var(--text-muted);font-weight:700}
+
+/* RETAKE */
+.retake{
+  display:block;text-align:center;
+  font-size:12px;color:var(--text-muted);
+  font-weight:300;margin-top:14px;
+  cursor:pointer;text-decoration:underline;
+  background:none;border:none;
+  font-family:'Almarai',sans-serif;width:100%;
+}
+
+@media(max-width:400px){
+  .guarantee-bar{grid-template-columns:1fr}
+  .routine-choice{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- SITE HEADER -->
+<header class="site-header">
+  <span class="site-logo">VÉLLMOR</span>
+  <span class="site-tagline">عناية فاخرة · الإمارات</span>
+</header>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <span class="trust-item">✨ <span>+5,000 عميلة سعيدة</span></span>
+  <span class="trust-item">🚚 <span>شحن مجاني</span></span>
+  <span class="trust-item">💳 <span>دفع عند الاستلام</span></span>
+  <span class="trust-item">↩️ <span>ضمان 7 أيام</span></span>
+</div>
+
+<!-- PROGRESS (hidden until quiz starts) -->
+<div id="progressBar" style="display:none">
+  <div class="progress-wrap">
+    <div class="progress-label">
+      <span id="progText">السؤال 1 من 7</span>
+      <span id="progPct">14%</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progFill" style="width:14%"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ===================== INTRO ===================== -->
+<div class="screen active" id="s-intro">
+  <div class="intro">
+    <span class="intro-eyebrow">✨ اختبار مجاني · دقيقتان فقط</span>
+    <h1>اكتشفي <em>روتين شعرك</em><br>المثالي الآن</h1>
+    <p class="intro-sub">7 أسئلة بسيطة وستحصلين على توصية مخصصة بالمنتجات التي يحتاجها شعرك فعلاً — وليس توصية عامة لأي أحد</p>
+    <div class="intro-pills">
+      <span class="pill"><span class="pill-icon">⚡</span>دقيقتان فقط</span>
+      <span class="pill"><span class="pill-icon">🎯</span>نتيجة مخصصة لكِ</span>
+      <span class="pill"><span class="pill-icon">🌿</span>منتجات طبيعية</span>
+      <span class="pill"><span class="pill-icon">💳</span>دفع عند الاستلام</span>
+    </div>
+    <button class="btn-primary btn-gold" onclick="startQuiz()">ابدئي الاختبار الآن 🌿</button>
+    <p style="font-size:11px;color:var(--text-muted);margin-top:10px;font-weight:300">+5,000 عميلة اكتشفن روتينهن المثالي</p>
+  </div>
+</div>
+
+<!-- ===================== Q1 ===================== -->
+<div class="screen" id="s-q1">
+  <div class="question-wrap">
+    <span class="q-num">السؤال الأول من 7</span>
+    <div class="q-title">ما هي المشكلة الأساسية في شعرك؟</div>
+    <div class="q-sub">اختاري المشكلة التي تزعجك أكثر</div>
+    <div class="options">
+      <div class="option" onclick="pick(this,'q1','damage')">
+        <div class="opt-icon">💔</div>
+        <div class="opt-body"><span class="opt-label">جفاف وشعر متعب</span><span class="opt-desc">شعر خشن، أطراف مفتوحة، بهتان</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q1','color')">
+        <div class="opt-icon">🎨</div>
+        <div class="opt-body"><span class="opt-label">تأثير الصبغة والحرارة</span><span class="opt-desc">اللون يبهت، شعر ضعيف بعد السشوار</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q1','loss')">
+        <div class="opt-icon">🌪️</div>
+        <div class="opt-body"><span class="opt-label">تساقط وخفة في الشعر</span><span class="opt-desc">فقدان الكثافة، شعر يبدو خفيفاً</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q1','basic')">
+        <div class="opt-icon">✨</div>
+        <div class="opt-body"><span class="opt-label">شعر جيد لكن يحتاج عناية</span><span class="opt-desc">أريد الحفاظ على شعري وتحسينه</span></div>
+        <div class="opt-check"></div>
+      </div>
+    </div>
+    <button class="btn-primary" id="n-q1" onclick="go(2)" disabled>التالي ←</button>
+    <button class="btn-back" onclick="back(0)">→ السابق</button>
+  </div>
+</div>
+
+<!-- ===================== Q2 ===================== -->
+<div class="screen" id="s-q2">
+  <div class="question-wrap">
+    <span class="q-num">السؤال الثاني من 7</span>
+    <div class="q-title">كيف تصفين ملمس شعرك؟</div>
+    <div class="q-sub">اختاري الوصف الأقرب لشعرك الآن</div>
+    <div class="options">
+      <div class="option" onclick="pick(this,'q2','coarse')">
+        <div class="opt-icon">🪨</div>
+        <div class="opt-body"><span class="opt-label">خشن وجاف تماماً</span><span class="opt-desc">لا نعومة، يصعب تمشيطه</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q2','brittle')">
+        <div class="opt-icon">🍂</div>
+        <div class="opt-body"><span class="opt-label">هش وينكسر بسهولة</span><span class="opt-desc">تكسر عند التمشيط أو الشد</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q2','soft_dry')">
+        <div class="opt-icon">🌤️</div>
+        <div class="opt-body"><span class="opt-label">ناعم لكن يجف بسرعة</span><span class="opt-desc">جيد بعد الغسيل ثم يجف خلال ساعات</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q2','normal')">
+        <div class="opt-icon">💆</div>
+        <div class="opt-body"><span class="opt-label">طبيعي لكن يحتاج حيوية</span><span class="opt-desc">ليس سيئاً لكن أريد تحسينه</span></div>
+        <div class="opt-check"></div>
+      </div>
+    </div>
+    <button class="btn-primary" id="n-q2" onclick="go(3)" disabled>التالي ←</button>
+    <button class="btn-back" onclick="back(1)">→ السابق</button>
+  </div>
+</div>
+
+<!-- ===================== Q3 ===================== -->
+<div class="screen" id="s-q3">
+  <div class="question-wrap">
+    <span class="q-num">السؤال الثالث من 7</span>
+    <div class="q-title">هل شعرك تعرض لصبغة أو حرارة؟</div>
+    <div class="q-sub">هذا يحدد نوع العناية الأنسب لكِ</div>
+    <div class="options">
+      <div class="option" onclick="pick(this,'q3','both')">
+        <div class="opt-icon">🔥</div>
+        <div class="opt-body"><span class="opt-label">صبغة وحرارة معاً</span><span class="opt-desc">أصبغ شعري وأستخدم السشوار يومياً</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q3','color_only')">
+        <div class="opt-icon">🎨</div>
+        <div class="opt-body"><span class="opt-label">صبغة فقط</span><span class="opt-desc">أصبغ شعري بدون حرارة كثيرة</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q3','heat_only')">
+        <div class="opt-icon">💨</div>
+        <div class="opt-body"><span class="opt-label">حرارة فقط</span><span class="opt-desc">سشوار أو مكواة يومياً</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q3','none')">
+        <div class="opt-icon">🌿</div>
+        <div class="opt-body"><span class="opt-label">لا شيء من ذلك</span><span class="opt-desc">شعر طبيعي بدون معالجات</span></div>
+        <div class="opt-check"></div>
+      </div>
+    </div>
+    <button class="btn-primary" id="n-q3" onclick="go(4)" disabled>التالي ←</button>
+    <button class="btn-back" onclick="back(2)">→ السابق</button>
+  </div>
+</div>
+
+<!-- ===================== Q4 ===================== -->
+<div class="screen" id="s-q4">
+  <div class="question-wrap">
+    <span class="q-num">السؤال الرابع من 7</span>
+    <div class="q-title">منذ متى تلاحظين هذه المشكلة؟</div>
+    <div class="q-sub">مدة المشكلة تحدد عمق العناية المطلوبة</div>
+    <div class="options">
+      <div class="option" onclick="pick(this,'q4','long')">
+        <div class="opt-icon">📅</div>
+        <div class="opt-body"><span class="opt-label">أكثر من سنة</span><span class="opt-desc">مشكلة قديمة ومستمرة</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q4','medium')">
+        <div class="opt-icon">🗓️</div>
+        <div class="opt-body"><span class="opt-label">من 3 إلى 12 شهراً</span><span class="opt-desc">المشكلة بدأت تتطور</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q4','recent')">
+        <div class="opt-icon">⏰</div>
+        <div class="opt-body"><span class="opt-label">أقل من 3 أشهر</span><span class="opt-desc">مشكلة جديدة نسبياً</span></div>
+        <div class="opt-check"></div>
+      </div>
+    </div>
+    <button class="btn-primary" id="n-q4" onclick="go(5)" disabled>التالي ←</button>
+    <button class="btn-back" onclick="back(3)">→ السابق</button>
+  </div>
+</div>
+
+<!-- ===================== Q5 ===================== -->
+<div class="screen" id="s-q5">
+  <div class="question-wrap">
+    <span class="q-num">السؤال الخامس من 7</span>
+    <div class="q-title">كم مرة تهتمين بشعرك أسبوعياً؟</div>
+    <div class="q-sub">سنختار روتيناً يناسب وقتك</div>
+    <div class="options">
+      <div class="option" onclick="pick(this,'q5','daily')">
+        <div class="opt-icon">💪</div>
+        <div class="opt-body"><span class="opt-label">يومياً</span><span class="opt-desc">أهتم بشعري كل يوم</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q5','few')">
+        <div class="opt-icon">✌️</div>
+        <div class="opt-body"><span class="opt-label">2-3 مرات أسبوعياً</span><span class="opt-desc">روتين منتظم غير يومي</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q5','once')">
+        <div class="opt-icon">☝️</div>
+        <div class="opt-body"><span class="opt-label">مرة واحدة أسبوعياً</span><span class="opt-desc">وقتي محدود</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q5','rarely')">
+        <div class="opt-icon">😅</div>
+        <div class="opt-body"><span class="opt-label">نادراً</span><span class="opt-desc">أريد روتيناً سريعاً جداً</span></div>
+        <div class="opt-check"></div>
+      </div>
+    </div>
+    <button class="btn-primary" id="n-q5" onclick="go(6)" disabled>التالي ←</button>
+    <button class="btn-back" onclick="back(4)">→ السابق</button>
+  </div>
+</div>
+
+<!-- ===================== Q6 ===================== -->
+<div class="screen" id="s-q6">
+  <div class="question-wrap">
+    <span class="q-num">السؤال السادس من 7</span>
+    <div class="q-title">ما النتيجة التي تريدينها؟</div>
+    <div class="q-sub">حددي هدفك الرئيسي</div>
+    <div class="options">
+      <div class="option" onclick="pick(this,'q6','softness')">
+        <div class="opt-icon">🌸</div>
+        <div class="opt-body"><span class="opt-label">نعومة وبريق ولمعة</span><span class="opt-desc">شعر ناعم كالحرير ويلفت الأنظار</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q6','strength')">
+        <div class="opt-icon">💎</div>
+        <div class="opt-body"><span class="opt-label">قوة وكثافة وحجم</span><span class="opt-desc">شعر يبدو أكثر كثافة وامتلاءً</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q6','repair')">
+        <div class="opt-icon">🔧</div>
+        <div class="opt-body"><span class="opt-label">استعادة الحيوية</span><span class="opt-desc">إعادة الشعر لأفضل حالاته</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q6','growth')">
+        <div class="opt-icon">🌱</div>
+        <div class="opt-body"><span class="opt-label">نمو وتكثيف</span><span class="opt-desc">تحفيز النمو ووقف التساقط</span></div>
+        <div class="opt-check"></div>
+      </div>
+    </div>
+    <button class="btn-primary" id="n-q6" onclick="go(7)" disabled>التالي ←</button>
+    <button class="btn-back" onclick="back(5)">→ السابق</button>
+  </div>
+</div>
+
+<!-- ===================== Q7 ===================== -->
+<div class="screen" id="s-q7">
+  <div class="question-wrap">
+    <span class="q-num">السؤال الأخير ✨</span>
+    <div class="q-title">هل تفضلين نتائج سريعة أم تدريجية؟</div>
+    <div class="q-sub">كلاهما صحيح — فقط أخبرينا</div>
+    <div class="options">
+      <div class="option" onclick="pick(this,'q7','fast')">
+        <div class="opt-icon">⚡</div>
+        <div class="opt-body"><span class="opt-label">نتائج سريعة</span><span class="opt-desc">فرق واضح خلال أسبوع</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q7','gradual')">
+        <div class="opt-icon">🌿</div>
+        <div class="opt-body"><span class="opt-label">نتائج تدريجية ومستدامة</span><span class="opt-desc">إصلاح عميق وطويل الأمد</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q7','both')">
+        <div class="opt-icon">🎯</div>
+        <div class="opt-body"><span class="opt-label">كلاهما</span><span class="opt-desc">فورية الآن واستدامة لاحقاً</span></div>
+        <div class="opt-check"></div>
+      </div>
+    </div>
+    <button class="btn-primary btn-gold" id="n-q7" onclick="showLoading()" disabled>احصلي على روتينك المخصص ✨</button>
+    <button class="btn-back" onclick="back(6)">→ السابق</button>
+  </div>
+</div>
+
+<!-- ===================== LOADING ===================== -->
+<div class="screen" id="s-loading">
+  <div class="loading-wrap">
+    <div class="spinner"></div>
+    <div class="loading-title">جاري تحليل إجاباتك...</div>
+    <div class="loading-sub">نحضّر روتينك المثالي</div>
+    <div class="loading-steps">
+      <div class="loading-step"><div class="step-dot"></div><span>تحليل حالة شعرك...</span></div>
+      <div class="loading-step"><div class="step-dot"></div><span>اختيار المنتجات الأنسب...</span></div>
+      <div class="loading-step"><div class="step-dot"></div><span>تجهيز روتينك الشخصي...</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== RESULT ===================== -->
+<div class="screen" id="s-result">
+  <div class="result-wrap">
+
+    <span class="result-ribbon">✨ روتينك الشخصي</span>
+    <div class="result-headline" id="r-title"></div>
+
+    <!-- PERSONALIZATION -->
+    <div class="personal-card">
+      <span class="personal-label">🎯 تحليل مخصص لكِ</span>
+      <p id="r-personal"></p>
+    </div>
+
+    <!-- TRUST -->
+    <div class="trust-strip">
+      <div class="trust-avatars">
+        <div class="t-avatar">س</div>
+        <div class="t-avatar">ن</div>
+        <div class="t-avatar">م</div>
+        <div class="t-avatar">ر</div>
+        <div class="t-avatar">ه</div>
+      </div>
+      <div class="trust-copy">
+        <strong>+5,000 عميلة حققن نتائج مثبتة</strong>
+        <span>بروتينات مشابهة لما أُوصي به لكِ اليوم</span>
+      </div>
+      <span style="font-size:18px">⭐ 4.9</span>
+    </div>
+
+    <!-- TIMELINE -->
+    <div class="timeline-card">
+      <div class="section-title">⏱️ متى ستظهر النتائج؟</div>
+      <div id="r-timeline"></div>
+    </div>
+
+    <!-- ROUTINE CHOICE -->
+    <span class="sec-lbl">🌿 روتينك الموصى به</span>
+    <div class="routine-choice" id="r-choice">
+      <div class="choice-btn active" onclick="switchRoutine('full',this)">
+        <span class="choice-label">الروتين الكامل</span>
+        <span class="choice-sub">أقوى نتيجة ممكنة</span>
+      </div>
+      <div class="choice-btn" onclick="switchRoutine('starter',this)">
+        <span class="choice-label">ابدئي بمنتجين</span>
+        <span class="choice-sub">للبداية السريعة</span>
+      </div>
+    </div>
+    <div id="r-products"></div>
+
+    <!-- BUNDLE -->
+    <div class="bundle-card">
+      <div class="bundle-title">🔗 لماذا هذا الروتين معاً؟</div>
+      <div class="bundle-desc" id="r-bundle-desc"></div>
+      <div class="bundle-items" id="r-bundle-items"></div>
+      <div class="bundle-result" id="r-bundle-result"></div>
+    </div>
+
+    <!-- HOW TO USE -->
+    <div class="how-card">
+      <div class="section-title">📋 كيف تستخدمين الروتين؟</div>
+      <div id="r-how"></div>
+    </div>
+
+    <!-- PAIN -->
+    <div class="pain-card">
+      <div class="pain-title">⚠️ ماذا يحدث إذا لم تبدئي الآن؟</div>
+      <ul class="pain-list" id="r-pain"></ul>
+    </div>
+
+    <!-- FINAL CTA -->
+    <div class="final-cta-card">
+      <span class="cta-eyebrow">⚡ عرض محدود — كمية محدودة</span>
+      <h3 id="r-cta-title">احصلي على روتينك الكامل الآن</h3>
+      <p>نتائج تبدأ من أول استخدام — شحن مجاني لجميع الإمارات</p>
+      <a href="#" class="btn-final" id="r-cta-btn" target="_blank">🛒 اطلبي الآن — توصيل 24-48 ساعة 🇦🇪</a>
+      <span class="cta-sub">💳 دفع عند الاستلام &nbsp;|&nbsp; ↩️ ضمان 7 أيام &nbsp;|&nbsp; 🚚 شحن مجاني</span>
+    </div>
+
+    <!-- GUARANTEE -->
+    <div class="guarantee-bar">
+      <div class="g-item"><span class="g-icon">🚚</span><span class="g-txt">شحن مجاني</span></div>
+      <div class="g-item"><span class="g-icon">💳</span><span class="g-txt">دفع عند الاستلام</span></div>
+      <div class="g-item"><span class="g-icon">↩️</span><span class="g-txt">ضمان 7 أيام</span></div>
+    </div>
+
+    <button class="retake" onclick="restart()">إعادة الاختبار من البداية</button>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<script>
+/* ============================================================
+   PRODUCTS DATABASE
+   غيري أي رابط تريدينه — كل شيء مركّز هنا
+============================================================ */
+const PRODUCTS = {
+  karseell_mask: {
+    id:'karseell_mask',
+    icon:'🥥',
+    name:'ماسك الشعر بالكولاجين من كارسيل',
+    stars:'⭐⭐⭐⭐⭐',
+    reviews:'2,400+ تقييم',
+    badge:'badge-hot', badgeText:'الأكثر مبيعاً',
+    link:'https://ar.vellmor.store/products/mask-alshaar-balkolagyn-mn-karsyl',
+    cta:'اطلبيه الآن — توصيل 24 ساعة 🚚'
+  },
+  argan_set: {
+    id:'argan_set',
+    icon:'💧',
+    name:'مجموعة زيت الأرجان الكاملة',
+    stars:'⭐⭐⭐⭐⭐',
+    reviews:'1,800+ تقييم',
+    badge:'badge-lim', badgeText:'كمية محدودة',
+    link:'https://ar.vellmor.store/products/mgmoaa-zyt-alargan-llaanay-balshaar',
+    cta:'احصلي عليه 🌿'
+  },
+  karseell_shampoo: {
+    id:'karseell_shampoo',
+    icon:'🧴',
+    name:'مجموعة شامبو وبلسم كارسيل بالكولاجين',
+    stars:'⭐⭐⭐⭐⭐',
+    reviews:'1,200+ تقييم',
+    badge:'badge-fav', badgeText:'مفضل العملاء',
+    link:'https://ar.vellmor.store/products/mgmoaa-shambo-oblsm-karsyl',
+    cta:'اطلبيها الآن 🌿'
+  },
+  pumpkin_oil: {
+    id:'pumpkin_oil',
+    icon:'🌱',
+    name:'زيت بذور اليقطين لتقوية الشعر',
+    stars:'⭐⭐⭐⭐⭐',
+    reviews:'3,100+ تقييم',
+    badge:'badge-hot', badgeText:'الأكثر مبيعاً',
+    link:'https://ar.vellmor.store/products/3-ktaa-mn-zyt-yzor-alyktyn',
+    cta:'اطلبيه — قبل نفاد الكمية 🚚'
+  },
+  retinol_cream: {
+    id:'retinol_cream',
+    icon:'✨',
+    name:'كريم الريتينول لإشراقة فروة الرأس',
+    stars:'⭐⭐⭐⭐⭐',
+    reviews:'980+ تقييم',
+    badge:'badge-new', badgeText:'وصل حديثاً',
+    link:'https://ar.vellmor.store/products/rytnonol-krym-alhlat-dark-c',
+    cta:'احصلي عليه 🌿'
+  },
+  sakura_set: {
+    id:'sakura_set',
+    icon:'🌸',
+    name:'مجموعة الساكورا اليابانية — ترطيب وإشراقة',
+    stars:'⭐⭐⭐⭐⭐',
+    reviews:'1,500+ تقييم',
+    badge:'badge-fav', badgeText:'مفضل العملاء',
+    link:'https://ar.vellmor.store/products/mgmoaa-alsakora-alyabany-llaanay-balbshr',
+    cta:'اطلبيها الآن 🌸'
+  },
+  eye_cream: {
+    id:'eye_cream',
+    icon:'💎',
+    name:'سيروم Hoygi ببتيد النحاس — تجديد وحيوية',
+    stars:'⭐⭐⭐⭐⭐',
+    reviews:'750+ تقييم',
+    badge:'badge-new', badgeText:'جديد',
+    link:'https://ar.vellmor.store/products/syrom-hoygi-ltgdyd-oshd-albshr-bbbtyd-alnhas-alazrk',
+    cta:'احصلي عليه 🌿'
+  }
+};
+
+/* ============================================================
+   RESULTS CONFIG
+============================================================ */
+const RESULTS = {
+
+  /* ─── ROUTINE 1: DAMAGE ─── */
+  Routine_Damage: {
+    title:'روتين استعادة حيوية الشعر — نتائج من أول استخدام',
+    personal:`بناءً على إجاباتكِ، شعرك يحتاج إلى <strong>ترطيب عميق من الداخل</strong> — ليس مجرد بلسم سطحي يختفي بعد الغسيل. السبب الحقيقي هو أن رطوبة شعرك لا تُحتجز بما يكفي، مما يجعله يبدو جافاً وباهتاً حتى بعد الاستحمام. الروتين الذي اخترناه لكِ يعمل على تغذية الشعر من الداخل ويمنح بريقاً حريرياً يدوم أياماً.`,
+    timeline:[
+      {icon:'✨', when:'من أول استخدام', what:'نعومة فورية ملموسة', detail:'تشعرين بفرق واضح في ملمس الشعر فور الشطف'},
+      {icon:'💪', when:'بعد أسبوع', what:'بريق طبيعي ونعومة تدوم', detail:'شعرك يحتفظ بحيويته أياماً بعد الغسيل'},
+      {icon:'🌟', when:'بعد أسبوعين', what:'تحسن عميق ومستدام', detail:'شعر مرن وحيوي يعكس الضوء بشكل طبيعي'}
+    ],
+    fullProducts:[
+      {pid:'karseell_mask', why:'لماذا هو الأساس: الكولاجين المركّز فيه يمنح شعرك رطوبة عميقة تدوم أياماً — 15 دقيقة تكفي لفرق تشعرين به فوراً.', desc:'ترطيب عميق يمنح نعومة حريرية من أول استخدام', featured:true},
+      {pid:'argan_set', why:'لماذا يكمل الروتين: زيت الأرجان يُغلق الرطوبة داخل الشعر ويمنحه بريقاً طبيعياً يدوم طول اليوم.', desc:'يُثبّت الرطوبة ويمنح لمعة طبيعية لا تُقاوم', featured:false},
+      {pid:'karseell_shampoo', why:'لماذا تحتاجينه: الشامبو والبلسم المناسبان يحضّران شعرك لامتصاص العناية بشكل أعمق.', desc:'تنظيف لطيف يحافظ على رطوبة الشعر بين الجلسات', featured:false}
+    ],
+    starterProducts:[
+      {pid:'karseell_mask', why:'ابدئي بهذا: الخطوة الأهم لاستعادة حيوية شعرك في أسرع وقت.', desc:'ترطيب عميق يمنح نعومة حريرية من أول استخدام', featured:true},
+      {pid:'argan_set', why:'ثم أضيفي هذا: الحماية اليومية التي تُبقي شعرك ناعماً بين الجلسات.', desc:'يُثبّت الرطوبة ويمنح لمعة طبيعية يومياً', featured:false}
+    ],
+    bundle:{
+      desc:'الماسك يُغذّي من الداخل والزيت يحمي من الخارج — معاً يمنحان شعرك رطوبة متكاملة لا تختفي.',
+      items:[
+        {icon:'🥥', text:'الماسك: تغذية عميقة تدوم', arrow:'+'},
+        {icon:'💧', text:'الأرجان: حماية وبريق يومي', arrow:'='},
+        {icon:'✨', text:'شعر ناعم ولامع طوال الأسبوع', arrow:''}
+      ],
+      result:'⚡ معاً = نتيجة أقوى بـ 3 مرات من منتج واحد فقط'
+    },
+    howToUse:[
+      {num:'1', action:'الماسك مرتين أسبوعياً بعد الشامبو', detail:'ضعيه على الشعر المبلل من الجذور للأطراف'},
+      {num:'2', action:'اتركيه 15 دقيقة', detail:'لفّي شعرك بمنشفة دافئة لتعميق الترطيب'},
+      {num:'3', action:'اشطفي بماء فاتر', detail:'يُحبس الترطيب داخل الشعر بشكل أفضل'},
+      {num:'4', action:'زيت الأرجان يومياً على الأطراف', detail:'3-4 قطرات — قبل التصفيف أو قبل النوم'}
+    ],
+    pain:[
+      'الجفاف سيزداد تدريجياً مع الوقت ويصبح أصعب في العلاج',
+      'الأطراف المتشعثة ستمتد لأعلى الشعر إذا لم تُعالج',
+      'الشعر الجاف أكثر عرضة للانكسار بأدوات التصفيف',
+      'ستحتاجين لمنتجات أغلى وأكثر لاحقاً'
+    ],
+    ctaTitle:'احصلي على روتين الترطيب الكامل الآن',
+    ctaLink:'https://ar.vellmor.store/products/mask-alshaar-balkolagyn-mn-karsyl'
+  },
+
+  /* ─── ROUTINE 2: COLOR ─── */
+  Routine_Color: {
+    title:'روتين حماية الشعر المصبوغ — لون ثابت وحيوية دائمة',
+    personal:`بناءً على إجاباتكِ، شعرك تأثّر بالصبغة والحرارة اللتان تفتحان قشور الشعر وتجعلانه يفقد <strong>رطوبته ولونه بسرعة</strong>. السبب الحقيقي لبهتان لونك ليس جودة الصبغة — بل غياب العناية المتخصصة للشعر المصبوغ. الروتين الذي اخترناه لكِ يُصلح الشعر ويُثبّت اللون في نفس الوقت.`,
+    timeline:[
+      {icon:'✨', when:'من أول استخدام', what:'لمعة فورية ولون أكثر حيوية', detail:'اللون يبدو أكثر إشراقاً من الاستخدام الأول'},
+      {icon:'🎨', when:'بعد أسبوع', what:'لون أثبت وأقل بهتاناً', detail:'ستلاحظين أن لونك يدوم أطول بين جلسات الصبغ'},
+      {icon:'💎', when:'بعد أسبوعين', what:'شعر أقوى وأكثر حيوية', detail:'نعومة ملموسة وبريق طبيعي في كل يوم'}
+    ],
+    fullProducts:[
+      {pid:'karseell_mask', why:'لماذا هو أساس الروتين: الكولاجين يُعوّض ما تسحبه الصبغة من رطوبة ويُرسّخ اللون في آن واحد.', desc:'يُصلح الشعر المصبوغ ويُثبّت اللون — مزدوج الفائدة', featured:true},
+      {pid:'argan_set', why:'لماذا يحمي لونك: يُشكّل طبقة حماية خفية تمنع الشمس والحرارة من سحب لونك.', desc:'يحمي اللون من البهتان ويمنح بريقاً ثابتاً', featured:false},
+      {pid:'karseell_shampoo', why:'لماذا تحتاجين شامبو متخصص: الشامبو العادي يُسرّع بهتان الصبغة — هذا يحميها.', desc:'شامبو وبلسم يحافظان على اللون بين جلسات الصبغ', featured:false},
+      {pid:'sakura_set', why:'الإضافة المثالية: مجموعة الساكورا تمنح بريقاً إضافياً وترطيباً يجعل اللون يبدو أكثر حيوية.', desc:'ترطيب ياباني فاخر يُضخّم إشراقة اللون', featured:false}
+    ],
+    starterProducts:[
+      {pid:'karseell_mask', why:'الأساس: يُصلح الشعر ويُثبّت اللون معاً.', desc:'يُصلح الشعر المصبوغ ويُثبّت اللون — مزدوج الفائدة', featured:true},
+      {pid:'argan_set', why:'الحماية: يمنع بهتان اللون يومياً.', desc:'يحمي اللون من البهتان ويمنح بريقاً ثابتاً', featured:false}
+    ],
+    bundle:{
+      desc:'الماسك يُصلح والأرجان يحمي — بدون الحماية اليومية، اللون يبهت بسرعة حتى مع أفضل ماسك.',
+      items:[
+        {icon:'🎨', text:'الماسك: يُصلح ويُرسّخ اللون', arrow:'+'},
+        {icon:'💧', text:'الأرجان: يحمي من الشمس والحرارة', arrow:'='},
+        {icon:'✨', text:'لون ثابت وشعر صحي لوقت أطول', arrow:''}
+      ],
+      result:'⚡ معاً = توفير في مصروف الصالون بالنصف'
+    },
+    howToUse:[
+      {num:'1', action:'الماسك مرتين أسبوعياً — الأفضل بعد الصبغ مباشرة', detail:'تطبيق يوم الصبغ أو اليوم التالي يُثبّت اللون أكثر'},
+      {num:'2', action:'اتركيه 20 دقيقة', detail:'الشعر المصبوغ يحتاج وقتاً أطول'},
+      {num:'3', action:'اشطفي بماء بارد دائماً', detail:'الماء البارد يُغلق الشعر ويُثبّت اللون'},
+      {num:'4', action:'زيت الأرجان قبل السشوار أو الخروج', detail:'يحمي من الحرارة والشمس اللتان تمحوان اللون'}
+    ],
+    pain:[
+      'اللون سيبهت أسرع وستضطرين لتكرار الصبغ كل شهر بدل كل شهرين',
+      'الشعر المصبوغ بدون عناية يفقد لمعته ويبدو جافاً دائماً',
+      'كل جلسة صبغ بدون عناية بعدها تراكم في الضعف',
+      'ستضطرين لقص الأطراف المتشعثة باستمرار'
+    ],
+    ctaTitle:'احصلي على روتين حماية الشعر المصبوغ الآن',
+    ctaLink:'https://ar.vellmor.store/products/mask-alshaar-balkolagyn-mn-karsyl'
+  },
+
+  /* ─── ROUTINE 3: HAIR LOSS ─── */
+  Routine_HairLoss: {
+    title:'روتين تكثيف الشعر ووقف التساقط — نتائج خلال 4 أسابيع',
+    personal:`بناءً على إجاباتكِ، تساقط شعرك يحتاج معالجة من الجذر وليس فقط من السطح. السبب الأكثر شيوعاً هو <strong>ضعف في تغذية فروة الرأس</strong>، مما يجعل الشعر الجديد يخرج رفيعاً ويسقط قبل أن ينضج. الروتين الذي اخترناه لكِ يُغذّي فروة الرأس ويُقوّي الشعر الموجود في آن واحد.`,
+    timeline:[
+      {icon:'🌱', when:'الأسبوع الأول', what:'تقليل ملحوظ في التساقط اليومي', detail:'أقل شعر على المشط وفي المغسلة'},
+      {icon:'💪', when:'بعد أسبوعين', what:'شعر يبدو أكثر كثافة وحيوية', detail:'الجذور تصبح أقوى وشعرك أكثر امتلاءً'},
+      {icon:'🌟', when:'بعد 4 أسابيع', what:'نمو ملحوظ وكثافة أفضل', detail:'شعرات جديدة ظاهرة وكثافة تتحسن بشكل عام'}
+    ],
+    fullProducts:[
+      {pid:'pumpkin_oil', why:'لماذا هو الأساس: يحتوي على زينك وأحماض دهنية تُغذّي فروة الرأس وتُنشّط الجذور الخاملة.', desc:'يُغذّي الجذور ويُحفّز نمو شعر جديد أقوى', featured:true},
+      {pid:'karseell_mask', why:'لماذا تحتاجينه: الشعر الموجود يحتاج تقوية — الكولاجين يمنع الشعر الرفيع من الانكسار.', desc:'يُقوّي الشعر الرفيع ويمنع التكسر الذي يشبه التساقط', featured:false},
+      {pid:'karseell_shampoo', why:'لماذا الشامبو مهم: تنظيف فروة الرأس يفتح المسام ويساعد الزيت على الوصول للجذور.', desc:'يُنظّف فروة الرأس ويُهيّئها لامتصاص العناية', featured:false},
+      {pid:'retinol_cream', why:'الإضافة المتقدمة: يُحفّز الدورة الدموية في فروة الرأس لتقوية الجذور.', desc:'يُحفّز الدورة الدموية لتغذية أفضل للجذور', featured:false}
+    ],
+    starterProducts:[
+      {pid:'pumpkin_oil', why:'الأساس: يُغذّي الجذور ويبدأ بوقف التساقط من المصدر.', desc:'يُغذّي الجذور ويُحفّز نمو شعر جديد أقوى', featured:true},
+      {pid:'karseell_mask', why:'الدعم: يُقوّي الشعر الموجود ويمنعه من الانكسار.', desc:'يُقوّي الشعر الرفيع ويمنع التكسر', featured:false}
+    ],
+    bundle:{
+      desc:'الزيت يعالج من الجذر والماسك يُقوّي الخيط — معاً يوقفان التساقط من مصدرين مختلفين في نفس الوقت.',
+      items:[
+        {icon:'🌱', text:'زيت اليقطين: يُغذّي الجذور ويوقف التساقط', arrow:'+'},
+        {icon:'💪', text:'الماسك: يُقوّي ويمنع الانكسار', arrow:'='},
+        {icon:'✨', text:'شعر أكثف وأقوى من جهتين', arrow:''}
+      ],
+      result:'⚡ معاً = نتائج أسرع بضعف من منتج واحد فقط'
+    },
+    howToUse:[
+      {num:'1', action:'زيت اليقطين 3 مرات أسبوعياً على فروة الرأس', detail:'دلّكي 5 دقائق بحركات دائرية لتحفيز الدورة الدموية'},
+      {num:'2', action:'اتركيه ساعة أو طوال الليل', detail:'أفضل نتيجة: ضعيه قبل النوم واغسلي صباحاً'},
+      {num:'3', action:'الماسك مرة أسبوعياً بعد الشامبو', detail:'ركّزي على الأطراف والمناطق الضعيفة — 15 دقيقة'},
+      {num:'4', action:'تجنّبي ربط الشعر بإحكام يومياً', detail:'الضغط المتكرر يُضعف الجذور'}
+    ],
+    pain:[
+      'التساقط لن يتوقف وحده — يتفاقم مع الضغط والوقت',
+      'الجذور الضعيفة بدون تغذية قد تُنتج شعراً أرق مع الوقت',
+      'تأجيل العلاج يعني وقتاً أطول لاسترداد الكثافة لاحقاً',
+      'الشعر الرفيع أكثر عرضة للانكسار مما يبدو كتساقط إضافي'
+    ],
+    ctaTitle:'ابدئي روتين تقوية الشعر الآن',
+    ctaLink:'https://ar.vellmor.store/products/3-ktaa-mn-zyt-yzor-alyktyn'
+  },
+
+  /* ─── ROUTINE 4: BASIC ─── */
+  Routine_Basic: {
+    title:'روتين الصيانة الذكية — شعر صحي ومُشرق دائماً',
+    personal:`بناءً على إجاباتكِ، شعرك في حالة جيدة — وهذا يعني أنكِ في <strong>أفضل وقت للحماية والصيانة</strong>. الشعر الصحي الذي لا يُعتنى به يتراجع تدريجياً دون أن تلاحظين. روتين صيانة بسيط الآن يحمي شعرك ويُبقيه مُشرقاً — ويوفّر عليكِ علاجاً أغلى لاحقاً.`,
+    timeline:[
+      {icon:'✨', when:'من أول استخدام', what:'نعومة ولمعة طبيعية', detail:'شعرك يبدو أكثر حيوية وإشراقاً فوراً'},
+      {icon:'💧', when:'بعد أسبوع', what:'رطوبة تدوم أيام لا ساعات', detail:'الجفاف يختفي وشعرك يبقى ناعماً طول اليوم'},
+      {icon:'🛡️', when:'بعد أسبوعين', what:'شعر محمي ومقاوم', detail:'الحرارة والبيئة لن تؤثران بنفس الشدة'}
+    ],
+    fullProducts:[
+      {pid:'karseell_mask', why:'لماذا هو الأساس: جلسة كولاجين أسبوعية تُجدّد ما يفقده شعرك يومياً — مثل صيانة دورية تماماً.', desc:'ترطيب عميق أسبوعي يُبقي شعرك ناعماً ولامعاً', featured:true},
+      {pid:'argan_set', why:'لماذا يُكمل الروتين: قطرات يومية بسيطة تحمي شعرك من الحرارة والجفاف.', desc:'حماية يومية سريعة — 3 قطرات على الأطراف تكفي', featured:false},
+      {pid:'sakura_set', why:'الإضافة المثالية: مجموعة الساكورا تمنح إشراقة يابانية فاخرة وترطيباً إضافياً.', desc:'ترطيب وإشراقة يابانية فاخرة لشعر مُضيء', featured:false},
+      {pid:'eye_cream', why:'للعناية الكاملة: سيروم الببتيد يمنح الشعر حيوية إضافية ويُقوّيه من الجذر.', desc:'سيروم متقدم يمنح الشعر قوة وحيوية فائقة', featured:false}
+    ],
+    starterProducts:[
+      {pid:'karseell_mask', why:'ابدئي بهذا: الأساس الأهم لصيانة شعرك الصحي.', desc:'ترطيب عميق أسبوعي يُبقي شعرك ناعماً ولامعاً', featured:true},
+      {pid:'argan_set', why:'ثم أضيفي هذا: الحماية اليومية السريعة.', desc:'حماية يومية سريعة — 3 قطرات تكفي', featured:false}
+    ],
+    bundle:{
+      desc:'الماسك يُجدّد أسبوعياً والأرجان يحمي يومياً — معاً يمنعان تراكم الجفاف بين الجلسات.',
+      items:[
+        {icon:'✨', text:'الماسك: تجديد عميق أسبوعي', arrow:'+'},
+        {icon:'🌿', text:'الأرجان: حماية يومية خفيفة', arrow:'='},
+        {icon:'💎', text:'شعر صحي محمي طوال الأسبوع', arrow:''}
+      ],
+      result:'⚡ معاً = 5 دقائق أسبوعياً لشعر لا يحتاج علاجاً'
+    },
+    howToUse:[
+      {num:'1', action:'الماسك مرة واحدة أسبوعياً يوم الغسيل', detail:'بعد الشامبو على الشعر المبلل — 15 دقيقة'},
+      {num:'2', action:'اشطفي بماء فاتر أو بارد', detail:'يُغلق الشعر ويحبس الرطوبة'},
+      {num:'3', action:'زيت الأرجان يومياً قبل الخروج', detail:'3 قطرات على الأطراف — 30 ثانية تكفي'},
+      {num:'4', action:'زيدي الماسك لمرتين أسبوعياً في الصيف', detail:'حرارة الإمارات تُسرّع جفاف الشعر'}
+    ],
+    pain:[
+      'الشعر الصحي بدون صيانة يتراجع بصمت — وحين تلاحظين يكون قد تراكم',
+      'حرارة الإمارات تستنزف رطوبة الشعر أسرع من أي مناخ آخر',
+      'تأجيل الصيانة يعني علاجاً أطول وأغلى لاحقاً',
+      'الشعر الجاف أكثر عرضة للانكسار من أدوات التصفيف'
+    ],
+    ctaTitle:'احصلي على روتين الصيانة الكامل الآن',
+    ctaLink:'https://ar.vellmor.store/products/mask-alshaar-balkolagyn-mn-karsyl'
+  }
+};
+
+/* ============================================================
+   QUIZ STATE
+============================================================ */
+let answers = {};
+let currentResult = null;
+let currentMode = 'full';
+
+/* ============================================================
+   QUIZ FUNCTIONS
+============================================================ */
+function startQuiz(){
+  document.getElementById('progressBar').style.display='block';
+  show('s-q1');
+  updateProg(1);
+}
+
+function pick(el, qId, val){
+  el.closest('.options').querySelectorAll('.option').forEach(o=>{
+    o.classList.remove('selected');
+    o.querySelector('.opt-check').innerHTML='';
+  });
+  el.classList.add('selected');
+  el.querySelector('.opt-check').innerHTML='✓';
+  answers[qId]=val;
+  const btn=document.getElementById('n-'+qId);
+  if(btn) btn.disabled=false;
+}
+
+function go(num){
+  show('s-q'+num);
+  updateProg(num);
+}
+
+function back(num){
+  if(num===0){
+    document.getElementById('progressBar').style.display='none';
+    show('s-intro');
+  } else {
+    show('s-q'+num);
+    updateProg(num);
+  }
+}
+
+function updateProg(n){
+  const pct=Math.round((n/7)*100);
+  document.getElementById('progFill').style.width=pct+'%';
+  document.getElementById('progText').textContent='السؤال '+n+' من 7';
+  document.getElementById('progPct').textContent=pct+'%';
+}
+
+function showLoading(){
+  show('s-loading');
+  document.getElementById('progressBar').style.display='none';
+  setTimeout(()=>{
+    currentResult=calcResult();
+    renderResult(currentResult,'full');
+  },2600);
+}
+
+function calcResult(){
+  const q1=answers.q1||'basic';
+  const q3=answers.q3||'none';
+  if(q1==='loss') return 'Routine_HairLoss';
+  if(q1==='color'||q3==='color_only'||q3==='both') return 'Routine_Color';
+  if(q1==='damage'||q3==='heat_only') return 'Routine_Damage';
+  return 'Routine_Basic';
+}
+
+function switchRoutine(mode, btn){
+  document.querySelectorAll('.choice-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  currentMode=mode;
+  renderProducts(currentResult,mode);
+}
+
+function renderResult(key, mode){
+  const r=RESULTS[key];
+
+  document.getElementById('r-title').textContent=r.title;
+  document.getElementById('r-personal').innerHTML=r.personal;
+
+  // Timeline
+  let tlHtml='';
+  r.timeline.forEach(t=>{
+    tlHtml+=`<div class="tl-row">
+      <div class="tl-dot">${t.icon}</div>
+      <div class="tl-body">
+        <span class="tl-when">${t.when}</span>
+        <span class="tl-what">${t.what}</span>
+        <span class="tl-detail">${t.detail}</span>
+      </div>
+    </div>`;
+  });
+  document.getElementById('r-timeline').innerHTML=tlHtml;
+
+  renderProducts(key, mode);
+
+  // Bundle
+  document.getElementById('r-bundle-desc').textContent=r.bundle.desc;
+  let bItems='';
+  r.bundle.items.forEach(item=>{
+    bItems+=`<div class="bundle-row">
+      <span class="bundle-ico">${item.icon}</span>
+      <span style="flex:1">${item.text}</span>
+      ${item.arrow?`<span style="font-size:16px;font-weight:800;color:var(--olive-pale)">${item.arrow}</span>`:''}
+    </div>`;
+  });
+  document.getElementById('r-bundle-items').innerHTML=bItems;
+  document.getElementById('r-bundle-result').textContent=r.bundle.result;
+
+  // How to use
+  let howHtml='';
+  r.howToUse.forEach(s=>{
+    howHtml+=`<div class="how-row">
+      <div class="how-num">${s.num}</div>
+      <div class="how-body">
+        <span class="how-action">${s.action}</span>
+        <span class="how-detail">${s.detail}</span>
+      </div>
+    </div>`;
+  });
+  document.getElementById('r-how').innerHTML=howHtml;
+
+  // Pain
+  document.getElementById('r-pain').innerHTML=r.pain.map(p=>`<li>${p}</li>`).join('');
+
+  // CTA
+  document.getElementById('r-cta-title').textContent=r.ctaTitle;
+  document.getElementById('r-cta-btn').href=r.ctaLink;
+
+  show('s-result');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function renderProducts(key, mode){
+  const r=RESULTS[key];
+  const list=mode==='full'?r.fullProducts:r.starterProducts;
+  let html='';
+  list.forEach(item=>{
+    const p=PRODUCTS[item.pid];
+    html+=`<div class="product-card${item.featured?' featured':''}">
+      <div class="prod-top">
+        <div class="prod-icon">${p.icon}</div>
+        <div class="prod-meta">
+          <div class="prod-badges"><span class="${p.badge}">${p.badgeText}</span></div>
+          <span class="prod-name">${p.name}</span>
+          <div class="prod-stars">${p.stars}</div>
+          <div class="prod-reviews">${p.reviews}</div>
+        </div>
+      </div>
+      <div class="prod-why">🎯 ${item.why}</div>
+      <p class="prod-desc">${item.desc}</p>
+      <a href="${p.link}" class="btn-buy${item.featured?'':' btn-buy-secondary'}" target="_blank">${p.cta}</a>
+    </div>`;
+  });
+  document.getElementById('r-products').innerHTML=html;
+}
+
+function show(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function restart(){
+  answers={};
+  currentResult=null;
+  currentMode='full';
+  document.querySelectorAll('.option').forEach(o=>{
+    o.classList.remove('selected');
+    const c=o.querySelector('.opt-check');
+    if(c) c.innerHTML='';
+  });
+  document.querySelectorAll('[id^="n-q"]').forEach(b=>b.disabled=true);
+  document.getElementById('progressBar').style.display='none';
+  // reset routine choice
+  document.querySelectorAll('.choice-btn').forEach((b,i)=>{
+    b.classList.toggle('active',i===0);
+  });
+  show('s-intro');
+}
+</script>
+</body>
+</html>
