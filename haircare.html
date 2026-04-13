@@ -47,32 +47,34 @@ body{
 /* ============================================================
    HEADER
 ============================================================ */
-.site-header{
-  background:var(--olive);
-  padding:14px 24px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  position:sticky;
-  top:0;
-  z-index:100;
-  box-shadow:0 2px 12px rgba(0,0,0,.15);
+/* ============================================================
+   HEADER UPDATED (MATCHING IMAGE)
+============================================================ */
+.site-header {
+  background: #F8F6EE; /* لون الخلفية الفاتح من الصورة */
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
-.site-logo{
-  font-size:20px;
-  font-weight:800;
-  color:var(--gold);
-  letter-spacing:4px;
-  text-transform:uppercase;
+
+.main-logo-img {
+  width: 180px; /* يمكنك تكبير أو تصغير الحجم من هنا */
+  height: auto;
+  display: block;
+  transition: opacity 0.3s ease;
 }
-.site-tagline{
-  font-size:10px;
-  color:rgba(200,184,154,.6);
-  font-weight:300;
-  letter-spacing:2px;
-  display:none;
+
+.main-logo-img:hover {
+  opacity: 0.8; /* تأثير بسيط عند تمرير الماوس */
 }
+
+/* إخفاء التاجلاين القديم لأنه غير موجود في شعار الصورة */
+.site-tagline { display: none !important; }
 @media(min-width:480px){.site-tagline{display:block}}
 
 /* ============================================================
@@ -590,8 +592,15 @@ body{
 
 <!-- SITE HEADER -->
 <header class="site-header">
-  <span class="site-logo">VÉLLMOR</span>
-  <span class="site-tagline">عناية فاخرة · الإمارات</span>
+  <div class="logo">
+    <a href="https://ar.vellmor.store/" aria-label="home">
+      <img 
+        src="https://assets.youcan.shop/stores/e355641c50b802d7cd2b1d0db0bb4df05e8f9d4d/untitled-design-F6H82Oj6B72RQNP0rb39ScU6SFS.png" 
+        alt="Vellmor-ar" 
+        class="main-logo-img"
+      >
+    </a>
+  </div>
 </header>
 
 <!-- TRUST BAR -->
