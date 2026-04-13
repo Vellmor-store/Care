@@ -589,17 +589,17 @@ body{
 <body>
 
 <!-- SITE HEADER -->
-<header class="site-header">
-  <span class="site-logo">VÉLLMOR</span>
-  <span class="site-tagline">عناية فاخرة · الإمارات</span>
-</header>
+<div class="header">
+  <a href="https://ar.vellmor.store/" class="header-logo" style="text-decoration: none;">VÉLLMOR</a>
+  <div class="header-tagline"> عناية تستحقينها </div>
+</div>
 
 <!-- TRUST BAR -->
 <div class="trust-bar">
-  <span class="trust-item">✨ <span>+5,000 عميلة سعيدة</span></span>
-  <span class="trust-item">🚚 <span>شحن مجاني</span></span>
-  <span class="trust-item">💳 <span>دفع عند الاستلام</span></span>
-  <span class="trust-item">↩️ <span>ضمان 7 أيام</span></span>
+  <span class="trust-item"> 😊 <span>+5,000 عميلة سعيدة</span></span>
+  <span class="trust-item"> 🚚 <span>شحن مجاني</span></span>
+  <span class="trust-item"> 💵 <span>دفع عند الاستلام</span></span>
+  <span class="trust-item"> ↩️ <span>ضمان 7 أيام</span></span>
 </div>
 
 <!-- PROGRESS (hidden until quiz starts) -->
@@ -627,9 +627,9 @@ body{
       <span class="pill"><span class="pill-icon">⚡</span>دقيقتان فقط</span>
       <span class="pill"><span class="pill-icon">🎯</span>نتيجة مخصصة لكِ</span>
       <span class="pill"><span class="pill-icon">🌿</span>منتجات طبيعية</span>
-      <span class="pill"><span class="pill-icon">💳</span>دفع عند الاستلام</span>
+      <span class="pill"><span class="pill-icon">💵</span>دفع عند الاستلام</span>
     </div>
-    <button class="btn-primary btn-gold" onclick="startQuiz()">ابدئي الاختبار الآن 🌿</button>
+    <button class="btn-primary btn-gold" onclick="startQuiz()"> ابدئي اختبارك الآن 🌿</button>
     <p style="font-size:11px;color:var(--text-muted);margin-top:10px;font-weight:300">+5,000 عميلة اكتشفن روتينهن المثالي</p>
   </div>
 </div>
@@ -690,7 +690,7 @@ body{
         <div class="opt-check"></div>
       </div>
       <div class="option" onclick="pick(this,'q2','normal')">
-        <div class="opt-icon">💆</div>
+        <div class="opt-icon">👱‍♀️</div>
         <div class="opt-body"><span class="opt-label">طبيعي لكن يحتاج حيوية</span><span class="opt-desc">ليس سيئاً لكن أريد تحسينه</span></div>
         <div class="opt-check"></div>
       </div>
@@ -944,13 +944,13 @@ body{
       <h3 id="r-cta-title">احصلي على روتينك الكامل الآن</h3>
       <p>نتائج تبدأ من أول استخدام — شحن مجاني لجميع الإمارات</p>
       <a href="#" class="btn-final" id="r-cta-btn" target="_blank">🛒 اطلبي الآن — توصيل 24-48 ساعة 🇦🇪</a>
-      <span class="cta-sub">💳 دفع عند الاستلام &nbsp;|&nbsp; ↩️ ضمان 7 أيام &nbsp;|&nbsp; 🚚 شحن مجاني</span>
+      <span class="cta-sub">💵 دفع عند الاستلام &nbsp;|&nbsp; ↩️ ضمان 7 أيام &nbsp;|&nbsp; 🚚 شحن مجاني</span>
     </div>
 
     <!-- GUARANTEE -->
     <div class="guarantee-bar">
       <div class="g-item"><span class="g-icon">🚚</span><span class="g-txt">شحن مجاني</span></div>
-      <div class="g-item"><span class="g-icon">💳</span><span class="g-txt">دفع عند الاستلام</span></div>
+      <div class="g-item"><span class="g-icon">💵</span><span class="g-txt">دفع عند الاستلام</span></div>
       <div class="g-item"><span class="g-icon">↩️</span><span class="g-txt">ضمان 7 أيام</span></div>
     </div>
 
@@ -968,7 +968,7 @@ body{
 const PRODUCTS = {
   karseell_mask: {
     id:'karseell_mask',
-    icon:'🥥',
+    icon:"hhttps://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/O698TDQMfsBEq1Zzhq51QUhHI1y9qar1HNvknKj3.png",
     name:'ماسك الشعر بالكولاجين من كارسيل',
     stars:'⭐⭐⭐⭐⭐',
     reviews:'2,400+ تقييم',
@@ -978,7 +978,7 @@ const PRODUCTS = {
   },
   argan_set: {
     id:'argan_set',
-    icon:'💧',
+    icon:"https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/3KUJy2EgNYGTG4cLvvSnHVzDDEpqCgqIr2B6XGAW.jpg",
     name:'مجموعة زيت الأرجان الكاملة',
     stars:'⭐⭐⭐⭐⭐',
     reviews:'1,800+ تقييم',
@@ -988,7 +988,7 @@ const PRODUCTS = {
   },
   karseell_shampoo: {
     id:'karseell_shampoo',
-    icon:'🧴',
+    icon:"https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/t8Ca8eJsD3REhrSrinN3yehdmNqfzrSOJhsrRDFO.png",
     name:'مجموعة شامبو وبلسم كارسيل بالكولاجين',
     stars:'⭐⭐⭐⭐⭐',
     reviews:'1,200+ تقييم',
@@ -998,7 +998,7 @@ const PRODUCTS = {
   },
   pumpkin_oil: {
     id:'pumpkin_oil',
-    icon:'🌱',
+    icon:"https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/de7NFu9yoLHzHLNIeGC1ohH1jqf8W63VgB4mYp2f.jpg",
     name:'زيت بذور اليقطين لتقوية الشعر',
     stars:'⭐⭐⭐⭐⭐',
     reviews:'3,100+ تقييم',
@@ -1006,19 +1006,19 @@ const PRODUCTS = {
     link:'https://ar.vellmor.store/products/3-ktaa-mn-zyt-yzor-alyktyn',
     cta:'اطلبيه — قبل نفاد الكمية 🚚'
   },
-  retinol_cream: {
-    id:'retinol_cream',
-    icon:'✨',
-    name:'كريم الريتينول لإشراقة فروة الرأس',
-    stars:'⭐⭐⭐⭐⭐',
+  karseell_set: {
+    id:'karseell_set',
+    icon:"https://media.taager.com/208fee13-4b3e-436f-a10f-ebf933608cf8.jpg",
+    name:'مجموعة كارسيل — شامبو وبلسم بالكولاجين',
+    stars:'⭐⭐⭐⭐',
     reviews:'980+ تقييم',
     badge:'badge-new', badgeText:'وصل حديثاً',
-    link:'https://ar.vellmor.store/products/rytnonol-krym-alhlat-dark-c',
-    cta:'احصلي عليه 🌿'
+    link:'hthttps://ar.vellmor.store/products/mgmoaa-shambo-oblsm-karsyl',
+    cta:'احصلي عليها 🌿'
   },
   sakura_set: {
     id:'sakura_set',
-    icon:'🌸',
+    icon:"https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/kTsgPKgAXPpkPQG9xrpPr1IRKxTzE5JXjWIWBwYs.jpg",
     name:'مجموعة الساكورا اليابانية — ترطيب وإشراقة',
     stars:'⭐⭐⭐⭐⭐',
     reviews:'1,500+ تقييم',
@@ -1028,7 +1028,7 @@ const PRODUCTS = {
   },
   eye_cream: {
     id:'eye_cream',
-    icon:'💎',
+    icon:"https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/uT7F7TxN8mJni2se7sN825p3q6G4natZuPygLUaX.png",
     name:'سيروم Hoygi ببتيد النحاس — تجديد وحيوية',
     stars:'⭐⭐⭐⭐⭐',
     reviews:'750+ تقييم',
@@ -1083,7 +1083,7 @@ const RESULTS = {
       'ستحتاجين لمنتجات أغلى وأكثر لاحقاً'
     ],
     ctaTitle:'احصلي على روتين الترطيب الكامل الآن',
-    ctaLink:'https://ar.vellmor.store/products/mask-alshaar-balkolagyn-mn-karsyl'
+    ctaLink:'https://ar.vellmor.store/collections/haircare-arabic'
   },
 
   /* ─── ROUTINE 2: COLOR ─── */
@@ -1127,7 +1127,7 @@ const RESULTS = {
       'ستضطرين لقص الأطراف المتشعثة باستمرار'
     ],
     ctaTitle:'احصلي على روتين حماية الشعر المصبوغ الآن',
-    ctaLink:'https://ar.vellmor.store/products/mask-alshaar-balkolagyn-mn-karsyl'
+    ctaLink:'https://ar.vellmor.store/collections/haircare-arabic'
   },
 
   /* ─── ROUTINE 3: HAIR LOSS ─── */
@@ -1143,7 +1143,7 @@ const RESULTS = {
       {pid:'pumpkin_oil', why:'لماذا هو الأساس: يحتوي على زينك وأحماض دهنية تُغذّي فروة الرأس وتُنشّط الجذور الخاملة.', desc:'يُغذّي الجذور ويُحفّز نمو شعر جديد أقوى', featured:true},
       {pid:'karseell_mask', why:'لماذا تحتاجينه: الشعر الموجود يحتاج تقوية — الكولاجين يمنع الشعر الرفيع من الانكسار.', desc:'يُقوّي الشعر الرفيع ويمنع التكسر الذي يشبه التساقط', featured:false},
       {pid:'karseell_shampoo', why:'لماذا الشامبو مهم: تنظيف فروة الرأس يفتح المسام ويساعد الزيت على الوصول للجذور.', desc:'يُنظّف فروة الرأس ويُهيّئها لامتصاص العناية', featured:false},
-      {pid:'retinol_cream', why:'الإضافة المتقدمة: يُحفّز الدورة الدموية في فروة الرأس لتقوية الجذور.', desc:'يُحفّز الدورة الدموية لتغذية أفضل للجذور', featured:false}
+      {pid:'Karseell_set', why:'الإضافة المتقدمة: يُحفّز الدورة الدموية في فروة الرأس لتقوية الجذور.', desc:'يُحفّز الدورة الدموية لتغذية أفضل للجذور', featured:false}
     ],
     starterProducts:[
       {pid:'pumpkin_oil', why:'الأساس: يُغذّي الجذور ويبدأ بوقف التساقط من المصدر.', desc:'يُغذّي الجذور ويُحفّز نمو شعر جديد أقوى', featured:true},
@@ -1171,7 +1171,7 @@ const RESULTS = {
       'الشعر الرفيع أكثر عرضة للانكسار مما يبدو كتساقط إضافي'
     ],
     ctaTitle:'ابدئي روتين تقوية الشعر الآن',
-    ctaLink:'https://ar.vellmor.store/products/3-ktaa-mn-zyt-yzor-alyktyn'
+    ctaLink:'https://ar.vellmor.store/collections/haircare-arabic'
   },
 
   /* ─── ROUTINE 4: BASIC ─── */
@@ -1215,7 +1215,7 @@ const RESULTS = {
       'الشعر الجاف أكثر عرضة للانكسار من أدوات التصفيف'
     ],
     ctaTitle:'احصلي على روتين الصيانة الكامل الآن',
-    ctaLink:'https://ar.vellmor.store/products/mask-alshaar-balkolagyn-mn-karsyl'
+    ctaLink:'https://ar.vellmor.store/collections/haircare-arabic'
   }
 };
 
