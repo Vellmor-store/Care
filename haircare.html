@@ -438,10 +438,23 @@ body{
 .product-card:hover{box-shadow:0 4px 20px rgba(61,74,48,.1)}
 .product-card.featured{border-color:var(--olive);border-width:2px}
 .prod-top{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px}
-.prod-icon{
-  width:48px;height:48px;background:var(--green-light);
-  border-radius:13px;display:flex;align-items:center;
-  justify-content:center;font-size:21px;flex-shrink:0;
+.prod-icon {
+  width: 65px;
+  height: 65px;
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden; /* لضمان قص الصورة لتناسب انحناء الحواف */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+}
+
+.prod-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* تجعل الصورة تملأ المربع بدون تمطيط */
 }
 .prod-meta{flex:1}
 .prod-badges{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:3px}
@@ -977,7 +990,7 @@ body{
 const PRODUCTS = {
   karseell_mask: {
     id:'karseell_mask',
-    icon:'🥥',
+    icon:"https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/O698TDQMfsBEq1Zzhq51QUhHI1y9qar1HNvknKj3.png",
     name:'ماسك الشعر بالكولاجين من كارسيل',
     stars:'⭐⭐⭐⭐⭐',
     reviews:'2,400+ تقييم',
@@ -987,7 +1000,7 @@ const PRODUCTS = {
   },
   argan_set: {
     id:'argan_set',
-    icon:'💧',
+    icon:"https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/3KUJy2EgNYGTG4cLvvSnHVzDDEpqCgqIr2B6XGAW.jpg",
     name:'مجموعة زيت الأرجان الكاملة',
     stars:'⭐⭐⭐⭐⭐',
     reviews:'1,800+ تقييم',
@@ -997,7 +1010,7 @@ const PRODUCTS = {
   },
   karseell_shampoo: {
     id:'karseell_shampoo',
-    icon:'🧴',
+    icon:"https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/t8Ca8eJsD3REhrSrinN3yehdmNqfzrSOJhsrRDFO.png",
     name:'مجموعة شامبو وبلسم كارسيل بالكولاجين',
     stars:'⭐⭐⭐⭐⭐',
     reviews:'1,200+ تقييم',
@@ -1007,17 +1020,17 @@ const PRODUCTS = {
   },
   pumpkin_oil: {
     id:'pumpkin_oil',
-    icon:'🌱',
-    name:'زيت بذور اليقطين لتقوية الشعر',
+    icon:"https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/de7NFu9yoLHzHLNIeGC1ohH1jqf8W63VgB4mYp2f.jpg",
+    name:'قناع الشعر العلاجي ',
     stars:'⭐⭐⭐⭐⭐',
     reviews:'3,100+ تقييم',
     badge:'badge-hot', badgeText:'الأكثر مبيعاً',
     link:'https://ar.vellmor.store/products/3-ktaa-mn-zyt-yzor-alyktyn',
     cta:'اطلبيه — قبل نفاد الكمية 🚚'
   },
-  retinol_cream: {
-    id:'retinol_cream',
-    icon:'✨',
+  bubble_plant: {
+    id:'bubble_plant',
+    icon:"https://media.taager.com/989c555e-a804-464c-b14a-a9b945889c4b.PNG",
     name:'كريم الريتينول لإشراقة فروة الرأس',
     stars:'⭐⭐⭐⭐⭐',
     reviews:'980+ تقييم',
@@ -1027,7 +1040,7 @@ const PRODUCTS = {
   },
   sakura_set: {
     id:'sakura_set',
-    icon:'🌸',
+    icon:"https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/kTsgPKgAXPpkPQG9xrpPr1IRKxTzE5JXjWIWBwYs.jpg",
     name:'مجموعة الساكورا اليابانية — ترطيب وإشراقة',
     stars:'⭐⭐⭐⭐⭐',
     reviews:'1,500+ تقييم',
@@ -1037,7 +1050,7 @@ const PRODUCTS = {
   },
   eye_cream: {
     id:'eye_cream',
-    icon:'💎',
+    icon:"https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/uT7F7TxN8mJni2se7sN825p3q6G4natZuPygLUaX.png",
     name:'سيروم Hoygi ببتيد النحاس — تجديد وحيوية',
     stars:'⭐⭐⭐⭐⭐',
     reviews:'750+ تقييم',
@@ -1152,7 +1165,7 @@ const RESULTS = {
       {pid:'pumpkin_oil', why:'لماذا هو الأساس: يحتوي على زينك وأحماض دهنية تُغذّي فروة الرأس وتُنشّط الجذور الخاملة.', desc:'يُغذّي الجذور ويُحفّز نمو شعر جديد أقوى', featured:true},
       {pid:'karseell_mask', why:'لماذا تحتاجينه: الشعر الموجود يحتاج تقوية — الكولاجين يمنع الشعر الرفيع من الانكسار.', desc:'يُقوّي الشعر الرفيع ويمنع التكسر الذي يشبه التساقط', featured:false},
       {pid:'karseell_shampoo', why:'لماذا الشامبو مهم: تنظيف فروة الرأس يفتح المسام ويساعد الزيت على الوصول للجذور.', desc:'يُنظّف فروة الرأس ويُهيّئها لامتصاص العناية', featured:false},
-      {pid:'retinol_cream', why:'الإضافة المتقدمة: يُحفّز الدورة الدموية في فروة الرأس لتقوية الجذور.', desc:'يُحفّز الدورة الدموية لتغذية أفضل للجذور', featured:false}
+      {pid:'bubble_plant', why:'الإضافة المتقدمة: يُحفّز الدورة الدموية في فروة الرأس لتقوية الجذور.', desc:'يُحفّز الدورة الدموية لتغذية أفضل للجذور', featured:false}
     ],
     starterProducts:[
       {pid:'pumpkin_oil', why:'الأساس: يُغذّي الجذور ويبدأ بوقف التساقط من المصدر.', desc:'يُغذّي الجذور ويُحفّز نمو شعر جديد أقوى', featured:true},
@@ -1370,7 +1383,9 @@ function renderProducts(key, mode){
     const p=PRODUCTS[item.pid];
     html+=`<div class="product-card${item.featured?' featured':''}">
       <div class="prod-top">
-        <div class="prod-icon">${p.icon}</div>
+        <div class="prod-icon">
+  <img src="${p.icon}" alt="${p.name}" style="width: 100%; height: 100%; object-fit: cover;">
+</div>
         <div class="prod-meta">
           <div class="prod-badges"><span class="${p.badge}">${p.badgeText}</span></div>
           <span class="prod-name">${p.name}</span>
