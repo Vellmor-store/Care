@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -624,7 +625,7 @@ body{
 <div id="progressBar" style="display:none">
   <div class="progress-wrap">
     <div class="progress-label">
-      <span id="progText">السؤال 1 من 7</span>
+      <span id="progText">السؤال 1 من 10</span>
       <span id="progPct">14%</span>
     </div>
     <div class="progress-bar">
@@ -640,9 +641,9 @@ body{
   <div class="intro">
 
 
-    <br> <p class="intro-sub">لا تعرفين ما تحتاجه بشرتكِ؟</p> 
-   <h1>اكتشفي <em>نوع بشرتك</em>  بدقيقة واحدة فقط </h1>
-    <br> <p class="intro-sub">واحصلِي على روتين العناية الأمثل والخاص ببشرتكِ.</p>
+    <br> <p class="intro-sub">بشرتك فريدة من نوعها — وهي تستحق روتيناً مصمماً لها وحدها 🌿</p>
+   <br><h1>اكتشفي <em>ما تحتاجه بشرتك</em> فعلاً</h1>
+    <br> <p class="intro-sub">10 أسئلة بسيطة وستعرفين بشرتك أكثر مما تتخيلين.</p>
     <br> <div class="intro-pills">
       <span class="pill"><span class="pill-icon">⚡</span>30 ثانية فقط</span>
       <span class="pill"><span class="pill-icon">🎯</span>نتيجة مخصصة لكِ</span>
@@ -657,28 +658,28 @@ body{
 <!-- ===================== Q1 ===================== -->
 <div class="screen" id="s-q1">
   <div class="question-wrap">
-    <span class="q-num">السؤال الأول من 5</span>
-    <div class="q-title">كيف تبدو بشرتك بعد غسلها؟</div>
-    <div class="q-sub">اختاري الوصف الأقرب لبشرتك</div>
+    <span class="q-num">1 من 10</span>
+    <div class="q-title">بعد ما تغسلين وجهك وتمر دقائق… كيف تحسين ببشرتك؟</div>
+    <div class="q-sub">اختاري الوصف الأقرب لما تشعرين به فعلاً</div>
     <div class="options">
       <div class="option" onclick="pick(this,'q1','dry')">
         <div class="opt-icon">🏜️</div>
-        <div class="opt-body"><span class="opt-label">مشدودة وجافة</span><span class="opt-desc">إحساس بالشد والخشونة بعد الغسيل</span></div>
+        <div class="opt-body"><span class="opt-label">مشدودة وجافة — تطلب كريم فوراً</span><span class="opt-desc">إحساس بالشد وأحياناً خشونة خفيفة</span></div>
         <div class="opt-check"></div>
       </div>
       <div class="option" onclick="pick(this,'q1','oily')">
         <div class="opt-icon">💦</div>
-        <div class="opt-body"><span class="opt-label">تصبح لامعة بسرعة</span><span class="opt-desc">دهون تظهر خلال ساعة من الغسيل</span></div>
+        <div class="opt-body"><span class="opt-label">تبدأ تلمع بسرعة</span><span class="opt-desc">دهون تظهر خلال ساعة حتى بعد الغسيل</span></div>
         <div class="opt-check"></div>
       </div>
       <div class="option" onclick="pick(this,'q1','combo')">
         <div class="opt-icon">⚖️</div>
-        <div class="opt-body"><span class="opt-label">دهنية في مناطق وجافة في أخرى</span><span class="opt-desc">الجبهة والأنف دهنية والخدود جافة</span></div>
+        <div class="opt-body"><span class="opt-label">منطقة T دهنية والخدود جافة</span><span class="opt-desc">الجبهة والأنف لامعة والخدين يطلبان ترطيب</span></div>
         <div class="opt-check"></div>
       </div>
       <div class="option" onclick="pick(this,'q1','sensitive')">
         <div class="opt-icon">🌸</div>
-        <div class="opt-body"><span class="opt-label">تتحسس بسهولة</span><span class="opt-desc">احمرار أو تهيج بعد الغسيل</span></div>
+        <div class="opt-body"><span class="opt-label">أحياناً تتهيج أو تحمر</span><span class="opt-desc">بشرتي تتأثر بسهولة من الماء أو المنتجات</span></div>
         <div class="opt-check"></div>
       </div>
     </div>
@@ -690,28 +691,33 @@ body{
 <!-- ===================== Q2 ===================== -->
 <div class="screen" id="s-q2">
   <div class="question-wrap">
-    <span class="q-num">السؤال الثاني من 5</span>
-    <div class="q-title">كيف تتفاعل بشرتك مع المنتجات؟</div>
-    <div class="q-sub">اختاري الأقرب لتجربتك</div>
+    <span class="q-num">2 من 10</span>
+    <div class="q-title">أي مشكلة تلاحظينها أكثر على بشرتك الآن؟</div>
+    <div class="q-sub">اختاري ما يضايقك أكثر — حتى لو فيه أكثر من شيء</div>
     <div class="options">
-      <div class="option" onclick="pick(this,'q2','dry')">
-        <div class="opt-icon">💧</div>
-        <div class="opt-body"><span class="opt-label">تحتاج ترطيب دائم</span><span class="opt-desc">تمتص الكريم بسرعة وتطلب المزيد</span></div>
+      <div class="option" onclick="pick(this,'q2','acne')">
+        <div class="opt-icon">🔴</div>
+        <div class="opt-body"><span class="opt-label">حبوب تظهر باستمرار</span><span class="opt-desc">حتى لما أعتني بنفسي تظهر حبوب</span></div>
         <div class="opt-check"></div>
       </div>
-      <div class="option" onclick="pick(this,'q2','oily')">
-        <div class="opt-icon">🫧</div>
-        <div class="opt-body"><span class="opt-label">تصبح دهنية مع أي كريم</span><span class="opt-desc">معظم المرطبات تجعلها تبدو دهنية</span></div>
+      <div class="option" onclick="pick(this,'q2','dry_high')">
+        <div class="opt-icon">🍂</div>
+        <div class="opt-body"><span class="opt-label">جفاف واضح أو تقشر</span><span class="opt-desc">بشرتي تحتاج ترطيب مستمر وأحياناً تتقشر</span></div>
         <div class="opt-check"></div>
       </div>
-      <div class="option" onclick="pick(this,'q2','combo')">
-        <div class="opt-icon">🔄</div>
-        <div class="opt-body"><span class="opt-label">تختلف حسب المنطقة</span><span class="opt-desc">بعض المناطق تستجيب بشكل مختلف</span></div>
+      <div class="option" onclick="pick(this,'q2','pigment')">
+        <div class="opt-icon">🌑</div>
+        <div class="opt-body"><span class="opt-label">تصبغات أو بقع داكنة</span><span class="opt-desc">بقع من الشمس أو آثار حبوب قديمة</span></div>
         <div class="opt-check"></div>
       </div>
-      <div class="option" onclick="pick(this,'q2','sensitive')">
-        <div class="opt-icon">⚠️</div>
-        <div class="opt-body"><span class="opt-label">تتهيج من كثير من المنتجات</span><span class="opt-desc">احمرار أو حرقة عند استخدام منتجات جديدة</span></div>
+      <div class="option" onclick="pick(this,'q2','dark')">
+        <div class="opt-icon">👁️</div>
+        <div class="opt-body"><span class="opt-label">هالات تحت العين</span><span class="opt-desc">دائماً أبدو متعبة حتى بعد نوم كافٍ</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q2','aging')">
+        <div class="opt-icon">⏳</div>
+        <div class="opt-body"><span class="opt-label">خطوط دقيقة أو تجاعيد</span><span class="opt-desc">بدأت ألاحظ علامات التقدم في السن</span></div>
         <div class="opt-check"></div>
       </div>
     </div>
@@ -723,28 +729,23 @@ body{
 <!-- ===================== Q3 ===================== -->
 <div class="screen" id="s-q3">
   <div class="question-wrap">
-    <span class="q-num">السؤال الثالث من 5</span>
-    <div class="q-title">ما أكثر مشكلة تعانين منها؟</div>
-    <div class="q-sub">اختاري المشكلة الأبرز</div>
+    <span class="q-num">3 من 10</span>
+    <div class="q-title">لو لمستِ خدّك الآن… كيف يبدو الملمس؟</div>
+    <div class="q-sub">لا يوجد إجابة خاطئة — كل بشرة مختلفة</div>
     <div class="options">
-      <div class="option" onclick="pick(this,'q3','dry')">
-        <div class="opt-icon">🍂</div>
-        <div class="opt-body"><span class="opt-label">جفاف وتقشر</span><span class="opt-desc">بشرة خشنة وتتقشر أحياناً</span></div>
+      <div class="option" onclick="pick(this,'q3','smooth')">
+        <div class="opt-icon">🪷</div>
+        <div class="opt-body"><span class="opt-label">ناعم ومتساوٍ بشكل عام</span><span class="opt-desc">الملمس لطيف وخفيف</span></div>
         <div class="opt-check"></div>
       </div>
-      <div class="option" onclick="pick(this,'q3','oily')">
-        <div class="opt-icon">✨</div>
-        <div class="opt-body"><span class="opt-label">حبوب ولمعان زائد</span><span class="opt-desc">ظهور حبوب متكررة ومسام واسعة</span></div>
+      <div class="option" onclick="pick(this,'q3','texture')">
+        <div class="opt-icon">🌾</div>
+        <div class="opt-body"><span class="opt-label">غير متساوٍ في بعض المناطق</span><span class="opt-desc">هناك مناطق أخشن أو أكثر جفافاً</span></div>
         <div class="opt-check"></div>
       </div>
-      <div class="option" onclick="pick(this,'q3','combo')">
-        <div class="opt-icon">⚖️</div>
-        <div class="opt-body"><span class="opt-label">عدم توازن البشرة</span><span class="opt-desc">مناطق مختلفة تحتاج عناية مختلفة</span></div>
-        <div class="opt-check"></div>
-      </div>
-      <div class="option" onclick="pick(this,'q3','sensitive')">
-        <div class="opt-icon">🔴</div>
-        <div class="opt-body"><span class="opt-label">احمرار وتهيج مستمر</span><span class="opt-desc">بشرة تتأثر بسهولة من البيئة والمنتجات</span></div>
+      <div class="option" onclick="pick(this,'q3','pores_high')">
+        <div class="opt-icon">🔬</div>
+        <div class="opt-body"><span class="opt-label">أشعر بمسامات واضحة</span><span class="opt-desc">خاصة في منطقة الأنف والجبهة</span></div>
         <div class="opt-check"></div>
       </div>
     </div>
@@ -756,28 +757,23 @@ body{
 <!-- ===================== Q4 ===================== -->
 <div class="screen" id="s-q4">
   <div class="question-wrap">
-    <span class="q-num">السؤال الرابع من 5</span>
-    <div class="q-title">كيف تبدو المسام لديكِ؟</div>
-    <div class="q-sub">ألقي نظرة في المرآة وأخبرينا</div>
+    <span class="q-num">4 من 10</span>
+    <div class="q-title">الحبوب عندك… هل تظهر بشكل متكرر؟</div>
+    <div class="q-sub">كوني صريحة — هذا يساعدنا نختار الأنسب</div>
     <div class="options">
-      <div class="option" onclick="pick(this,'q4','dry')">
-        <div class="opt-icon">🔍</div>
-        <div class="opt-body"><span class="opt-label">غير واضحة وصغيرة</span><span class="opt-desc">المسام تكاد لا تُرى</span></div>
+      <div class="option" onclick="pick(this,'q4','none')">
+        <div class="opt-icon">😌</div>
+        <div class="opt-body"><span class="opt-label">نادراً جداً</span><span class="opt-desc">ليست مشكلة أساسية عندي</span></div>
         <div class="opt-check"></div>
       </div>
-      <div class="option" onclick="pick(this,'q4','oily')">
-        <div class="opt-icon">🔎</div>
-        <div class="opt-body"><span class="opt-label">واسعة وواضحة</span><span class="opt-desc">مسام كبيرة خاصة في منطقة الأنف</span></div>
+      <div class="option" onclick="pick(this,'q4','acne_light')">
+        <div class="opt-icon">😐</div>
+        <div class="opt-body"><span class="opt-label">أحياناً — خاصة في فترات التوتر</span><span class="opt-desc">تظهر وتختفي لكنها مزعجة</span></div>
         <div class="opt-check"></div>
       </div>
-      <div class="option" onclick="pick(this,'q4','combo')">
-        <div class="opt-icon">🗺️</div>
-        <div class="opt-body"><span class="opt-label">واضحة في منطقة T-zone فقط</span><span class="opt-desc">الجبهة والأنف والذقن مسامها أوسع</span></div>
-        <div class="opt-check"></div>
-      </div>
-      <div class="option" onclick="pick(this,'q4','sensitive')">
-        <div class="opt-icon">🌡️</div>
-        <div class="opt-body"><span class="opt-label">حساسة ومتغيرة</span><span class="opt-desc">تتأثر بالطقس والمنتجات والتوتر</span></div>
+      <div class="option" onclick="pick(this,'q4','acne_heavy')">
+        <div class="opt-icon">😔</div>
+        <div class="opt-body"><span class="opt-label">موجودة تقريباً دائماً</span><span class="opt-desc">حبوب بشكل مستمر صعبة التحكم فيها</span></div>
         <div class="opt-check"></div>
       </div>
     </div>
@@ -789,33 +785,173 @@ body{
 <!-- ===================== Q5 ===================== -->
 <div class="screen" id="s-q5">
   <div class="question-wrap">
-    <span class="q-num">السؤال الأخير ✨</span>
-    <div class="q-title">كيف تبدو بشرتك نهاية اليوم؟</div>
-    <div class="q-sub">فكّري في آخر يوم عادي مررتِ به</div>
+    <span class="q-num">5 من 10</span>
+    <div class="q-title">قربّي من المرآة… كيف تصفين مساماتك؟</div>
+    <div class="q-sub">انظري خاصة لمنطقة الأنف والجبهة</div>
     <div class="options">
-      <div class="option" onclick="pick(this,'q5','dry')">
-        <div class="opt-icon">🏜️</div>
-        <div class="opt-body"><span class="opt-label">جافة ومتعبة</span><span class="opt-desc">تشعرين بالحاجة للترطيب فوراً</span></div>
+      <div class="option" onclick="pick(this,'q5','pores_low')">
+        <div class="opt-icon">🔍</div>
+        <div class="opt-body"><span class="opt-label">مساماتي غير ملحوظة أبداً</span><span class="opt-desc">يكاد لا يُرى شيء حتى من قرب</span></div>
         <div class="opt-check"></div>
       </div>
-      <div class="option" onclick="pick(this,'q5','oily')">
-        <div class="opt-icon">💦</div>
-        <div class="opt-body"><span class="opt-label">دهنية ولامعة</span><span class="opt-desc">تحتاجين مسح الوجه أكثر من مرة</span></div>
+      <div class="option" onclick="pick(this,'q5','pores_mid')">
+        <div class="opt-icon">🔎</div>
+        <div class="opt-body"><span class="opt-label">متوسطة — موجودة لكن مش مشكلة</span><span class="opt-desc">واضحة لكن ليست كبيرة جداً</span></div>
         <div class="opt-check"></div>
       </div>
-      <div class="option" onclick="pick(this,'q5','combo')">
-        <div class="opt-icon">⚖️</div>
-        <div class="opt-body"><span class="opt-label">مختلطة — بعض المناطق جافة وأخرى دهنية</span><span class="opt-desc">لا تبدو متوازنة في نهاية اليوم</span></div>
-        <div class="opt-check"></div>
-      </div>
-      <div class="option" onclick="pick(this,'q5','sensitive')">
-        <div class="opt-icon">😔</div>
-        <div class="opt-body"><span class="opt-label">حساسة ومتهيجة</span><span class="opt-desc">احمرار أو شعور بعدم الراحة</span></div>
+      <div class="option" onclick="pick(this,'q5','pores_high')">
+        <div class="opt-icon">🕳️</div>
+        <div class="opt-body"><span class="opt-label">واسعة وتضايقني</span><span class="opt-desc">واضحة جداً وأحاول إخفاءها</span></div>
         <div class="opt-check"></div>
       </div>
     </div>
-    <button class="btn-primary btn-gold" id="n-q5" onclick="showLoading()" disabled>احصلي على نتيجتك المخصصة ✨</button>
+    <button class="btn-primary" id="n-q5" onclick="go(6)" disabled>التالي ←</button>
     <button class="btn-back" onclick="back(4)">→ السابق</button>
+  </div>
+</div>
+
+<!-- ===================== Q6 ===================== -->
+<div class="screen" id="s-q6">
+  <div class="question-wrap">
+    <span class="q-num">6 من 10</span>
+    <div class="q-title">لو نظرتِ لوجهك في الضوء… لون بشرتك يبدو؟</div>
+    <div class="q-sub">الصدق هنا يساعدنا نختار أدق توصية</div>
+    <div class="options">
+      <div class="option" onclick="pick(this,'q6','even')">
+        <div class="opt-icon">🌟</div>
+        <div class="opt-body"><span class="opt-label">موحد وطبيعي</span><span class="opt-desc">لا توجد بقع واضحة أو اختلاف في اللون</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q6','pigment_light')">
+        <div class="opt-icon">🌤️</div>
+        <div class="opt-body"><span class="opt-label">فيه بقع خفيفة أو احمرار</span><span class="opt-desc">اختلاف بسيط في اللون لكن مش واضح كثيراً</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q6','pigment_high')">
+        <div class="opt-icon">🌑</div>
+        <div class="opt-body"><span class="opt-label">غير موحد — بقع داكنة واضحة</span><span class="opt-desc">تصبغات أو آثار حبوب قديمة تزعجني</span></div>
+        <div class="opt-check"></div>
+      </div>
+    </div>
+    <button class="btn-primary" id="n-q6" onclick="go(7)" disabled>التالي ←</button>
+    <button class="btn-back" onclick="back(5)">→ السابق</button>
+  </div>
+</div>
+
+<!-- ===================== Q7 ===================== -->
+<div class="screen" id="s-q7">
+  <div class="question-wrap">
+    <span class="q-num">7 من 10</span>
+    <div class="q-title">منطقة تحت العين… كيف تبدو عادةً؟</div>
+    <div class="q-sub">حتى مع النوم الكافي والراحة</div>
+    <div class="options">
+      <div class="option" onclick="pick(this,'q7','no_dark')">
+        <div class="opt-icon">😊</div>
+        <div class="opt-body"><span class="opt-label">طبيعية — لا أشتكي منها</span><span class="opt-desc">المنطقة مريحة ومو مشكلة</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q7','dark_light')">
+        <div class="opt-icon">🌙</div>
+        <div class="opt-body"><span class="opt-label">هالات خفيفة أحياناً</span><span class="opt-desc">تظهر خاصة عند التعب أو قلة النوم</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q7','dark_high')">
+        <div class="opt-icon">😴</div>
+        <div class="opt-body"><span class="opt-label">هالات واضحة تزعجني</span><span class="opt-desc">دائماً موجودة حتى مع النوم الكافي</span></div>
+        <div class="opt-check"></div>
+      </div>
+    </div>
+    <button class="btn-primary" id="n-q7" onclick="go(8)" disabled>التالي ←</button>
+    <button class="btn-back" onclick="back(6)">→ السابق</button>
+  </div>
+</div>
+
+<!-- ===================== Q8 ===================== -->
+<div class="screen" id="s-q8">
+  <div class="question-wrap">
+    <span class="q-num">8 من 10</span>
+    <div class="q-title">هل بدأتِ تلاحظين تغير في مرونة بشرتك؟</div>
+    <div class="q-sub">لا يوجد إجابة صح أو غلط</div>
+    <div class="options">
+      <div class="option" onclick="pick(this,'q8','no_aging')">
+        <div class="opt-icon">💚</div>
+        <div class="opt-body"><span class="opt-label">لا — بشرتي لا تزال ممتلئة</span><span class="opt-desc">لم أبدأ بملاحظة فرق واضح</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q8','aging_light')">
+        <div class="opt-icon">🌤️</div>
+        <div class="opt-body"><span class="opt-label">بداية خطوط خفيفة حول العيون أو الفم</span><span class="opt-desc">أرى خطوطاً دقيقة خاصة عند الابتسام</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q8','aging_high')">
+        <div class="opt-icon">⏳</div>
+        <div class="opt-body"><span class="opt-label">تجاعيد واضحة وبشرة تفقد شدّها</span><span class="opt-desc">ألاحظ تراجعاً في المرونة والتوتر</span></div>
+        <div class="opt-check"></div>
+      </div>
+    </div>
+    <button class="btn-primary" id="n-q8" onclick="go(9)" disabled>التالي ←</button>
+    <button class="btn-back" onclick="back(7)">→ السابق</button>
+  </div>
+</div>
+
+<!-- ===================== Q9 ===================== -->
+<div class="screen" id="s-q9">
+  <div class="question-wrap">
+    <span class="q-num">9 من 10</span>
+    <div class="q-title">لما تجربين منتجاً جديداً… كيف تتعامل بشرتك معه؟</div>
+    <div class="q-sub">هذا يحدد نوع المكونات المناسبة لكِ</div>
+    <div class="options">
+      <div class="option" onclick="pick(this,'q9','strong')">
+        <div class="opt-icon">💪</div>
+        <div class="opt-body"><span class="opt-label">تتحمل أي شيء تقريباً</span><span class="opt-desc">نادراً ما أواجه مشكلة مع منتجات جديدة</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q9','sensitive')">
+        <div class="opt-icon">🌸</div>
+        <div class="opt-body"><span class="opt-label">تحتاج منتجات لطيفة وهادئة</span><span class="opt-desc">بشرتي تتأثر من المكونات القوية</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q9','reactive')">
+        <div class="opt-icon">⚡</div>
+        <div class="opt-body"><span class="opt-label">أحياناً تتفاعل بشكل مفاجئ</span><span class="opt-desc">بعض المنتجات تناسبني وبعضها يسبب مشكلة</span></div>
+        <div class="opt-check"></div>
+      </div>
+    </div>
+    <button class="btn-primary" id="n-q9" onclick="go(10)" disabled>التالي ←</button>
+    <button class="btn-back" onclick="back(8)">→ السابق</button>
+  </div>
+</div>
+
+<!-- ===================== Q10 ===================== -->
+<div class="screen" id="s-q10">
+  <div class="question-wrap">
+    <span class="q-num">السؤال الأخير ✨</span>
+    <div class="q-title">لو كان في شيء واحد تتمنينه لبشرتك… ماذا تختارين؟</div>
+    <div class="q-sub">هذا هو هدفنا — كل شيء سيُبنى عليه</div>
+    <div class="options">
+      <div class="option" onclick="pick(this,'q10','goal_glow')">
+        <div class="opt-icon">✨</div>
+        <div class="opt-body"><span class="opt-label">إشراقة وبشرة نضرة بدون مكياج</span><span class="opt-desc">أريد وجهاً مضيئاً بشكل طبيعي</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q10','goal_acne')">
+        <div class="opt-icon">🧹</div>
+        <div class="opt-body"><span class="opt-label">بشرة نقية بلا حبوب ولا مسامات</span><span class="opt-desc">أريد التخلص من الحبوب والمسامات الواسعة</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q10','goal_bright')">
+        <div class="opt-icon">🌟</div>
+        <div class="opt-body"><span class="opt-label">لون موحد بلا بقع</span><span class="opt-desc">أريد بشرة متساوية اللون ومشرقة</span></div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="option" onclick="pick(this,'q10','goal_anti')">
+        <div class="opt-icon">💎</div>
+        <div class="opt-body"><span class="opt-label">شد ومكافحة علامات السن</span><span class="opt-desc">أريد بشرة شابة ومشدودة لأطول وقت</span></div>
+        <div class="opt-check"></div>
+      </div>
+    </div>
+    <button class="btn-primary btn-gold" id="n-q10" onclick="showLoading()" disabled>احصلي على روتينك الآن ✨</button>
+    <button class="btn-back" onclick="back(9)">→ السابق</button>
   </div>
 </div>
 
@@ -918,6 +1054,15 @@ body{
       <div class="g-item"><span class="g-icon">↩️</span><span class="g-txt">ضمان 7 أيام</span></div>
     </div>
 
+    <!-- WHATSAPP CTA -->
+    <div style="background:#25D366;border-radius:18px;padding:20px;margin-bottom:14px;text-align:center;">
+      <span style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.8);letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:8px;">💬 تواصلي مع خبيرة البشرة</span>
+      <p style="font-size:13px;color:rgba(255,255,255,0.9);font-weight:300;margin-bottom:14px;line-height:1.7;">احصلي على روتين مخصص لكِ تماماً عبر واتساب — مجاناً</p>
+      <a id="wa-result-btn" href="#" target="_blank" style="display:block;background:#fff;color:#25D366;font-family:'Almarai',sans-serif;font-size:14px;font-weight:800;padding:15px;border-radius:50px;text-decoration:none;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
+        💬 احصلي على روتين مخصص عبر واتساب
+      </a>
+    </div>
+
     <button class="retake" onclick="restart()">إعادة الاختبار من البداية</button>
   </div>
 </div>
@@ -926,263 +1071,342 @@ body{
 
 <script>
 /* ============================================================
-   PRODUCTS DATABASE — منتجات العناية بالبشرة
+   PRODUCTS DATABASE
 ============================================================ */
 const PRODUCTS = {
   cosrx_snail: {
-    id:'cosrx_snail',
     icon:'https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/iWhMuexkjxuVJfg4YhlFbRGCHymCbLTtJFqNBD5l.jpg',
     name:'كريم COSRX خلاصة الحلزون 92%',
-    stars:'⭐⭐⭐⭐⭐',
-    reviews:'2,800+ تقييم',
+    stars:'⭐⭐⭐⭐⭐', reviews:'2,800+ تقييم',
     badge:'badge-hot', badgeText:'الأكثر مبيعاً',
     link:'https://ar.vellmor.store/products/cosrx-advanced-snail-92-all-in-one-cream-100g',
-    cta:'اطلبيه الآن 🚚'
+    benefit:'ترطيب عميق، تجديد، وتهدئة في منتج واحد'
   },
-  sakura_set: {
-    id:'sakura_set',
-    icon:'https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/kTsgPKgAXPpkPQG9xrpPr1IRKxTzE5JXjWIWBwYs.jpg',
-    name:'مجموعة الساكورا اليابانية — ترطيب وإشراقة',
-    stars:'⭐⭐⭐⭐⭐',
-    reviews:'1,500+ تقييم',
-    badge:'badge-fav', badgeText:'مفضل العملاء',
-    link:'https://ar.vellmor.store/products/mgmoaa-alsakora-alyabany-llaanay-balbshr',
-    cta:'احصلي عليها 🌸'
+  cosrx_duo: {
+    icon:'https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/iWhMuexkjxuVJfg4YhlFbRGCHymCbLTtJFqNBD5l.jpg',
+    name:'COSRX خلاصة الحلزون — عرض قطعتين',
+    stars:'⭐⭐⭐⭐⭐', reviews:'1,400+ تقييم',
+    badge:'badge-hot', badgeText:'عرض خاص',
+    link:'https://ar.vellmor.store/products/cosrx-advanced-snail-92-all-in-one-cream-100g',
+    benefit:'نفس الترطيب العميق بسعر أوفر — للاستمرارية'
   },
-  retinol_cream: {
-    id:'retinol_cream',
+  retinol_dark: {
     icon:'https://media.taager.com/6839037d-385c-4dec-b359-8d7bbda4c1e3.PNG',
-    name:'كريم الريتينول لتفتيح الهالات والبقع',
-    stars:'⭐⭐⭐⭐⭐',
-    reviews:'1,200+ تقييم',
+    name:'كريم ريتينول لتفتيح البقع والهالات',
+    stars:'⭐⭐⭐⭐⭐', reviews:'1,200+ تقييم',
     badge:'badge-hot', badgeText:'الأكثر مبيعاً',
     link:'https://ar.vellmor.store/products/rytnonol-krym-alhlat-dark-c',
-    cta:'اطلبيه الآن 🚚'
+    benefit:'يُفتّح التصبغات ويُوحّد لون البشرة تدريجياً'
   },
-  sadoer_mask: {
-    id:'sadoer_mask',
-    icon:'https://media.taager.com/99e9675e-5e20-4cdc-8ce6-d183592a5740.jpg',
-    name:'قناع SADOER الأسود بالفحم لتنقية المسامات',
-    stars:'⭐⭐⭐⭐⭐',
-    reviews:'980+ تقييم',
+  retinol_anti_age: {
+    icon:'https://media.taager.com/6839037d-385c-4dec-b359-8d7bbda4c1e3.PNG',
+    name:'كريم ريتينول مضاد الشيخوخة',
+    stars:'⭐⭐⭐⭐⭐', reviews:'1,050+ تقييم',
+    badge:'badge-hot', badgeText:'الأكثر مبيعاً',
+    link:'https://ar.vellmor.store/products/rytnonol-krym-alhlat-dark-c',
+    benefit:'يُحفّز الكولاجين ويُقلل التجاعيد والخطوط الدقيقة'
+  },
+  retinol_kit: {
+    icon:'https://media.taager.com/6839037d-385c-4dec-b359-8d7bbda4c1e3.PNG',
+    name:'طقم الريتينول الكامل',
+    stars:'⭐⭐⭐⭐⭐', reviews:'640+ تقييم',
+    badge:'badge-lim', badgeText:'طقم كامل',
+    link:'https://ar.vellmor.store/products/rytnonol-krym-alhlat-dark-c',
+    benefit:'روتين ريتينول متكامل لتجديد شامل للبشرة'
+  },
+  collagen_serum: {
+    icon:'https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/egzGG0kDT8utfMnPgrzIJrWh9oqyzFek0GO3Csry.jpg',
+    name:'سيروم الكولاجين المكثّف',
+    stars:'⭐⭐⭐⭐⭐', reviews:'880+ تقييم',
     badge:'badge-fav', badgeText:'مفضل العملاء',
-    link:'https://ar.vellmor.store/products/knaaa-sadoer-alasod-balfhm-oalbambo',
-    cta:'احصلي عليه 🌿'
+    link:'https://ar.vellmor.store/products/krym-altkhls-mn-tgaaayd-mntk-alaayn',
+    benefit:'يُعيد كثافة البشرة ويُقاوم الترهل من الداخل'
   },
-  hoygi_serum: {
-    id:'hoygi_serum',
+  copper_serum: {
     icon:'https://media.taager.com/ff51959f-4ac3-4cea-a4f3-8c2d17ec8b64.jpg',
-    name:'سيروم Hoygi ببتيد النحاس — تجديد وشد',
-    stars:'⭐⭐⭐⭐⭐',
-    reviews:'860+ تقييم',
+    name:'سيروم ببتيد النحاس الأزرق',
+    stars:'⭐⭐⭐⭐⭐', reviews:'860+ تقييم',
     badge:'badge-new', badgeText:'وصل حديثاً',
     link:'https://ar.vellmor.store/products/syrom-hoygi-ltgdyd-oshd-albshr-bbbtyd-alnhas-alazrk',
-    cta:'احصلي عليه 🌿'
+    benefit:'يُصغّر المسامات ويشد البشرة بتقنية الببتيد'
+  },
+  sadoer_mask: {
+    icon:'https://media.taager.com/99e9675e-5e20-4cdc-8ce6-d183592a5740.jpg',
+    name:'ماسك SADOER بالفحم لتنقية المسامات',
+    stars:'⭐⭐⭐⭐⭐', reviews:'980+ تقييم',
+    badge:'badge-fav', badgeText:'مفضل العملاء',
+    link:'https://ar.vellmor.store/products/knaaa-sadoer-alasod-balfhm-oalbambo',
+    benefit:'يشفط الشوائب وينقي المسامات بعمق'
+  },
+  green_tea_mask: {
+    icon:'https://media.taager.com/99e9675e-5e20-4cdc-8ce6-d183592a5740.jpg',
+    name:'ماسك الشاي الأخضر المهدّئ',
+    stars:'⭐⭐⭐⭐⭐', reviews:'710+ تقييم',
+    badge:'badge-fav', badgeText:'مفضل العملاء',
+    link:'https://ar.vellmor.store/products/knaaa-sadoer-alasod-balfhm-oalbambo',
+    benefit:'يُهدّئ الاحمرار ويكافح الأكسدة بلطف'
   },
   eye_cream: {
-    id:'eye_cream',
     icon:'https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/egzGG0kDT8utfMnPgrzIJrWh9oqyzFek0GO3Csry.jpg',
-    name:'كريم العين لتقليل التجاعيد والهالات',
-    stars:'⭐⭐⭐⭐⭐',
-    reviews:'740+ تقييم',
+    name:'كريم العين لتقليل الهالات',
+    stars:'⭐⭐⭐⭐⭐', reviews:'740+ تقييم',
     badge:'badge-lim', badgeText:'كمية محدودة',
     link:'https://ar.vellmor.store/products/krym-altkhls-mn-tgaaayd-mntk-alaayn',
-    cta:'احصلي عليه 🌿'
+    benefit:'يُخفف الهالات والانتفاخ ويُجدد منطقة العين'
+  },
+  sakura_set: {
+    icon:'https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/kTsgPKgAXPpkPQG9xrpPr1IRKxTzE5JXjWIWBwYs.jpg',
+    name:'مجموعة الساكورا اليابانية',
+    stars:'⭐⭐⭐⭐⭐', reviews:'1,500+ تقييم',
+    badge:'badge-fav', badgeText:'مفضل العملاء',
+    link:'https://ar.vellmor.store/products/mgmoaa-alsakora-alyabany-llaanay-balbshr',
+    benefit:'ترطيب فاخر وإشراقة يابانية طبيعية'
   }
 };
 
 /* ============================================================
-   RESULTS CONFIG — 4 أنواع بشرة
+   6 RESULTS — Human-first, Conversion-optimized
 ============================================================ */
 const RESULTS = {
 
-  /* ─── بشرة جافة ─── */
-  Skin_Dry: {
-    title:'بشرتك جافة وتحتاج ترطيب عميق 💧',
-    personal:`تم اختيار هذه النتائج بناءً على إجاباتك — بشرتك تفقد الرطوبة بسرعة، لذلك تحتاجين منتجات <strong>تُغذيها وتحافظ على توازنها</strong> طوال اليوم. البشرة الجافة تحتاج ترطيباً من الداخل وليس فقط طبقة على السطح.`,
+  Skin_Oily_Acne: {
+    skinLabel:'بشرة دهنية', problemLabel:'حبوب ومسامات واسعة',
+    title:'بشرتك دهنية مع مسامات تحتاج تنقية ذكية 🧹',
+    humanIntro:'من إجاباتك… يبدو أنكِ تفهمين بشرتك بشكل جيد ✨',
+    diagnosis:'بشرتك تميل إلى <strong>الدهنية</strong>، وأكثر ما يؤثر عليها حالياً هو <strong>الحبوب والمسامات الواسعة</strong>. هذا النوع من المشاكل غالباً إذا تم تجاهله، قد يزداد تدريجياً ويؤثر على مظهر البشرة مع الوقت.',
+    insight:['التجفيف الزائد يعاكس النتيجة — البشرة تُنتج دهوناً أكثر تعويضاً','المسامات الواسعة تتراكم فيها الأوساخ أسرع — تنقية منتظمة ضرورية','الترطيب الخفيف مهم حتى للبشرة الدهنية — يمنع فرط الإفراز'],
     timeline:[
-      {icon:'💧', when:'من أول استخدام', what:'ترطيب فوري ملموس', detail:'تشعرين بنعومة وترطيب فور وضع المنتج'},
-      {icon:'✨', when:'بعد 3 أيام', what:'بشرة أكثر نضارة وإشراقة', detail:'الجفاف يتراجع والبشرة تبدو أكثر حيوية'},
-      {icon:'🌟', when:'بعد أسبوعين', what:'ترطيب يدوم طوال اليوم', detail:'بشرة متوازنة ولا تحتاج تجديد الترطيب كثيراً'}
+      {icon:'🧹', when:'من أول استخدام', what:'مسامات أنظف وأقل انسداداً', detail:'تنقية فورية تُفرق في الملمس'},
+      {icon:'💎', when:'بعد أسبوع', what:'حبوب أقل وبشرة أكثر توازناً', detail:'البيئة أقل ملاءمة لنشوء الحبوب'},
+      {icon:'🌟', when:'بعد أسبوعين', what:'مسامات أصغر ووجه أنعم', detail:'توازن حقيقي في الإفراز الدهني'}
     ],
-    fullProducts:[
-      {pid:'cosrx_snail', why:'لماذا هو أساس روتينك: خلاصة الحلزون 92% تُغذّي البشرة بعمق وتحبس الرطوبة — مثالية للبشرة الجافة.', desc:'ترطيب عميق ومتجدد يمنح بشرتك الحيوية التي تحتاجها', featured:true},
-      {pid:'sakura_set', why:'لماذا تكملين بها: الساكورا اليابانية تُعزز الترطيب وتمنح بريقاً طبيعياً رائعاً.', desc:'إشراقة يابانية فاخرة مع ترطيب عميق يدوم', featured:false},
-      {pid:'eye_cream', why:'للعناية الكاملة: منطقة العين أول مكان يتأثر بالجفاف — هذا الكريم يحميها.', desc:'يُرطب منطقة العين الحساسة ويُقلل ظهور الخطوط', featured:false}
-    ],
-    starterProducts:[
-      {pid:'cosrx_snail', why:'ابدئي بهذا: الخطوة الأهم لترطيب بشرتك الجافة في أسرع وقت.', desc:'ترطيب عميق ومتجدد يمنح بشرتك الحيوية', featured:true},
-      {pid:'sakura_set', why:'ثم أضيفي هذا: يعزز الترطيب ويمنح إشراقة يومية.', desc:'إشراقة يابانية فاخرة مع ترطيب يدوم', featured:false}
-    ],
+    fullProducts:['sadoer_mask','copper_serum','cosrx_snail'],
+    starterProducts:['sadoer_mask','cosrx_snail'],
     bundle:{
-      desc:'كريم الحلزون يُرطب من الداخل ومجموعة الساكورا تُثبّت الرطوبة وتمنح إشراقة — معاً يعطيان بشرتك الترطيب الكامل.',
-      items:[
-        {icon:'🐌', text:'كريم الحلزون: ترطيب عميق من الداخل', arrow:'+'},
-        {icon:'🌸', text:'الساكورا: إشراقة وتثبيت الرطوبة', arrow:'='},
-        {icon:'💧', text:'بشرة مرطبة ومُشرقة طوال اليوم', arrow:''}
-      ],
-      result:'⚡ معاً = نتيجة أقوى بـ 3 مرات من منتج واحد فقط'
+      desc:'القناع ينقّي أسبوعياً وسيروم النحاس يضبط المسامات يومياً والحلزون يُرطب بدون دهون.',
+      items:[{icon:'⚫',text:'ماسك الفحم: تنقية عميقة أسبوعياً',arrow:'+'},{icon:'🔵',text:'سيروم النحاس: ضبط المسامات يومياً',arrow:'+'},{icon:'🐌',text:'الحلزون: ترطيب خفيف بدون لمعان',arrow:'='}],
+      result:'⭐ أكثر من 5,000 عميلة استخدمن هذا الروتين وحصلن على بشرة نقية'
     },
     howToUse:[
-      {num:'1', action:'نظّفي وجهك بلطف صباحاً ومساءً', detail:'استخدمي منظفاً لطيفاً لا يُجفف البشرة'},
-      {num:'2', action:'ضعي كريم الحلزون على بشرة رطبة قليلاً', detail:'البشرة الرطبة تمتص الترطيب أفضل'},
-      {num:'3', action:'أضيفي مجموعة الساكورا فوقه', detail:'تُعزز الترطيب وتمنع تبخره'},
-      {num:'4', action:'كررّي المساء قبل النوم', detail:'الليل أفضل وقت لتجديد الترطيب'}
+      {num:'1', action:'ماسك الفحم مرة أسبوعياً', detail:'15 دقيقة على وجه نظيف ثم اشطفيه بماء فاتر'},
+      {num:'2', action:'سيروم النحاس يومياً بعد التنظيف', detail:'يعمل على تضييق المسامات تدريجياً'},
+      {num:'3', action:'كريم الحلزون بكمية صغيرة', detail:'ترطيب خفيف لا يُسبب اللمعان الزائد'}
     ],
-    pain:[
-      'الجفاف يزيد ظهور التجاعيد والخطوط الدقيقة مبكراً',
-      'البشرة الجافة أكثر عرضة للتهيج والاحمرار',
-      'بدون ترطيب كافٍ تبدو البشرة باهتة وغير صحية',
-      'تأجيل الترطيب يعني حاجة لعلاجات أغلى لاحقاً'
-    ],
-    ctaTitle:'تصفحي منتجات البشرة الجافة الآن',
-    ctaLink:'https://ar.vellmor.store/collections/dry-skin-arabic'
-  },
-
-  /* ─── بشرة دهنية ─── */
-  Skin_Oily: {
-    title:'بشرتك دهنية وتحتاج توازناً ذكياً ✨',
-    personal:`تم اختيار هذه النتائج بناءً على إجاباتك — بشرتك تُنتج زيوتاً أكثر من اللازم، وهذا يحتاج <strong>منتجات تُوازن الإفراز لا تُجفف البشرة</strong>. التجفيف الزائد يزيد الإفراز الدهني — الحل الذكي هو التوازن.`,
-    timeline:[
-      {icon:'✨', when:'من أول استخدام', what:'مسام أنظف وأقل لمعاناً', detail:'البشرة تبدو أكثر نضافة ومتوازنة'},
-      {icon:'💎', when:'بعد أسبوع', what:'تقليل الإفراز الدهني الزائد', detail:'اللمعان يتراجع وبشرتك تبدو أكثر توازناً'},
-      {icon:'🌟', when:'بعد أسبوعين', what:'بشرة نقية ومُشرقة', detail:'مسامات أصغر وبشرة صحية بدون دهون زائدة'}
-    ],
-    fullProducts:[
-      {pid:'sadoer_mask', why:'لماذا هو أساس روتينك: الفحم النباتي يشفط الدهون الزائدة وينقي المسامات بعمق — مرة أسبوعياً تكفي.', desc:'ينقي المسامات ويشفط الدهون الزائدة بعمق', featured:true},
-      {pid:'cosrx_snail', why:'لماذا تحتاجينه: حتى البشرة الدهنية تحتاج ترطيباً خفيفاً — الحلزون مثالي لأنه خفيف ولا يُسبب الدهون.', desc:'ترطيب خفيف لا يُسبب اللمعان — مثالي للبشرة الدهنية', featured:false},
-      {pid:'hoygi_serum', why:'للعناية المتقدمة: ببتيد النحاس يُصغّر المسامات ويُحسّن ملمس البشرة الدهنية.', desc:'يُصغّر المسامات ويمنح بشرة أكثر نعومة', featured:false}
-    ],
-    starterProducts:[
-      {pid:'sadoer_mask', why:'ابدئي بهذا: تنقية عميقة للمسامات مرة أسبوعياً.', desc:'ينقي المسامات ويشفط الدهون الزائدة بعمق', featured:true},
-      {pid:'cosrx_snail', why:'ثم أضيفي هذا: ترطيب خفيف لا يُسبب اللمعان.', desc:'ترطيب خفيف مثالي للبشرة الدهنية', featured:false}
-    ],
-    bundle:{
-      desc:'قناع الفحم يُنظف أسبوعياً وكريم الحلزون يُرطب يومياً بدون دهون — معاً يمنحان بشرتك التوازن المثالي.',
-      items:[
-        {icon:'⚫', text:'قناع الفحم: تنقية عميقة أسبوعية', arrow:'+'},
-        {icon:'🐌', text:'كريم الحلزون: ترطيب خفيف يومي', arrow:'='},
-        {icon:'✨', text:'بشرة نقية ومتوازنة بدون لمعان', arrow:''}
-      ],
-      result:'⚡ معاً = بشرة متوازنة ومشرقة بدون دهون زائدة'
-    },
-    howToUse:[
-      {num:'1', action:'نظّفي وجهك جيداً صباحاً ومساءً', detail:'التنظيف المنتظم يُقلل تراكم الدهون'},
-      {num:'2', action:'قناع الفحم مرة أسبوعياً', detail:'اتركيه 15 دقيقة ثم اشطفيه بماء فاتر'},
-      {num:'3', action:'كريم الحلزون يومياً بكمية صغيرة', detail:'قليل يكفي — لا تُبالغي في الكمية'},
-      {num:'4', action:'تجنّبي المنتجات الزيتية', detail:'اختاري دائماً منتجات Oil-Free أو Non-Comedogenic'}
-    ],
-    pain:[
-      'الدهون الزائدة تُسدّ المسامات وتُسبب حبوباً متكررة',
-      'بدون تنظيف منتظم تتراكم الدهون وتُغلق المسامات',
-      'اللمعان المستمر يُؤثر على مظهرك طوال اليوم',
-      'إهمال التوازن يُضاعف الإفراز الدهني مع الوقت'
-    ],
-    ctaTitle:'تصفحي منتجات البشرة الدهنية الآن',
+    pain:['الحبوب بدون علاج تترك ندوباً وبقعاً داكنة تحتاج علاجاً أطول','المسامات المنسدة تُسبب دوامة من الحبوب المتكررة','كلما تأخرتِ، زاد الوقت اللازم للعودة للبشرة النقية'],
+    ctaTitle:'ابدئي روتين البشرة النقية الآن',
     ctaLink:'https://ar.vellmor.store/collections/oily-skin-arabic'
   },
 
-  /* ─── بشرة مختلطة ─── */
-  Skin_Combo: {
-    title:'بشرتك مختلطة وتحتاج عناية ذكية ⚖️',
-    personal:`تم اختيار هذه النتائج بناءً على إجاباتك — بشرتك تحتاج <strong>توازناً بين الترطيب والتحكم بالدهون</strong> في نفس الوقت. المناطق الجافة تحتاج ترطيباً والمناطق الدهنية تحتاج ضبطاً — الحل في منتجات ذكية تُعالج الجميع.`,
+  Skin_Dry_Glow: {
+    skinLabel:'بشرة جافة', problemLabel:'جفاف وحاجة للإشراقة',
+    title:'بشرتك جافة وتستحق ترطيباً عميقاً وإشراقة دائمة 💧',
+    humanIntro:'من إجاباتك… يبدو أنكِ تفهمين بشرتك بشكل جيد ✨',
+    diagnosis:'بشرتك تميل إلى <strong>الجفاف</strong>، وأكثر ما يؤثر عليها هو <strong>فقدان الرطوبة بسرعة</strong>. هذا النوع من المشاكل غالباً إذا تم تجاهله، يجعل البشرة تبدو باهتة وقد يُسرّع ظهور علامات التقدم في السن.',
+    insight:['الجفاف يُسرّع ظهور خطوط التعبير والتجاعيد أبكر من اللازم','بشرة مرطبة تمتص المنتجات أفضل وتعطي نتيجة أسرع','الترطيب الصحيح يجعل بشرتك تبدو نضرة حتى بدون مكياج'],
     timeline:[
-      {icon:'⚖️', when:'من أول استخدام', what:'بشرة أكثر توازناً فوراً', detail:'كل منطقة تحصل على ما تحتاجه'},
-      {icon:'✨', when:'بعد أسبوع', what:'تراجع اللمعان في الـ T-zone', detail:'والخدود تبدو أكثر ترطيباً وحيوية'},
-      {icon:'🌟', when:'بعد أسبوعين', what:'بشرة متوازنة ومشرقة بشكل كامل', detail:'لا جفاف في الخدود ولا لمعان في الأنف'}
+      {icon:'💧', when:'من أول استخدام', what:'نعومة وترطيب فوري', detail:'تشعرين بالفرق في الملمس من أول وضع'},
+      {icon:'✨', when:'بعد 3 أيام', what:'بشرة أكثر نضارة وحيوية', detail:'الجفاف يتراجع والبشرة تبدو أكثر إشراقاً'},
+      {icon:'🌟', when:'بعد أسبوعين', what:'ترطيب يدوم طوال اليوم', detail:'لا تحتاجين إعادة الترطيب كل ساعات'}
     ],
-    fullProducts:[
-      {pid:'cosrx_snail', why:'لماذا هو الأساس: خفيف بما يكفي للمناطق الدهنية ومُرطب بما يكفي للمناطق الجافة — مثالي للبشرة المختلطة.', desc:'توازن مثالي بين الترطيب وعدم الإثقال', featured:true},
-      {pid:'sadoer_mask', why:'لمنطقة T-zone: ينقي الأنف والجبهة من الدهون الزائدة أسبوعياً.', desc:'ينقي المناطق الدهنية بدون تجفيف باقي الوجه', featured:false},
-      {pid:'retinol_cream', why:'للعناية الكاملة: يُوازن لون البشرة ويُقلل عدم التناسق بين المناطق.', desc:'يُوحّد لون البشرة ويُحسّن التناسق بين المناطق', featured:false}
-    ],
-    starterProducts:[
-      {pid:'cosrx_snail', why:'ابدئي بهذا: ترطيب خفيف متوازن لكل مناطق وجهك.', desc:'توازن مثالي بين الترطيب وعدم الإثقال', featured:true},
-      {pid:'sadoer_mask', why:'ثم أضيفي هذا: لتنقية منطقة T-zone أسبوعياً.', desc:'ينقي المناطق الدهنية بلطف', featured:false}
-    ],
+    fullProducts:['cosrx_duo','sakura_set','collagen_serum'],
+    starterProducts:['cosrx_snail','sakura_set'],
     bundle:{
-      desc:'كريم الحلزون يوازن الكل يومياً وقناع الفحم يُنقي المناطق الدهنية أسبوعياً — الحل الأذكى للبشرة المختلطة.',
-      items:[
-        {icon:'🐌', text:'كريم الحلزون: توازن يومي لكل البشرة', arrow:'+'},
-        {icon:'⚫', text:'قناع الفحم: تنقية الـ T-zone أسبوعياً', arrow:'='},
-        {icon:'⚖️', text:'بشرة متوازنة ومشرقة في كل منطقة', arrow:''}
-      ],
-      result:'⚡ معاً = الحل الذكي للبشرة المختلطة'
+      desc:'الحلزون يُرطب عميقاً، الساكورا تُثبّت الرطوبة وتمنح إشراقة، والكولاجين يملأ البشرة من الداخل.',
+      items:[{icon:'🐌',text:'الحلزون: ترطيب عميق يدوم ساعات',arrow:'+'},{icon:'🌸',text:'الساكورا: إشراقة وتثبيت الرطوبة',arrow:'+'},{icon:'🧬',text:'الكولاجين: امتلاء وحيوية من الداخل',arrow:'='}],
+      result:'⭐ أكثر من 5,000 عميلة استخدمن هذا الروتين وحصلن على بشرة مرطبة ونضرة'
     },
     howToUse:[
-      {num:'1', action:'نظّفي وجهك بلطف صباحاً ومساءً', detail:'منظف لطيف لا يُجفف ولا يُترك دهنياً'},
-      {num:'2', action:'كريم الحلزون على كامل الوجه يومياً', detail:'كمية صغيرة تكفي — وزّعيها بالتساوي'},
-      {num:'3', action:'قناع الفحم على الأنف والجبهة فقط', detail:'مرة أسبوعياً — 10 دقائق'},
-      {num:'4', action:'رطّبي الخدين أكثر عند الحاجة', detail:'إذا شعرتِ بالجفاف أضيفي طبقة إضافية على الخدين فقط'}
+      {num:'1', action:'كريم الحلزون صباحاً ومساءً على بشرة نظيفة', detail:'ضعيه على بشرة رطبة قليلاً لامتصاص أفضل'},
+      {num:'2', action:'سيروم الكولاجين قبل الكريم مساءً', detail:'الليل وقت التجديد والترطيب العميق'},
+      {num:'3', action:'الساكورا كطبقة نهائية للحماية', detail:'تمنع تبخر الرطوبة وتمنح إشراقة يابانية'}
     ],
-    pain:[
-      'إهمال التوازن يجعل الجفاف والدهون يتفاقمان معاً',
-      'استخدام منتج واحد لكل البشرة قد يُسيء لمنطقة على حساب أخرى',
-      'المناطق الجافة بدون ترطيب تُسرّع ظهور التجاعيد',
-      'المناطق الدهنية بدون عناية تُسبب حبوباً مستمرة'
-    ],
-    ctaTitle:'تصفحي منتجات البشرة المختلطة الآن',
-    ctaLink:'https://ar.vellmor.store/collections/combination-skin-arabic'
+    pain:['الجفاف المزمن يُسرّع ظهور التجاعيد سنوات قبل أوانها','بشرة غير مرطبة تبدو باهتة حتى مع المكياج','تأجيل الترطيب يجعل المشكلة أصعب في العلاج لاحقاً'],
+    ctaTitle:'ابدئي روتين الترطيب والإشراقة الآن',
+    ctaLink:'https://ar.vellmor.store/collections/dry-skin-arabic'
   },
 
-  /* ─── بشرة حساسة ─── */
-  Skin_Sensitive: {
-    title:'بشرتك حساسة وتحتاج عناية لطيفة 🌸',
-    personal:`تم اختيار هذه النتائج بناءً على إجاباتك — بشرتك تتأثر بسهولة من المنتجات والبيئة، لذلك تحتاجين <strong>منتجات لطيفة خالية من المهيجات</strong> تهدّئها وتحميها بدلاً من إثارتها.`,
+  Skin_Pigmentation: {
+    skinLabel:'بشرة مع تصبغات', problemLabel:'بقع داكنة وعدم تناسق اللون',
+    title:'بشرتك تستحق لوناً موحداً ومشرقاً بدون بقع 🌟',
+    humanIntro:'من إجاباتك… يبدو أنكِ تفهمين بشرتك بشكل جيد ✨',
+    diagnosis:'بشرتك تعاني من <strong>عدم تناسق في اللون والتصبغات</strong>. هذا النوع من المشاكل غالباً إذا تم تجاهله، يزداد مع الشمس ويصبح أصعب في العلاج مع الوقت — لكن الريتينول مُثبت علمياً لعكسه.',
+    insight:['الريتينول يُجدد الخلايا ويُحل محل الخلايا المصطبغة تدريجياً','البقع القديمة تستجيب أبطأ — الاستمرارية هي السر الحقيقي','الحماية من الشمس أهم من أي علاج — بدونها يعود اللون الداكن'],
     timeline:[
-      {icon:'🌸', when:'من أول استخدام', what:'هدوء فوري وتخفيف الاحمرار', detail:'البشرة تشعر بالراحة والهدوء'},
-      {icon:'💚', when:'بعد 3 أيام', what:'تراجع التهيج والاحمرار', detail:'البشرة أقل حساسية وأكثر استقراراً'},
-      {icon:'✨', when:'بعد أسبوعين', what:'بشرة أهدأ وأكثر مقاومة', detail:'حساسية أقل وقدرة أفضل على تحمّل المؤثرات'}
+      {icon:'🌑', when:'أول أسبوع', what:'بشرة مُشرقة وأكثر نضارة', detail:'توحيد أولي وتراجع البقع الخفيفة'},
+      {icon:'✨', when:'بعد 3 أسابيع', what:'تراجع واضح في البقع الداكنة', detail:'خلايا جديدة تحل محل الخلايا المصطبغة'},
+      {icon:'🌟', when:'بعد 6 أسابيع', what:'بشرة موحدة ومشرقة بشكل ملحوظ', detail:'نتيجة تراكمية تزداد مع الاستمرار'}
     ],
-    fullProducts:[
-      {pid:'cosrx_snail', why:'لماذا هو الأفضل للحساسة: خلاصة الحلزون تُهدّئ الالتهابات وتُرطب بلطف — موثوق للبشرة الحساسة جداً.', desc:'يُهدّئ ويُرطب بلطف — آمن حتى للبشرة الأكثر حساسية', featured:true},
-      {pid:'sakura_set', why:'لماذا تكملين بها: الساكورا اليابانية مشهورة بخصائصها المهدّئة وهي لطيفة جداً على البشرة الحساسة.', desc:'تُهدّئ وتمنح إشراقة لطيفة بدون تهيج', featured:false},
-      {pid:'eye_cream', why:'للعناية الكاملة: منطقة العين حساسة جداً — هذا الكريم اللطيف يعتني بها بدون تهيج.', desc:'عناية لطيفة بمنطقة العين الحساسة', featured:false}
-    ],
-    starterProducts:[
-      {pid:'cosrx_snail', why:'ابدئي بهذا: الألطف والأأمن لبشرتك الحساسة.', desc:'يُهدّئ ويُرطب بلطف — آمن للبشرة الحساسة', featured:true},
-      {pid:'sakura_set', why:'ثم أضيفي هذا: إشراقة لطيفة بدون تهيج.', desc:'تُهدّئ وتمنح إشراقة لطيفة', featured:false}
-    ],
+    fullProducts:['retinol_dark','cosrx_snail','eye_cream'],
+    starterProducts:['retinol_dark','cosrx_snail'],
     bundle:{
-      desc:'كريم الحلزون يُهدّئ ويُرطب يومياً ومجموعة الساكورا تُعزز التهدئة وتمنح إشراقة — معاً يمنحان بشرتك الأمان والجمال.',
-      items:[
-        {icon:'🐌', text:'كريم الحلزون: تهدئة وترطيب يومي', arrow:'+'},
-        {icon:'🌸', text:'الساكورا: تعزيز التهدئة وإشراقة لطيفة', arrow:'='},
-        {icon:'💚', text:'بشرة هادئة ومشرقة وأقل حساسية', arrow:''}
-      ],
-      result:'⚡ معاً = حماية كاملة للبشرة الحساسة'
+      desc:'الريتينول يُجدد ويُفتّح، الحلزون يُرطب ويحمي البشرة المجددة، وكريم العين يُعالج الهالات.',
+      items:[{icon:'🌙',text:'الريتينول: تجديد وتفتيح ليلي',arrow:'+'},{icon:'🐌',text:'الحلزون: حماية وترطيب نهاري',arrow:'+'},{icon:'👁️',text:'كريم العين: عناية بمنطقة الهالات',arrow:'='}],
+      result:'⭐ أكثر من 5,000 عميلة استخدمن هذا الروتين وحصلن على بشرة موحدة اللون'
     },
     howToUse:[
-      {num:'1', action:'نظّفي وجهك بماء فاتر فقط — مرتين يومياً', detail:'الماء الساخن يُهيج البشرة الحساسة'},
-      {num:'2', action:'ضعي كريم الحلزون بلطف بدون فرك', detail:'استخدمي أطراف أصابعك بحركات خفيفة'},
-      {num:'3', action:'اختبري أي منتج جديد على رقبتك أولاً', detail:'انتظري 24 ساعة قبل الاستخدام على الوجه'},
-      {num:'4', action:'تجنّبي المنتجات ذات الروائح القوية', detail:'العطور من أكثر مُسبّبات تهيج البشرة الحساسة'}
+      {num:'1', action:'الريتينول مساءً فقط على بشرة جافة', detail:'ابدئي بمرة في الأسبوع وزيدي تدريجياً'},
+      {num:'2', action:'كريم الحلزون صباحاً للحماية والترطيب', detail:'يحمي البشرة المجددة ويمنع الجفاف'},
+      {num:'3', action:'كريم العين صباحاً ومساءً', detail:'منطقة العين أول مكان يظهر فيه التصبغ'}
     ],
-    pain:[
-      'البشرة الحساسة تتفاقم مع المنتجات الخاطئة وتصبح أكثر حساسية',
-      'الاحمرار المستمر يُؤثر على مظهرك وثقتك بنفسك',
-      'إهمال التهدئة يُحوّل الحساسية لمشكلة مزمنة',
-      'استخدام منتجات غير مناسبة قد يُسبب ردود فعل تحسسية'
+    pain:['البقع تزداد مع الشمس كل يوم بدون علاج','التصبغات القديمة أصعب علاجاً كلما تأخر التدخل','عدم التوحيد يجعلك تعتمدين على المكياج أكثر وأكثر'],
+    ctaTitle:'ابدئي روتين توحيد اللون الآن',
+    ctaLink:'https://ar.vellmor.store/collections/skincare-arabic'
+  },
+
+  Skin_DarkCircles: {
+    skinLabel:'بشرة عادية مع هالات', problemLabel:'هالات داكنة وإرهاق منطقة العين',
+    title:'عيونك تستحق إشراقة حقيقية — بدون تعب دائم 👁️',
+    humanIntro:'من إجاباتك… يبدو أنكِ تفهمين بشرتك بشكل جيد ✨',
+    diagnosis:'بشرتك بشكل عام جيدة، لكن أكثر ما يؤثر على مظهرك هو <strong>الهالات حول العين</strong>. هذا النوع من المشاكل إذا تم تجاهله يصبح أصعب علاجاً — لأن جلد العين رفيع جداً ويحتاج عناية متخصصة وليس نفس كريم الوجه.',
+    insight:['منطقة العين أرق 10 مرات من باقي البشرة — تحتاج مكونات مخصصة','الهالات قد تكون من الجفاف أو الدورة الدموية — الكريم المتخصص يُعالج الاثنين','العناية اليومية بالعين تُحدث فرقاً في مظهرك العام خلال أسبوعين'],
+    timeline:[
+      {icon:'👁️', when:'من أول استخدام', what:'منطقة العين أكثر رطوبة وأقل تعباً', detail:'ترطيب فوري يُقلل الإحساس بالجفاف'},
+      {icon:'✨', when:'بعد أسبوعين', what:'هالات أفتح وانتفاخ أقل', detail:'المكونات الفعّالة تبدأ بالتأثير'},
+      {icon:'🌟', when:'بعد شهر', what:'عيون تبدو أكثر إشراقة وشباباً', detail:'النتيجة واضحة على المظهر العام'}
     ],
-    ctaTitle:'تصفحي منتجات البشرة الحساسة الآن',
+    fullProducts:['eye_cream','retinol_dark','cosrx_snail'],
+    starterProducts:['eye_cream','cosrx_snail'],
+    bundle:{
+      desc:'كريم العين يُعالج مباشرة، الريتينول يُفتّح الهالات الداكنة، والحلزون يُرطب باقي الوجه.',
+      items:[{icon:'👁️',text:'كريم العين: عناية مخصصة يومياً',arrow:'+'},{icon:'🌙',text:'الريتينول: تفتيح الهالات الداكنة',arrow:'+'},{icon:'🐌',text:'الحلزون: ترطيب وتهدئة كامل الوجه',arrow:'='}],
+      result:'⭐ أكثر من 5,000 عميلة استخدمن هذا الروتين وحصلن على عيون مشرقة'
+    },
+    howToUse:[
+      {num:'1', action:'كريم العين بأصبع البنصر صباحاً ومساءً', detail:'أخف الأصابع ضغطاً — المنطقة حساسة جداً'},
+      {num:'2', action:'الريتينول حول العين مساءً فقط', detail:'تجنبي وضعه على الجفن مباشرة'},
+      {num:'3', action:'الحلزون على كامل الوجه للتناسق', detail:'يُكمل الروتين ويُرطب باقي البشرة'}
+    ],
+    pain:['الهالات تجعلك تبدين متعبة حتى بعد نوم كافٍ','إهمال المنطقة يُسرّع ظهور التجاعيد حول العين','بدون عناية مخصصة لن تُؤثر منتجات الوجه العادية على الهالات'],
+    ctaTitle:'ابدئي العناية بمنطقة العين الآن',
+    ctaLink:'https://ar.vellmor.store/collections/skincare-arabic'
+  },
+
+  Skin_AntiAging: {
+    skinLabel:'بشرة ناضجة', problemLabel:'تجاعيد وفقدان المرونة',
+    title:'بشرتك تستحق استعادة شبابها وشدّها من الداخل 💎',
+    humanIntro:'من إجاباتك… يبدو أنكِ تفهمين بشرتك بشكل جيد ✨',
+    diagnosis:'بشرتك تمر بمرحلة تراجع طبيعي في إنتاج الكولاجين — وهذا يظهر كـ <strong>خطوط دقيقة أو فقدان شد</strong>. هذا النوع من المشاكل يتسارع مع الوقت إذا لم يتم التدخل — لكن الريتينول والكولاجين مُثبتان علمياً لعكسه.',
+    insight:['الريتينول يُحفّز إنتاج الكولاجين الطبيعي — ليس مجرد تغطية للمشكلة','التجديد الليلي هو الأقوى — الجلد يُصلح نفسه أثناء النوم','البداية المبكرة تعني نتائج أفضل وأسرع بكثير'],
+    timeline:[
+      {icon:'✨', when:'أول أسبوعين', what:'بشرة أكثر نعومة وإشراقة', detail:'التجديد الخلوي يبدأ بالعمل'},
+      {icon:'💎', when:'بعد شهر', what:'تراجع ملحوظ في الخطوط الدقيقة', detail:'الكولاجين الجديد يبدأ بملء الفراغات'},
+      {icon:'🌟', when:'بعد شهرين', what:'بشرة مشدودة وأكثر مرونة', detail:'نتيجة تراكمية تزداد مع الاستمرار'}
+    ],
+    fullProducts:['retinol_kit','collagen_serum','eye_cream'],
+    starterProducts:['retinol_anti_age','collagen_serum'],
+    bundle:{
+      desc:'طقم الريتينول يُجدد الخلايا، الكولاجين يُعيد الشد والامتلاء، وكريم العين يعتني بأول علامات التقدم.',
+      items:[{icon:'🧬',text:'طقم الريتينول: تجديد شامل ليلي',arrow:'+'},{icon:'💉',text:'الكولاجين: شد وامتلاء من الداخل',arrow:'+'},{icon:'👁️',text:'كريم العين: عناية بأكثر منطقة حساسة',arrow:'='}],
+      result:'⭐ أكثر من 5,000 عميلة استخدمن هذا الروتين وحصلن على بشرة أكثر شباباً'
+    },
+    howToUse:[
+      {num:'1', action:'طقم الريتينول مساءً على بشرة جافة نظيفة', detail:'ابدئي بمرة أسبوعياً وزيدي تدريجياً'},
+      {num:'2', action:'سيروم الكولاجين صباحاً بحركات رافعة للأعلى', detail:'الطريقة الصحيحة تُعزز الامتصاص'},
+      {num:'3', action:'كريم العين صباحاً ومساءً', detail:'منطقة العين تُظهر علامات التقدم أولاً'}
+    ],
+    pain:['التجاعيد تتعمق كل عام بدون تدخل مُبكّر','فقدان الكولاجين يصعب عكسه كلما تأخر العلاج','الانتظار يعني حاجة لعلاجات أطول وأكثر تكلفة'],
+    ctaTitle:'ابدئي روتين مكافحة الشيخوخة الآن',
+    ctaLink:'https://ar.vellmor.store/collections/skincare-arabic'
+  },
+
+  Skin_Sensitive_Calm: {
+    skinLabel:'بشرة حساسة', problemLabel:'حساسية واحمرار مستمر',
+    title:'بشرتك حساسة وتستحق منتجات تُهدّئها حقاً 🌸',
+    humanIntro:'من إجاباتك… يبدو أنكِ تفهمين بشرتك بشكل جيد ✨',
+    diagnosis:'بشرتك تميل إلى <strong>الحساسية والتهيج</strong>. هذا النوع من المشاكل إذا تم تجاهله، يصبح البشرة أكثر حساسية مع الوقت — الحل هو اختيار المكونات الصحيحة التي تُهدّئ وتحمي بدلاً من الإثارة.',
+    insight:['البشرة الحساسة تستجيب بسرعة للمكونات المهدّئة الصحيحة','تجنّب المكونات ذات الرائحة القوية والكحول — أكثر مُهيّجات الحساسية','الاختبار على منطقة صغيرة أولاً يُنقذك من ردود الفعل المفاجئة'],
+    timeline:[
+      {icon:'🌸', when:'من أول استخدام', what:'هدوء فوري وتخفيف الاحمرار', detail:'بشرتك تشعر بالراحة الفورية'},
+      {icon:'💚', when:'بعد 3 أيام', what:'تهيج أقل ومقاومة أعلى', detail:'البشرة تبدأ بالتكيّف والتقوية'},
+      {icon:'✨', when:'بعد أسبوعين', what:'بشرة أهدأ وأقل حساسية', detail:'مقاومة أفضل للمؤثرات الخارجية'}
+    ],
+    fullProducts:['cosrx_snail','green_tea_mask','sakura_set'],
+    starterProducts:['cosrx_snail','green_tea_mask'],
+    bundle:{
+      desc:'الحلزون يُهدّئ ويُرطب يومياً، ماسك الشاي الأخضر يُهدّئ أسبوعياً، والساكورا تُقوّي البشرة.',
+      items:[{icon:'🐌',text:'الحلزون: تهدئة وترطيب يومي لطيف',arrow:'+'},{icon:'🍵',text:'الشاي الأخضر: تهدئة أسبوعية عميقة',arrow:'+'},{icon:'🌸',text:'الساكورا: تقوية وإشراقة لطيفة',arrow:'='}],
+      result:'⭐ أكثر من 5,000 عميلة استخدمن هذا الروتين وحصلن على بشرة أهدأ وأقل حساسية'
+    },
+    howToUse:[
+      {num:'1', action:'اختبري أي منتج على رقبتك أولاً', detail:'انتظري 24 ساعة قبل الاستخدام على الوجه'},
+      {num:'2', action:'الحلزون بلطف بدون فرك — صباحاً ومساءً', detail:'حركات خفيفة بأطراف الأصابع فقط'},
+      {num:'3', action:'ماسك الشاي الأخضر مرة أسبوعياً', detail:'10 دقائق فقط — لا تُبالغي في المدة'}
+    ],
+    pain:['المنتجات الخاطئة تُحوّل الحساسية لمشكلة مزمنة','الاحمرار المستمر يُؤثر على ثقتك بنفسك يومياً','تجاهل الحساسية قد يُفضي لردود فعل أشد مستقبلاً'],
+    ctaTitle:'ابدئي روتين تهدئة البشرة الآن',
     ctaLink:'https://ar.vellmor.store/collections/sensitive-skin-arabic'
   }
 };
 
 /* ============================================================
-   QUIZ STATE
+   SMART SCORING ENGINE — 10 أسئلة → نتيجة ذكية
 ============================================================ */
 let answers = {};
 let currentResult = null;
-let currentMode = 'full';
+
+function calcResult(){
+  const a = answers;
+  const s = {
+    Skin_Oily_Acne:0, Skin_Dry_Glow:0, Skin_Pigmentation:0,
+    Skin_DarkCircles:0, Skin_AntiAging:0, Skin_Sensitive_Calm:0
+  };
+
+  // Q1 — نوع البشرة الأساسي
+  if(a.q1==='dry')       { s.Skin_Dry_Glow+=3; }
+  if(a.q1==='oily')      { s.Skin_Oily_Acne+=3; }
+  if(a.q1==='combo')     { s.Skin_Oily_Acne+=1; s.Skin_Dry_Glow+=1; }
+  if(a.q1==='sensitive') { s.Skin_Sensitive_Calm+=3; }
+
+  // Q2 — المشكلة الأبرز (وزن عالٍ)
+  if(a.q2==='acne')     { s.Skin_Oily_Acne+=4; }
+  if(a.q2==='dry_high') { s.Skin_Dry_Glow+=4; }
+  if(a.q2==='pigment')  { s.Skin_Pigmentation+=4; }
+  if(a.q2==='dark')     { s.Skin_DarkCircles+=4; }
+  if(a.q2==='aging')    { s.Skin_AntiAging+=4; }
+
+  // Q3 — الملمس
+  if(a.q3==='pores_high') { s.Skin_Oily_Acne+=2; }
+  if(a.q3==='texture')    { s.Skin_Dry_Glow+=1; s.Skin_Pigmentation+=1; }
+
+  // Q4 — الحبوب
+  if(a.q4==='acne_heavy') { s.Skin_Oily_Acne+=3; }
+  if(a.q4==='acne_light') { s.Skin_Oily_Acne+=1; }
+
+  // Q5 — المسامات
+  if(a.q5==='pores_high') { s.Skin_Oily_Acne+=2; }
+
+  // Q6 — اللون
+  if(a.q6==='pigment_high') { s.Skin_Pigmentation+=3; }
+  if(a.q6==='pigment_light'){ s.Skin_Pigmentation+=1; }
+
+  // Q7 — الهالات
+  if(a.q7==='dark_high')  { s.Skin_DarkCircles+=4; }
+  if(a.q7==='dark_light') { s.Skin_DarkCircles+=2; }
+
+  // Q8 — التجاعيد والشيخوخة
+  if(a.q8==='aging_high') { s.Skin_AntiAging+=4; }
+  if(a.q8==='aging_light'){ s.Skin_AntiAging+=2; }
+
+  // Q9 — تحمّل البشرة
+  if(a.q9==='sensitive') { s.Skin_Sensitive_Calm+=3; }
+  if(a.q9==='reactive')  { s.Skin_Sensitive_Calm+=1; }
+
+  // Q10 — الهدف (وزن عالٍ — الأهم)
+  if(a.q10==='goal_glow')  { s.Skin_Dry_Glow+=3; }
+  if(a.q10==='goal_acne')  { s.Skin_Oily_Acne+=3; }
+  if(a.q10==='goal_bright'){ s.Skin_Pigmentation+=3; }
+  if(a.q10==='goal_anti')  { s.Skin_AntiAging+=3; }
+
+  // الفائز
+  return Object.entries(s).reduce((a,b)=>b[1]>a[1]?b:a)[0];
+}
 
 /* ============================================================
-   QUIZ FUNCTIONS
+   QUIZ STATE + NAVIGATION
 ============================================================ */
 function startQuiz(){
   document.getElementById('progressBar').style.display='block';
-  show('s-q1');
-  updateProg(1);
+  show('s-q1'); updateProg(1);
 }
 
 function pick(el, qId, val){
@@ -1197,125 +1421,105 @@ function pick(el, qId, val){
   if(btn) btn.disabled=false;
 }
 
-function go(num){
-  show('s-q'+num);
-  updateProg(num);
-}
+function go(num){ show('s-q'+num); updateProg(num); }
 
 function back(num){
-  if(num===0){
-    document.getElementById('progressBar').style.display='none';
-    show('s-intro');
-  } else {
-    show('s-q'+num);
-    updateProg(num);
-  }
+  if(num===0){ document.getElementById('progressBar').style.display='none'; show('s-intro'); }
+  else { show('s-q'+num); updateProg(num); }
 }
 
 function updateProg(n){
-  const pct=Math.round((n/5)*100);
+  const pct=Math.round((n/10)*100);
   document.getElementById('progFill').style.width=pct+'%';
-  document.getElementById('progText').textContent='السؤال '+n+' من 5';
+  document.getElementById('progText').textContent='السؤال '+n+' من 10';
   document.getElementById('progPct').textContent=pct+'%';
 }
 
 function showLoading(){
   show('s-loading');
   document.getElementById('progressBar').style.display='none';
-  setTimeout(()=>{
-    currentResult=calcResult();
-    renderResult(currentResult,'full');
-  },2600);
+  setTimeout(()=>{ currentResult=calcResult(); renderResult(currentResult); }, 2800);
 }
 
-function calcResult(){
-  // احسب الأكثر تكراراً من الإجابات
-  const votes = {dry:0, oily:0, combo:0, sensitive:0};
-  Object.values(answers).forEach(v => { if(votes[v]!==undefined) votes[v]++; });
-  const max = Math.max(...Object.values(votes));
-  if(votes.sensitive===max) return 'Skin_Sensitive';
-  if(votes.oily===max) return 'Skin_Oily';
-  if(votes.combo===max) return 'Skin_Combo';
-  return 'Skin_Dry';
-}
+/* ============================================================
+   RENDER RESULT — Human-first UX
+============================================================ */
+function renderResult(key){
+  const r = RESULTS[key];
 
-function switchRoutine(mode, btn){
-  document.querySelectorAll('.choice-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  currentMode=mode;
-  renderProducts(currentResult,mode);
-}
+  document.getElementById('r-title').textContent = r.title;
 
-function renderResult(key, mode){
-  const r=RESULTS[key];
-
-  document.getElementById('r-title').textContent=r.title;
-  document.getElementById('r-personal').innerHTML=r.personal;
+  // Personal card — إنسانية أولاً
+  document.getElementById('r-personal').innerHTML = `
+    <span style="display:block;font-size:13px;color:var(--gold);font-weight:700;margin-bottom:10px;">${r.humanIntro}</span>
+    <p style="margin-bottom:12px;line-height:1.9;">${r.diagnosis}</p>
+    <ul style="list-style:none;margin-top:4px;border-top:1px solid rgba(200,184,154,0.2);padding-top:10px;">
+      ${r.insight.map(i=>`<li style="font-size:12px;color:rgba(220,205,180,0.85);padding:4px 0 4px 0;padding-right:18px;position:relative;font-weight:300;line-height:1.7;">
+        <span style="position:absolute;right:0;">💡</span>${i}
+      </li>`).join('')}
+    </ul>`;
 
   // Timeline
-  let tlHtml='';
-  r.timeline.forEach(t=>{
-    tlHtml+=`<div class="tl-row">
+  document.getElementById('r-timeline').innerHTML = r.timeline.map(t=>`
+    <div class="tl-row">
       <div class="tl-dot">${t.icon}</div>
       <div class="tl-body">
         <span class="tl-when">${t.when}</span>
         <span class="tl-what">${t.what}</span>
         <span class="tl-detail">${t.detail}</span>
       </div>
-    </div>`;
-  });
-  document.getElementById('r-timeline').innerHTML=tlHtml;
+    </div>`).join('');
 
-  renderProducts(key, mode);
+  renderProducts(key, 'full');
 
   // Bundle
-  document.getElementById('r-bundle-desc').textContent=r.bundle.desc;
-  let bItems='';
-  r.bundle.items.forEach(item=>{
-    bItems+=`<div class="bundle-row">
+  document.getElementById('r-bundle-desc').textContent = r.bundle.desc;
+  document.getElementById('r-bundle-items').innerHTML = r.bundle.items.map(item=>`
+    <div class="bundle-row">
       <span class="bundle-ico">${item.icon}</span>
       <span style="flex:1">${item.text}</span>
       ${item.arrow?`<span style="font-size:16px;font-weight:800;color:var(--olive-pale)">${item.arrow}</span>`:''}
-    </div>`;
-  });
-  document.getElementById('r-bundle-items').innerHTML=bItems;
-  document.getElementById('r-bundle-result').textContent=r.bundle.result;
+    </div>`).join('');
+  document.getElementById('r-bundle-result').textContent = r.bundle.result;
 
   // How to use
-  let howHtml='';
-  r.howToUse.forEach(s=>{
-    howHtml+=`<div class="how-row">
+  document.getElementById('r-how').innerHTML = r.howToUse.map(s=>`
+    <div class="how-row">
       <div class="how-num">${s.num}</div>
       <div class="how-body">
         <span class="how-action">${s.action}</span>
         <span class="how-detail">${s.detail}</span>
       </div>
-    </div>`;
-  });
-  document.getElementById('r-how').innerHTML=howHtml;
+    </div>`).join('');
 
   // Pain
-  document.getElementById('r-pain').innerHTML=r.pain.map(p=>`<li>${p}</li>`).join('');
+  document.getElementById('r-pain').innerHTML = r.pain.map(p=>`<li>${p}</li>`).join('');
 
   // CTA
-  document.getElementById('r-cta-title').textContent=r.ctaTitle;
-  document.getElementById('r-cta-btn').href=r.ctaLink;
-  document.getElementById('r-cta-btn').textContent='🛍️ '+r.ctaTitle+' →';
+  document.getElementById('r-cta-title').textContent = r.ctaTitle;
+  document.getElementById('r-cta-btn').href = r.ctaLink;
+  document.getElementById('r-cta-btn').textContent = '🛍️ ' + r.ctaTitle + ' →';
+
+  // WhatsApp
+  const waMsg = encodeURIComponent(
+    `مرحبا Vellmor 🌿\nأجريت اختبار البشرة ونتيجتي:\n\nنوع بشرتي: ${r.skinLabel}\nمشكلتي: ${r.problemLabel}\n\nأريد روتيناً مخصصاً لي ✨`
+  );
+  document.getElementById('wa-result-btn').href = `https://wa.me/971547726911?text=${waMsg}`;
 
   show('s-result');
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
 function renderProducts(key, mode){
-  const r=RESULTS[key];
-  const list=mode==='full'?r.fullProducts:r.starterProducts;
-  let html='';
-  list.forEach(item=>{
-    const p=PRODUCTS[item.pid];
-    html+=`<div class="product-card${item.featured?' featured':''}">
+  const r = RESULTS[key];
+  const list = mode==='full' ? r.fullProducts : r.starterProducts;
+  document.getElementById('r-products').innerHTML = list.map((pid,idx)=>{
+    const p = PRODUCTS[pid]; if(!p) return '';
+    const featured = idx===0;
+    return `<div class="product-card${featured?' featured':''}">
       <div class="prod-top">
         <div class="prod-icon">
-          <img src="${p.icon}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;border-radius:10px;">
+          <img src="${p.icon}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;border-radius:10px;" loading="lazy">
         </div>
         <div class="prod-meta">
           <div class="prod-badges"><span class="${p.badge}">${p.badgeText}</span></div>
@@ -1324,12 +1528,18 @@ function renderProducts(key, mode){
           <div class="prod-reviews">${p.reviews}</div>
         </div>
       </div>
-      <div class="prod-why">🎯 ${item.why}</div>
-      <p class="prod-desc">${item.desc}</p>
-      <a href="${p.link}" class="btn-buy${item.featured?'':' btn-buy-secondary'}" target="_blank">${p.cta}</a>
+      <div class="prod-why">💡 ${p.benefit}</div>
+      <a href="${p.link}" class="btn-buy${featured?'':' btn-buy-secondary'}" target="_blank">
+        ${featured ? 'اطلبيه الآن 🚚' : 'عرض المنتج →'}
+      </a>
     </div>`;
-  });
-  document.getElementById('r-products').innerHTML=html;
+  }).join('');
+}
+
+function switchRoutine(mode, btn){
+  document.querySelectorAll('.choice-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderProducts(currentResult, mode);
 }
 
 function show(id){
@@ -1339,22 +1549,16 @@ function show(id){
 }
 
 function restart(){
-  answers={};
-  currentResult=null;
-  currentMode='full';
+  answers={}; currentResult=null;
   document.querySelectorAll('.option').forEach(o=>{
     o.classList.remove('selected');
-    const c=o.querySelector('.opt-check');
-    if(c) c.innerHTML='';
+    const c=o.querySelector('.opt-check'); if(c) c.innerHTML='';
   });
   document.querySelectorAll('[id^="n-q"]').forEach(b=>b.disabled=true);
   document.getElementById('progressBar').style.display='none';
-  document.querySelectorAll('.choice-btn').forEach((b,i)=>{
-    b.classList.toggle('active',i===0);
-  });
+  document.querySelectorAll('.choice-btn').forEach((b,i)=>b.classList.toggle('active',i===0));
   show('s-intro');
 }
-</script>
 </script>
 </body>
 </html>
