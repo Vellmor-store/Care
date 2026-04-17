@@ -328,10 +328,10 @@ body{font-family:'Almarai',sans-serif;direction:rtl;background:var(--bg);color:v
 
 <!-- ══════ Q1 ══════ -->
 <div class="screen" id="s-q1">
-  <br>
   <div class="qwrap">
     <span class="qnum">1 من 7</span>
     <div class="qtitle">بعد غسل وجهك… ما أول إحساس مزعج يظهر؟</div>
+    <br>
     <div class="opts">
       <div class="opt" onclick="autoNext(this,'q1','dry',2)">
         <div class="opt-ic">🏜️</div>
@@ -360,10 +360,10 @@ body{font-family:'Almarai',sans-serif;direction:rtl;background:var(--bg);color:v
 
 <!-- ══════ Q2 ══════ -->
 <div class="screen" id="s-q2">
-  <br>
   <div class="qwrap">
     <span class="qnum">2 من 7</span>
     <div class="qtitle">ما المشكلة التي تؤثر على ثقتك بنفسك يومياً؟</div>
+    <br>
     <div class="opts">
       <div class="opt" onclick="autoNext(this,'q2','acne',3)">
         <div class="opt-ic">🔴</div>
@@ -397,10 +397,10 @@ body{font-family:'Almarai',sans-serif;direction:rtl;background:var(--bg);color:v
 
 <!-- ══════ Q3 ══════ -->
 <div class="screen" id="s-q3">
-  <br>
   <div class="qwrap">
     <span class="qnum">3 من 7</span>
     <div class="qtitle">عند النظر في المرآة… ما أكثر شيء تلاحظينه في بشرتك؟</div>
+    <br>
     <div class="opts">
       <div class="opt" onclick="autoNext(this,'q3','pores_low',4)">
         <div class="opt-ic">🔍</div>
@@ -424,10 +424,10 @@ body{font-family:'Almarai',sans-serif;direction:rtl;background:var(--bg);color:v
 
 <!-- ══════ Q4 ══════ -->
 <div class="screen" id="s-q4">
-  <br>
   <div class="qwrap">
     <span class="qnum">4 من 7</span>
     <div class="qtitle">هل تشعرين أن لون بشرتك غير موحد؟</div>
+    <br>
     <div class="opts">
       <div class="opt" onclick="autoNext(this,'q4','even',5)">
         <div class="opt-ic">🌟</div>
@@ -452,10 +452,10 @@ body{font-family:'Almarai',sans-serif;direction:rtl;background:var(--bg);color:v
 
 <!-- ══════ Q5 ══════ -->
 <div class="screen" id="s-q5">
-  <br>
   <div class="qwrap">
     <span class="qnum">5 من 7</span>
     <div class="qtitle">الهالات تحت عينيك… كيف تؤثر على مظهرك؟</div>
+    <br>
     <div class="opts">
       <div class="opt" onclick="autoNext(this,'q5','no_dark',6)">
         <div class="opt-ic">😊</div>
@@ -479,10 +479,10 @@ body{font-family:'Almarai',sans-serif;direction:rtl;background:var(--bg);color:v
 
 <!-- ══════ Q6 ══════ -->
 <div class="screen" id="s-q6">
-  <br>
   <div class="qwrap">
     <span class="qnum">6 من 7</span>
     <div class="qtitle">عند تجربة منتج جديد… ماذا يحدث غالباً؟</div>
+    <br>
     <div class="opts">
       <div class="opt" onclick="autoNext(this,'q6','strong',7)">
         <div class="opt-ic">😊</div>
@@ -506,10 +506,10 @@ body{font-family:'Almarai',sans-serif;direction:rtl;background:var(--bg);color:v
 
 <!-- ══════ Q7 ══════ -->
 <div class="screen" id="s-q7">
-  <br>
   <div class="qwrap">
     <span class="qnum">السؤال الأخير</span>
     <div class="qtitle">ما النتيجة التي تريدين رؤيتها في المرآة قريباً؟</div>
+     <br>
     <div class="opts">
       <div class="opt" onclick="autoNext(this,'q7','goal_glow',0)">
         <div class="opt-ic">✨</div>
@@ -537,13 +537,28 @@ body{font-family:'Almarai',sans-serif;direction:rtl;background:var(--bg);color:v
 </div>
 
 <!-- ══════ LOADING ══════ -->
-<div class="screen" id="s-loading">
+/* <div class="screen" id="s-loading">
   <div class="load-wrap">
     <div class="spinner"></div>
     <div class="load-h">جاري تحليل بشرتكِ…</div>
     <div class="load-s">نحدد الآن السبب الجذري للمشكلة</div>
     <div class="load-h">🎯 تم تحديد سبب المشكلة بنسبة 92% <br> جاري إعداد الروتين المناسب لكِ…</div>
     <div class="screen" id="s-result">
+    <div class="load-steps">
+      <div class="lstep" id="ls1"><div class="ldot"></div><span>تحديد نوع بشرتك من إجاباتك…</span></div>
+      <div class="lstep" id="ls2"><div class="ldot"></div><span>تحليل السبب الجذري للمشكلة…</span></div>
+      <div class="lstep" id="ls3"><div class="ldot"></div><span>اختيار المنتج الأنسب لكِ تحديداً…</span></div>
+    </div>
+  </div>
+</div>
+  */
+  <!-- ══════ LOADING ══════ -->
+<div class="screen" id="s-loading">
+  <div class="load-wrap">
+    <div class="spinner"></div>
+    <div class="load-h">جاري تحليل بشرتكِ…</div>
+    <div class="load-s">نحدد الآن السبب الجذري للمشكلة</div>
+    <div class="load-h">🎯 تم تحديد سبب المشكلة بنسبة 92% <br> جاري إعداد الروتين المناسب لكِ…</div>
     <div class="load-steps">
       <div class="lstep" id="ls1"><div class="ldot"></div><span>تحديد نوع بشرتك من إجاباتك…</span></div>
       <div class="lstep" id="ls2"><div class="ldot"></div><span>تحليل السبب الجذري للمشكلة…</span></div>
