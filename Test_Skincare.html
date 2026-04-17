@@ -966,18 +966,18 @@ function renderResult(key){
   const bp=P[r.bundleProd];
 
   // --- إضافة كود رسالة الواتساب المخصصة ---
- const waMsg = encodeURIComponent(
+  const waMsg = encodeURIComponent(
   `مرحباً فريق Vellmor 🌿\n\n` +
   `أكملت اختبار تحليل البشرة، وهذه نتيجتي:\n\n` +
   `👤 نوع البشرة: ${r.type}\n` +
   `🔍 التشخيص: ${r.explain}\n\n` +
-  `أرغب في طلب الروتين المناسب لي بناءً على هذه النتيجة لبدء العلاج فوراً.
+  `أرغب في طلب الروتين المناسب لي بناءً على هذه النتيجة لبدء العلاج فوراً.` // أضفنا العلامة المائلة هنا
 );
-  
-  const waBtn = document.getElementById('wa-result-btn');
-  if(waBtn) {
-    waBtn.href = `https://wa.me/971547726911?text=${waMsg}`;
-  }
+
+const waBtn = document.getElementById('wa-result-btn');
+if(waBtn) {
+  waBtn.href = `https://wa.me/971547726911?text=${waMsg}`;
+}
 
   // [A] Identity
   document.getElementById('r-type').textContent=r.type;
