@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -9,62 +8,61 @@
 <link rel="shortcut icon" href="https://assets.youcan.shop/stores/e355641c50b802d7cd2b1d0db0bb4df05e8f9d4d/cropped-circle-image-4-F6THU7APJT3oWX43OfDli1CIGuo.png">
 <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
 <style>
-/* ─── TOKENS ─── */
 :root{
-  --o:#3D4A30; --ol:#5C6B4A; --op:#7A8F68;
-  --g:#C8B89A; --gl:#EDE0CE;
-  --bg:#F8F6EE; --w:#fff;
-  --t:#1a1a1a; --s:#555; --m:#888780;
-  --soft-g:#EEF2E8; --border:#e0ddd6;
-  --r:16px; --rb:50px;
-  --warn-bg:#fff5f0; --warn-b:#f0c4a8; --warn-t:#92400e;
+  --o:#3D4A30;--ol:#5C6B4A;--op:#7A8F68;
+  --g:#C8B89A;--gl:#EDE0CE;
+  --bg:#F8F6EE;--w:#fff;
+  --t:#1a1a1a;--s:#4a4a4a;--m:#888780;
+  --soft-g:#EEF2E8;--border:#e0ddd6;
+  --r:16px;--rb:50px;
+  --warn-bg:#fff5f0;--warn-b:#f0c4a8;--warn-t:#92400e;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Almarai',sans-serif;direction:rtl;background:var(--bg);color:var(--t);min-height:100vh;line-height:1.7;-webkit-font-smoothing:antialiased}
+body{font-family:"Almarai",sans-serif;direction:rtl;background:var(--bg);color:var(--t);min-height:100vh;line-height:1.75;-webkit-font-smoothing:antialiased;font-size:15px}
 
-/* ─── HEADER ─── */
+/* HEADER */
 .hdr{background:var(--w);padding:12px 20px;display:flex;align-items:center;justify-content:center;position:sticky;top:0;z-index:200;border-bottom:1px solid var(--border);box-shadow:0 1px 8px rgba(0,0,0,.04)}
 .hdr img{width:130px;height:auto}
 
-/* ─── PROGRESS ─── */
-#pb{display:none;background:var(--w);border-bottom:1px solid var(--border);padding:10px 20px 10px}
-.plabel{display:flex;justify-content:space-between;align-items:center;font-size:10px;color:var(--m);font-weight:700;margin-bottom:6px}
+/* PROGRESS */
+#pb{display:none;background:var(--w);border-bottom:1px solid var(--border);padding:10px 20px}
+.plabel{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--m);font-weight:700;margin-bottom:6px}
 .pbar{height:5px;background:var(--border);border-radius:10px;overflow:hidden}
 .pfill{height:100%;background:linear-gradient(90deg,var(--op),var(--o));border-radius:10px;transition:width .45s cubic-bezier(.4,0,.2,1)}
 
-/* ─── LAYOUT ─── */
+/* LAYOUT */
 .wrap{max-width:520px;margin:0 auto;padding:0 18px 100px}
 .screen{display:none;animation:fu .32s ease}
 .screen.active{display:block}
-@keyframes fu{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fu{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 
-/* ─── MICRO-COMMIT SCREEN ─── */
+/* MICRO-COMMIT */
 .mc-wrap{padding:52px 0 36px;text-align:center}
-.mc-badge{display:inline-block;background:var(--soft-g);border:1px solid rgba(61,74,48,.15);border-radius:30px;padding:5px 16px;font-size:10px;font-weight:700;color:var(--o);letter-spacing:2px;text-transform:uppercase;margin-bottom:18px}
-.mc-h{font-size:clamp(20px,5.5vw,28px);font-weight:800;color:var(--o);line-height:1.3;margin-bottom:12px}
-.mc-sub{font-size:13px;color:var(--s);font-weight:300;max-width:320px;margin:0 auto 28px;line-height:1.85}
+.mc-badge{display:inline-block;background:var(--soft-g);border:1px solid rgba(61,74,48,.15);border-radius:30px;padding:5px 16px;font-size:11px;font-weight:700;color:var(--o);letter-spacing:2px;text-transform:uppercase;margin-bottom:18px}
+.mc-h{font-size:clamp(20px,5.5vw,26px);font-weight:800;color:var(--o);line-height:1.35;margin-bottom:12px}
+.mc-sub{font-size:14px;color:var(--s);font-weight:300;max-width:320px;margin:0 auto 28px;line-height:1.85}
 .mc-opts{display:flex;flex-direction:column;gap:10px;max-width:340px;margin:0 auto}
-.mc-opt{background:var(--w);border:2px solid var(--border);border-radius:var(--r);padding:16px 20px;cursor:pointer;transition:all .2s;font-family:'Almarai',sans-serif;font-size:15px;font-weight:700;color:var(--t);text-align:center;display:flex;align-items:center;justify-content:space-between}
+.mc-opt{background:var(--w);border:2px solid var(--border);border-radius:var(--r);padding:16px 20px;cursor:pointer;transition:all .2s;font-family:"Almarai",sans-serif;font-size:15px;font-weight:700;color:var(--t);text-align:center;display:flex;align-items:center;justify-content:space-between}
 .mc-opt:hover{border-color:var(--o);background:var(--soft-g);transform:translateY(-1px)}
 .mc-opt .mc-em{font-size:20px}
 
-/* ─── HERO ─── */
+/* HERO */
 .hero{padding:44px 0 28px;text-align:center}
-.hero-stat{display:inline-flex;align-items:center;gap:6px;background:var(--warn-bg);border:1px solid var(--warn-b);border-radius:30px;padding:5px 14px;font-size:11px;font-weight:700;color:var(--warn-t);margin-bottom:18px}
-.hero h1{font-size:clamp(22px,6vw,34px);font-weight:800;color:var(--o);line-height:1.3;margin-bottom:12px}
+.hero-stat{display:inline-flex;align-items:center;gap:6px;background:var(--warn-bg);border:1px solid var(--warn-b);border-radius:30px;padding:5px 14px;font-size:12px;font-weight:700;color:var(--warn-t);margin-bottom:18px}
+.hero h1{font-size:clamp(22px,6vw,32px);font-weight:800;color:var(--o);line-height:1.3;margin-bottom:12px}
 .hero h1 span{color:#c0392b;display:block}
-.hero-sub{font-size:13px;color:var(--s);font-weight:300;max-width:360px;margin:0 auto 24px;line-height:1.9}
+.hero-sub{font-size:14px;color:var(--s);font-weight:300;max-width:360px;margin:0 auto 24px;line-height:1.9}
 .hero-sub strong{color:var(--o);font-weight:700}
-.btn-hero{display:block;background:var(--o);color:#fff;font-family:'Almarai',sans-serif;font-size:16px;font-weight:800;padding:18px 28px;border-radius:var(--rb);border:none;cursor:pointer;transition:all .25s;text-align:center;max-width:360px;margin:0 auto 12px;box-shadow:0 8px 24px rgba(61,74,48,.28);letter-spacing:.2px}
-.btn-hero:hover{background:var(--ol);transform:translateY(-2px);box-shadow:0 12px 28px rgba(61,74,48,.32)}
-.hero-proof{font-size:11px;color:var(--m);font-weight:300;text-align:center}
+.btn-hero{display:block;background:var(--o);color:#fff;font-family:"Almarai",sans-serif;font-size:16px;font-weight:800;padding:18px 28px;border-radius:var(--rb);border:none;cursor:pointer;transition:all .25s;text-align:center;max-width:360px;margin:0 auto 12px;box-shadow:0 8px 24px rgba(61,74,48,.28)}
+.btn-hero:hover{background:var(--ol);transform:translateY(-2px)}
+.hero-proof{font-size:13px;color:var(--m);font-weight:300;text-align:center}
 .hero-proof strong{color:var(--o)}
 
-/* ─── QUESTIONS ─── */
+/* QUESTIONS */
 .qwrap{padding:32px 0 16px}
-.qnum{font-size:10px;font-weight:700;color:var(--op);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;display:block}
-.qtitle{font-size:clamp(17px,4.5vw,22px);font-weight:800;color:var(--o);line-height:1.4;margin-bottom:4px}
-.qsub{font-size:12px;color:var(--m);font-weight:300;margin-bottom:22px}
+.qnum{font-size:12px;font-weight:700;color:var(--op);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;display:block}
+.qtitle{font-size:clamp(18px,4.5vw,22px);font-weight:800;color:var(--o);line-height:1.4;margin-bottom:4px}
+.qsub{font-size:14px;color:var(--m);font-weight:300;margin-bottom:22px}
 .opts{display:flex;flex-direction:column;gap:10px}
 .opt{background:var(--w);border:2px solid var(--border);border-radius:var(--r);padding:14px 16px;cursor:pointer;transition:all .18s;display:flex;align-items:center;gap:12px}
 .opt:hover{border-color:var(--op);background:var(--soft-g);transform:translateX(-2px)}
@@ -72,210 +70,164 @@ body{font-family:'Almarai',sans-serif;direction:rtl;background:var(--bg);color:v
 .opt-ic{font-size:20px;flex-shrink:0;width:40px;height:40px;background:var(--bg);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:background .18s}
 .opt.sel .opt-ic{background:var(--o)}
 .opt-b{flex:1;text-align:right}
-.opt-lbl{font-size:13px;font-weight:700;color:var(--t);display:block;margin-bottom:1px}
-.opt-dsc{font-size:11px;color:var(--m);font-weight:300}
-.opt-ck{width:20px;height:20px;border:2px solid var(--border);border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;transition:all .18s;color:#fff}
+.opt-lbl{font-size:15px;font-weight:700;color:var(--t);display:block;margin-bottom:1px}
+.opt-dsc{font-size:13px;color:var(--m);font-weight:300}
+.opt-ck{width:22px;height:22px;border:2px solid var(--border);border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:12px;transition:all .18s;color:#fff}
 .opt.sel .opt-ck{background:var(--o);border-color:var(--o)}
-.btn-back{background:none;border:none;font-family:'Almarai',sans-serif;font-size:11px;color:var(--m);cursor:pointer;font-weight:300;margin-top:14px;display:block;width:100%;text-align:center;padding:6px}
-.btn-back:hover{color:var(--o)}
+.btn-back{background:none;border:none;font-family:"Almarai",sans-serif;font-size:13px;color:var(--m);cursor:pointer;font-weight:300;margin-top:14px;display:block;width:100%;text-align:center;padding:6px}
 
-/* ─── LOADING ─── */
+/* LOADING */
 .load-wrap{padding:80px 20px;text-align:center}
 .spinner{width:46px;height:46px;border:3px solid var(--border);border-top-color:var(--o);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 24px}
 @keyframes spin{to{transform:rotate(360deg)}}
 .load-h{font-size:18px;font-weight:800;color:var(--o);margin-bottom:6px}
-.load-s{font-size:12px;color:var(--m);font-weight:300;margin-bottom:28px}
+.load-s{font-size:14px;color:var(--m);font-weight:300;margin-bottom:28px}
 .load-steps{display:flex;flex-direction:column;gap:12px;text-align:right;max-width:280px;margin:0 auto}
-.lstep{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--s);font-weight:300;opacity:0;transform:translateX(10px);transition:all .5s ease}
+.lstep{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--s);font-weight:300;opacity:0;transform:translateX(10px);transition:all .5s ease}
 .lstep.show{opacity:1;transform:translateX(0)}
 .ldot{width:8px;height:8px;border-radius:50%;background:var(--op);flex-shrink:0}
 .lcheck{width:8px;height:8px;border-radius:50%;background:var(--o);flex-shrink:0}
 
-/* ─── RESULT ─── */
+/* ── RESULT PAGE ── */
 .rw{padding:20px 0}
 
-/* A — Identity */
-.id-block{background:var(--o);border-radius:20px;padding:24px 20px;margin-bottom:18px;text-align:center;position:relative;overflow:hidden}
-.id-block::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(200,184,154,.12) 0%,transparent 70%);pointer-events:none}
-.id-ey{font-size:14px;font-weight:600;color:var(--g);letter-spacing:3px;text-transform:uppercase;display:block;margin-bottom:12px}
-.id-type{font-size:clamp(20px,5.5vw,28px);font-weight:800;color:#fff;line-height:1.2;margin-bottom:10px}
-.id-explain{font-size:12px;color:rgba(210,196,172,.9);font-weight:300;line-height:1.85;max-width:380px;margin:0 auto}
+/* Identity */
+.id-block{background:var(--o);border-radius:20px;padding:26px 20px;margin-bottom:20px;text-align:center;position:relative;overflow:hidden}
+.id-block::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(200,184,154,.12) 0%,transparent 70%);pointer-events:none}
+.id-ey{font-size:11px;font-weight:700;color:var(--g);letter-spacing:3px;text-transform:uppercase;display:block;margin-bottom:10px}
+.id-type{font-size:clamp(20px,5.5vw,26px);font-weight:800;color:#fff;line-height:1.25;margin-bottom:10px}
+.id-explain{font-size:14px;color:rgba(210,196,172,.9);font-weight:300;line-height:1.85;max-width:380px;margin:0 auto}
 
-/* B — Science */
-.sci-block{background:var(--w);border:1px solid var(--border);border-right:4px solid var(--o);border-radius:0 14px 14px 0;padding:16px;margin-bottom:18px}
-.sci-label{font-size:14px;font-weight:600;color:var(--op);letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:8px}
-.sci-title{font-size:13px;font-weight:800;color:var(--o);margin-bottom:8px;line-height:1.4}
-.sci-text{font-size:12px;color:var(--s);font-weight:300;line-height:1.85}
+/* Pain — compact */
+.pain-block{background:var(--warn-bg);border:1px solid var(--warn-b);border-right:4px solid #d97706;border-radius:0 14px 14px 0;padding:18px;margin-bottom:20px}
+.pain-label{font-size:11px;font-weight:700;color:var(--warn-t);letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:8px}
+.pain-h{font-size:15px;font-weight:700;color:var(--warn-t);margin-bottom:8px;line-height:1.5}
+.pain-tip{font-size:14px;color:#78350f;font-weight:400;line-height:1.75;border-top:1px solid var(--warn-b);padding-top:8px;margin-top:4px}
 
-/* C — Pain */
-.pain-block{background:var(--warn-bg);border:1px solid var(--warn-b);border-right:4px solid #d97706;border-radius:0 14px 14px 0;padding:16px;margin-bottom:18px}
-.pain-ey{font-size:14px;font-weight:600;color:var(--warn-t);letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:8px}
-.pain-h{font-size:13px;font-weight:600;color:var(--warn-t);margin-bottom:10px;line-height:1.4}
-.pain-list{list-style:none;margin-bottom:10px}
-.pain-list li{font-size:12px;color:#78350f;font-weight:300;line-height:1.8;padding-right:16px;position:relative;margin-bottom:4px}
-.pain-list li::before{content:'→';position:absolute;right:0;font-weight:800;color:#d97706}
-.pain-conclusion{font-size:12px;color:var(--warn-t);font-weight:700;line-height:1.7;border-top:1px solid var(--warn-b);padding-top:10px;margin-top:6px}
+/* ── ROUTINE CARDS ── */
+.routine-section{margin-bottom:6px}
+.routine-label{font-size:15px;font-weight:800;color:var(--o);margin-bottom:14px;display:block}
+.routine-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.rc{border:2px solid var(--border);border-radius:16px;padding:16px 14px;cursor:pointer;transition:all .2s;background:var(--w);text-align:center;position:relative}
+.rc:hover{border-color:var(--op);transform:translateY(-2px);box-shadow:0 4px 14px rgba(61,74,48,.1)}
+.rc.active{border-color:var(--o);background:var(--soft-g);box-shadow:0 4px 14px rgba(61,74,48,.15)}
+.rc-check{position:absolute;top:-9px;left:50%;transform:translateX(-50%);background:var(--o);color:#fff;border-radius:20px;font-size:11px;font-weight:700;padding:2px 10px;display:none;white-space:nowrap}
+.rc.active .rc-check{display:block}
+.rc-badge{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:8px;letter-spacing:.5px}
+.rc-badge.ess{background:var(--soft-g);color:var(--o);border:1px solid rgba(61,74,48,.2)}
+.rc-badge.adv{background:var(--o);color:var(--g)}
+.rc-title{font-size:15px;font-weight:800;color:var(--o);display:block;margin-bottom:4px;line-height:1.3}
+.rc-count{font-size:13px;color:var(--m);font-weight:300;display:block;margin-bottom:8px}
+.rc-price{font-size:18px;font-weight:800;color:var(--o);display:block}
 
-/* D — Hero Product */
-.hp-wrap{background:var(--w);border:2px solid var(--o);border-radius:20px;padding:20px;margin-bottom:16px;position:relative}
-.hp-badge-pill{position:absolute;top:-11px;right:18px;background:var(--o);color:var(--g);font-size:14px;font-weight:600;padding:4px 14px;border-radius:20px;letter-spacing:.5px}
-.hp-justification{background:var(--soft-g);border-radius:10px;padding:12px 14px;font-size:12px;color:var(--o);font-weight:700;line-height:1.7;margin-bottom:16px;border-right:3px solid var(--o)}
-.hp-top{display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
-.hp-img{width:76px;height:76px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1px solid var(--border)}
-.hp-img img{width:100%;height:100%;object-fit:cover}
-.hp-label-sm{font-size:9px;font-weight:700;color:var(--op);letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:4px}
-.hp-name{font-size:14px;font-weight:800;color:var(--o);display:block;line-height:1.3;margin-bottom:5px}
-.hp-stars{color:#f5a623;font-size:12px;display:block;margin-bottom:2px}
-.hp-reviews{font-size:10px;color:var(--m)}
-.hp-badge-hot{display:inline-block;background:#fff0e8;color:#c05621;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;border:1px solid #f0c4a8;margin-top:4px}
-.btn-buy-main{display:block;width:100%;background:var(--o);color:#fff;font-family:'Almarai',sans-serif;font-size:15px;font-weight:800;padding:16px;border-radius:var(--rb);border:none;cursor:pointer;text-decoration:none;text-align:center;transition:all .22s;box-shadow:0 6px 20px rgba(61,74,48,.28);margin-bottom:8px}
-.btn-buy-main:hover{background:var(--ol);transform:translateY(-2px)}
-.hp-sub-info{font-size:10px;color:var(--m);text-align:center;font-weight:300}
+/* ── ROUTINE PANEL ── */
+.routine-panel{display:none;animation:fu .25s ease}
+.routine-panel.active{display:block}
 
-/* E — Future Results */
-.future-block{background:var(--w);border:1px solid var(--border);border-radius:16px;padding:18px;margin-bottom:18px}
-.future-title{font-size:13px;font-weight:800;color:var(--o);margin-bottom:14px;display:flex;align-items:center;gap:6px}
-.future-items{display:flex;flex-direction:column;gap:10px}
-.future-item{display:flex;gap:12px;align-items:flex-start}
-.future-badge{min-width:72px;background:var(--soft-g);color:var(--o);font-size:10px;font-weight:800;padding:4px 8px;border-radius:8px;text-align:center;flex-shrink:0;line-height:1.4}
-.future-text{font-size:12px;color:var(--s);font-weight:300;line-height:1.7;padding-top:2px}
+/* Product list */
+.prod-list{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
+.prod-row{display:flex;gap:14px;align-items:center;background:var(--w);border:1px solid var(--border);border-radius:14px;padding:14px}
+.prod-thumb{width:64px;height:64px;border-radius:10px;overflow:hidden;flex-shrink:0;border:1px solid var(--border)}
+.prod-thumb img{width:100%;height:100%;object-fit:cover}
+.prod-info{flex:1}
+.prod-name{font-size:14px;font-weight:700;color:var(--o);display:block;margin-bottom:4px;line-height:1.35}
+.prod-price-row{display:flex;align-items:center;gap:6px}
+.prod-price{font-size:15px;font-weight:800;color:var(--o)}
+.prod-old{font-size:13px;color:var(--m);text-decoration:line-through;font-weight:300}
 
-/* F — Proof */
-.proof-block{background:var(--w);border:1px solid var(--border);border-radius:16px;padding:18px;margin-bottom:18px}
-.proof-stat{text-align:center;margin-bottom:14px}
-.proof-num{font-size:28px;font-weight:800;color:var(--o);display:block;line-height:1}
-.proof-label{font-size:11px;color:var(--m);font-weight:300;display:block;margin-top:4px}
-.proof-reviews{display:flex;flex-direction:column;gap:10px}
-.rev-card{background:var(--bg);border-radius:12px;padding:12px}
-.rev-header{display:flex;align-items:center;gap:8px;margin-bottom:6px}
-.rev-av{width:30px;height:30px;border-radius:50%;background:var(--g);color:var(--o);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.rev-name{font-size:11px;font-weight:700;color:var(--o)}
-.rev-loc{font-size:10px;color:var(--m);font-weight:300}
-.rev-stars{color:#f5a623;font-size:11px;margin-right:auto}
-.rev-text{font-size:11px;color:var(--s);font-weight:300;line-height:1.75}
+/* Accordion */
+.acc{border:1px solid var(--border);border-radius:14px;margin-bottom:10px;overflow:hidden;background:var(--w)}
+.acc-head{padding:16px 18px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:700;color:var(--o);user-select:none}
+.acc-arr{font-size:18px;transition:transform .2s;color:var(--op);flex-shrink:0}
+.acc-body{display:none;padding:4px 18px 18px}
+.acc.open .acc-arr{transform:rotate(180deg)}
+.acc.open .acc-body{display:block}
 
-/* G — Objections */
-.obj-block{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:18px;margin-bottom:18px}
-.obj-title{font-size:17px;font-weight:800;color:var(--o);margin-bottom:14px}
-.obj-item{border-bottom:1px solid var(--border);padding:12px 0;cursor:pointer}
-.obj-item:last-child{border-bottom:none;padding-bottom:0}
-.obj-q{font-size:14px;font-weight:800;color:var(--o);display:flex;justify-content:space-between;align-items:center}
-.obj-arrow{font-size:14px;transition:transform .2s;display:inline-block}
-.obj-a{font-size:14px;color:var(--s);font-weight:500;line-height:1.75;margin-top:8px;display:none}
+/* FAQ sub-items */
+.faq-item{border-bottom:1px solid var(--border);padding:12px 0}
+.faq-item:last-child{border-bottom:none;padding-bottom:0}
+.faq-q{font-size:14px;font-weight:700;color:var(--o);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;user-select:none}
+.faq-arr{font-size:16px;color:var(--op);transition:transform .2s;flex-shrink:0}
+.faq-a{font-size:14px;color:var(--s);font-weight:300;line-height:1.8;margin-top:8px;display:none}
+.faq-item.open .faq-arr{transform:rotate(180deg)}
+.faq-item.open .faq-a{display:block}
 
-/* H — Bundle */
-.bundle-block{background:var(--w);border:1px solid var(--border);border-radius:16px;padding:18px;margin-bottom:18px}
-.bundle-ey{font-size:9px;font-weight:700;color:var(--m);letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:8px}
-.bundle-title{font-size:14px;font-weight:800;color:var(--o);margin-bottom:6px}
-.bundle-sub{font-size:12px;color:var(--s);font-weight:300;line-height:1.7;margin-bottom:14px}
-.bundle-items{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
-.bundle-row{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--t);font-weight:300}
-.bico{font-size:14px;width:22px;text-align:center;flex-shrink:0}
-.btn-bundle{display:block;width:100%;background:var(--g);color:var(--o);font-family:'Almarai',sans-serif;font-size:13px;font-weight:800;padding:13px;border-radius:var(--rb);border:none;cursor:pointer;text-decoration:none;text-align:center;transition:all .2s}
-.btn-bundle:hover{background:#d4c4a6;transform:translateY(-1px)}
+/* Price summary */
+.price-summary{background:var(--soft-g);border:1px solid rgba(61,74,48,.15);border-radius:12px;padding:16px;margin-bottom:14px;text-align:center}
+.ps-old{font-size:13px;color:var(--m);text-decoration:line-through;font-weight:300;display:block;margin-bottom:3px}
+.ps-new{font-size:22px;font-weight:800;color:var(--o);display:block;margin-bottom:6px}
+.ps-tag{display:inline-block;background:var(--o);color:var(--g);font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px}
 
-/* I — Routine */
-.routine-block{background:var(--soft-g);border:1px solid rgba(61,74,48,.12);border-radius:16px;padding:18px;margin-bottom:18px}
-.routine-h{font-size:13px;font-weight:800;color:var(--o);margin-bottom:14px}
-.routine-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.rcol-title{font-size:9px;font-weight:700;color:var(--op);letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:10px}
-.rcol-step{display:flex;gap:8px;align-items:flex-start;margin-bottom:8px}
-.rcol-step:last-child{margin-bottom:0}
-.rnum{width:20px;height:20px;border-radius:50%;background:var(--o);color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-.rtext{font-size:11px;color:var(--s);font-weight:300;line-height:1.6}
+/* CTA buttons */
+.btn-checkout{display:block;width:100%;background:var(--o);color:#fff;font-family:"Almarai",sans-serif;font-size:16px;font-weight:800;padding:17px;border-radius:var(--rb);border:none;cursor:pointer;text-decoration:none;text-align:center;transition:all .22s;box-shadow:0 6px 20px rgba(61,74,48,.28);margin-bottom:8px}
+.btn-checkout:hover{background:var(--ol);transform:translateY(-2px)}
+.checkout-meta{font-size:12px;color:var(--m);text-align:center;font-weight:300}
 
-/* J — Urgency */
-.urg-block{background:var(--o);border-radius:16px;padding:18px;margin-bottom:18px}
-.urg-h{font-size:13px;font-weight:800;color:var(--g);margin-bottom:12px}
-.urg-items{display:flex;flex-direction:column;gap:8px}
-.urg-item{display:flex;align-items:center;gap:10px;font-size:12px;color:rgba(232,220,198,.9);font-weight:300}
-.udot{width:5px;height:5px;border-radius:50%;background:var(--g);flex-shrink:0}
-
-/* K — Final CTA */
-.final-cta{background:var(--o);border-radius:20px;padding:26px 20px;text-align:center;margin-bottom:16px}
-.cta-ey{font-size:14px;font-weight:700;color:#D8AD25;letter-spacing:3px;text-transform:uppercase;display:block;margin-bottom:8px}
-.cta-h{font-size:19px;font-weight:800;color:#fff;line-height:1.3;margin-bottom:6px}
-.cta-s{font-size:14px;color:#FFFFFF;font-weight:500;margin-bottom:18px}
-.btn-final{display:block;background:#D8AD25;color:var(--o);font-family:'Almarai',sans-serif;font-size:15px;font-weight:800;padding:17px;border-radius:var(--rb);border:none;cursor:pointer;text-decoration:none;text-align:center;transition:all .22s;box-shadow:0 4px 16px rgba(0,0,0,.2)}
-.btn-final:hover{background:#FFFFFF;transform:translateY(-2px)}
-.cta-trust{font-size:10px;color:rgba(200,184,154,.6);font-weight:300;margin-top:10px;display:block}
-
-.retake{display:block;text-align:center;font-size:15px;color:var(--m);font-weight:300;margin-top:12px;cursor:pointer;text-decoration:underline;background:none;border:none;font-family:'Almarai',sans-serif;width:100%}
-
-/* ── SOCIAL PROOF POPUP ── */
-#sp-popup{position:fixed;bottom:24px;right:16px;left:16px;max-width:340px;margin:0 auto;background:var(--w);border:1px solid var(--border);border-right:3px solid var(--o);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:10px;box-shadow:0 8px 24px rgba(0,0,0,.12);z-index:999;transform:translateY(120px);opacity:0;transition:all .4s cubic-bezier(.4,0,.2,1);pointer-events:none}
-#sp-popup.show{transform:translateY(0);opacity:1}
-.sp-av{width:36px;height:36px;border-radius:50%;background:var(--g);color:var(--o);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.sp-body{flex:1}
-.sp-name{font-size:12px;font-weight:700;color:var(--o);display:block}
-.sp-action{font-size:11px;color:var(--s);font-weight:300}
-.sp-time{font-size:10px;color:var(--m);font-weight:300}
-
-/* ── PRICE ANCHOR ── */
-.price-anchor{background:var(--soft-g);border:1px solid rgba(61,74,48,.15);border-radius:12px;padding:14px 16px;margin-bottom:14px;text-align:center}
-.pa-old{font-size:12px;color:var(--m);font-weight:300;text-decoration:line-through;display:block;margin-bottom:2px}
-.pa-new{font-size:18px;font-weight:800;color:var(--o);display:block;margin-bottom:4px}
-.pa-save{display:inline-block;background:var(--o);color:var(--g);font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px}
-
-/* ── VISUAL PROGRESS ILLUSTRATION ── */
-.visual-progress{background:var(--w);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:18px}
-.vp-title{font-size:13px;font-weight:800;color:var(--o);margin-bottom:14px;text-align:center}
-.vp-track{display:flex;align-items:flex-start;gap:0;position:relative;padding-bottom:4px}
-.vp-track::before{content:'';position:absolute;top:18px;right:18px;left:18px;height:2px;background:var(--border);z-index:0}
-.vp-fill{position:absolute;top:18px;right:18px;height:2px;background:var(--o);z-index:1;transition:width 1.2s ease;width:0}
-.vp-step{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;position:relative;z-index:2}
-.vp-dot{width:36px;height:36px;border-radius:50%;border:2px solid var(--border);background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:14px;transition:all .4s;flex-shrink:0}
-.vp-dot.active{background:var(--o);border-color:var(--o)}
-.vp-label{font-size:12px;color:var(--m);font-weight:700;text-align:center;line-height:1.4}
-.vp-label.active{color:var(--o)}
-
-/* ── TRANSFORMATION TIMELINE ── */
-.tl-block{background:var(--w);border:1px solid var(--border);border-radius:16px;padding:18px;margin-bottom:18px}
-.tl-title{font-size:16px;font-weight:800;color:var(--o);margin-bottom:16px;display:flex;align-items:center;gap:6px}
-.tl-week{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;position:relative}
-.tl-week:last-child{margin-bottom:0}
-.tl-week::after{content:'';position:absolute;right:16px;top:36px;bottom:-14px;width:2px;background:var(--border)}
-.tl-week:last-child::after{display:none}
-.tl-circle{width:34px;height:34px;border-radius:50%;background:var(--o);color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1}
+/* Timeline */
+.tl-block{background:var(--w);border:1px solid var(--border);border-radius:16px;padding:20px;margin-bottom:14px}
+.tl-title{font-size:15px;font-weight:800;color:var(--o);margin-bottom:16px}
+.tl-row{display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;position:relative}
+.tl-row:last-child{margin-bottom:0}
+.tl-row::after{content:"";position:absolute;right:17px;top:36px;bottom:-14px;width:2px;background:var(--border)}
+.tl-row:last-child::after{display:none}
+.tl-dot{width:36px;height:36px;border-radius:50%;background:var(--o);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1}
 .tl-content{}
-.tl-week-label{font-size:15px;font-weight:800;color:var(--op);letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:3px}
-.tl-week-result{font-size:14px;font-weight:700;color:var(--o);display:block;margin-bottom:2px}
-.tl-week-detail{font-size:12;color:var(--s);font-weight:300;line-height:1.6}
+.tl-week{font-size:11px;font-weight:700;color:var(--op);letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:2px}
+.tl-result{font-size:15px;font-weight:700;color:var(--o);display:block;margin-bottom:2px}
+.tl-detail{font-size:13px;color:var(--s);font-weight:300;line-height:1.6}
 
-/* ── TRUST VELLMOR ── */
-.trust-vellmor{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:18px;margin-bottom:18px}
-.tv-title{font-size:13px;font-weight:800;color:var(--o);margin-bottom:14px;text-align:center}
-.tv-items{display:flex;flex-direction:column;gap:10px}
-.tv-item{display:flex;align-items:flex-start;gap:10px}
-.tv-icon{width:32px;height:32px;border-radius:8px;background:var(--soft-g);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
-.tv-text{}
-.tv-h{font-size:12px;font-weight:700;color:var(--o);display:block;margin-bottom:1px}
-.tv-s{font-size:11px;color:var(--s);font-weight:300}
+/* Reviews inside accordion */
+.rev-card{background:var(--bg);border-radius:12px;padding:14px;margin-bottom:10px}
+.rev-card:last-child{margin-bottom:0}
+.rev-header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.rev-av{width:34px;height:34px;border-radius:50%;background:var(--g);color:var(--o);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.rev-name{font-size:14px;font-weight:700;color:var(--o)}
+.rev-loc{font-size:12px;color:var(--m);font-weight:300}
+.rev-stars{color:#f5a623;font-size:13px;margin-right:auto}
+.rev-text{font-size:14px;color:var(--s);font-weight:300;line-height:1.75}
 
-/* ── LOSS AVERSION ── */
-.loss-block{background:var(--warn-bg);border:1px solid var(--warn-b);border-radius:12px;padding:14px 16px;margin-bottom:16px;display:flex;gap:10px;align-items:flex-start}
-.loss-icon{font-size:20px;flex-shrink:0}
-.loss-text{font-size:12px;color:#78350f;font-weight:300;line-height:1.75}
-.loss-text strong{color:var(--warn-t);font-weight:700}
+/* Trust section inside accordion */
+.trust-row{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--border)}
+.trust-row:last-child{border-bottom:none;padding-bottom:0}
+.trust-ic{font-size:18px;flex-shrink:0;margin-top:2px}
+.trust-h{font-size:14px;font-weight:700;color:var(--o);display:block;margin-bottom:2px}
+.trust-s{font-size:13px;color:var(--s);font-weight:300}
+
+/* Final CTA */
+.final-cta{background:var(--o);border-radius:20px;padding:28px 20px;text-align:center;margin-bottom:16px}
+.cta-ey{font-size:11px;font-weight:700;color:var(--g);letter-spacing:3px;text-transform:uppercase;display:block;margin-bottom:8px}
+.cta-h{font-size:20px;font-weight:800;color:#fff;line-height:1.3;margin-bottom:6px}
+.cta-s{font-size:14px;color:rgba(200,184,154,.85);font-weight:300;margin-bottom:18px}
+.btn-final{display:block;background:#D8AD25;color:var(--o);font-family:"Almarai",sans-serif;font-size:16px;font-weight:800;padding:17px;border-radius:var(--rb);border:none;cursor:pointer;text-decoration:none;text-align:center;transition:all .22s;box-shadow:0 4px 16px rgba(0,0,0,.2)}
+.btn-final:hover{background:#fff;transform:translateY(-2px)}
+.cta-trust{font-size:12px;color:rgba(200,184,154,.6);font-weight:300;margin-top:10px;display:block}
+
+.retake{display:block;text-align:center;font-size:14px;color:var(--m);font-weight:300;margin-top:14px;cursor:pointer;text-decoration:underline;background:none;border:none;font-family:"Almarai",sans-serif;width:100%}
+
+/* Social Proof Popup — TOP */
+#sp-popup{position:fixed;top:70px;right:16px;left:16px;max-width:360px;margin:0 auto;background:var(--w);border:1px solid var(--border);border-right:3px solid var(--o);border-radius:12px;padding:12px 16px;display:flex;align-items:center;gap:12px;box-shadow:0 8px 28px rgba(0,0,0,.12);z-index:999;transform:translateY(-130px);opacity:0;transition:all .4s cubic-bezier(.4,0,.2,1);pointer-events:none}
+#sp-popup.show{transform:translateY(0);opacity:1}
+.sp-av{width:38px;height:38px;border-radius:50%;background:var(--g);color:var(--o);font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sp-body{flex:1}
+.sp-name{font-size:13px;font-weight:700;color:var(--o);display:block}
+.sp-action{font-size:12px;color:var(--s);font-weight:300}
+.sp-time{font-size:11px;color:var(--m);font-weight:300}
 
 @media(max-width:400px){
-  .routine-cols{grid-template-columns:1fr}
-  .hero h1{font-size:21px}
-  .mc-h{font-size:20px}
-  #sp-popup{left:12px;right:12px}
+  .routine-cards{grid-template-columns:1fr}
+  .hero h1{font-size:20px}
+  .mc-h{font-size:19px}
 }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="hdr">
   <a href="https://ar.vellmor.store/">
     <img src="https://assets.youcan.shop/stores/e355641c50b802d7cd2b1d0db0bb4df05e8f9d4d/untitled-design-F6H82Oj6B72RQNP0rb39ScU6SFS.png" alt="Vellmor">
   </a>
 </header>
 
-<!-- PROGRESS -->
 <div id="pb">
   <div class="plabel">
     <span id="pt">السؤال 1 من 7</span>
@@ -552,499 +504,294 @@ body{font-family:'Almarai',sans-serif;direction:rtl;background:var(--bg);color:v
   </div>
 </div>
 
+
 <!-- ══════ RESULT ══════ -->
 <div class="screen" id="s-result">
   <div class="rw">
-    <!-- [A] Identity -->
+
+    <!-- Identity -->
     <div class="id-block">
       <span class="id-ey">✦ تشخيص بشرتكِ</span>
       <div class="id-type" id="r-type">—</div>
       <p class="id-explain" id="r-explain">—</p>
     </div>
-    <!-- [B] Science -->
-    <div class="sci-block">
-      <span class="sci-label">🔬 لماذا يحدث هذا؟</span>
-      <div class="sci-title" id="r-sci-title">—</div>
-      <p class="sci-text" id="r-sci-text">—</p>
-    </div>
-    <!-- [C] Pain -->
+
+    <!-- Pain — سطران + نصيحة -->
     <div class="pain-block">
-      <span class="pain-ey">⚠️ هذا هو السبب المباشر لمشكلتك</span>
-      <div class="pain-h" id="r-pain-h">—</div>
-      <ul class="pain-list" id="r-pain-list"></ul>
-      <p class="pain-conclusion" id="r-pain-conc">—</p>
+      <span class="pain-label">⚠️ هذا هو السبب المباشر لمشكلتك</span>
+      <p class="pain-h" id="r-pain-h">—</p>
+      <p class="pain-tip" id="r-pain-tip">—</p>
     </div>
-    <!-- [D] Hero Product -->
-    <div id="r-hero"></div>
-    <!-- VISUAL PROGRESS -->
-    <div class="visual-progress">
-      <div class="vp-title">🌿 رحلة بشرتكِ مع الروتين الصحيح</div>
-      <div class="vp-track">
-        <div class="vp-fill" id="vp-fill"></div>
-        <div class="vp-step">
-          <div class="vp-dot active">🌱</div>
-          <div class="vp-label active">اليوم<br>البداية</div>
-        </div>
-        <div class="vp-step">
-          <div class="vp-dot" id="vp2">✨</div>
-          <div class="vp-label" id="vp2l">أسبوع<br>تحسن</div>
-        </div>
-        <div class="vp-step">
-          <div class="vp-dot" id="vp3">💎</div>
-          <div class="vp-label" id="vp3l">شهر<br>نتائج</div>
-        </div>
-        <div class="vp-step">
-          <div class="vp-dot" id="vp4">🌟</div>
-          <div class="vp-label" id="vp4l">شهرين<br>تحول</div>
-        </div>
-      </div>
+
+    <!-- Routine Selection -->
+    <div class="routine-section">
+      <span class="routine-label">اختاري روتينك:</span>
+      <div class="routine-cards" id="r-cards"></div>
+      <div id="r-panel-essential" class="routine-panel"></div>
+      <div id="r-panel-advanced" class="routine-panel"></div>
     </div>
-    <!-- [E] Future Results / Timeline -->
+
+    <!-- Timeline -->
     <div class="tl-block">
-      <div class="tl-title">📅 ما ستلاحظينه فعلياً — أسبوعاً بأسبوع</div>
+      <div class="tl-title">📅 ما ستلاحظينه أسبوعاً بأسبوع</div>
       <div id="r-timeline"></div>
     </div>
-    <!-- [E-old] Future -->
-    <div class="future-block" style="display:none">
-      <div class="future-title">📅 ماذا ستلاحظين؟</div>
-      <div class="future-items" id="r-future"></div>
-    </div>
-    <!-- [F] Proof -->
-    <div class="proof-block">
-      <div class="proof-stat">
-        <span class="proof-num">4,000+</span>
-        <span class="proof-label">عميلة استخدمن هذا الروتين بنتائج واضحة</span>
+
+    <!-- Reviews Accordion -->
+    <div class="acc" id="acc-reviews">
+      <div class="acc-head" onclick="toggleAcc('acc-reviews')">
+        ⭐ ماذا قالت العميلات
+        <span class="acc-arr">↓</span>
       </div>
-      <div class="proof-reviews" id="r-reviews"></div>
-    </div>
-    <!-- [G] Objections -->
-    <div class="obj-block">
-      <div class="obj-title">🤔 أسئلة شائعة</div>
-      <div id="r-objections"></div>
-    </div>
-    <!-- [H] Bundle -->
-    <div class="bundle-block" id="r-bundle"></div>
-    <!-- [I] Routine -->
-    <div class="routine-block" id="r-routine"></div>
-    <!-- [J] Urgency -->
-    <div class="urg-block">
-      <div class="urg-h">⚡ لماذا الآن؟</div>
-      <div class="urg-items">
-        <div class="urg-item"><div class="udot"></div><span id="r-urg">بسبب الإقبال العالي، يتم تحديث توفر المنتج باستمرار</span></div>
-        <div class="urg-item"><div class="udot"></div><span>🎁 طلبك اليوم يشمل:</span></div>
-        <div class="urg-item"><div class="udot"></div><span>✔ شحن مجاني داخل الإمارات</span></div>
-        <div class="urg-item"><div class="udot"></div><span>✔ دفع عند الاستلام — بدون أي مخاطرة</span></div>
-        <div class="urg-item"><div class="udot"></div><span>✔ ضمان استرداد كامل خلال 7 أيام</span></div>
+      <div class="acc-body">
+        <div style="text-align:center;padding:8px 0 14px">
+          <span style="font-size:28px;font-weight:800;color:var(--o);display:block;line-height:1">4,000+</span>
+          <span style="font-size:13px;color:var(--m);font-weight:300">عميلة بنتائج واضحة · تقييم 4.9 / 5</span>
+        </div>
+        <div id="r-reviews"></div>
       </div>
     </div>
-    <!-- LOSS AVERSION -->
-    <div class="loss-block" id="r-loss">
-      <span class="loss-icon">⏳</span>
-      <div class="loss-text" id="r-loss-text">
-        <strong>ماذا يحدث إذا أجّلتِ القرار؟</strong><br>
-        كل يوم بدون الروتين الصحيح يُعمّق المشكلة أكثر — والعلاج لاحقاً يستغرق وقتاً أطول وجهداً أكبر.
+
+    <!-- FAQ Accordion -->
+    <div class="acc" id="acc-faq">
+      <div class="acc-head" onclick="toggleAcc('acc-faq')">
+        🤔 أسئلة شائعة
+        <span class="acc-arr">↓</span>
+      </div>
+      <div class="acc-body" id="r-faq"></div>
+    </div>
+
+    <!-- Loss Aversion Accordion -->
+    <div class="acc" id="acc-loss">
+      <div class="acc-head" onclick="toggleAcc('acc-loss')">
+        ⏳ ماذا يحدث إذا أجّلتِ القرار؟
+        <span class="acc-arr">↓</span>
+      </div>
+      <div class="acc-body">
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;padding-top:4px" id="r-loss"></ul>
       </div>
     </div>
-    <!-- TRUST VELLMOR -->
-    <div class="trust-vellmor">
-      <div class="tv-title">🛡️ لماذا نثق بـ Vellmor؟</div>
-      <div class="tv-items">
-        <div class="tv-item">
-          <div class="tv-icon">⭐</div>
-          <div class="tv-text"><span class="tv-h">نتائج مثبتة على 4,000+ عميلة</span><span class="tv-s">تقييم 4.9 من 5 — أكثر من 98% من العميلات راضيات عن النتائج</span></div>
-        </div>
-        <div class="tv-item">
-          <div class="tv-icon">🔬</div>
-          <div class="tv-text"><span class="tv-h">منتجات مختبرة ومعتمدة</span><span class="tv-s">كل منتج مُختبر ومعتمد بمعايير دولية قبل طرحه للبيع</span></div>
-        </div>
-        <div class="tv-item">
-          <div class="tv-icon">↩️</div>
-          <div class="tv-text"><span class="tv-h">ضمان استرداد 7 أيام — بدون أسئلة</span><span class="tv-s">إذا لم تُلاحظي فرقاً خلال 7 أيام، نُعيد لكِ المبلغ كاملاً</span></div>
-        </div>
-        <div class="tv-item">
-          <div class="tv-icon">💵</div>
-          <div class="tv-text"><span class="tv-h">دفع عند الاستلام — بدون مخاطرة</span><span class="tv-s">لا تدفعي شيئاً إلا بعد استلام المنتج بيدكِ</span></div>
-        </div>
-        <div class="tv-item">
-          <div class="tv-icon">🚚</div>
-          <div class="tv-text"><span class="tv-h">توصيل مجاني خلال 24-48 ساعة</span><span class="tv-s">لجميع مناطق الإمارات — سريع وموثوق</span></div>
+
+    <!-- Vellmor Trust Accordion -->
+    <div class="acc" id="acc-trust">
+      <div class="acc-head" onclick="toggleAcc('acc-trust')">
+        🛡️ ماذا نقدم لكِ في Vellmor
+        <span class="acc-arr">↓</span>
+      </div>
+      <div class="acc-body">
+        <div style="display:flex;flex-direction:column;padding-top:4px">
+          <div class="trust-row"><span class="trust-ic">⭐</span><div><span class="trust-h">4,000+ عميلة بنتائج مثبتة</span><span class="trust-s">تقييم 4.9 — أكثر من 98% راضيات عن النتائج</span></div></div>
+          <div class="trust-row"><span class="trust-ic">🔬</span><div><span class="trust-h">منتجات مختبرة ومعتمدة</span><span class="trust-s">كل منتج مُختبر بمعايير دولية قبل طرحه</span></div></div>
+          <div class="trust-row"><span class="trust-ic">↩️</span><div><span class="trust-h">ضمان استرداد 7 أيام — بدون أسئلة</span><span class="trust-s">إذا لم تُلاحظي فرقاً نُعيد لكِ المبلغ كاملاً</span></div></div>
+          <div class="trust-row"><span class="trust-ic">💵</span><div><span class="trust-h">دفع عند الاستلام</span><span class="trust-s">لا تدفعي شيئاً قبل استلام المنتج بيدكِ</span></div></div>
+          <div class="trust-row"><span class="trust-ic">🚚</span><div><span class="trust-h">توصيل مجاني 24-48 ساعة</span><span class="trust-s">لجميع مناطق الإمارات</span></div></div>
         </div>
       </div>
     </div>
-    <!-- [K] Final CTA -->
+
+    <!-- Final CTA -->
     <div class="final-cta">
       <span class="cta-ey">التشخيص اكتمل</span>
       <div class="cta-h">ابدئي علاج بشرتكِ الآن</div>
-      <p class="cta-s">تم تخصيص هذا المنتج لكِ بناءً على تحليل دقيق - النتائج تبدأ من أول استخدام</p>
-      <a href="#" class="btn-final" id="r-final-btn" target="_blank">
-         ابدئي علاج بشرتكِ — اطلبي الآن 🛒
+      <p class="cta-s">نتائج تبدأ من أول استخدام · شحن مجاني · دفع عند الاستلام</p>
+      <a href="#" class="btn-final" id="r-final-btn" target="_blank">ابدئي علاج بشرتكِ — اطلبي الآن</a>
+      <span class="cta-trust">🔒 آمن 100% &nbsp;|&nbsp; ↩️ ضمان 7 أيام &nbsp;|&nbsp; 💵 دفع عند الاستلام</span>
+    </div>
+
+    <!-- WhatsApp -->
+    <div style="margin-top:12px">
+      <a id="wa-result-btn" href="https://wa.me/971547726911" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:#fff;font-family:'Almarai',sans-serif;font-size:15px;font-weight:800;padding:15px;border-radius:50px;text-decoration:none">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.512-2.96-2.626-.087-.114-.694-.924-.694-1.762 0-.837.44-1.246.596-1.412.155-.166.34-.209.453-.209s.226.002.325.006c.105.004.246-.04.385.293.144.346.491 1.2.533 1.285.043.085.071.184.014.298-.057.114-.085.184-.17.284-.085.1-.178.223-.254.3-.086.087-.175.182-.075.353.1.171.444.733.953 1.187.657.585 1.21.767 1.381.853.171.086.271.071.37-.043.1-.114.426-.498.539-.669.114-.171.227-.142.384-.085.156.057 1.008.476 1.181.562.17.085.284.128.326.199.043.071.043.413-.101.818z"/></svg>
+        ابدأي استشارتك الآن
       </a>
     </div>
 
-   <div style="background: #ffffff; border: 1px solid #e0ddd6; border-radius: 20px; padding: 25px; margin-bottom: 20px; text-align: center; box-shadow: 0 10px 30px rgba(61, 74, 48, 0.03);">
-    
-    <h3 style="font-size: 18px; color: #3D4A30; font-weight: 700; margin-bottom: 8px; font-family: 'Almarai', sans-serif;">
-        استشارة خاصة عبر واتساب
-    </h3>
-    
-    <p style="font-size: 13px; color: #3D4A30; font-weight: 500; margin-bottom: 20px; line-height: 1.6;">
-        خبرائنا جاهزون لمساعدتك، في اختيار الروتين الأمثل لبشرتك
-    </p>
-    
-    <a id="wa-result-btn" 
-       href="https://wa.me/971547726911?text=مرحباً%20Vellmor،%20أريد%20الحصول%20على%20استشارة%20بخصوص%20روتين%20بشرتي" 
-       target="_blank" 
-       style="display: flex; align-items: center; justify-content: flex-start; background: #25D366; color: #ffffff; font-family: 'Almarai', sans-serif; font-size: 16px; font-weight: 700; text-decoration: none; border-radius: 60px; overflow: hidden; max-width: 320px; margin: 0 auto; box-shadow: 0 4px 15px rgba(61, 74, 48, 0.2);">
-        
-        <div style="background: #25D366; display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; flex-shrink: 0;">
-            <svg width="45" height="45" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.512-2.96-2.626-.087-.114-.694-.924-.694-1.762 0-.837.44-1.246.596-1.412.155-.166.34-.209.453-.209s.226.002.325.006c.105.004.246-.04.385.293.144.346.491 1.2.533 1.285.043.085.071.184.014.298-.057.114-.085.184-.17.284-.085.1-.178.223-.254.3-.086.087-.175.182-.075.353.1.171.444.733.953 1.187.657.585 1.21.767 1.381.853.171.086.271.071.37-.043.1-.114.426-.498.539-.669.114-.171.227-.142.384-.085.156.057 1.008.476 1.181.562.17.085.284.128.326.199.043.071.043.413-.101.818z"/>
-            </svg>
-        </div>
-        
-        <span style="padding: 0 15px; flex-grow: 1; text-align: center;">
-            ابدأي استشارتك الآن
-        </span>
-    </a>
-</div>
-
-    
     <button class="retake" onclick="restart()">إعادة التحليل من البداية</button>
   </div>
 </div>
 
 </div><!-- /wrap -->
 
-<!-- SOCIAL PROOF POPUP -->
+<!-- Social Proof Popup -->
 <div id="sp-popup">
   <div class="sp-av" id="sp-av">س</div>
   <div class="sp-body">
     <span class="sp-name" id="sp-name">سارة من دبي</span>
-    <span class="sp-action" id="sp-action">اشترت هذا المنتج للتو</span>
+    <span class="sp-action" id="sp-action">أضافت هذا الروتين للسلة</span>
     <span class="sp-time" id="sp-time">قبل 3 دقائق</span>
   </div>
-  <span style="font-size:16px;">✅</span>
+  <span style="font-size:18px">✅</span>
 </div>
 
 <script>
-/* ══════════════════════════════════════
-   PRODUCTS DATABASE
-══════════════════════════════════════ */
+/* ══ PRODUCTS ══ */
 const P = {
-  cosrx_snail:{img:'https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/WhLL0I5yPdo6ODyX0m3w5ib1AB275JfbKPyqbAOg.webp',name:'كريم COSRX خلاصة الحلزون 92%',stars:'⭐⭐⭐⭐⭐',reviews:'2,800+ تقييم',link:'https://ar.vellmor.store/products/cosrx-advanced-snail-92-all-in-one-cream-100g',checkoutLink:'https://ar.vellmor.store/products/cosrx-advanced-snail-92-all-in-one-cream-100g',badge:'الأكثر مبيعاً',price:'139',oldPrice:'172'},
-  green_tea_mask:{img:'https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/HaAUDf7cHFQzcklRQ7ejeV32OV22QdDlevqz0ard.webp',name:'ماسك الوجه بالشاي الأخضر لتنظيف المسامات',stars:'⭐⭐⭐⭐',reviews:'900+ تقييم',link:'https://ar.vellmor.store/products/mask-alogh-balshay-alakhdr',checkoutLink:'https://ar.vellmor.store/products/cosrx-advanced-snail-92-all-in-one-cream-100g',badge:'الأكثر مبيعاً',price:'117',oldPrice:'142'},
-  eye_cream:{img:'https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/6URGlkSFK6lY6sBRV0QqGLp70J12M03UguZPhfVw.webp',name:'كريم العين لتقليل التجاعيد والهالات الداكنة',stars:'⭐⭐⭐⭐',reviews:'740+ تقييم',link:'https://ar.vellmor.store/products/krym-altkhls-mn-tgaaayd-mntk-alaayn',checkoutLink:'https://ar.vellmor.store/products/krym-altkhls-mn-tgaaayd-mntk-alaayn',badge:'كمية محدودة',price:'112',oldPrice:'143'},
-  collagen_serum:{img:'https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/9ujhM0nxGQEZMqhjByQbtu9neh39GCaTUkpk6ya9.webp',name:'سيروم الكولاجين المضاد للتجاعيد',stars:'⭐⭐⭐⭐',reviews:'200+ تقييم',link:'https://ar.vellmor.store/products/syrm-alkolagyn-mdad-alshykhokh-algdyd',checkoutLink:'https://ar.vellmor.store/products/syrm-alkolagyn-mdad-alshykhokh-algdyd',badge:'مفضل العملاء',price:'118',oldPrice:'139'},
-  Golden_face_cream:{img:'https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/ql2t8etDzaXZYVmwZwn56IDLvZw6Fl01E4fOqdbm.webp',name:'كريم الوجه الذهبي لعلاج البشرة الجافة والخشنة',stars:'⭐⭐⭐⭐',reviews:'700+ تقييم',link:'https://ar.vellmor.store/products/krym-alogh-almghthy-oalmgdd-mn-goldn-frost',checkoutLink:'https://ar.vellmor.store/products/krym-alogh-almghthy-oalmgdd-mn-goldn-frost',badge:'مفضل للعملاء',price:'129',oldPrice:'158'},
-  sadoer_mask:{img:'https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/bsFw2FRZ4j5REDpMFbugI14LXi1zINcKUmTveZQh.webp',name:'ماسك SADOER بالفحم',stars:'⭐⭐⭐⭐',reviews:'2,300+ تقييم',link:'https://ar.vellmor.store/products/knaaa-sadoer-alasod-balfhm-oalbambo',checkoutLink:'https://ar.vellmor.store/products/knaaa-sadoer-alasod-balfhm-oalbambo',badge:'مفضل للعملاء',price:'98',oldPrice:'120'},
-  copper_serum:{img:'https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/eGCqfbROWGjrGbFXreKikZrpDY9ibRdG16ggq3y1.webp',name:'سيروم ببتيد النحاس لشد البشرة',stars:'⭐⭐⭐⭐',reviews:'860+ تقييم',link:'https://ar.vellmor.store/products/syrom-hoygi-ltgdyd-oshd-albshr-bbbtyd-alnhas-alazrk',checkoutLink:'https://ar.vellmor.store/products/syrom-hoygi-ltgdyd-oshd-albshr-bbbtyd-alnhas-alazrk',badge:' ًالأكثر طلبا',price:'139',oldPrice:'160'},
-  Celimax_Retinal:{img:'https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/dUq7cwU8yGulwlMCpQ8Dk9W6jtJahbFC47WwHMUc.webp',name:'سيروم Celimax لشد البشرة ومكافحة التجاعيد',stars:'⭐⭐⭐⭐',reviews:'200+ تقييم',link:'https://ar.vellmor.store/products/retinal-shot',checkoutLink:'https://ar.vellmor.store/products/retinal-shot',badge:'مفضل للعملاء',price:'116',oldPrice:'146'},
-  Urea_Cream:{img:'https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/J2MpCtBSU1vFB7x37NVsIwHZ5uC11c4ca7MHujZH.webp',name:'كريم ال Urea لمعالجة البشرة الجافة',stars:'⭐⭐⭐⭐',reviews:'100+ تقييم',link:'https://ar.vellmor.store/products/krym-mrtb-omghthy-llaanay-balydyn-oalkdmyn-bhmd-alsalysylyk-oalyorya',checkoutLink:'https://ar.vellmor.store/products/krym-mrtb-omghthy-llaanay-balydyn-oalkdmyn-bhmd-alsalysylyk-oalyorya',badge:'مفضل للعملاء',price:'114',oldPrice:'129'},
-  sakura_set:{img:'https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/pgQbYRk1k839ovNKQtPmJaysYlJcBp44XPmLaT9K.webp',name:' مجموعة الساكورا اليابانية للعناية بالبشرة',stars:'⭐⭐⭐⭐',reviews:'1,500+ تقييم',link:'https://ar.vellmor.store/products/mgmoaa-alsakora-alyabany-llaanay-balbshr',checkoutLink:'https://ar.vellmor.store/products/mgmoaa-alsakora-alyabany-llaanay-balbshr',badge:'مفضل للعملاء',price:'129',oldPrice:'175'},
-  retinol_kit:{img:'https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/cFSNPxVJwhhHoebckBlR48fvGfIixmz8c2xWUt4Q.webp',name:'طقم الريتينول الكامل',stars:'⭐⭐⭐⭐⭐',reviews:'500+ تقييم',link:'https://ar.vellmor.store/products/tkm-alrytynol-rotynk-algdyd-laalag-mshakl-albshr',checkoutLink:'https://ar.vellmor.store/products/tkm-alrytynol-rotynk-algdyd-laalag-mshakl-albshr',badge:'مفضل للعملاء',price:'169',oldPrice:'190'},
-  retinol_dark:{img:'https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/QnwxbrruB0fTLMmpTr5wXH9era8Ye17vRGWthn6f.webp',name:'كريم الريتينول لتفتيح الهالات والبقع الداكنة',stars:'⭐⭐⭐⭐⭐',reviews:'1,000+ تقييم',link:'https://ar.vellmor.store/products/rytnonol-krym-alhlat-dark-c',checkoutLink:'https://ar.vellmor.store/products/rytnonol-krym-alhlat-dark-c',badge:'الأكثر مبيعاً',price:'109',oldPrice:'128'},
-  retinol_anti_aging:{img:'https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/HGgBRlK5mAG20aU32cUM0YBOuxNyuEgza36EIN3U.webp',name:'كريم الريتينول المضاد للشيخوخة',stars:'⭐⭐⭐⭐⭐',reviews:'1,300+ تقييم',link:'https://ar.vellmor.store/products/rytonol-krym-anti-aging',checkoutLink:'https://ar.vellmor.store/products/rytonol-krym-anti-aging',badge:'مفضل للعملاء',price:'112',oldPrice:'130'},
-   
+  cosrx_snail:{img:"https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/WhLL0I5yPdo6ODyX0m3w5ib1AB275JfbKPyqbAOg.webp",name:"كريم COSRX خلاصة الحلزون 92%",link:"https://ar.vellmor.store/products/cosrx-advanced-snail-92-all-in-one-cream-100g",price:139,oldPrice:172},
+  green_tea_mask:{img:"https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/HaAUDf7cHFQzcklRQ7ejeV32OV22QdDlevqz0ard.webp",name:"ماسك الشاي الأخضر لتنظيف المسامات",link:"https://ar.vellmor.store/products/mask-alogh-balshay-alakhdr",price:117,oldPrice:142},
+  eye_cream:{img:"https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/6URGlkSFK6lY6sBRV0QqGLp70J12M03UguZPhfVw.webp",name:"كريم العين لتقليل التجاعيد والهالات",link:"https://ar.vellmor.store/products/krym-altkhls-mn-tgaaayd-mntk-alaayn",price:112,oldPrice:143},
+  collagen_serum:{img:"https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/9ujhM0nxGQEZMqhjByQbtu9neh39GCaTUkpk6ya9.webp",name:"سيروم الكولاجين المضاد للتجاعيد",link:"https://ar.vellmor.store/products/syrm-alkolagyn-mdad-alshykhokh-algdyd",price:118,oldPrice:139},
+  Golden_face_cream:{img:"https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/ql2t8etDzaXZYVmwZwn56IDLvZw6Fl01E4fOqdbm.webp",name:"كريم الوجه الذهبي للبشرة الجافة والخشنة",link:"https://ar.vellmor.store/products/krym-alogh-almghthy-oalmgdd-mn-goldn-frost",price:129,oldPrice:158},
+  sadoer_mask:{img:"https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/bsFw2FRZ4j5REDpMFbugI14LXi1zINcKUmTveZQh.webp",name:"ماسك SADOER بالفحم",link:"https://ar.vellmor.store/products/knaaa-sadoer-alasod-balfhm-oalbambo",price:98,oldPrice:120},
+  copper_serum:{img:"https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/eGCqfbROWGjrGbFXreKikZrpDY9ibRdG16ggq3y1.webp",name:"سيروم ببتيد النحاس لشد البشرة",link:"https://ar.vellmor.store/products/syrom-hoygi-ltgdyd-oshd-albshr-bbbtyd-alnhas-alazrk",price:139,oldPrice:160},
+  Celimax_Retinal:{img:"https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/dUq7cwU8yGulwlMCpQ8Dk9W6jtJahbFC47WwHMUc.webp",name:"سيروم Celimax لشد البشرة ومكافحة التجاعيد",link:"https://ar.vellmor.store/products/retinal-shot",price:116,oldPrice:146},
+  Urea_Cream:{img:"https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/J2MpCtBSU1vFB7x37NVsIwHZ5uC11c4ca7MHujZH.webp",name:"كريم Urea لمعالجة البشرة الجافة",link:"https://ar.vellmor.store/products/krym-mrtb-omghthy-llaanay-balydyn-oalkdmyn-bhmd-alsalysylyk-oalyorya",price:114,oldPrice:129},
+  sakura_set:{img:"https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/pgQbYRk1k839ovNKQtPmJaysYlJcBp44XPmLaT9K.webp",name:"مجموعة الساكورا اليابانية",link:"https://ar.vellmor.store/products/mgmoaa-alsakora-alyabany-llaanay-balbshr",price:129,oldPrice:175},
+  retinol_kit:{img:"https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/cFSNPxVJwhhHoebckBlR48fvGfIixmz8c2xWUt4Q.webp",name:"طقم الريتينول الكامل",link:"https://ar.vellmor.store/products/tkm-alrytynol-rotynk-algdyd-laalag-mshakl-albshr",price:169,oldPrice:190},
+  retinol_dark:{img:"https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/QnwxbrruB0fTLMmpTr5wXH9era8Ye17vRGWthn6f.webp",name:"كريم الريتينول لتفتيح الهالات والبقع",link:"https://ar.vellmor.store/products/rytnonol-krym-alhlat-dark-c",price:109,oldPrice:128},
+  retinol_anti_aging:{img:"https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/HGgBRlK5mAG20aU32cUM0YBOuxNyuEgza36EIN3U.webp",name:"كريم الريتينول المضاد للشيخوخة",link:"https://ar.vellmor.store/products/rytonol-krym-anti-aging",price:112,oldPrice:130}
 };
 
-/* ══════════════════════════════════════
-   6 RESULTS — Full CRO structure [A-K]
-══════════════════════════════════════ */
-const RESULTS = {
-
+/* ══ ROUTINES per skin type ══ */
+const ROUTINES = {
   Skin_Oily_Acne:{
-    type:'بشرة دهنية — مسامات واسعة وحبوب',
-    explain:'بشرتك تُنتج دهوناً زائدة تُغلق المسامات وتُهيئ البيئة لنشوء الحبوب. هذا ليس عيباً وراثياً — إنه اختلال في إنتاج الزيوت يمكن تصحيحه بالمنتج الصحيح.',
-    sciTitle:'السبب العلمي: فرط في إنتاج الزهم',
-    sciText:'بشرتك تُنتج كميات زائدة من الزهم (Sebum) عبر الغدد الدهنية. هذا الفائض يسد فتحات المسامات ويخلق بيئة مثالية لنمو البكتيريا المسببة للحبوب.',
-    painH:'وهذا يفسر لماذا لم تنجح معكِ المنتجات السابقة…',
-    painList:['المنتجات المُجففة تُحفّز البشرة على إنتاج دهون أكثر تعويضاً','الغسول الأقوى يكسر الحاجز الطبيعي فتزيد الحبوب','مستحضرات "بدون زيت" السطحية لا تعالج السبب الجذري'],
-    painConc:'السبب الجذري ليس القذارة أو كثرة الغسيل — بل اختلال هرموني في إنتاج الدهون يحتاج مكوناً يُعالج المصدر.',
-    heroProduct:'sadoer_mask',
-    heroJust:'تم اختيار هذا المنتج لأنه يعالج السبب الجذري — ليس مجرد تجفيف السطح',
-    heroWhy:'الفحم النباتي النشط يشفط الدهون الزائدة من داخل المسامة ذاتها، ويُنظف البيئة التي تنشأ فيها الحبوب. هذا هو الحل الصحيح لبشرتك.',
-    future:[{t:'بعد 7 أيام',d:'مسامات أنظف وأقل انتفاخاً — تلاحظين الفرق في الملمس'},{t:'بعد 14 يوم',d:'الحبوب الجديدة تتوقف عن الظهور بنفس الوتيرة'},{t:'بعد 30 يوم',d:'بشرة أكثر توازناً وأقل لمعاناً طوال اليوم'}],
-    reviews:[{av:'ن',name:'نورة م.',loc:'أبوظبي',t:'"أخيراً وجدت حلاً! الحبوب تراجعت بشكل ملحوظ بعد أسبوعين فقط. كنت أجرب منتجات كثيرة بدون نتيجة."'},{av:'م',name:'منال ع.',loc:'دبي',t:'"صدمة بالإيجاب. بشرتي كانت دهنية جداً وحبوبها لا تتوقف. هذا الروتين غيّر كل شيء."'}],
-    objections:[{q:'هل يناسب البشرة الحساسة مع الحبوب؟',a:'نعم — الفحم النباتي لطيف على البشرة ولا يُسبب جفافاً أو تهيجاً عند الاستخدام الصحيح. ابدئي بمرة أسبوعياً وزيدي حسب تحمل بشرتك.'},{q:'متى تظهر النتائج؟',a:'التنظيف العميق يبدأ من أول استخدام. أما التراجع الواضح في الحبوب فيبدأ بعد أسبوعين من الاستخدام المنتظم.'},{q:'هل يمكن استخدامه مع منتجات أخرى؟',a:'نعم — استخدميه كخطوة تنظيف أسبوعية، ثم أكملي باقي روتينك المعتاد.'}],
-    bundleProd:'copper_serum',bundleWhy:'سيروم النحاس يُكمل العمل يومياً: يضبط إنتاج الدهون ويُصغّر المسامات من الداخل.',bundleLabel:'للتخلص من الحبوب نهائياً',
-    routineMorning:['تنظيف الوجه بلطف','سيروم النحاس للمسامات','مرطب خفيف Oil-Free'],
-    routineNight:['تنظيف جيد','ماسك الفحم أسبوعياً (15 دق)','سيروم النحاس قبل النوم'],
-    urgency:'هذا الروتين يُطلب بكثافة من صاحبات البشرة الدهنية في الإمارات اليوم',
-    lossText:'كل أسبوع بدون التنقية الصحيحة يعني حبوباً أكثر وندوباً أعمق — المسامات المسدودة لا تُصحّح نفسها وحدها.',
-    timeline:[
-      {week:'الأسبوع 1',result:'مسامات أنظف وأقل انتفاخاً',detail:'ستُلاحظين فرقاً في الملمس والنظافة'},
-      {week:'الأسبوع 2',result:'حبوب أقل وبشرة أكثر هدوءاً',detail:'الدوامة تتكسر — بيئة أقل ملاءمة للحبوب'},
-      {week:'الأسبوع 4',result:'بشرة متوازنة ومسامات أصغر',detail:'نتيجة تراكمية واضحة في المظهر العام'}
-    ],
-    ctaLink:'https://ar.vellmor.store/collections/oily-skin-arabic',
-    skinLabel:'بشرة دهنية', problemLabel:'حبوب ومسامات'
+    essential:{ids:["sadoer_mask","cosrx_snail"],why:"ماسك الفحم يُنظف المسامات بعمق مرة أسبوعياً، وكريم الحلزون يُرطب بدون دهون يومياً — ثنائي يُوقف دوامة الحبوب.",how:["صباحاً: غسيل لطيف → كريم الحلزون","مساءً: غسيل جيد → ماسك الفحم (أسبوعياً)"]},
+    advanced:{ids:["sadoer_mask","cosrx_snail","copper_serum"],why:"إضافة سيروم النحاس يُضبط الإفراز الدهني يومياً من الداخل ويُصغّر المسامات — نتيجة أعمق وأدوم.",how:["صباحاً: غسيل → سيروم النحاس → كريم الحلزون","مساءً: غسيل → ماسك الفحم (أسبوعياً) → سيروم النحاس"]}
   },
-
   Skin_Dry_Glow:{
-    type:'بشرة جافة — تفقد الرطوبة بسرعة',
-    explain:'بشرتك تعاني من ضعف في الحاجز المائي الطبيعي، مما يجعلها تفقد الرطوبة أسرع مما تُحتجز. النتيجة: بشرة باهتة، جافة، وأكثر عرضة للتجاعيد المبكرة.',
-    sciTitle:'السبب العلمي: خلل في طبقة NMF الطبيعية',
-    sciText:'الطبقة الخارجية لبشرتك تحتاج عوامل ترطيب طبيعية (NMF) للاحتفاظ بالماء. عند ضعف هذه الطبقة، تتبخر الرطوبة بسرعة مما يُسبب الشد والجفاف المستمر.',
-    painH:'وهذا يفسر لماذا الكريمات العادية لم تحل المشكلة…',
-    painList:['الكريمات السطحية تُرطب الطبقة الخارجية فقط — لا تصل للعمق','الجفاف المزمن يُسرّع ظهور الخطوط الدقيقة سنوات قبل أوانها','بشرة غير مرطبة لا تمتص المنتجات الأخرى بكفاءة'],
-    painConc:'تحتاجين مكوناً يرطب من الداخل ويحبس الرطوبة لساعات — وليس فقط طبقة على السطح.',
-    heroProduct:'cosrx_snail',
-    heroJust:'تم اختيار هذا المنتج لأنه يصل للطبقات العميقة ويُحبس الرطوبة من الداخل',
-    heroWhy:'خلاصة الحلزون 92% تحتوي على mucin طبيعي يُشابه الطبقة الواقية لبشرتك. يُرطب بعمق، يُجدد الخلايا التالفة، ويُعيد بناء الحاجز المائي الطبيعي.',
-    future:[{t:'من أول استخدام',d:'نعومة وترطيب فوري تشعرين به في الملمس'},{t:'بعد 3 أيام',d:'بشرة أكثر نضارة وحيوية — الجفاف يتراجع'},{t:'بعد 30 يوم',d:'ترطيب يدوم طوال اليوم بدون إعادة تطبيق'}],
-    reviews:[{av:'س',name:'سارة خ.',loc:'دبي',t:'"بشرتي كانت تتقشر وتشعر بالشد طوال اليوم. بعد أسبوع واحد فقط لاحظت فرقاً كبيراً في الترطيب."'},{av:'ه',name:'هنوف ر.',loc:'الشارقة',t:'"أخيراً منتج يُرطب فعلاً. بشرتي ناعمة طوال اليوم — حتى بدون مكياج تبدو بصحة جيدة."'}],
-    objections:[{q:'هل هو ثقيل على البشرة؟',a:'لا — رغم تركيزه العالي فهو خفيف وسريع الامتصاص. لا يُخلف طبقة دهنية ومناسب للاستخدام الصباحي والمسائي.'},{q:'متى تظهر النتائج؟',a:'الترطيب الفوري يبدأ من أول وضع. التحسن الملحوظ في مرونة البشرة يبدأ بعد أسبوع من الاستخدام اليومي.'},{q:'هل يناسب الجو الحار في الإمارات؟',a:'نعم — صُمِّم للاستخدام في كل الأجواء. خفيف بما يكفي للطقس الحار وفعّال بما يكفي للبشرة الجافة.'}],
-    bundleProd:'sakura_set',bundleWhy:'مجموعة الساكورا تُثبّت الرطوبة وتمنح إشراقة يابانية فاخرة.',bundleLabel:'لإشراقة تدوم طوال اليوم',
-    routineMorning:['كريم الحلزون على بشرة رطبة قليلاً','مرطب خفيف للحماية','واقٍ شمسي SPF'],
-    routineNight:['تنظيف لطيف جداً','كريم الحلزون بكمية سخية','اتركيه يتشرب قبل النوم'],
-    urgency:'هذا الروتين يُطلب بكثافة من صاحبات البشرة الجافة في الإمارات اليوم',
-    lossText:'كل يوم بدون ترطيب عميق يعني خسارة في مرونة البشرة — والجفاف المزمن يُسرّع التجاعيد بشكل لا يمكن عكسه لاحقاً.',
-    timeline:[
-      {week:'من أول استخدام',result:'نعومة وترطيب فوري ملموس',detail:'تشعرين بالفرق في الملمس من أول وضع'},
-      {week:'الأسبوع 1-2',result:'بشرة أكثر نضارة وحيوية',detail:'الجفاف يتراجع والبشرة تبدو أكثر إشراقاً'},
-      {week:'الشهر الأول',result:'ترطيب يدوم طوال اليوم',detail:'لا تحتاجين إعادة الترطيب باستمرار'}
-    ],
-    ctaLink:'https://ar.vellmor.store/collections/dry-skin-arabic',
-    skinLabel:'بشرة جافة', problemLabel:'جفاف وحاجة للترطيب'
+    essential:{ids:["cosrx_snail","Urea_Cream"],why:"الحلزون يُرطب بعمق وكريم Urea يُصلح الحاجز المائي — يعملان معاً على احتباس الرطوبة لساعات.",how:["صباحاً: كريم الحلزون على بشرة رطبة → واقٍ شمسي","مساءً: كريم الحلزون → كريم Urea"]},
+    advanced:{ids:["cosrx_snail","Urea_Cream","Golden_face_cream"],why:"كريم الوجه الذهبي يُغذي بعمق ويمنح إشراقة — للبشرة التي تحتاج ترطيباً مكثفاً.",how:["صباحاً: كريم الحلزون → واقٍ شمسي","مساءً: كريم Urea → الكريم الذهبي كطبقة ختامية"]}
   },
-
   Skin_Pigmentation:{
-    type:'بشرة مع تصبغات — عدم تناسق اللون',
-    explain:'بشرتك تُنتج ميلانين زائداً في مناطق معينة، سواء بسبب الشمس أو الالتهاب (آثار الحبوب). هذا يُسبب تفاوتاً في اللون يزداد سوءاً مع الوقت والشمس.',
-    sciTitle:'السبب العلمي: فرط في إنتاج الميلانين',
-    sciText:'خلايا الميلانوسايت في بشرتك تُنتج كميات زائدة من الميلانين استجابةً للشمس أو الالتهاب. الريتينول هو المكون الوحيد المُثبت علمياً لتسريع دوران الخلايا وإزالة الخلايا المصطبغة.',
-    painH:'وهذا يفسر لماذا منتجات التفتيح السابقة لم تنجح معكِ…',
-    painList:['مستحضرات التفتيح تعمل على السطح — الريتينول يصل للخلايا المصطبغة','البقع القديمة أصعب علاجاً كلما تأخر التدخل — كل يوم تتعمق أكثر','استخدام الشمس بدون حماية يُلغي أي علاج تفعلينه'],
-    painConc:'الحل الجذري هو تجديد خلايا البشرة من الداخل — وليس تغطية السطح.',
-    heroProduct:'retinol_dark',
-    heroJust:'تم اختيار الريتينول لأنه يُعالج السبب الجذري — تجديد الخلايا المصطبغة',
-    heroWhy:'الريتينول يُسرّع دوران خلايا البشرة، يُزيل الخلايا القديمة المصطبغة، ويُحفّز الكولاجين لاستبدالها بخلايا جديدة موحدة اللون.',
-    future:[{t:'بعد 7 أيام',d:'بشرة مشرقة أكثر — توحيد أولي ملحوظ'},{t:'بعد 21 يوم',d:'تراجع واضح في البقع الخفيفة وتحسن اللمعان'},{t:'بعد 6 أسابيع',d:'بشرة موحدة اللون بشكل ملحوظ — نتيجة تراكمية'}],
-    reviews:[{av:'ر',name:'ريم ف.',loc:'أبوظبي',t:'"آثار الحبوب كانت تزعجني سنوات. بعد شهر من الريتينول بدأت تختفي فعلاً. الفرق واضح في الصور."'},{av:'ل',name:'لولوة س.',loc:'العين',t:'"تصبغات الشمس كانت مشكلتي الكبيرة. الريتينول أوضح منتج جربته — يعمل فعلاً."'}],
-    objections:[{q:'هل الريتينول آمن للاستخدام اليومي؟',a:'ابدئي بمرة أسبوعياً ثم زيدي تدريجياً. بشرتك تحتاج وقتاً للتأقلم. التسرع يُسبب تقشراً.'},{q:'هل يناسب البشرة الحساسة؟',a:'نوصي بالبدء بتركيز منخفض ومرة أسبوعياً. إذا شعرتِ بتهيج، قللي التكرار.'},{q:'هل أحتاج واقياً شمسياً معه؟',a:'إلزامي. الريتينول يجعل بشرتك أكثر حساسية للشمس. واقٍ شمسي SPF 50+ صباحاً ضرورة مطلقة.'}],
-    bundleProd:'cosrx_snail',bundleWhy:'الحلزون يحمي البشرة المجددة ويمنع الجفاف الناتج عن الريتينول.',bundleLabel:'لحماية البشرة خلال العلاج',
-    routineMorning:['كريم الحلزون للحماية والترطيب','مرطب خفيف','واقٍ شمسي SPF 50+ — إلزامي'],
-    routineNight:['تنظيف جيد','ريتينول (ابدئي بمرة أسبوعياً)','زيدي تدريجياً حسب تحمل بشرتك'],
-    urgency:'هذا الروتين يُطلب بكثافة من صاحبات مشاكل التصبغات في الإمارات اليوم',
-    lossText:'كل يوم تتعرضين فيه للشمس بدون علاج يُعمّق البقع الداكنة أكثر — والتصبغات القديمة تحتاج جهداً أكبر بكثير للعلاج.',
-    timeline:[
-      {week:'الأسبوع 1',result:'بشرة مشرقة وأكثر نضارة',detail:'توحيد أولي وتراجع البقع الخفيفة'},
-      {week:'الأسبوع 3',result:'تراجع واضح في البقع الداكنة',detail:'خلايا جديدة تحل محل الخلايا المصطبغة'},
-      {week:'6 أسابيع',result:'بشرة موحدة اللون ومشرقة',detail:'نتيجة تراكمية تزداد مع الاستمرار'}
-    ],
-    ctaLink:'https://ar.vellmor.store/collections/skincare-arabic',
-    skinLabel:'بشرة مع تصبغات', problemLabel:'بقع داكنة'
+    essential:{ids:["retinol_dark","cosrx_snail"],why:"الريتينول يُجدد الخلايا المصطبغة والحلزون يحمي البشرة المجددة — ضرورة ألا تتخلي عن الواقي الشمسي.",how:["صباحاً: كريم الحلزون + واقٍ شمسي SPF 50+ (إلزامي)","مساءً: ريتينول مرة أسبوعياً، زيدي تدريجياً"]},
+    advanced:{ids:["retinol_dark","cosrx_snail","retinol_kit"],why:"طقم الريتينول الكامل يُضاعف سرعة تجديد الخلايا لنتائج أسرع على البقع والتصبغات.",how:["صباحاً: كريم الحلزون + واقٍ شمسي SPF 50+","مساءً: طقم الريتينول → كريم الريتينول المفتّح"]}
   },
-
   Skin_DarkCircles:{
-    type:'بشرة عادية — هالات وإرهاق حول العين',
-    explain:'بشرتك بشكل عام جيدة، لكن منطقة العين تعاني من إرهاق الأوعية الدموية الدقيقة أسفل الجلد الرقيق جداً. هذا يُظهر الهالات الداكنة التي تجعلكِ تبدين متعبة.',
-    sciTitle:'السبب العلمي: رقة جلد العين وضعف الدورة الدموية',
-    sciText:'جلد منطقة العين أرق بعشر مرات من باقي الوجه. الأوعية الدموية الدقيقة تحته مرئية أكثر، خاصة عند ضعف الدورة الدموية أو احتباس السوائل. يحتاج مكوناً مخصصاً.',
-    painH:'وهذا يفسر لماذا كريمات الوجه العادية لم تُفيد منطقة العين…',
-    painList:['كريمات الوجه العادية لم تُصمَّم لرقة جلد العين — قد تُسبب تهيجاً','الهالات تزداد مع العمر بدون عناية مخصصة مبكرة','إهمالها يُسرّع ظهور التجاعيد الدقيقة حول العين'],
-    painConc:'منطقة العين تحتاج مكوناً مُصمَّماً لها تحديداً — وليس أي كريم وجه.',
-    heroProduct:'eye_cream',
-    heroJust:'تم اختيار كريم العين لأن مكوناته تُصمَّم خصيصاً لرقة جلد هذه المنطقة',
-    heroWhy:'مُصغّر خاص للأوعية الدموية الدقيقة تحت العين، يُقلل احتباس السوائل ويمنح إشراقة للمنطقة. مُصمَّم خصيصاً للجلد الرقيق.',
-    future:[{t:'من أول استخدام',d:'ترطيب فوري لمنطقة العين وتخفيف الجفاف'},{t:'بعد 14 يوم',d:'هالات أفتح وانتفاخ أقل تحت العين'},{t:'بعد شهر',d:'عيون تبدو أكثر إشراقة وأقل إرهاقاً'}],
-    reviews:[{av:'ع',name:'عبير ن.',loc:'دبي',t:'"الهالات كانت مشكلتي الأولى. بعد أسبوعين من الكريم، أصبحت أخف بشكل واضح وعيوني أكثر إشراقة."'},{av:'ن',name:'نجلاء م.',loc:'الشارقة',t:'"أخيراً منتج للعين فعلاً. لاحظت فرقاً في الانتفاخ الصباحي من الأسبوع الأول."'}],
-    objections:[{q:'كيف أضع كريم العين بشكل صحيح؟',a:'استخدمي أصبع البنصر (الأخف ضغطاً). ضعيه بحركة دائرية لطيفة من الزاوية الخارجية للعين للداخل. لا تضغطي.'},{q:'هل يناسب البشرة الحساسة؟',a:'نعم — مُصمَّم للجلد الرقيق والحساس. إذا كانت بشرتك حساسة جداً، اختبريه على الرسغ أولاً.'},{q:'متى الأفضل للاستخدام؟',a:'صباحاً ومساءً. المساء أهم لأن الجسم يُجدد خلاياه أثناء النوم.'}],
-    bundleProd:'retinol_dark',bundleWhy:'الريتينول يُفتّح الهالات الداكنة تدريجياً ويُجدد خلايا المنطقة.',bundleLabel:'لتفتيح الهالات بشكل أعمق',
-    routineMorning:['كريم العين بأصبع البنصر — حركة دائرية لطيفة','مرطب خفيف على باقي الوجه','واقٍ شمسي'],
-    routineNight:['كريم العين مساءً','ريتينول حول العين (ليس على الجفن)','انتظري الامتصاص'],
-    urgency:'هذا المنتج يُطلب بكثافة من صاحبات مشاكل الهالات في الإمارات اليوم',
-    lossText:'بدون عناية مخصصة لمنطقة العين، تزداد الهالات تدريجياً مع كل عام — وتُسرّع ظهور التجاعيد الدقيقة حول العين.',
-    timeline:[
-      {week:'من أول استخدام',result:'ترطيب فوري لمنطقة العين',detail:'تخفيف الجفاف والإحساس بالراحة'},
-      {week:'الأسبوع 2',result:'هالات أفتح وانتفاخ أقل',detail:'المكونات الفعّالة تبدأ بالتأثير'},
-      {week:'الشهر الأول',result:'عيون أكثر إشراقة',detail:'نتيجة واضحة على المظهر العام'}
-    ],
-    ctaLink:'https://ar.vellmor.store/collections/skincare-arabic',
-    skinLabel:'بشرة عادية', problemLabel:'هالات العين'
+    essential:{ids:["eye_cream","cosrx_snail"],why:"كريم العين مُصمم للجلد الرقيق حول العين لتفتيح الهالات، والحلزون يُكمل ترطيب باقي الوجه.",how:["صباحاً: كريم العين بأصبع البنصر → كريم الحلزون","مساءً: كريم الحلزون → كريم العين"]},
+    advanced:{ids:["eye_cream","cosrx_snail","retinol_dark"],why:"الريتينول يُعمّق تفتيح الهالات الداكنة تدريجياً لنتيجة أكثر ديمومة.",how:["صباحاً: كريم الحلزون → كريم العين → واقٍ شمسي","مساءً: ريتينول حول العين (ليس الجفن) → كريم العين"]}
   },
-
   Skin_AntiAging:{
-    type:'بشرة ناضجة — تحتاج شداً وتجديداً',
-    explain:'بشرتك تمر بمرحلة طبيعية حيث يتراجع إنتاج الكولاجين تدريجياً. هذا يُسبب فقدان المرونة وظهور الخطوط الدقيقة. التدخل المبكر يُعطي نتائج أفضل بكثير.',
-    sciTitle:'السبب العلمي: تراجع في إنتاج الكولاجين',
-    sciText:'بعد سن الـ25، ينتج جسمك كولاجيناً أقل بنسبة 1% سنوياً. هذا يُضعف الشبكة الداعمة للبشرة فتظهر الخطوط الدقيقة. الريتينول يُحفّز إعادة الإنتاج من الداخل.',
-    painH:'وهذا يفسر لماذا المرطبات العادية لا تُوقف ظهور الخطوط…',
-    painList:['الكريمات السطحية تملأ الخطوط مؤقتاً — لا تُعالج السبب','كل عام بدون تحفيز الكولاجين يعني تجاعيد أعمق وأصعب','انتظار النتائج بدون تدخل يجعل العلاج لاحقاً أطول وأصعب'],
-    painConc:'الحل الحقيقي يبدأ من تحفيز إنتاج الكولاجين من الداخل — وليس من التغطية.',
-    heroProduct:'retinol_kit',
-    heroJust:'تم اختيار طقم الريتينول لأنه يُحفّز الكولاجين من المصدر — لا يغطي الأعراض',
-    heroWhy:'الريتينول يُسرّع دوران الخلايا، يُحفّز إنتاج الكولاجين الجديد، ويملأ الخطوط الدقيقة من الداخل. نتيجة تراكمية تزداد مع كل شهر استخدام.',
-    future:[{t:'بعد أسبوعين',d:'بشرة أكثر نعومة وإشراقة — التجديد يبدأ'},{t:'بعد شهر',d:'خطوط دقيقة أقل عمقاً — كولاجين جديد يُملؤها'},{t:'بعد شهرين',d:'بشرة مشدودة وأكثر مرونة — نتيجة واضحة وملموسة'}],
-    reviews:[{av:'ف',name:'فاطمة ع.',loc:'أبوظبي',t:'"بعد الأربعين بدأت الخطوط تظهر. طقم الريتينول أوقف تقدمها وحسّن مرونة بشرتي بشكل واضح."'},{av:'أ',name:'أمل ك.',loc:'دبي',t:'"النتائج تدريجية لكنها حقيقية. بعد شهرين بشرتي أشبب وأكثر شداً — الاستمرارية هي السر."'}],
-    objections:[{q:'هل الريتينول آمن للاستخدام طويل الأمد؟',a:'نعم — الريتينول مُدروس لأكثر من 40 عاماً وهو الأكثر إثباتاً لمكافحة الشيخوخة. ابدئي ببطء وزيدي التركيز تدريجياً.'},{q:'متى أرى نتائج واضحة؟',a:'التحسن في النعومة يبدأ بعد أسبوعين. أما تراجع الخطوط الدقيقة فيبدأ بعد 4-6 أسابيع من الاستخدام المنتظم.'},{q:'هل أحتاج واقياً شمسياً؟',a:'إلزامي بالكامل. الريتينول يُحسّن حساسية الجلد للشمس. واقٍ شمسي يومياً يحمي نتائجك ويُضاعفها.'}],
-    bundleProd:'collagen_serum',bundleWhy:'سيروم الكولاجين يُضاعف النتيجة: يُعيد الشد والامتلاء من الداخل.',bundleLabel:'لشد أعمق وأسرع',
-    routineMorning:['سيروم الكولاجين بحركات رافعة للأعلى','مرطب غني','واقٍ شمسي SPF 50+ — إلزامي'],
-    routineNight:['تنظيف جيد','طقم الريتينول (ابدئي بمرة أسبوعياً)','زيدي التكرار تدريجياً'],
-    urgency:'هذا الروتين يُطلب بكثافة من صاحبات البشرة الناضجة في الإمارات اليوم',
-    lossText:'كل سنة بدون تحفيز الكولاجين تعني تجاعيد أعمق وجلداً أقل مرونة — والانتظار يجعل النتائج أبطأ وأصعب.',
-    timeline:[
-      {week:'الأسبوع 2',result:'بشرة أكثر نعومة وإشراقة',detail:'التجديد الخلوي يبدأ بالعمل من الداخل'},
-      {week:'الشهر الأول',result:'خطوط دقيقة أقل عمقاً',detail:'كولاجين جديد يبدأ بملء الفراغات'},
-      {week:'الشهر الثاني',result:'بشرة مشدودة وأكثر مرونة',detail:'نتيجة واضحة وملموسة تزداد مع الوقت'}
-    ],
-    ctaLink:'https://ar.vellmor.store/collections/skincare-arabic',
-    skinLabel:'بشرة ناضجة', problemLabel:'شيخوخة وتجاعيد'
+    essential:{ids:["retinol_anti_aging","collagen_serum"],why:"الريتينول يُحفّز الكولاجين وسيروم الكولاجين يُعيد الشد والامتلاء — الثنائي الأقوى لمكافحة الشيخوخة.",how:["صباحاً: سيروم الكولاجين بحركات رافعة → واقٍ شمسي","مساءً: كريم الريتينول المضاد للشيخوخة (ابدئي مرة أسبوعياً)"]},
+    advanced:{ids:["retinol_anti_aging","collagen_serum","Celimax_Retinal"],why:"سيروم Celimax يُضيف طبقة تجديدية متقدمة تُعزز نتيجة الريتينول والكولاجين.",how:["صباحاً: سيروم الكولاجين → واقٍ شمسي SPF 50+","مساءً: سيروم Celimax → كريم الريتينول المضاد للشيخوخة"]}
   },
-
   Skin_Sensitive_Calm:{
-    type:'بشرة حساسة — حاجز ضعيف يحتاج تقوية',
-    explain:'بشرتك تملك حاجزاً طبيعياً ضعيفاً يسمح للمهيجات بالدخول والرطوبة بالخروج. هذا يُسبب الاحمرار، الحساسية، والتهيج المتكرر.',
-    sciTitle:'السبب العلمي: ضعف في الحاجز الجلدي (Skin Barrier)',
-    sciText:'الطبقة الخارجية (Stratum Corneum) لبشرتك تحتاج دهوناً طبيعية لتشكيل حاجز واقٍ. عند ضعف هذا الحاجز، كل شيء يصل للطبقات الحساسة تحته ويُسبب تهيجاً.',
-    painH:'وهذا يفسر لماذا معظم المنتجات تُهيّج بشرتك…',
-    painList:['المنتجات القوية تكسر ما تبقى من الحاجز وتزيد الحساسية','العطور والكحول في المنتجات يُضاعفون الالتهاب','استخدام منتجات كثيرة معاً يُربك بشرتك ويزيد ردود فعلها'],
-    painConc:'بشرتك تحتاج تبسيطاً — منتجاً واحداً يُقوّي الحاجز بدلاً من تكديس المنتجات.',
-    heroProduct:'cosrx_snail',
-    heroJust:'تم اختيار هذا المنتج لأنه يُقوّي الحاجز الطبيعي لبشرتك — المشكلة الجذرية',
-    heroWhy:'خلاصة الحلزون 92% تحتوي على mucin يُشابه المكونات الطبيعية لحاجز بشرتك. تُهدّئ الالتهاب، تُرطب بلطف، وتُعيد بناء الحاجز الواقي تدريجياً.',
-    future:[{t:'من أول استخدام',d:'هدوء فوري للاحمرار والشعور بالتهيج'},{t:'بعد 3 أيام',d:'بشرة أكثر هدوءاً وأقل حساسية للمحيط'},{t:'بعد أسبوعين',d:'حاجز أقوى — بشرة تتحمل أكثر وتتهيج أقل'}],
-    reviews:[{av:'ش',name:'شيخة م.',loc:'أبوظبي',t:'"بشرتي كانت تتهيج من كل شيء. الحلزون هو المنتج الوحيد الذي يناسبها. هادئة ومرطبة."'},{av:'د',name:'دانة ع.',loc:'العين',t:'"كنت أخاف من تجربة أي منتج. هذا هو الوحيد الذي لم يُسبب لي مشكلة — بل حسّن بشرتي."'}],
-    objections:[{q:'كيف أعرف إذا كان يناسب بشرتي الحساسة؟',a:'اختبريه على منطقة صغيرة من الرقبة لمدة 24 ساعة. إذا لم يحدث تهيج، ابدئي استخدامه على الوجه بكمية صغيرة.'},{q:'كيف أبدأ بشكل آمن؟',a:'ابدئي بالمساء فقط لأسبوع. ثم أضيفي الصباح. أبطئي — بشرتك تحتاج وقتاً للتأقلم.'},{q:'هل يمكن استخدامه مع منتجات أخرى؟',a:'نعم، لكن نوصي بتبسيط روتينك أولاً. منتج واحد يُعطي نتائج أفضل من طبقات متعددة لبشرة حساسة.'}],
-    bundleProd:'sadoer_mask',bundleWhy:'ماسك الشاي الأخضر يُعمّق التهدئة أسبوعياً بمضادات أكسدة طبيعية.',bundleLabel:'لتهدئة أعمق أسبوعياً',
-    routineMorning:['كريم الحلزون بكمية صغيرة — حركة دائرية لطيفة','لا تفركي — انتظري الامتصاص','واقٍ شمسي لطيف'],
-    routineNight:['تنظيف لطيف جداً — بدون فرك','كريم الحلزون بسخاء','اختبري أي منتج جديد على الرقبة أولاً'],
-    urgency:'هذا الروتين يُطلب بكثافة من صاحبات البشرة الحساسة في الإمارات اليوم',
-    lossText:'كل منتج خاطئ تستخدمينه يُضعف الحاجز الطبيعي أكثر — والحساسية تتراكم وتصبح مشكلة مزمنة أصعب علاجاً.',
-    timeline:[
-      {week:'من أول استخدام',result:'هدوء فوري وتخفيف الاحمرار',detail:'بشرتك تشعر بالراحة فوراً'},
-      {week:'3 أيام',result:'تهيج أقل ومقاومة أعلى',detail:'البشرة تبدأ بالتكيّف والتقوية'},
-      {week:'الأسبوعان الأولان',result:'حاجز أقوى وأقل حساسية',detail:'مقاومة أفضل للمؤثرات الخارجية'}
-    ],
-    ctaLink:'https://ar.vellmor.store/collections/sensitive-skin-arabic',
-    skinLabel:'بشرة حساسة', problemLabel:'حساسية واحمرار'
+    essential:{ids:["cosrx_snail","green_tea_mask"],why:"الحلزون يُهدّئ ويُرطب يومياً، وماسك الشاي الأخضر يُعمّق التهدئة بمضادات الأكسدة أسبوعياً.",how:["صباحاً: كريم الحلزون بكمية صغيرة — حركة لطيفة","مساءً: كريم الحلزون + ماسك الشاي الأخضر أسبوعياً"]},
+    advanced:{ids:["cosrx_snail","green_tea_mask","sakura_set"],why:"مجموعة الساكورا تُقوّي الحاجز الطبيعي وتُضيف إشراقة هادئة — لبشرة أكثر مقاومة.",how:["صباحاً: كريم الحلزون → ساكورا لطيفة","مساءً: ماسك الشاي الأخضر أسبوعياً → كريم الحلزون"]}
   }
 };
 
-/* ══════════════════════════════════════
-   SCORING ENGINE
-══════════════════════════════════════ */
+/* ══ RESULTS DATA ══ */
+const RESULTS = {
+  Skin_Oily_Acne:{
+    type:"بشرة دهنية — مسامات واسعة وحبوب",
+    explain:"بشرتك تُنتج دهوناً زائدة تُغلق المسامات وتُهيئ البيئة لنشوء الحبوب. هذا اختلال يمكن تصحيحه بالمنتج الصحيح.",
+    painH:"المنتجات المُجففة تزيد الدهون ضعفاً — والغسول القوي يكسر الحاجز الطبيعي.",
+    painTip:"الحل ليس التجفيف بل التنظيف العميق مع ترطيب خفيف — هذا ما يُوقف دوامة الحبوب.",
+    timeline:[{week:"الأسبوع 1",result:"مسامات أنظف وأقل انسداداً",detail:"تلاحظين فرقاً في الملمس من أول استخدام"},{week:"الأسبوع 2",result:"حبوب جديدة أقل",detail:"البيئة أصبحت أقل ملاءمة للحبوب"},{week:"الأسبوع 3",result:"بشرة أكثر توازناً",detail:"مسامات أصغر ولمعان أقل طوال اليوم"}],
+    reviews:[{av:"ن",name:"نورة م.",loc:"أبوظبي",t:"الحبوب تراجعت بشكل واضح بعد أسبوعين. ماسك الفحم والحلزون ثنائي رائع!"},{av:"م",name:"منال ع.",loc:"دبي",t:"بشرتي الدهنية تحسنت كثيراً. السيروم يضبط الدهون بشكل ملحوظ — أنصح به."} ],
+    faq:[{q:"هل الفحم مناسب للبشرة الحساسة مع الحبوب؟",a:"نعم — ابدئي بمرة أسبوعياً وراقبي بشرتك. الفحم النباتي لطيف عند الاستخدام الصحيح."},{q:"متى تظهر النتائج؟",a:"التنظيف العميق من أول استخدام. تراجع الحبوب يبدأ بعد أسبوعين من الاستمرار."},{q:"هل يمكن استخدامه يومياً؟",a:"الماسك أسبوعياً فقط. السيروم والحلزون يومياً صباحاً ومساءً."}],
+    loss:["كل أسبوع بدون التنقية الصحيحة يعني حبوباً أكثر وندوباً أعمق","المسامات المسدودة لا تُصحح نفسها بدون التدخل الصحيح","الانتظار يُطيل مدة العلاج ويجعل النتائج أبطأ"],
+    ctaLink:"https://ar.vellmor.store/collections/oily-skin-arabic",
+    skinLabel:"بشرة دهنية"
+  },
+  Skin_Dry_Glow:{
+    type:"بشرة جافة — تفقد الرطوبة بسرعة",
+    explain:"بشرتك تعاني من ضعف في الحاجز المائي، مما يجعلها تفقد الرطوبة بسرعة — النتيجة بشرة باهتة وأكثر عرضة للتجاعيد.",
+    painH:"الكريمات العادية تُرطب السطح فقط — لا تصل للطبقات العميقة التي تحتاج الرطوبة.",
+    painTip:"بشرتك تحتاج مكوناً يُرطب من الداخل ويحبس الرطوبة لساعات طويلة.",
+    timeline:[{week:"من أول استخدام",result:"نعومة وترطيب فوري",detail:"تشعرين بالفرق في الملمس من أول تطبيق"},{week:"الأسبوع 1-2",result:"بشرة أكثر نضارة وحيوية",detail:"الجفاف يتراجع والبشرة تبدو أكثر إشراقاً"},{week:"الأسبوع 3",result:"ترطيب يدوم طوال اليوم",detail:"لا تحتاجين إعادة الترطيب باستمرار"}],
+    reviews:[{av:"س",name:"سارة خ.",loc:"دبي",t:"بشرتي كانت تتقشر من الجفاف. بعد أسبوع من الحلزون وكريم Urea شعرت بفرق كبير."},{av:"ه",name:"هنوف ر.",loc:"الشارقة",t:"أخيراً ترطيب حقيقي. بشرتي ناعمة طوال اليوم حتى بدون مكياج."}],
+    faq:[{q:"هل كريم Urea مناسب للوجه؟",a:"نعم — تركيزه مناسب للوجه وخاصة للبشرة الجافة جداً. يُرطب ويُنعم بشكل ملحوظ."},{q:"هل الكريم الذهبي ثقيل؟",a:"هو غني بعض الشيء، مناسب للاستخدام المسائي كطبقة ختامية للبشرة الجافة."},{q:"متى أرى تحسناً واضحاً؟",a:"الترطيب فوري من أول استخدام. التحسن في مرونة البشرة يظهر بعد أسبوع."}],
+    loss:["الجفاف المزمن يُسرّع ظهور التجاعيد سنوات قبل أوانها","بشرة غير مرطبة تبدو باهتة حتى مع المكياج","تأجيل الترطيب يجعل الحاجز أضعف ويصعب إصلاحه لاحقاً"],
+    ctaLink:"https://ar.vellmor.store/collections/dry-skin-arabic",
+    skinLabel:"بشرة جافة"
+  },
+  Skin_Pigmentation:{
+    type:"بشرة مع تصبغات — عدم تناسق اللون",
+    explain:"بشرتك تُنتج ميلانين زائداً في مناطق معينة مما يُسبب البقع الداكنة. يزداد مع الشمس يومياً بدون تدخل.",
+    painH:"منتجات التفتيح تعمل على السطح فقط — الريتينول هو الوحيد المُثبت علمياً للوصول للخلايا المصطبغة.",
+    painTip:"الواقي الشمسي إلزامي مع الريتينول — بدونه يعود اللون الداكن أسرع مما يختفي.",
+    timeline:[{week:"الأسبوع 1",result:"بشرة أكثر إشراقاً",detail:"توحيد أولي وتراجع البقع الخفيفة"},{week:"الأسبوع 2-3",result:"تراجع واضح في البقع الداكنة",detail:"خلايا جديدة تحل محل المصطبغة"},{week:"الأسبوع 6",result:"بشرة موحدة اللون",detail:"نتيجة تراكمية تزداد مع الاستمرار"}],
+    reviews:[{av:"ر",name:"ريم ف.",loc:"أبوظبي",t:"آثار الحبوب اختفت بعد شهر من الريتينول. الفرق واضح جداً في الصور."},{av:"ل",name:"لولوة س.",loc:"العين",t:"تصبغات الشمس بدأت تتلاشى. أنصح بالصبر والاستمرار — النتائج حقيقية."}],
+    faq:[{q:"هل الريتينول آمن للبشرة الحساسة؟",a:"ابدئي بمرة أسبوعياً وزيدي تدريجياً. بشرتك تحتاج وقتاً للتأقلم."},{q:"هل الواقي الشمسي ضروري؟",a:"إلزامي 100%. الريتينول يزيد حساسية الجلد للشمس — بدون واقٍ تفقدين كل النتائج."},{q:"متى أرى فرقاً واضحاً؟",a:"الإشراقة تبدأ من الأسبوع الأول. تراجع البقع يظهر بعد 3-4 أسابيع من الاستمرار."}],
+    loss:["كل يوم شمس بدون حماية يُعمّق البقع أكثر","البقع القديمة أصعب علاجاً كلما تأخر التدخل","منتجات التفتيح الرخيصة قد تُسبب تهيجاً وبقعاً أسوأ"],
+    ctaLink:"https://ar.vellmor.store/collections/skincare-arabic",
+    skinLabel:"بشرة مع تصبغات"
+  },
+  Skin_DarkCircles:{
+    type:"بشرة عادية — هالات وإرهاق حول العين",
+    explain:"منطقة العين لديكِ تحتاج عناية مخصصة — جلدها أرق بعشر مرات من باقي الوجه ويظهر فيه إرهاق الأوعية الدموية.",
+    painH:"كريمات الوجه العادية لا تُصمَّم لرقة جلد العين — وقد تُسبب تهيجاً.",
+    painTip:"فقط منتج مخصص لمنطقة العين يمكنه تحسين الهالات والانتفاخ فعلياً.",
+    timeline:[{week:"من أول استخدام",result:"ترطيب فوري لمنطقة العين",detail:"تخفيف الإحساس بالجفاف حول العين"},{week:"الأسبوع 2",result:"هالات أفتح وانتفاخ أقل",detail:"المكونات تبدأ بالتأثير الفعلي"},{week:"الأسبوع 3-4",result:"عيون أكثر إشراقة",detail:"نتيجة واضحة على المظهر العام"}],
+    reviews:[{av:"ع",name:"عبير ن.",loc:"دبي",t:"الهالات خفت بشكل واضح بعد أسبوعين. أصبحت لا أحتاج مؤسس ثقيل لإخفاءها."},{av:"ن",name:"نجلاء م.",loc:"الشارقة",t:"لاحظت فرقاً في الانتفاخ الصباحي من الأسبوع الأول. منتج رائع."}],
+    faq:[{q:"كيف أضع كريم العين بشكل صحيح؟",a:"أصبع البنصر فقط — الأخف ضغطاً. حركة دائرية لطيفة من الخارج للداخل."},{q:"هل يناسب البشرة الحساسة؟",a:"نعم — مُصمَّم للجلد الرقيق والحساس. اختبريه على الرسغ أولاً لراحة بالك."},{q:"متى الأفضل للاستخدام؟",a:"صباحاً ومساءً. المساء أهم لأن الجسم يُجدد خلاياه أثناء النوم."}],
+    loss:["إهمال منطقة العين يُسرّع ظهور التجاعيد الدقيقة حولها","الهالات تزداد مع الوقت بدون عناية مخصصة","بدون كريم عين مخصص لن تُفيد أي كريمات وجه عادية"],
+    ctaLink:"https://ar.vellmor.store/collections/skincare-arabic",
+    skinLabel:"بشرة مع هالات"
+  },
+  Skin_AntiAging:{
+    type:"بشرة ناضجة — تحتاج شداً وتجديداً",
+    explain:"بشرتك تمر بمرحلة طبيعية حيث يتراجع إنتاج الكولاجين — الريتينول والكولاجين هما الحل المُثبت علمياً.",
+    painH:"الكريمات السطحية تملأ الخطوط مؤقتاً — لكنها لا تُحفّز الكولاجين الجديد من الداخل.",
+    painTip:"كل سنة بدون تحفيز الكولاجين تعني تجاعيد أعمق وأصعب علاجاً.",
+    timeline:[{week:"الأسبوع 2",result:"بشرة أكثر نعومة وإشراقة",detail:"التجديد الخلوي يبدأ من الداخل"},{week:"الأسبوع 4",result:"خطوط دقيقة أقل عمقاً",detail:"كولاجين جديد يبدأ بملء الفراغات"},{week:"الشهر 2",result:"بشرة مشدودة وأكثر مرونة",detail:"نتيجة تراكمية تزداد باستمرار"}],
+    reviews:[{av:"ف",name:"فاطمة ع.",loc:"أبوظبي",t:"بعد شهرين بشرتي أشد وأكثر نضارة. الريتينول والكولاجين معاً يعطيان نتيجة رائعة."},{av:"أ",name:"أمل ك.",loc:"دبي",t:"النتائج تدريجية لكنها حقيقية. الاستمرار هو السر — بشرتي أصبحت أكثر شباباً."}],
+    faq:[{q:"هل الريتينول آمن للاستخدام طويل الأمد؟",a:"نعم — مُدروس لأكثر من 40 عاماً. ابدئي ببطء وزيدي التركيز تدريجياً."},{q:"متى أرى نتائج واضحة؟",a:"النعومة بعد أسبوعين. تراجع الخطوط الدقيقة بعد 4-6 أسابيع من الاستمرار."},{q:"هل أحتاج واقياً شمسياً؟",a:"إلزامي تماماً. الريتينول يزيد حساسية الجلد للشمس — واقٍ SPF 50+ يومياً."}],
+    loss:["كل سنة بدون تحفيز الكولاجين تعني تجاعيد أعمق","فقدان المرونة يتسارع كلما تأخر التدخل","الانتظار يجعل النتائج أبطأ وأصعب وأكثر تكلفة"],
+    ctaLink:"https://ar.vellmor.store/collections/skincare-arabic",
+    skinLabel:"بشرة ناضجة"
+  },
+  Skin_Sensitive_Calm:{
+    type:"بشرة حساسة — حاجز ضعيف يحتاج تقوية",
+    explain:"بشرتك تملك حاجزاً طبيعياً ضعيفاً يسمح للمهيجات بالدخول والرطوبة بالخروج — سبب الاحمرار والتهيج المتكرر.",
+    painH:"المنتجات القوية والعطور والكحول تكسر ما تبقى من الحاجز وتُضاعف الحساسية.",
+    painTip:"بشرتك تحتاج تبسيطاً — منتج واحد لطيف يُقوّي الحاجز أفضل من طبقات متعددة.",
+    timeline:[{week:"من أول استخدام",result:"هدوء فوري للاحمرار",detail:"بشرتك تشعر بالراحة من التطبيق الأول"},{week:"بعد 3 أيام",result:"تهيج أقل ومقاومة أعلى",detail:"البشرة تبدأ بالتكيف والتقوية"},{week:"الأسبوع 2-3",result:"حاجز أقوى وأقل حساسية",detail:"مقاومة أفضل للمؤثرات الخارجية"}],
+    reviews:[{av:"ش",name:"شيخة م.",loc:"أبوظبي",t:"بشرتي كانت تتهيج من كل شيء. الحلزون هو الوحيد الذي يناسبها — هادئة ومرطبة."},{av:"د",name:"دانة ع.",loc:"العين",t:"ماسك الشاي الأخضر لطيف جداً. بشرتي الحساسة قبلته من أول استخدام."}],
+    faq:[{q:"كيف أختبر المنتج قبل الاستخدام؟",a:"ضعيه على منطقة صغيرة من الرقبة لـ 24 ساعة. إذا لم يحدث تهيج، ابدئي بالوجه."},{q:"كيف أبدأ بشكل آمن؟",a:"المساء فقط لأسبوع أول. ثم أضيفي الصباح تدريجياً. أبطئي — بشرتك تحتاج وقتاً."},{q:"هل يمكن دمجه مع منتجات أخرى؟",a:"نوصي بتبسيط الروتين أولاً. منتج واحد يُعطي نتائج أفضل من طبقات كثيرة."}],
+    loss:["كل منتج خاطئ يُضعف الحاجز الطبيعي أكثر","الحساسية تتراكم وتصبح مشكلة مزمنة أصعب علاجاً","إهمال الحاجز الجلدي يجعل أي علاج مستقبلي أصعب"],
+    ctaLink:"https://ar.vellmor.store/collections/sensitive-skin-arabic",
+    skinLabel:"بشرة حساسة"
+  }
+};
+
+/* ══ SCORING ENGINE ══ */
 let answers={}, currentResult=null, mcChoice='yes';
-
-function mcPick(v){
-  mcChoice=v;
-  show('s-intro');
-}
-
+function mcPick(v){mcChoice=v;show('s-intro');startSocialProof();}
 function calcResult(){
   const a=answers;
   const s={Skin_Oily_Acne:0,Skin_Dry_Glow:0,Skin_Pigmentation:0,Skin_DarkCircles:0,Skin_AntiAging:0,Skin_Sensitive_Calm:0};
-  if(a.q1==='dry'){s.Skin_Dry_Glow+=3}
-  if(a.q1==='oily'){s.Skin_Oily_Acne+=3}
-  if(a.q1==='combo'){s.Skin_Oily_Acne+=1;s.Skin_Dry_Glow+=1}
-  if(a.q1==='sensitive'){s.Skin_Sensitive_Calm+=3}
-  if(a.q2==='acne'){s.Skin_Oily_Acne+=5}
-  if(a.q2==='dry_high'){s.Skin_Dry_Glow+=5}
-  if(a.q2==='pigment'){s.Skin_Pigmentation+=5}
-  if(a.q2==='dark'){s.Skin_DarkCircles+=5}
-  if(a.q2==='aging'){s.Skin_AntiAging+=5}
-  if(a.q3==='pores_high'){s.Skin_Oily_Acne+=2}
-  if(a.q4==='pigment_high'){s.Skin_Pigmentation+=3}
-  if(a.q4==='pigment_light'){s.Skin_Pigmentation+=1}
-  if(a.q5==='dark_high'){s.Skin_DarkCircles+=4}
-  if(a.q5==='dark_light'){s.Skin_DarkCircles+=2}
-  if(a.q6==='sensitive'){s.Skin_Sensitive_Calm+=3}
-  if(a.q6==='reactive'){s.Skin_Sensitive_Calm+=1}
-  if(a.q7==='goal_glow'){s.Skin_Dry_Glow+=3}
-  if(a.q7==='goal_acne'){s.Skin_Oily_Acne+=3}
-  if(a.q7==='goal_bright'){s.Skin_Pigmentation+=3}
-  if(a.q7==='goal_anti'){s.Skin_AntiAging+=3}
+  if(a.q1==='dry'){s.Skin_Dry_Glow+=3}if(a.q1==='oily'){s.Skin_Oily_Acne+=3}if(a.q1==='combo'){s.Skin_Oily_Acne+=1;s.Skin_Dry_Glow+=1}if(a.q1==='sensitive'){s.Skin_Sensitive_Calm+=3}
+  if(a.q2==='acne'){s.Skin_Oily_Acne+=5}if(a.q2==='dry_high'){s.Skin_Dry_Glow+=5}if(a.q2==='pigment'){s.Skin_Pigmentation+=5}if(a.q2==='dark'){s.Skin_DarkCircles+=5}if(a.q2==='aging'){s.Skin_AntiAging+=5}
+  if(a.q3==='pores_high'){s.Skin_Oily_Acne+=2}if(a.q4==='pigment_high'){s.Skin_Pigmentation+=3}if(a.q4==='pigment_light'){s.Skin_Pigmentation+=1}if(a.q5==='dark_high'){s.Skin_DarkCircles+=4}if(a.q5==='dark_light'){s.Skin_DarkCircles+=2}
+  if(a.q6==='sensitive'){s.Skin_Sensitive_Calm+=3}if(a.q6==='reactive'){s.Skin_Sensitive_Calm+=1}if(a.q7==='goal_glow'){s.Skin_Dry_Glow+=3}if(a.q7==='goal_acne'){s.Skin_Oily_Acne+=3}if(a.q7==='goal_bright'){s.Skin_Pigmentation+=3}if(a.q7==='goal_anti'){s.Skin_AntiAging+=3}
   return Object.entries(s).reduce((a,b)=>b[1]>a[1]?b:a)[0];
 }
 
-/* ══════════════════════════════════════
-   RENDER RESULT [A-K] — Enhanced
-══════════════════════════════════════ */
+/* ══ RENDER RESULT ══ */
+let activeMode='essential', activeKey='';
 function renderResult(key){
+  activeKey=key;
   const r=RESULTS[key];
-  const hp=P[r.heroProduct];
-  const bp=P[r.bundleProd];
+  // WA
+  const waMsg=encodeURIComponent(`مرحباً Vellmor 🌿
 
-  // --- إضافة كود رسالة الواتساب المخصصة ---
-  const waMsg = encodeURIComponent(
-  `مرحباً فريق Vellmor 🌿\n\n` +
-  `أكملت اختبار تحليل البشرة، وهذه نتيجتي:\n\n` +
-  `👤 نوع البشرة: ${r.type}\n` +
-  `🔍 التشخيص: ${r.explain}\n\n` +
-  `أرغب في طلب الروتين المناسب لي بناءً على هذه النتيجة لبدء العلاج فوراً.` // أضفنا العلامة المائلة هنا
-);
+نتيجة تحليل البشرة:
+👤 ${r.type}
 
-const waBtn = document.getElementById('wa-result-btn');
-if(waBtn) {
-  waBtn.href = `https://wa.me/971547726911?text=${waMsg}`;
-}
-
-  // [A] Identity
+أرغب في طلب الروتين المناسب.`);
+  const waBtn=document.getElementById('wa-result-btn');
+  if(waBtn) waBtn.href=`https://wa.me/971547726911?text=${waMsg}`;
+  // Identity
   document.getElementById('r-type').textContent=r.type;
   document.getElementById('r-explain').textContent=r.explain;
-
-  // [B] Science
-  document.getElementById('r-sci-title').textContent=r.sciTitle;
-  document.getElementById('r-sci-text').textContent=r.sciText;
-
-  // [C] Pain
+  // Pain
   document.getElementById('r-pain-h').textContent=r.painH;
-  document.getElementById('r-pain-list').innerHTML=r.painList.map(p=>`<li>${p}</li>`).join('');
-  document.getElementById('r-pain-conc').textContent=r.painConc;
-
-  // [D] Hero Product — Direct Checkout + Price Anchor
-  document.getElementById('r-hero').innerHTML=`
-    <div class="hp-wrap">
-      <span class="hp-badge-pill">🎯 هذا هو المنتج الذي تحتاجه بشرتك</span>
-      <div class="hp-justification">${r.heroJust}</div>
-      <div class="hp-top">
-        <div class="hp-img"><img src="${hp.img}" alt="${hp.name}" loading="lazy"></div>
-        <div>
-          <span class="hp-label-sm">المنتج الموصى به حصرياً</span>
-          <span class="hp-name">${hp.name}</span>
-          <span class="hp-stars">${hp.stars}</span>
-          <div class="hp-reviews">${hp.reviews}</div>
-          <span class="hp-badge-hot">${hp.badge}</span>
-        </div>
-      </div>
-      <p style="font-size:12px;color:var(--s);font-weight:300;line-height:1.8;margin-bottom:14px;">${r.heroWhy}</p>
-      <div class="price-anchor">
-        <span class="pa-old">بدلاً من ${hp.oldPrice} درهم في العيادات والمراكز...</span>
-        <span class="pa-new">${hp.price} درهم فقط — مع توصيل مجاني</span>
-        <span class="pa-save">💵 دفع عند الاستلام — بدون مخاطرة</span>
-      </div>
-      <a href="${hp.checkoutLink}" class="btn-buy-main" target="_blank" onclick="trackBuy('${key}','${r.heroProduct}')">
-         لا يفوتك العرض - اطلبيه الآن 🛒
-      </a>
-      
-    </div>`;
-
-  // Animate visual progress
-  setTimeout(()=>{
-    const fill=document.getElementById('vp-fill');
-    if(fill){fill.style.width='80%';}
-    ['vp2','vp3','vp4'].forEach((id,i)=>{
-      setTimeout(()=>{
-        const el=document.getElementById(id);
-        const lbl=document.getElementById(id+'l');
-        if(el){el.classList.add('active');}
-        if(lbl){lbl.classList.add('active');}
-      },i*300);
-    });
-  },600);
-
+  document.getElementById('r-pain-tip').textContent=r.painTip;
+  // Build routine cards
+  renderCards(key);
+  showPanel('essential', key);
   // Timeline
   document.getElementById('r-timeline').innerHTML=r.timeline.map(w=>`
-    <div class="tl-week">
-      <div class="tl-circle">✓</div>
+    <div class="tl-row">
+      <div class="tl-dot">✓</div>
       <div class="tl-content">
-        <span class="tl-week-label">${w.week}</span>
-        <span class="tl-week-result">${w.result}</span>
-        <span class="tl-week-detail">${w.detail}</span>
+        <span class="tl-week">${w.week}</span>
+        <span class="tl-result">${w.result}</span>
+        <span class="tl-detail">${w.detail}</span>
       </div>
     </div>`).join('');
-
-  // [F] Proof
+  // Reviews
   document.getElementById('r-reviews').innerHTML=r.reviews.map(rv=>`
     <div class="rev-card">
       <div class="rev-header">
@@ -1054,104 +801,156 @@ if(waBtn) {
       </div>
       <p class="rev-text">${rv.t}</p>
     </div>`).join('');
-
-  // [G] Objections
-  document.getElementById('r-objections').innerHTML=r.objections.map(o=>`
-    <div class="obj-item" onclick="toggleObj(this)">
-      <div class="obj-q">${o.q}<span class="obj-arrow">🔷</span></div>
-      <div class="obj-a">${o.a}</div>
+  // FAQ
+  document.getElementById('r-faq').innerHTML=r.faq.map(f=>`
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">${f.q}<span class="faq-arr">↓</span></div>
+      <div class="faq-a">${f.a}</div>
     </div>`).join('');
-
-  // [H] Bundle — Direct Checkout
-  document.getElementById('r-bundle').innerHTML=`
-    <span class="bundle-ey">⬆️ ترقية اختيارية — للنتائج الأسرع</span>
-    <div class="bundle-title">أضيفي ${r.bundleLabel}</div>
-    <p class="bundle-sub">${r.bundleWhy}</p>
-    <div class="bundle-items">
-      <div class="bundle-row"><span class="bico">✅</span>${hp.name}</div>
-      <div class="bundle-row"><span class="bico">➕</span>${bp.name}</div>
-      <div class="bundle-row"><span class="bico">⚡</span>نتائج أقوى وأسرع معاً</div>
-    </div>
-    <a href="${bp.checkoutLink}" class="btn-bundle" target="_blank">أضيفي الترقية الآن ← ${bp.badge}</a>`;
-
-  // [I] Routine
-  const morn=r.routineMorning.map((s,i)=>`<div class="rcol-step"><div class="rnum">${i+1}</div><div class="rtext">${s}</div></div>`).join('');
-  const night=r.routineNight.map((s,i)=>`<div class="rcol-step"><div class="rnum">${i+1}</div><div class="rtext">${s}</div></div>`).join('');
-  document.getElementById('r-routine').innerHTML=`
-    <div class="routine-h">📋 روتينك اليومي</div>
-    <div class="routine-cols">
-      <div><span class="rcol-title">🌅 الصباح</span>${morn}</div>
-      <div><span class="rcol-title">🌙 المساء</span>${night}</div>
-    </div>`;
-
-  // [J] Urgency — personalized
-  document.getElementById('r-urg').textContent=r.urgency;
-
-  // Loss aversion — personalized
-  document.getElementById('r-loss-text').innerHTML=`<strong>ماذا يحدث إذا أجّلتِ القرار؟</strong><br>${r.lossText}`;
-
-  // [K] Final CTA — Direct Checkout
-  const finalBtn=document.getElementById('r-final-btn');
-  finalBtn.href=hp.checkoutLink;
-  finalBtn.setAttribute('onclick',`trackBuy('${key}','${r.heroProduct}')`);
-
+  // Loss
+  document.getElementById('r-loss').innerHTML=r.loss.map(l=>`
+    <li style="font-size:14px;color:#78350f;font-weight:300;line-height:1.75;padding-right:16px;position:relative">
+      <span style="position:absolute;right:0;color:#d97706;font-weight:800">→</span>${l}
+    </li>`).join('');
+  // Final CTA
+  updateFinalBtn(key, 'essential');
   show('s-result');
-  window.scrollTo({top:0,behavior:'smooth'});
-
-  // Start social proof popup
-  startSocialProof(r.skinLabel);
+  startSocialProof();
 }
 
-function trackBuy(resultKey, productKey){
-  // TikTok pixel event if available
-  if(typeof ttq !== 'undefined'){
-    try{ ttq.track('AddToCart', {content_id: productKey}); }catch(e){}
-  }
+function renderCards(key){
+  const rt=ROUTINES[key];
+  const essTotal=rt.essential.ids.reduce((s,id)=>s+(P[id]?.price||0),0);
+  const advTotal=rt.advanced.ids.reduce((s,id)=>s+(P[id]?.price||0),0);
+  const essOld=rt.essential.ids.reduce((s,id)=>s+(P[id]?.oldPrice||0),0);
+  const advOld=rt.advanced.ids.reduce((s,id)=>s+(P[id]?.oldPrice||0),0);
+  document.getElementById('r-cards').innerHTML=`
+    <div class="rc active" id="rc-essential" onclick="selectRoutine('essential','${key}')">
+      <div class="rc-check">✓ محدد</div>
+      <span class="rc-badge ess">أساسي</span>
+      <span class="rc-title">روتين البداية</span>
+      <span class="rc-count">${rt.essential.ids.length} منتجات</span>
+      <span class="rc-price">${essTotal} د.إ</span>
+    </div>
+    <div class="rc" id="rc-advanced" onclick="selectRoutine('advanced','${key}')">
+      <div class="rc-check">✓ محدد</div>
+      <span class="rc-badge adv">متكامل</span>
+      <span class="rc-title">روتين الاحتراف</span>
+      <span class="rc-count">${rt.advanced.ids.length} منتجات</span>
+      <span class="rc-price">${advTotal} د.إ</span>
+    </div>`;
 }
 
-/* ══════════════════════════════════════
-   SOCIAL PROOF POPUP ENGINE
-══════════════════════════════════════ */
-const NAMES=[
-  {n:'سارة',av:'س'},{n:'نورة',av:'ن'},{n:'منال',av:'م'},{n:'ريم',av:'ر'},
-  {n:'هنوف',av:'ه'},{n:'دانة',av:'د'},{n:'شيخة',av:'ش'},{n:'لولوة',av:'ل'},
-  {n:'فاطمة',av:'ف'},{n:'عبير',av:'ع'},{n:'أمل',av:'أ'},{n:'مريم',av:'م'}
-];
-const CITIES=['دبي','أبوظبي','الشارقة','العين','الفجيرة','أم القيوين','رأس الخيمة'];
-const ACTIONS=['اشترت هذا المنتج للتو','أضافت هذا الروتين للسلة','طلبت هذا المنتج'];
+function showPanel(mode, key){
+  activeMode=mode;
+  const rt=ROUTINES[key][mode];
+  const prods=rt.ids.map(id=>P[id]).filter(Boolean);
+  const total=prods.reduce((s,p)=>s+p.price,0);
+  const oldTotal=prods.reduce((s,p)=>s+p.oldPrice,0);
+  const prodHtml=prods.map(p=>`
+    <div class="prod-row">
+      <div class="prod-thumb"><img src="${p.img}" alt="${p.name}" loading="lazy"></div>
+      <div class="prod-info">
+        <span class="prod-name">${p.name}</span>
+        <div class="prod-price-row">
+          <span class="prod-old">${p.oldPrice} د.إ</span>
+          <span class="prod-price">${p.price} د.إ</span>
+        </div>
+      </div>
+    </div>`).join('');
+  // Why accordion
+  const whyHtml=`
+    <div class="acc" id="acc-why-${mode}" style="margin-bottom:12px;background:var(--soft-g);border-color:rgba(61,74,48,.15)">
+      <div class="acc-head" onclick="toggleAcc('acc-why-${mode}')" style="font-size:14px">
+        لماذا هذا الروتين مناسب لكِ؟
+        <span class="acc-arr">↓</span>
+      </div>
+      <div class="acc-body">
+        <p style="font-size:14px;color:var(--s);font-weight:300;line-height:1.8;margin-bottom:12px">${rt.why}</p>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          ${rt.how.map(h=>`<div style="font-size:13px;color:var(--op);font-weight:700;padding-right:14px;position:relative"><span style="position:absolute;right:0">✦</span>${h}</div>`).join('')}
+        </div>
+      </div>
+    </div>`;
+  // Price summary
+  const priceSummary=`
+    <div class="price-summary">
+      <span class="ps-old">${oldTotal} د.إ (السعر الأصلي)</span>
+      <span class="ps-new">${total} د.إ</span>
+      <span class="ps-tag">💵 دفع عند الاستلام</span>
+    </div>`;
+  // Checkout URL: first product link
+  const checkoutUrl=prods[0]?.link||'#';
+  document.getElementById(`r-panel-${mode}`).innerHTML=`
+    <div class="prod-list">${prodHtml}</div>
+    ${whyHtml}
+    ${priceSummary}
+    <a href="${checkoutUrl}" class="btn-checkout" target="_blank" onclick="trackBuy('${key}','${mode}')">
+      اطلبي الروتين الآن — توصيل مجاني 🚚
+    </a>
+    <p class="checkout-meta">↩️ ضمان 7 أيام &nbsp;·&nbsp; 🔒 دفع عند الاستلام</p>`;
+  document.getElementById(`r-panel-${mode}`).classList.add('active');
+  const other=mode==='essential'?'advanced':'essential';
+  const otherPanel=document.getElementById(`r-panel-${other}`);
+  if(otherPanel) otherPanel.classList.remove('active');
+}
+
+function selectRoutine(mode, key){
+  if(activeMode===mode) return;
+  document.getElementById('rc-essential').classList.toggle('active',mode==='essential');
+  document.getElementById('rc-advanced').classList.toggle('active',mode==='advanced');
+  // Re-render chosen panel
+  showPanel(mode, key);
+  updateFinalBtn(key, mode);
+}
+
+function updateFinalBtn(key, mode){
+  const rt=ROUTINES[key][mode];
+  const prods=rt.ids.map(id=>P[id]).filter(Boolean);
+  const btn=document.getElementById('r-final-btn');
+  if(btn && prods[0]) btn.href=prods[0].link;
+}
+
+function trackBuy(key, mode){
+  if(typeof ttq!=='undefined'){try{ttq.track('AddToCart',{content_id:key+'_'+mode});}catch(e){}}
+}
+
+/* ══ ACCORDIONS ══ */
+function toggleAcc(id){
+  const el=document.getElementById(id);
+  if(!el) return;
+  el.classList.toggle('open');
+}
+function toggleFaq(el){
+  const item=el.parentElement;
+  item.classList.toggle('open');
+}
+
+/* ══ SOCIAL PROOF ══ */
+const SP_NAMES=[{n:'سارة',av:'س'},{n:'نورة',av:'ن'},{n:'منال',av:'م'},{n:'ريم',av:'ر'},{n:'هنوف',av:'ه'},{n:'دانة',av:'د'},{n:'شيخة',av:'ش'},{n:'فاطمة',av:'ف'}];
+const SP_CITIES=['دبي','أبوظبي','الشارقة','العين','الفجيرة','رأس الخيمة'];
+const SP_ACTS=['أضافت الروتين للسلة','طلبت هذا المنتج','بدأت روتينها مع Vellmor'];
 let spTimer=null;
-
-function startSocialProof(skinLabel){
+function startSocialProof(){
   if(spTimer) clearInterval(spTimer);
-  showPopup(skinLabel);
-  spTimer=setInterval(()=>showPopup(skinLabel), 10000+Math.random()*4000);
+  setTimeout(showPopup,2000);
+  spTimer=setInterval(showPopup,11000+Math.random()*5000);
 }
-
-function showPopup(skinLabel){
-  const popup=document.getElementById('sp-popup');
-  const person=NAMES[Math.floor(Math.random()*NAMES.length)];
-  const city=CITIES[Math.floor(Math.random()*CITIES.length)];
-  const action=ACTIONS[Math.floor(Math.random()*ACTIONS.length)];
-  const mins=Math.floor(Math.random()*12)+1;
+function showPopup(){
+  const p=document.getElementById('sp-popup');
+  const person=SP_NAMES[Math.floor(Math.random()*SP_NAMES.length)];
+  const city=SP_CITIES[Math.floor(Math.random()*SP_CITIES.length)];
+  const act=SP_ACTS[Math.floor(Math.random()*SP_ACTS.length)];
+  const mins=Math.floor(Math.random()*14)+1;
   document.getElementById('sp-av').textContent=person.av;
   document.getElementById('sp-name').textContent=`${person.n} من ${city}`;
-  document.getElementById('sp-action').textContent=action;
+  document.getElementById('sp-action').textContent=act;
   document.getElementById('sp-time').textContent=`قبل ${mins} دقيقة`;
-  popup.classList.add('show');
-  setTimeout(()=>popup.classList.remove('show'),4500);
+  p.classList.add('show');
+  setTimeout(()=>p.classList.remove('show'),4500);
 }
 
-function toggleObj(el){
-  const a=el.querySelector('.obj-a');
-  const arrow=el.querySelector('.obj-arrow');
-  const isOpen=a.style.display==='block';
-  a.style.display=isOpen?'none':'block';
-  arrow.style.transform=isOpen?'':'rotate(180deg)';
-}
-
-/* ══════════════════════════════════════
-   NAVIGATION
-══════════════════════════════════════ */
+/* ══ NAVIGATION ══ */
 function autoNext(el,qId,val,nextQ){
   el.closest('.opts').querySelectorAll('.opt').forEach(o=>{o.classList.remove('sel');o.querySelector('.opt-ck').innerHTML=''});
   el.classList.add('sel');
@@ -1191,17 +990,20 @@ function showLoading(){
 
 function show(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
+  const target=document.getElementById(id);
+  if(target) target.classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
 function restart(){
-  answers={};currentResult=null;
+  answers={};currentResult=null;activeMode='essential';activeKey='';
   document.querySelectorAll('.opt').forEach(o=>{o.classList.remove('sel');const c=o.querySelector('.opt-ck');if(c)c.innerHTML='';});
   ['ls1','ls2','ls3'].forEach(id=>{const el=document.getElementById(id);if(el){el.classList.remove('show');el.querySelector('div').className='ldot';}});
   document.getElementById('pb').style.display='none';
+  if(spTimer){clearInterval(spTimer);spTimer=null;}
   show('s-mc');
 }
+
 </script>
 </body>
 </html>
