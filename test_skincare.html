@@ -159,9 +159,9 @@ body{font-family:'Almarai',sans-serif;direction:rtl;background:var(--bg);color:v
 .obj-title{font-size:17px;font-weight:800;color:var(--o);margin-bottom:14px}
 .obj-item{border-bottom:1px solid var(--border);padding:12px 0;cursor:pointer}
 .obj-item:last-child{border-bottom:none;padding-bottom:0}
-.obj-q{font-size:15px;font-weight:800;color:var(--o);display:flex;justify-content:space-between;align-items:center}
+.obj-q{font-size:14px;font-weight:800;color:var(--o);display:flex;justify-content:space-between;align-items:center}
 .obj-arrow{font-size:14px;transition:transform .2s;display:inline-block}
-.obj-a{font-size:13px;color:var(--s);font-weight:500;line-height:1.75;margin-top:8px;display:none}
+.obj-a{font-size:14px;color:var(--s);font-weight:500;line-height:1.75;margin-top:8px;display:none}
 
 /* H — Bundle */
 .bundle-block{background:var(--w);border:1px solid var(--border);border-radius:16px;padding:18px;margin-bottom:18px}
@@ -1058,7 +1058,7 @@ if(waBtn) {
   // [G] Objections
   document.getElementById('r-objections').innerHTML=r.objections.map(o=>`
     <div class="obj-item" onclick="toggleObj(this)">
-      <div class="obj-q">${o.q}<span class="obj-arrow">↓</span></div>
+      <div class="obj-q">${o.q}<span class="obj-arrow">🔷</span></div>
       <div class="obj-a">${o.a}</div>
     </div>`).join('');
 
