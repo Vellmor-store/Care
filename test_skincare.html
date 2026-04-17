@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -876,9 +877,9 @@ function showRoutinePanel(mode,key){
       <br>
       <span class="ps-tag">💵 متاح الدفع عند الاستلام</span>
     </div>
-    <a href="${firstLink}" class="btn-checkout" target="_blank">
-      اطلبي الروتين الآن واحصلي على توصيل مجاني 
-    </a>
+    <button class="btn-checkout" onclick="addRoutineToCart('${mode}','${key}')">
+      اطلبي الروتين الآن واحصلي على توصيل مجاني 🛒
+    </button>
     <p class="checkout-meta"> </p>`;
   panel.classList.add('active');
   const other=mode==='essential'?'advanced':'essential';
@@ -886,7 +887,7 @@ function showRoutinePanel(mode,key){
   if(op)op.classList.remove('active');
   // تحديث زر CTA النهائي
   const fb=document.getElementById('checkout-all-btn');
-  if(fb){fb.onclick=()=>window.open(firstLink,'_blank');}
+  if(fb){fb.onclick=()=>addRoutineToCart(activeMode,activeKey);}
 }
 
 function selectRoutine(mode,key){
@@ -949,6 +950,80 @@ window.addEventListener('DOMContentLoaded',()=>{
   show('s-mc');
   console.log('Vellmor System Initialized ✅');
 });
+
+/* ══ CART FUNCTION (via Cloudflare Worker proxy) ══ */
+const PROXY = 'https://vellmor.redaismail-onlinework.workers.dev';
+
+async function addRoutineToCart(mode, key) {
+  const rt = ROUTINES[key] && ROUTINES[key][mode];
+  if (!rt) return;
+
+  const prods = rt.ids.map(id => P[id]).filter(Boolean);
+  if (!prods.length) return;
+
+  // تعطيل كل أزرار الشراء
+  const allBtns = Array.from(document.querySelectorAll('.btn-checkout, #checkout-all-btn'));
+  allBtns.forEach(b => {
+    b.setAttribute('data-orig', b.textContent.trim());
+    b.textContent = '⏳ جاري الإضافة للسلة...';
+    b.style.opacity = '0.7';
+    b.style.pointerEvents = 'none';
+  });
+
+  try {
+    for (let i = 0; i < prods.length; i++) {
+      const p = prods[i];
+
+      // تحديث العداد
+      allBtns.forEach(b => {
+        b.textContent = `⏳ إضافة ${i + 1} من ${prods.length}...`;
+      });
+
+      const res = await fetch(PROXY + '/api/cart/add', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest',
+          'Accept': 'application/json',
+        },
+        credentials: 'include',
+        body: JSON.stringify({ id: p.id, quantity: 1 }),
+      });
+
+      if (!res.ok) {
+        throw new Error('فشل إضافة: ' + p.name + ' (' + res.status + ')');
+      }
+    }
+
+    // نجح الكل
+    allBtns.forEach(b => {
+      b.textContent = '✅ تمت الإضافة! جاري فتح السلة...';
+      b.style.opacity = '1';
+    });
+
+    setTimeout(() => {
+      window.location.href = 'https://ar.vellmor.store/cart';
+    }, 900);
+
+  } catch (err) {
+    console.error('Cart error:', err);
+    allBtns.forEach(b => {
+      b.textContent = '❌ خطأ — حاولي مجدداً';
+      b.style.opacity = '1';
+      b.style.pointerEvents = 'auto';
+    });
+    setTimeout(() => {
+      allBtns.forEach(b => {
+        b.textContent = b.getAttribute('data-orig') || 'اطلبي الروتين الآن';
+      });
+    }, 3000);
+  }
+}
+
+function buyRoutine() {
+  addRoutineToCart(activeMode, activeKey);
+}
+
 window.onerror=function(){return true;};
 
 </script>
