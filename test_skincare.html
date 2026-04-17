@@ -806,6 +806,60 @@ const RESULTS = {
   }
 };
 
+/* ══ 6. QUIZ CORE LOGIC (الإصلاح هنا) ══ */
+function selectOpt(step, val, el) {
+  answers[step] = val;
+  const parent = el.closest('.screen');
+  parent.querySelectorAll('.opt').forEach(o => o.classList.remove('sel'));
+  el.classList.add('sel');
+  
+  // الانتقال للسؤال التالي
+  setTimeout(() => {
+    const nextStep = step + 1;
+    const nextScreen = document.getElementById('s' + nextStep);
+    if (nextScreen) {
+      show('s' + nextStep);
+      updatePB(nextStep);
+    } else {
+      showLoading();
+    }
+  }, 350);
+}
+
+function updatePB(n) {
+  const pct = Math.floor((n-1)/7*100);
+  document.getElementById('pbf').style.width = pct + '%';
+  document.getElementById('pt').textContent = 'السؤال ' + n + ' من 7';
+}
+
+function showLoading() {
+  show('s-loading');
+  // محاكاة التحليل ثم إظهار النتيجة
+  setTimeout(() => {
+    activeKey = calcResult(); 
+    renderResult(activeKey);
+    show('s-results');
+  }, 2500);
+}
+
+function calcResult() {
+  // منطق حساب النتيجة بناءً على الإجابات
+  if(answers[1] === 'oily') return 'Skin_Oily_Acne';
+  if(answers[1] === 'dry') return 'Skin_Dry_Glow';
+  return 'Skin_DarkCircles'; // قيمة افتراضية
+}
+
+function renderResult(key) {
+  const data = RESULTS[key];
+  document.getElementById('res-type').textContent = data.type;
+  // باقي كود تعبئة البيانات...
+}
+
+function show(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+  
 /* ══ SCORING ENGINE ══ */
 let answers={}, currentResult=null, mcChoice='yes';
 function mcPick(v){mcChoice=v;show('s-intro');startSocialProof();}
