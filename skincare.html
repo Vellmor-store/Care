@@ -328,6 +328,8 @@ body{font-family:'Almarai',sans-serif;direction:rtl;background:var(--bg);color:v
 
 <!-- ══════ Q1 ══════ -->
 <div class="screen" id="s-q1">
+  <div class="qsub">  
+  </div>
   <div class="qwrap">
     <span class="qnum">1 من 7</span>
     <div class="qtitle">بعد غسل وجهك… ما أول إحساس مزعج يظهر؟</div>
@@ -359,6 +361,8 @@ body{font-family:'Almarai',sans-serif;direction:rtl;background:var(--bg);color:v
 
 <!-- ══════ Q2 ══════ -->
 <div class="screen" id="s-q2">
+  <div class="qsub">  
+  </div>
   <div class="qwrap">
     <span class="qnum">2 من 7</span>
     <div class="qtitle">ما المشكلة التي تؤثر على ثقتك بنفسك يومياً؟</div>
@@ -395,6 +399,8 @@ body{font-family:'Almarai',sans-serif;direction:rtl;background:var(--bg);color:v
 
 <!-- ══════ Q3 ══════ -->
 <div class="screen" id="s-q3">
+  <div class="qsub">  
+  </div>
   <div class="qwrap">
     <span class="qnum">3 من 7</span>
     <div class="qtitle">عند النظر في المرآة… ما أكثر شيء تلاحظينه في بشرتك؟</div>
@@ -421,6 +427,8 @@ body{font-family:'Almarai',sans-serif;direction:rtl;background:var(--bg);color:v
 
 <!-- ══════ Q4 ══════ -->
 <div class="screen" id="s-q4">
+  <div class="qsub">  
+  </div>
   <div class="qwrap">
     <span class="qnum">4 من 7</span>
     <div class="qtitle">هل تشعرين أن لون بشرتك غير موحد؟</div>
@@ -431,8 +439,13 @@ body{font-family:'Almarai',sans-serif;direction:rtl;background:var(--bg);color:v
         <div class="opt-ck"></div>
       </div>
       <div class="opt" onclick="autoNext(this,'q4','pigment_light',5)">
-        <div class="opt-ic">🌤️</div>
+        <div class="opt-ic">😔</div>
         <div class="opt-b"><span class="opt-lbl">نعم — بقع خفيفة</span><span class="opt-dsc">اختلاف بسيط في اللون</span></div>
+        <div class="opt-ck"></div>
+      </div>
+      <div class="opt" onclick="autoNext(this,'q4','pigment_high',5)">
+        <div class="opt-ic">🌑</div>
+        <div class="opt-b"><span class="opt-lbl">نعم — تصبغات واضحة ومزعجة</span><span class="opt-dsc">تصبغات ملحوظة تؤثر على مظهري</span></div>
         <div class="opt-ck"></div>
       </div>
      
@@ -443,6 +456,8 @@ body{font-family:'Almarai',sans-serif;direction:rtl;background:var(--bg);color:v
 
 <!-- ══════ Q5 ══════ -->
 <div class="screen" id="s-q5">
+  <div class="qsub">  
+  </div>
   <div class="qwrap">
     <span class="qnum">5 من 7</span>
     <div class="qtitle">الهالات تحت عينيك… كيف تؤثر على مظهرك؟</div>
@@ -459,7 +474,7 @@ body{font-family:'Almarai',sans-serif;direction:rtl;background:var(--bg);color:v
       </div>
       <div class="opt" onclick="autoNext(this,'q5','dark_high',6)">
         <div class="opt-ic">😴</div>
-        <div class="opt-b"><span class="opt-lbl">هالات واضحة - تجعلني أبدو مرهقة دائماً 😩</span><span class="opt-dsc">مزعجة حتى مع النوم الكافي</span></div>
+        <div class="opt-b"><span class="opt-lbl">هالات واضحة - تجعلني أبدو مرهقة دائماً</span><span class="opt-dsc">مزعجة حتى مع النوم الكافي</span></div>
         <div class="opt-ck"></div>
       </div>
     </div>
@@ -469,12 +484,14 @@ body{font-family:'Almarai',sans-serif;direction:rtl;background:var(--bg);color:v
 
 <!-- ══════ Q6 ══════ -->
 <div class="screen" id="s-q6">
+  <div class="qsub">  
+  </div>
   <div class="qwrap">
     <span class="qnum">6 من 7</span>
     <div class="qtitle">عند تجربة منتج جديد… ماذا يحدث غالباً؟</div>
     <div class="opts">
       <div class="opt" onclick="autoNext(this,'q6','strong',7)">
-        <div class="opt-ic">💪</div>
+        <div class="opt-ic">😊</div>
         <div class="opt-b"><span class="opt-lbl">لا مشكلة</span><span class="opt-dsc">نادراً ما أواجه مشكلة مع منتج جديد</span></div>
         <div class="opt-ck"></div>
       </div>
@@ -484,8 +501,8 @@ body{font-family:'Almarai',sans-serif;direction:rtl;background:var(--bg);color:v
         <div class="opt-ck"></div>
       </div>
       <div class="opt" onclick="autoNext(this,'q6','reactive',7)">
-        <div class="opt-ic">⚡</div>
-        <div class="opt-b"><span class="opt-lbl">أتعرض لتهيّج مفاجئ 😣</span><span class="opt-dsc">بعض المنتجات تناسبني وبعضها لا</span></div>
+        <div class="opt-ic">😣</div>
+        <div class="opt-b"><span class="opt-lbl">أتعرض لتهيّج مفاجئ </span><span class="opt-dsc">بعض المنتجات تناسبني وبعضها لا</span></div>
         <div class="opt-ck"></div>
       </div>
     </div>
@@ -495,28 +512,30 @@ body{font-family:'Almarai',sans-serif;direction:rtl;background:var(--bg);color:v
 
 <!-- ══════ Q7 ══════ -->
 <div class="screen" id="s-q7">
+  <div class="qsub">  
+  </div>
   <div class="qwrap">
     <span class="qnum">السؤال الأخير</span>
     <div class="qtitle">ما النتيجة التي تريدين رؤيتها في المرآة قريباً؟</div>
     <div class="opts">
       <div class="opt" onclick="autoNext(this,'q7','goal_glow',0)">
         <div class="opt-ic">✨</div>
-        <div class="opt-b"><span class="opt-lbl">بشرة صافية ومشرقة ✨</span><span class="opt-dsc">أريد وجهاً مضيئاً بدون مكياج</span></div>
+        <div class="opt-b"><span class="opt-lbl">بشرة صافية ومشرقة </span><span class="opt-dsc">أريد وجهاً مضيئاً بدون مكياج</span></div>
         <div class="opt-ck"></div>
       </div>
       <div class="opt" onclick="autoNext(this,'q7','goal_acne',0)">
         <div class="opt-ic">🧹</div>
-        <div class="opt-b"><span class="opt-lbl">التخلص من الحبوب نهائياً 🧹</span><span class="opt-dsc">أريد التخلص من الحبوب نهائياً</span></div>
+        <div class="opt-b"><span class="opt-lbl">التخلص من الحبوب نهائياً </span><span class="opt-dsc">أريد التخلص من الحبوب نهائياً</span></div>
         <div class="opt-ck"></div>
       </div>
       <div class="opt" onclick="autoNext(this,'q7','goal_bright',0)">
         <div class="opt-ic">🌟</div>
-        <div class="opt-b"><span class="opt-lbl">لون موحد بلا بقع 🌟</span><span class="opt-dsc">أريد بشرة متساوية ومشرقة</span></div>
+        <div class="opt-b"><span class="opt-lbl">لون موحد بلا بقع </span><span class="opt-dsc">أريد بشرة متساوية ومشرقة</span></div>
         <div class="opt-ck"></div>
       </div>
       <div class="opt" onclick="autoNext(this,'q7','goal_anti',0)">
         <div class="opt-ic">💎</div>
-        <div class="opt-b"><span class="opt-lbl">بشرة مشدودة وشابة 💎</span><span class="opt-dsc">أريد بشرة شابة لأطول وقت</span></div>
+        <div class="opt-b"><span class="opt-lbl">بشرة مشدودة وشابة </span><span class="opt-dsc">أريد بشرة شابة لأطول وقت</span></div>
         <div class="opt-ck"></div>
       </div>
     </div>
@@ -530,6 +549,10 @@ body{font-family:'Almarai',sans-serif;direction:rtl;background:var(--bg);color:v
     <div class="spinner"></div>
     <div class="load-h">جاري تحليل بشرتكِ…</div>
     <div class="load-s">نحدد الآن السبب الجذري للمشكلة</div>
+    <div class="load-h">🎯 تم تحديد سبب المشكلة بنسبة 92%
+جاري إعداد الروتين المناسب لكِ…</div>
+    <div class="screen" id="s-result">
+  
     <div class="load-steps">
       <div class="lstep" id="ls1"><div class="ldot"></div><span>تحديد نوع بشرتك من إجاباتك…</span></div>
       <div class="lstep" id="ls2"><div class="ldot"></div><span>تحليل السبب الجذري للمشكلة…</span></div>
@@ -539,9 +562,6 @@ body{font-family:'Almarai',sans-serif;direction:rtl;background:var(--bg);color:v
 </div>
 
 <!-- ══════ RESULT ══════ -->
-<div class="screen" id="s-result">
-  <div class="load-s">🎯 تم تحديد سبب المشكلة بنسبة 92%
-جاري إعداد الروتين المناسب لكِ…</div>
   <div class="rw">
     <!-- [A] Identity -->
     <div class="id-block">
@@ -1131,7 +1151,7 @@ function showLoading(){
   setTimeout(()=>document.getElementById('ls1').classList.add('show'),400);
   setTimeout(()=>{document.getElementById('ls1').querySelector('.ldot').className='lcheck';document.getElementById('ls2').classList.add('show');},1000);
   setTimeout(()=>{document.getElementById('ls2').querySelector('.ldot').className='lcheck';document.getElementById('ls3').classList.add('show');},1800);
-  setTimeout(()=>{currentResult=calcResult();renderResult(currentResult);},2700);
+  setTimeout(()=>{currentResult=calcResult();renderResult(currentResult);},3600);
 }
 
 function show(id){
