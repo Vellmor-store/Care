@@ -693,12 +693,14 @@ const ROUTINES = {
   }
 };
 
-  async function buyRoutine() {
+ /* ══ دالة الشراء الذكية ══ */
+async function buyRoutine() {
     const btn = document.getElementById('checkout-all-btn');
-    
-    // اختبار سريع: هل المتغيرات موجودة؟
+    if (!btn) return;
+
+    // التأكد من أن الاختبار اكتمل
     if (!activeKey) {
-        alert("عذراً، لم يتم تحديد نوع البشرة بعد. يرجى إكمال الاختبار.");
+        alert("عذراً، يرجى إكمال الاختبار أولاً.");
         return;
     }
 
@@ -707,39 +709,26 @@ const ROUTINES = {
 
     btn.innerHTML = "جاري تجهيز سلتك... ✨";
     btn.style.pointerEvents = "none";
+    btn.style.opacity = "0.7";
 
     try {
         for (const key of productKeys) {
             const variantId = P[key].id;
             
-            // إذا كان الـ ID ليس رقماً، سيظهر لك تنبيه يحدد المنتج المسبب للمشكلة
-            if (isNaN(variantId)) {
-                alert("خطأ: المنتج " + key + " يحتاج لرقم ID صحيح بدلاً من النص.");
-                btn.innerHTML = "اطلبي الروتين الآن";
-                btn.style.pointerEvents = "auto";
-                return;
-            }
-
+            // إضافة المنتج للسلة برمجياً
             await fetch(`/cart/add/${variantId}`, {
                 method: 'POST',
                 headers: { 'X-Requested-With': 'XMLHttpRequest' }
             });
         }
+        // التوجه لصفحة الدفع بعد إضافة كل المنتجات
         window.location.href = '/checkout';
     } catch (e) {
+        console.error("خطأ في الإضافة:", e);
         window.location.href = '/cart';
     }
 }
-        
-        // 5. التوجه مباشرة لصفحة الدفع النهائية
-        window.location.href = '/checkout';
 
-    } catch (e) {
-        console.error("فشل في إضافة المنتجات:", e);
-        // في حال حدوث أي خطأ تقني، نرسله للسلة كخيار احتياطي
-        window.location.href = '/cart';
-    }
-}
   
 /* ══ RESULTS DATA ══ */
 const RESULTS = {
