@@ -899,13 +899,13 @@ function showLoading() {
 
 function renderResult(key) {
   activeKey = key;
-  const r = RESULTS[key];
+  const r = RESULTS[key]; // أولاً: استخراج البيانات
   if(!r) return;
 
-  // تحديث رسالة الواتساب تلقائياً عند ظهور النتيجة
-updateWhatsAppLink(r);
+  // ثانياً: تحديث الرابط بعد تعريف r
+  updateWhatsAppLink(r); 
 
-  // تعبئة النصوص الأساسية
+  // ثالثاً: تعبئة النصوص
   document.getElementById('r-type').textContent = r.type;
   document.getElementById('r-explain').textContent = r.explain;
   document.getElementById('r-pain-h').textContent = r.painH;
@@ -952,13 +952,13 @@ updateWhatsAppLink(r);
       </div>`).join('');
   }
 
-  // تعبئة "مخاطر التأخير"
+  // تعبئة مخاطر التأخير
   const lossContainer = document.getElementById('r-loss');
   if(lossContainer) {
     lossContainer.innerHTML = r.loss.map(l => `<li>${l}</li>`).join('');
   }
 
-  // عرض الروتين "الأساسي" كخيار افتراضي عند ظهور النتيجة
+  // عرض الروتين
   selectRoutine('essential', key);
 }
   
