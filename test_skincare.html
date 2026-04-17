@@ -112,9 +112,9 @@ body{font-family:"Almarai",sans-serif;direction:rtl;background:var(--bg);color:v
 .rc{border:2px solid var(--border);border-radius:16px;padding:16px 14px;cursor:pointer;transition:all .2s;background:var(--w);text-align:center;position:relative}
 .rc:hover{border-color:var(--op);transform:translateY(-2px);box-shadow:0 4px 14px rgba(61,74,48,.1)}
 .rc.active{border-color:var(--o);background:var(--soft-g);box-shadow:0 4px 14px rgba(61,74,48,.15)}
-.rc-check{position:absolute;top:-9px;left:50%;transform:translateX(-50%);background:var(--o);color:#fff;border-radius:20px;font-size:11px;font-weight:700;padding:2px 10px;display:none;white-space:nowrap}
+.rc-check{position:absolute;top:-9px;left:50%;transform:translateX(-50%);background:var(--o);color:#fff;border-radius:20px;font-size:13px;font-weight:700;padding:2px 10px;display:none;white-space:nowrap}
 .rc.active .rc-check{display:block}
-.rc-badge{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:8px;letter-spacing:0px}
+.rc-badge{display:inline-block;font-size:14px;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:8px;letter-spacing:0px}
 .rc-badge.ess{background:var(--soft-g);color:var(--o);border:1px solid rgba(61,74,48,.2)}
 .rc-badge.adv{background:var(--o);color:var(--g)}
 .rc-title{font-size:15px;font-weight:800;color:var(--o);display:block;margin-bottom:4px;line-height:1.3}
@@ -173,7 +173,7 @@ body{font-family:"Almarai",sans-serif;direction:rtl;background:var(--bg);color:v
 .tl-row:last-child::after{display:none}
 .tl-dot{width:36px;height:36px;border-radius:50%;background:var(--o);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1}
 .tl-content{}
-.tl-week{font-size:11px;font-weight:700;color:var(--op);letter-spacing:0px;text-transform:uppercase;display:block;margin-bottom:2px}
+.tl-week{font-size:12px;font-weight:800;color:var(--op);letter-spacing:0px;text-transform:uppercase;display:block;margin-bottom:2px}
 .tl-result{font-size:15px;font-weight:700;color:var(--o);display:block;margin-bottom:2px}
 .tl-detail{font-size:13px;color:var(--s);font-weight:300;line-height:1.6}
 
@@ -203,7 +203,7 @@ body{font-family:"Almarai",sans-serif;direction:rtl;background:var(--bg);color:v
 .btn-final:hover{background:#fff;transform:translateY(-2px)}
 .cta-trust{font-size:12px;color:rgba(200,184,154,.6);font-weight:300;margin-top:10px;display:block}
 
-.retake{display:block;text-align:center;font-size:14px;color:var(--m);font-weight:300;margin-top:14px;cursor:pointer;text-decoration:underline;background:none;border:none;font-family:"Almarai",sans-serif;width:100%}
+.retake{display:block;text-align:center;font-size:15px;color:#29903B;font-weight:600;margin-top:14px;cursor:pointer;text-decoration:underline;background:none;border:none;font-family:"Almarai",sans-serif;width:100%}
 
 /* Social Proof Popup — TOP */
 #sp-popup{position:fixed;top:70px;right:16px;left:16px;max-width:360px;margin:0 auto;background:var(--w);border:1px solid var(--border);border-right:3px solid var(--o);border-radius:12px;padding:12px 16px;display:flex;align-items:center;gap:12px;box-shadow:0 8px 28px rgba(0,0,0,.12);z-index:999;transform:translateY(-130px);opacity:0;transition:all .4s cubic-bezier(.4,0,.2,1);pointer-events:none}
@@ -830,7 +830,7 @@ function renderCards(key){
     <div class="rc" id="rc-advanced" onclick="selectRoutine('advanced','${key}')">
       <div class="rc-check">✓ محدد</div>
       <span class="rc-badge adv">متكامل</span>
-      <span class="rc-title">روتين الاحتراف</span>
+      <span class="rc-title">الروتين الكامل</span>
       <span class="rc-count">${rt.advanced.ids.length} منتجات</span>
       <span class="rc-price">${advTotal} د.إ</span>
     </div>`;
