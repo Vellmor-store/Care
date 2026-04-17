@@ -693,38 +693,43 @@ const ROUTINES = {
   }
 };
 
-  let activeKey = "Skin_Oily_Acne"; // قيمة مؤقتة للتجربة
-let activeMode = "essential";     // قيمة مؤقتة للتجربة
-// --- دالة الشراء الذكية المحدثة لمتجر Vellmor ---
-async function buyRoutine() {
-    // 1. الوصول للزر وتغيير حالته
+  async function buyRoutine() {
     const btn = document.getElementById('checkout-all-btn');
-    if (!btn) return;
+    
+    // اختبار سريع: هل المتغيرات موجودة؟
+    if (!activeKey) {
+        alert("عذراً، لم يتم تحديد نوع البشرة بعد. يرجى إكمال الاختبار.");
+        return;
+    }
 
-    // 2. تحديد الروتين المختار (بناءً على المتغيرات التي حددها الكويز)
-    // ملاحظة: تأكد أن المتغيرات activeKey و activeMode معرفة في الكود لديك
     const routineData = ROUTINES[activeKey][activeMode];
     const productKeys = routineData.ids;
 
-    // 3. تأثير بصري للعميل (جاري التحميل)
-    const originalText = btn.innerHTML;
-    btn.innerHTML = "جاري تجهيز طلبك... ✨";
-    btn.style.opacity = "0.7";
-    btn.style.pointerEvents = "none"; // منع الضغط المتكرر
+    btn.innerHTML = "جاري تجهيز سلتك... ✨";
+    btn.style.pointerEvents = "none";
 
     try {
-        // 4. إضافة المنتجات واحداً تلو الآخر للسلة برمجياً
         for (const key of productKeys) {
             const variantId = P[key].id;
             
-            // التأكد من أن المعرف موجود ورقمي (كما اتفقنا)
-            if (variantId && !isNaN(variantId)) {
-                await fetch(`/cart/add/${variantId}`, {
-                    method: 'POST',
-                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
-                });
+            // إذا كان الـ ID ليس رقماً، سيظهر لك تنبيه يحدد المنتج المسبب للمشكلة
+            if (isNaN(variantId)) {
+                alert("خطأ: المنتج " + key + " يحتاج لرقم ID صحيح بدلاً من النص.");
+                btn.innerHTML = "اطلبي الروتين الآن";
+                btn.style.pointerEvents = "auto";
+                return;
             }
+
+            await fetch(`/cart/add/${variantId}`, {
+                method: 'POST',
+                headers: { 'X-Requested-With': 'XMLHttpRequest' }
+            });
         }
+        window.location.href = '/checkout';
+    } catch (e) {
+        window.location.href = '/cart';
+    }
+}
         
         // 5. التوجه مباشرة لصفحة الدفع النهائية
         window.location.href = '/checkout';
