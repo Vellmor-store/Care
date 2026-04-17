@@ -680,19 +680,18 @@ body{font-family:'Almarai',sans-serif;direction:rtl;background:var(--bg);color:v
       </a>
     </div>
 
-    <div style="background: #ffffff; border: 1px solid #e0ddd6; border-radius: 20px; padding: 25px; margin-bottom: 20px; text-align: center; box-shadow: 0 10px 30px rgba(61, 74, 48, 0.03);">
+   <div style="background: #ffffff; border: 1px solid #e0ddd6; border-radius: 20px; padding: 25px; margin-bottom: 20px; text-align: center; box-shadow: 0 10px 30px rgba(61, 74, 48, 0.03);">
     
     <h3 style="font-size: 18px; color: #3D4A30; font-weight: 700; margin-bottom: 8px; font-family: 'Almarai', sans-serif;">
         استشارة خاصة عبر واتساب
     </h3>
-      <br>
     
     <p style="font-size: 13px; color: #3D4A30; font-weight: 500; margin-bottom: 20px; line-height: 1.6;">
         دعي خبيراتنا يساعدنك في اختيار الروتين الأمثل لبشرتك، مخصص لكِ بالكامل.
     </p>
-     
     
-  <a href="https://wa.me/971547726911?text=مرحباً%20Vellmor،%20أريد%20الحصول%20على%20استشارة%20بخصوص%20روتين%20بشرتي" 
+    <a id="wa-result-btn" 
+       href="https://wa.me/971547726911?text=مرحباً%20Vellmor،%20أريد%20الحصول%20على%20استشارة%20بخصوص%20روتين%20بشرتي" 
        target="_blank" 
        style="display: flex; align-items: center; justify-content: flex-start; background: #25D366; color: #ffffff; font-family: 'Almarai', sans-serif; font-size: 16px; font-weight: 700; text-decoration: none; border-radius: 60px; overflow: hidden; max-width: 320px; margin: 0 auto; box-shadow: 0 4px 15px rgba(61, 74, 48, 0.2);">
         
@@ -702,13 +701,12 @@ body{font-family:'Almarai',sans-serif;direction:rtl;background:var(--bg);color:v
             </svg>
         </div>
         
-        <span style="padding-right: 3px; flex-grow: 1; text-align: center;">
-    بدء المحادثة الفورية
+        <span style="padding: 0 15px; flex-grow: 1; text-align: center;">
+            بدء المحادثة الفورية
         </span>
     </a>
-
-  
 </div>
+
     
     <button class="retake" onclick="restart()">إعادة التحليل من البداية</button>
   </div>
@@ -965,6 +963,16 @@ function renderResult(key){
   const r=RESULTS[key];
   const hp=P[r.heroProduct];
   const bp=P[r.bundleProd];
+
+  // --- إضافة كود رسالة الواتساب المخصصة ---
+  const waMsg = encodeURIComponent(
+    `مرحباً Vellmor 🌿\nلقد أجريت اختبار تحليل البشرة وهذه هي نتيجتي:\n\n📍 نوع بشرتي: ${r.type}\n📍 التشخيص: ${r.explain}\n\nأريد الحصول على استشارة وروتين مخصص لي ✨`
+  );
+  
+  const waBtn = document.getElementById('wa-result-btn');
+  if(waBtn) {
+    waBtn.href = `https://wa.me/971547726911?text=${waMsg}`;
+  }
 
   // [A] Identity
   document.getElementById('r-type').textContent=r.type;
