@@ -966,9 +966,13 @@ function renderResult(key){
   const bp=P[r.bundleProd];
 
   // --- إضافة كود رسالة الواتساب المخصصة ---
-  const waMsg = encodeURIComponent(
-    `مرحباً Vellmor 🌿\nلقد أجريت اختبار تحليل البشرة وهذه هي نتيجتي:\n\n📍 نوع بشرتي: ${r.type}\n📍 التشخيص: ${r.explain}\n\nأريد الحصول على استشارة وروتين مخصص لي ✨`
-  );
+ const waMsg = encodeURIComponent(
+  `مرحباً فريق Vellmor 🌿\n\n` +
+  `أكملت اختبار تحليل البشرة، وهذه نتيجتي:\n\n` +
+  `👤 نوع البشرة: ${r.type}\n` +
+  `🔍 التشخيص: ${r.explain}\n\n` +
+  `أرغب في طلب الروتين المناسب لي بناءً على هذه النتيجة لبدء العلاج فوراً.
+);
   
   const waBtn = document.getElementById('wa-result-btn');
   if(waBtn) {
