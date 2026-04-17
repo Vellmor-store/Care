@@ -594,7 +594,9 @@ body{font-family:"Almarai",sans-serif;direction:rtl;background:var(--bg);color:v
       <span class="cta-ey">التشخيص اكتمل</span>
       <div class="cta-h">ابدئي علاج بشرتكِ الآن</div>
       <p class="cta-s">نتائج تبدأ من أول استخدام · شحن مجاني · دفع عند الاستلام</p>
-      <a href="#" class="btn-final" id="r-final-btn" target="_blank">ابدئي علاج بشرتكِ — اطلبي الآن</a>
+      <button type="button" class="btn-final" id="checkout-all-btn" onclick="buyRoutine()" style="cursor: pointer; border: none; width: 100%;">
+    اطلبي الروتين الآن
+      </button>
     </div>
 
 
@@ -691,6 +693,47 @@ const ROUTINES = {
   }
 };
 
+// --- دالة الشراء الذكية المحدثة لمتجر Vellmor ---
+async function buyRoutine() {
+    // 1. الوصول للزر وتغيير حالته
+    const btn = document.getElementById('checkout-all-btn');
+    if (!btn) return;
+
+    // 2. تحديد الروتين المختار (بناءً على المتغيرات التي حددها الكويز)
+    // ملاحظة: تأكد أن المتغيرات activeKey و activeMode معرفة في الكود لديك
+    const routineData = ROUTINES[activeKey][activeMode];
+    const productKeys = routineData.ids;
+
+    // 3. تأثير بصري للعميل (جاري التحميل)
+    const originalText = btn.innerHTML;
+    btn.innerHTML = "جاري تجهيز طلبك... ✨";
+    btn.style.opacity = "0.7";
+    btn.style.pointerEvents = "none"; // منع الضغط المتكرر
+
+    try {
+        // 4. إضافة المنتجات واحداً تلو الآخر للسلة برمجياً
+        for (const key of productKeys) {
+            const variantId = P[key].id;
+            
+            // التأكد من أن المعرف موجود ورقمي (كما اتفقنا)
+            if (variantId && !isNaN(variantId)) {
+                await fetch(`/cart/add/${variantId}`, {
+                    method: 'POST',
+                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                });
+            }
+        }
+        
+        // 5. التوجه مباشرة لصفحة الدفع النهائية
+        window.location.href = '/checkout';
+
+    } catch (e) {
+        console.error("فشل في إضافة المنتجات:", e);
+        // في حال حدوث أي خطأ تقني، نرسله للسلة كخيار احتياطي
+        window.location.href = '/cart';
+    }
+}
+  
 /* ══ RESULTS DATA ══ */
 const RESULTS = {
   Skin_Oily_Acne:{
