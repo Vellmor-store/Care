@@ -950,7 +950,6 @@ window.addEventListener('DOMContentLoaded',()=>{
 });
 
 /* ══ CART FUNCTION — الإصلاح النهائي لمتجر Vellmor ══ */
-
 async function addRoutineToCart(mode, key) {
   const rt = ROUTINES[key] && ROUTINES[key][mode];
   if (!rt) return;
@@ -958,46 +957,37 @@ async function addRoutineToCart(mode, key) {
   const prods = rt.ids.map(id => P[id]).filter(Boolean);
   if (!prods.length) return;
 
-  // 1. تحديد كافة الأزرار وتعطيلها مؤقتاً
+  // تغيير شكل الأزرار أثناء التحميل
   const allBtns = Array.from(document.querySelectorAll('.btn-checkout, #checkout-all-btn'));
   allBtns.forEach(b => {
-    b.setAttribute('data-orig', b.textContent.trim());
     b.textContent = '⏳ جاري إضافة الروتين...';
     b.style.opacity = '0.7';
     b.style.pointerEvents = 'none';
   });
 
   try {
-    // 2. إضافة المنتجات واحداً تلو الآخر مباشرة لنظام يوكان
+    // إضافة المنتجات مباشرة لمتجر يوكان 
     for (const p of prods) {
       await fetch('/cart/add/' + p.id, {
         method: 'POST',
-        headers: {
-          'X-Requested-With': 'XMLHttpRequest'
-        }
+        headers: { 'X-Requested-With': 'XMLHttpRequest' }
       });
     }
 
-    // 3. النجاح: التوجه لصفحة السلة
-    allBtns.forEach(b => {
-      b.textContent = '✅ تمت الإضافة! جاري التحويل...';
-      b.style.background = '#27ae60';
-    });
-
-    setTimeout(() => {
-      window.location.href = '/cart';
-    }, 800);
+    // النجاح والتوجه للسلة
+    window.location.href = '/cart';
 
   } catch (err) {
-    console.error('Cart error:', err);
+    console.error('خطأ:', err);
     allBtns.forEach(b => {
-      b.textContent = '❌ خطأ، حاولي مجدداً';
+      b.textContent = '❌ فشل، حاولي مجدداً';
       b.style.opacity = '1';
       b.style.pointerEvents = 'auto';
     });
   }
 }
 
+  
 function buyRoutine() {
   addRoutineToCart(activeMode, activeKey);
 }
