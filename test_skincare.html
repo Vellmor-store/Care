@@ -962,42 +962,40 @@ async function addRoutineToCart(mode, key) {
   const allBtns = Array.from(document.querySelectorAll('.btn-checkout, #checkout-all-btn'));
   allBtns.forEach(b => {
     b.setAttribute('data-orig', b.textContent.trim());
-    b.textContent = '⏳ جاري إضافة الروتين...';
+    b.textContent = '⏳ يتم تجهيز طلبك الآن...';
     b.style.opacity = '0.7';
     b.style.pointerEvents = 'none';
   });
 
-  try {
-    // 2. إضافة كل منتج مباشرة باستخدام نظام يوكان (بدون PROXY)
-    for (const p of prods) {
-      await fetch('https://ar.vellmor.store/cart/add/' + p.id, {
-        method: 'POST',
-        headers: {
-          'X-Requested-With': 'XMLHttpRequest'
-        }
-      });
-    }
+try {
 
-    // 3. النجاح: التوجه لصفحة السلة مباشرة
-    allBtns.forEach(b => {
-      b.textContent = '✅ تمت الإضافة! جاري التحويل...';
-      b.style.background = '#27ae60';
-    });
+  // تجهيز المنتجات
+  const items = prods.map(p => `${p.id}:1`).join(',');
 
-    setTimeout(() => {
-      window.location.href = '/cart';
-    }, 800);
+  // تحديث الأزرار (تأكيد العملية)
+  allBtns.forEach(b => {
+    b.textContent = '✅ تم حجز روتينك — جاري تحويلك للدفع...';
+    b.style.background = '#27ae60';
+    b.style.opacity = '0.9';
+  });
 
-  } catch (err) {
-    console.error('Cart error:', err);
-    allBtns.forEach(b => {
-      b.textContent = '❌ فشل، حاولي مجدداً';
-      b.style.opacity = '1';
-      b.style.pointerEvents = 'auto';
-    });
-  }
+  // تحويل مباشر إلى صفحة الدفع مع المنتجات
+  window.location.href = `/checkout?products=${items}&source=quiz&mode=${mode}&routine=${key}`;
+
+} catch (err) {
+
+  console.error('Cart error:', err);
+
+  // في حال فشل العملية
+  allBtns.forEach(b => {
+    b.textContent = '❌ فشل، حاولي مجدداً';
+    b.style.opacity = '1';
+    b.style.pointerEvents = 'auto';
+  });
+
 }
 
+}
 function buyRoutine() {
   addRoutineToCart(activeMode, activeKey);
 }
