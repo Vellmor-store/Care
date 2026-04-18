@@ -949,7 +949,8 @@ window.addEventListener('DOMContentLoaded',()=>{
   console.log('Vellmor System Initialized ✅');
 });
 
-/* ══ CART FUNCTION — الإصلاح النهائي لمتجر Vellmor ══ */
+/* ══ CART FUNCTION — الإصلاح النهائي المباشر لمتجر Vellmor ══ */
+
 async function addRoutineToCart(mode, key) {
   const rt = ROUTINES[key] && ROUTINES[key][mode];
   if (!rt) return;
@@ -957,28 +958,38 @@ async function addRoutineToCart(mode, key) {
   const prods = rt.ids.map(id => P[id]).filter(Boolean);
   if (!prods.length) return;
 
-  // تغيير شكل الأزرار أثناء التحميل
+  // 1. تحديد الأزرار وتعطيلها مؤقتاً لمنع النقرات المتعددة
   const allBtns = Array.from(document.querySelectorAll('.btn-checkout, #checkout-all-btn'));
   allBtns.forEach(b => {
+    b.setAttribute('data-orig', b.textContent.trim());
     b.textContent = '⏳ جاري إضافة الروتين...';
     b.style.opacity = '0.7';
     b.style.pointerEvents = 'none';
   });
 
   try {
-    // إضافة المنتجات مباشرة لمتجر يوكان 
+    // 2. إضافة كل منتج مباشرة باستخدام نظام يوكان (بدون PROXY)
     for (const p of prods) {
       await fetch('/cart/add/' + p.id, {
         method: 'POST',
-        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest'
+        }
       });
     }
 
-    // النجاح والتوجه للسلة
-    window.location.href = '/cart';
+    // 3. النجاح: التوجه لصفحة السلة مباشرة
+    allBtns.forEach(b => {
+      b.textContent = '✅ تمت الإضافة! جاري التحويل...';
+      b.style.background = '#27ae60';
+    });
+
+    setTimeout(() => {
+      window.location.href = '/cart';
+    }, 800);
 
   } catch (err) {
-    console.error('خطأ:', err);
+    console.error('Cart error:', err);
     allBtns.forEach(b => {
       b.textContent = '❌ فشل، حاولي مجدداً';
       b.style.opacity = '1';
@@ -987,12 +998,11 @@ async function addRoutineToCart(mode, key) {
   }
 }
 
-  
 function buyRoutine() {
   addRoutineToCart(activeMode, activeKey);
 }
 
-// تجاهل أخطاء الجافا سكريبت البسيطة لضمان استمرار عمل الواجهة
+// لضمان عدم توقف الصفحة في حال وجود خطأ بسيط
 window.onerror = function() { return true; };
 
 </script>
