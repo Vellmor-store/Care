@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -661,7 +662,6 @@ let activeMode = 'essential';
 let activeKey = '';
 
 /* ══ 2. PRODUCTS DATA ══ */
-
 const P = {
   cosrx_snail:{id:"aefdc684-931f-4d14-87ab-5bfeafc38546",img:"https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/WhLL0I5yPdo6ODyX0m3w5ib1AB275JfbKPyqbAOg.webp",name:"كريم COSRX خلاصة الحلزون 92%",link:"https://ar.vellmor.store/products/veua040301kj0099",price:139,oldPrice:172},
   green_tea_mask:{id:"475632d6-b5af-4ac4-8a6a-2a510bf862cd",img:"https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/HaAUDf7cHFQzcklRQ7ejeV32OV22QdDlevqz0ard.webp",name:"ماسك الشاي الأخضر لتنظيف المسامات",link:"https://ar.vellmor.store/products/veua040301px0099",price:117,oldPrice:142},
@@ -877,9 +877,9 @@ function showRoutinePanel(mode,key){
       <br>
       <span class="ps-tag">💵 متاح الدفع عند الاستلام</span>
     </div>
-    <a href="${firstLink}" class="btn-checkout" target="_blank">
-      اطلبي الروتين الآن واحصلي على توصيل مجاني 
-    </a>
+    <button class="btn-checkout" onclick="addRoutineToCart('${mode}','${key}')">
+      اطلبي الروتين الآن واحصلي على توصيل مجاني 🛒
+    </button>
     <p class="checkout-meta"> </p>`;
   panel.classList.add('active');
   const other=mode==='essential'?'advanced':'essential';
@@ -887,7 +887,7 @@ function showRoutinePanel(mode,key){
   if(op)op.classList.remove('active');
   // تحديث زر CTA النهائي
   const fb=document.getElementById('checkout-all-btn');
-  if(fb){fb.onclick=()=>window.open(firstLink,'_blank');}
+  if(fb){fb.onclick=()=>addRoutineToCart(activeMode,activeKey);}
 }
 
 function selectRoutine(mode,key){
@@ -950,6 +950,26 @@ window.addEventListener('DOMContentLoaded',()=>{
   show('s-mc');
   console.log('Vellmor System Initialized ✅');
 });
+
+/* ══ COLLECTION LINKS — رابط مباشر لكل نوع بشرة ══ */
+const COLLECTION_LINKS = {
+  Skin_Oily_Acne:     'https://ar.vellmor.store/collections/oily-skin-arabic',
+  Skin_Dry_Glow:      'https://ar.vellmor.store/collections/dry-skin-arabic',
+  Skin_Pigmentation:  'https://ar.vellmor.store/collections/skincare-arabic',
+  Skin_DarkCircles:   'https://ar.vellmor.store/collections/skincare-arabic',
+  Skin_AntiAging:     'https://ar.vellmor.store/collections/skincare-arabic',
+  Skin_Sensitive_Calm:'https://ar.vellmor.store/collections/sensitive-skin-arabic'
+};
+
+function addRoutineToCart(mode, key) {
+  const link = COLLECTION_LINKS[key] || 'https://ar.vellmor.store/collections/skincare-arabic';
+  window.open(link, '_blank');
+}
+
+function buyRoutine() {
+  addRoutineToCart(activeMode, activeKey);
+}
+
 window.onerror=function(){return true;};
 
 </script>
