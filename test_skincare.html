@@ -662,6 +662,7 @@ let activeMode = 'essential';
 let activeKey = '';
 
 /* ══ 2. PRODUCTS DATA ══ */
+
 const P = {
   cosrx_snail:{id:"aefdc684-931f-4d14-87ab-5bfeafc38546",img:"https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/WhLL0I5yPdo6ODyX0m3w5ib1AB275JfbKPyqbAOg.webp",name:"كريم COSRX خلاصة الحلزون 92%",link:"https://ar.vellmor.store/products/veua040301kj0099",price:139,oldPrice:172},
   green_tea_mask:{id:"475632d6-b5af-4ac4-8a6a-2a510bf862cd",img:"https://cdn.youcan.shop/stores/77fd4a80a1622322f5d42a68acdd682e/products/HaAUDf7cHFQzcklRQ7ejeV32OV22QdDlevqz0ard.webp",name:"ماسك الشاي الأخضر لتنظيف المسامات",link:"https://ar.vellmor.store/products/veua040301px0099",price:117,oldPrice:142},
@@ -877,9 +878,9 @@ function showRoutinePanel(mode,key){
       <br>
       <span class="ps-tag">💵 متاح الدفع عند الاستلام</span>
     </div>
-    <button class="btn-checkout" onclick="addRoutineToCart('${mode}','${key}')">
-      اطلبي الروتين الآن واحصلي على توصيل مجاني 🛒
-    </button>
+    <a href="${firstLink}" class="btn-checkout" target="_blank">
+      اطلبي الروتين الآن واحصلي على توصيل مجاني 
+    </a>
     <p class="checkout-meta"> </p>`;
   panel.classList.add('active');
   const other=mode==='essential'?'advanced':'essential';
@@ -887,7 +888,7 @@ function showRoutinePanel(mode,key){
   if(op)op.classList.remove('active');
   // تحديث زر CTA النهائي
   const fb=document.getElementById('checkout-all-btn');
-  if(fb){fb.onclick=()=>addRoutineToCart(activeMode,activeKey);}
+  if(fb){fb.onclick=()=>window.open(firstLink,'_blank');}
 }
 
 function selectRoutine(mode,key){
@@ -950,74 +951,6 @@ window.addEventListener('DOMContentLoaded',()=>{
   show('s-mc');
   console.log('Vellmor System Initialized ✅');
 });
-
-/* ══ CART FUNCTION — Direct to YouCan ══ */
-async function addRoutineToCart(mode, key) {
-  const rt = ROUTINES[key] && ROUTINES[key][mode];
-  if (!rt) return;
-
-  const prods = rt.ids.map(id => P[id]).filter(Boolean);
-  if (!prods.length) return;
-
-  const allBtns = Array.from(document.querySelectorAll('.btn-checkout, #checkout-all-btn'));
-  allBtns.forEach(b => {
-    b.setAttribute('data-orig', b.textContent.trim());
-    b.textContent = '⏳ جاري الإضافة للسلة...';
-    b.style.opacity = '0.7';
-    b.style.pointerEvents = 'none';
-  });
-
-  try {
-    for (let i = 0; i < prods.length; i++) {
-      const p = prods[i];
-      allBtns.forEach(b => {
-        b.textContent = `⏳ إضافة ${i + 1} من ${prods.length}...`;
-      });
-
-      const res = await fetch('https://ar.vellmor.store/api/cart/add', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Requested-With': 'XMLHttpRequest',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify({ id: p.id, quantity: 1, attachedImage: null }),
-      });
-
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({}));
-        throw new Error(err.detail || 'فشل إضافة: ' + p.name);
-      }
-    }
-
-    allBtns.forEach(b => {
-      b.textContent = '✅ تمت الإضافة! جاري فتح السلة...';
-      b.style.opacity = '1';
-    });
-
-    setTimeout(() => {
-      window.location.href = 'https://ar.vellmor.store/cart';
-    }, 900);
-
-  } catch (err) {
-    console.error('Cart error:', err);
-    allBtns.forEach(b => {
-      b.textContent = '❌ ' + err.message;
-      b.style.opacity = '1';
-      b.style.pointerEvents = 'auto';
-    });
-    setTimeout(() => {
-      allBtns.forEach(b => {
-        b.textContent = b.getAttribute('data-orig') || 'اطلبي الروتين الآن';
-      });
-    }, 3000);
-  }
-}
-
-function buyRoutine() {
-  addRoutineToCart(activeMode, activeKey);
-}
-
 window.onerror=function(){return true;};
 
 </script>
