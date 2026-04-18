@@ -970,7 +970,7 @@ async function addRoutineToCart(mode, key) {
   try {
     // 2. إضافة كل منتج مباشرة باستخدام نظام يوكان (بدون PROXY)
     for (const p of prods) {
-      await fetch('/cart/add/' + p.id, {
+      await fetch('https://ar.vellmor.store/cart/add/' + p.id, {
         method: 'POST',
         headers: {
           'X-Requested-With': 'XMLHttpRequest'
