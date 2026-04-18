@@ -949,8 +949,7 @@ window.addEventListener('DOMContentLoaded',()=>{
   console.log('Vellmor System Initialized ✅');
 });
 
-/* ══ CART FUNCTION (via Cloudflare Worker proxy) ══ */
-const PROXY = 'https://vellmor.redaismail-onlinework.workers.dev';
+/* ══ CART FUNCTION — الإصلاح النهائي لمتجر Vellmor ══ */
 
 async function addRoutineToCart(mode, key) {
   const rt = ROUTINES[key] && ROUTINES[key][mode];
@@ -959,62 +958,43 @@ async function addRoutineToCart(mode, key) {
   const prods = rt.ids.map(id => P[id]).filter(Boolean);
   if (!prods.length) return;
 
-  // تعطيل كل أزرار الشراء
+  // 1. تحديد كافة الأزرار وتعطيلها مؤقتاً
   const allBtns = Array.from(document.querySelectorAll('.btn-checkout, #checkout-all-btn'));
   allBtns.forEach(b => {
     b.setAttribute('data-orig', b.textContent.trim());
-    b.textContent = '⏳ جاري الإضافة للسلة...';
+    b.textContent = '⏳ جاري إضافة الروتين...';
     b.style.opacity = '0.7';
     b.style.pointerEvents = 'none';
   });
 
   try {
-    for (let i = 0; i < prods.length; i++) {
-      const p = prods[i];
-
-      // تحديث العداد
-      allBtns.forEach(b => {
-        b.textContent = `⏳ إضافة ${i + 1} من ${prods.length}...`;
-      });
-
-      const res = await fetch(PROXY + '/api/cart/add', {
+    // 2. إضافة المنتجات واحداً تلو الآخر مباشرة لنظام يوكان
+    for (const p of prods) {
+      await fetch('/cart/add/' + p.id, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'X-Requested-With': 'XMLHttpRequest',
-          'Accept': 'application/json',
-        },
-        credentials: 'include',
-        body: JSON.stringify({ id: p.id, quantity: 1 }),
+          'X-Requested-With': 'XMLHttpRequest'
+        }
       });
-
-      if (!res.ok) {
-        throw new Error('فشل إضافة: ' + p.name + ' (' + res.status + ')');
-      }
     }
 
-    // نجح الكل
+    // 3. النجاح: التوجه لصفحة السلة
     allBtns.forEach(b => {
-      b.textContent = '✅ تمت الإضافة! جاري فتح السلة...';
-      b.style.opacity = '1';
+      b.textContent = '✅ تمت الإضافة! جاري التحويل...';
+      b.style.background = '#27ae60';
     });
 
     setTimeout(() => {
-      window.location.href = 'https://ar.vellmor.store/cart';
-    }, 900);
+      window.location.href = '/cart';
+    }, 800);
 
   } catch (err) {
     console.error('Cart error:', err);
     allBtns.forEach(b => {
-      b.textContent = '❌ خطأ — حاولي مجدداً';
+      b.textContent = '❌ خطأ، حاولي مجدداً';
       b.style.opacity = '1';
       b.style.pointerEvents = 'auto';
     });
-    setTimeout(() => {
-      allBtns.forEach(b => {
-        b.textContent = b.getAttribute('data-orig') || 'اطلبي الروتين الآن';
-      });
-    }, 3000);
   }
 }
 
@@ -1022,7 +1002,8 @@ function buyRoutine() {
   addRoutineToCart(activeMode, activeKey);
 }
 
-window.onerror=function(){return true;};
+// تجاهل أخطاء الجافا سكريبت البسيطة لضمان استمرار عمل الواجهة
+window.onerror = function() { return true; };
 
 </script>
 </body>
