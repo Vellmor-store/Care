@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -951,19 +950,34 @@ window.addEventListener('DOMContentLoaded',()=>{
   console.log('Vellmor System Initialized ✅');
 });
 
-/* ══ COLLECTION LINKS — رابط مباشر لكل نوع بشرة ══ */
-const COLLECTION_LINKS = {
-  Skin_Oily_Acne:     'https://ar.vellmor.store/collections/oily-skin-arabic',
-  Skin_Dry_Glow:      'https://ar.vellmor.store/collections/dry-skin-arabic',
-  Skin_Pigmentation:  'https://ar.vellmor.store/collections/skincare-arabic',
-  Skin_DarkCircles:   'https://ar.vellmor.store/collections/skincare-arabic',
-  Skin_AntiAging:     'https://ar.vellmor.store/collections/skincare-arabic',
-  Skin_Sensitive_Calm:'https://ar.vellmor.store/collections/sensitive-skin-arabic'
-};
-
+/* ══ CART — يجمع منتجات الروتين ويذهب للسلة على ar.vellmor.store ══ */
 function addRoutineToCart(mode, key) {
-  const link = COLLECTION_LINKS[key] || 'https://ar.vellmor.store/collections/skincare-arabic';
-  window.open(link, '_blank');
+  const rt = ROUTINES[key] && ROUTINES[key][mode];
+  if (!rt) return;
+
+  const prods = rt.ids.map(id => P[id]).filter(Boolean);
+  if (!prods.length) return;
+
+  // بناء رابط السلة بمنتجات الروتين كلها
+  // YouCan يدعم: /cart?items[0][product_id]=ID&items[0][quantity]=1
+  const params = prods.map((p, i) =>
+    `items[${i}][product_id]=${encodeURIComponent(p.id)}&items[${i}][quantity]=1`
+  ).join('&');
+
+  const cartUrl = 'https://ar.vellmor.store/cart?' + params;
+
+  // تحديث الأزرار
+  const allBtns = Array.from(document.querySelectorAll('.btn-checkout, #checkout-all-btn'));
+  allBtns.forEach(b => {
+    b.setAttribute('data-orig', b.textContent.trim());
+    b.textContent = 'جاري التحويل للسلة...';
+    b.style.opacity = '0.75';
+    b.style.pointerEvents = 'none';
+  });
+
+  setTimeout(() => {
+    window.location.href = cartUrl;
+  }, 500);
 }
 
 function buyRoutine() {
