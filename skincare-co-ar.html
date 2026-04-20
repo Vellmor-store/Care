@@ -144,7 +144,7 @@ body{font-family:"Almarai",sans-serif;direction:rtl;background:var(--bg);color:v
 
 /* Accordion */
 .acc{border:1px solid var(--border);border-radius:14px;margin-bottom:10px;overflow:hidden;background:var(--w)}
-.acc-head{padding:16px 18px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:700;color:var(--o);user-select:none}
+.acc-head{padding:16px 18px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:800;color:var(--o);user-select:none}
 .acc-arr{font-size:18px;transition:transform .2s;color:var(--op);flex-shrink:0}
 .acc-body{display:none;padding:4px 18px 18px}
 .acc.open .acc-arr{transform:rotate(180deg)}
@@ -168,7 +168,7 @@ body{font-family:"Almarai",sans-serif;direction:rtl;background:var(--bg);color:v
 /* CTA buttons */
 .btn-checkout{display:block;width:100%;background:var(--cta);color:#fff;font-family:"Almarai",sans-serif;font-size:16px;font-weight:800;padding:17px;border-radius:var(--rb);border:none;cursor:pointer;text-decoration:none;text-align:center;transition:all .22s;box-shadow:0 6px 20px rgba(34,197,94,.35);margin-bottom:8px}
 .btn-checkout:hover{background:var(--cta-h);transform:translateY(-2px)}
-.checkout-meta{font-size:12px;color:var(--m);text-align:center;font-weight:300}
+.checkout-meta{font-size:13px;color:var(--o);text-align:center;font-weight:500}
 
 /* Timeline */
 .tl-block{background:var(--w);border:1px solid var(--border);border-radius:16px;padding:20px;margin-bottom:14px}
@@ -754,15 +754,15 @@ body{font-family:"Almarai",sans-serif;direction:rtl;background:var(--bg);color:v
         <span class="g-item-sub">لجميع إمارات الدولة</span>
       </div>
       <div class="g-item">
-        <span class="g-item-title">منتجات معتمدة</span>
-        <span class="g-item-sub">مختبرة بمعايير دولية</span>
+        <span class="g-item-title">رويتن خاص</span>
+        <span class="g-item-sub">لبشرتكِ تحديداً</span>
       </div>
     </div>
 
     <!-- FAQ Accordion -->
     <div class="acc" id="acc-faq">
       <div class="acc-head" onclick="toggleAcc('acc-faq')">
-        أسئلة شائعة
+        الأسئلة الشائعة
         <span class="acc-arr">↓</span>
       </div>
       <div class="acc-body" id="r-faq"></div>
@@ -783,7 +783,7 @@ body{font-family:"Almarai",sans-serif;direction:rtl;background:var(--bg);color:v
       <button type="button" class="btn-final" id="checkout-all-btn" onclick="buyRoutine()" style="cursor:pointer;border:none;width:100%">
 عالجي بشرتكِ — واطلبي الآن
       </button>
-      <span class="cta-trust">دفع عند الاستلام · ضمان استرداد 7 أيام · بدون أي مخاطرة</span>
+      <span class="cta-trust">دفع عند الاستلام · ضمان استرداد 7 أيام</span>
     </div>
 
     <!-- WhatsApp -->
@@ -1189,9 +1189,9 @@ function showRoutinePanel(mode,key){
     </div>`).join('');
   const whyHtml=`
     <div class="acc" style="margin-bottom:12px;background:var(--soft-g);border-color:rgba(61,74,48,.15)" onclick="this.classList.toggle('open')">
-      <div class="acc-head" style="font-size:14px">لماذا هذا الروتين مناسب لكِ؟<span class="acc-arr">↓</span></div>
+      <div class="acc-head" style="font-size:20px">لماذا هذا الروتين مناسب لكِ؟<span class="acc-arr">↓</span></div>
       <div class="acc-body">
-        <p style="font-size:14px;color:var(--s);font-weight:300;line-height:1.8;margin-bottom:10px">${rt.why}</p>
+        <p style="font-size:13px;color:#000000;font-weight:700;line-height:1.8;margin-bottom:10px">${rt.why}</p>
         ${rt.how.map(h=>`<div style="font-size:13px;color:var(--op);font-weight:700;padding-right:14px;position:relative;margin-bottom:4px"><span style="position:absolute;right:0">✦</span>${h}</div>`).join('')}
       </div>
     </div>`;
@@ -1207,9 +1207,9 @@ function showRoutinePanel(mode,key){
       <span class="ps-tag">متاح الدفع عند الاستلام</span>
     </div>
     <button class="btn-checkout" onclick="addRoutineToCart('${mode}','${key}')">
-      ابدئي الآن — التوصيل مجاني
-    </button>
-    <p class="checkout-meta">دفع عند الاستلام · ضمان استرداد 7 أيام</p>`;
+لا تفوتي العرض - اطلبي الآن
+</button>
+    <br> <p class="checkout-meta">توصيل مجاني · دفع عند الاستلام · ضمان استرداد 7 أيام</p>`;
   panel.classList.add('active');
   const other=mode==='essential'?'advanced':'essential';
   const op=document.getElementById('r-panel-'+other);
