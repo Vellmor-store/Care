@@ -208,7 +208,7 @@ body{font-family:"Almarai",sans-serif;direction:rtl;background:var(--bg);color:v
 .cta-s{font-size:14px;color:#FAAB00;font-weight:400;margin-bottom:18px}
 .btn-final{display:block;background:var(--cta);color:#fff;font-family:"Almarai",sans-serif;font-size:17px;font-weight:800;padding:18px;border-radius:var(--rb);border:none;cursor:pointer;text-decoration:none;text-align:center;transition:all .22s;box-shadow:0 6px 24px rgba(34,197,94,.4)}
 .btn-final:hover{background:var(--cta-h);transform:translateY(-2px)}
-.cta-trust{font-size:12px;color:rgba(200,184,154,.6);font-weight:300;margin-top:10px;display:block}
+.cta-trust{font-size:14px;color:#FFFFFF;font-weight:500;margin-top:10px;display:block}
 
 .retake{display:block;text-align:center;font-size:15px;color:#585C27;font-weight:600;margin-top:14px;cursor:pointer;text-decoration:underline;background:none;border:none;font-family:"Almarai",sans-serif;width:100%}
 
@@ -763,19 +763,19 @@ body{font-family:"Almarai",sans-serif;direction:rtl;background:var(--bg);color:v
 
     <!-- Final CTA -->
     <div class="final-cta" style="margin-top:20px">
-      <span class="cta-ey">الروتين المخصص لبشرتكِ جاهز</span>
+      <span class="cta-ey">الروتين المخصص لبشرتكِ — جاهز الآن</span>
       <div class="cta-h" id="final-cta-title">ابدئي ببشرة صافية اليوم</div>
-      <p class="cta-s">نتائج ملموسة تبدأ من أول أسبوع — أو نُعيد لكِ المبلغ</p>
+      <p class="cta-s">نتائج ملموسة خلال 7 أيام - أو نُعيد لكِ المبلغ كاملاً</p>
       <button type="button" class="btn-final" id="checkout-all-btn" onclick="buyRoutine()" style="cursor:pointer;border:none;width:100%">
-        أوقفي المشكلة الآن — التوصيل مجاني
+عالجي بشرتكِ — واطلبي الآن
       </button>
       <span class="cta-trust">دفع عند الاستلام · ضمان استرداد 7 أيام · بدون أي مخاطرة</span>
     </div>
 
     <!-- WhatsApp -->
     <div style="background:#ffffff;border:1px solid #e0ddd6;border-radius:20px;padding:25px;margin-bottom:20px;text-align:center">
-      <h3 style="font-size:17px;color:#3D4A30;font-weight:700;margin-bottom:6px;font-family:'Almarai',sans-serif">استشارة مجانية عبر واتساب</h3>
-      <p style="font-size:13px;color:#4a4a4a;font-weight:400;margin-bottom:18px;line-height:1.6">خبيرة العناية جاهزة لمساعدتكِ في اختيار الروتين الأمثل</p>
+      <h3 style="font-size:17px;color:#3D4A30;font-weight:700;margin-bottom:6px;font-family:'Almarai',sans-serif">مترددة؟.. تكلمي معنا</h3>
+      <p style="font-size:13px;color:#4a4a4a;font-weight:400;margin-bottom:18px;line-height:1.6">خبيرة العناية جاهزة لمساعدتكِ في اختيار الروتين الأمثل لبشرتكِ</p>
       <a id="wa-result-btn"
          href="https://wa.me/971547726911?text=مرحباً%20Vellmor،%20أريد%20الحصول%20على%20استشارة%20بخصوص%20روتين%20بشرتي"
          target="_blank"
@@ -785,11 +785,11 @@ body{font-family:"Almarai",sans-serif;direction:rtl;background:var(--bg);color:v
             <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.512-2.96-2.626-.087-.114-.694-.924-.694-1.762 0-.837.44-1.246.596-1.412.155-.166.34-.209.453-.209s.226.002.325.006c.105.004.246-.04.385.293.144.346.491 1.2.533 1.285.043.085.071.184.014.298-.057.114-.085.184-.17.284-.085.1-.178.223-.254.3-.086.087-.175.182-.075.353.1.171.444.733.953 1.187.657.585 1.21.767 1.381.853.171.086.271.071.37-.043.1-.114.426-.498.539-.669.114-.171.227-.142.384-.085.156.057 1.008.476 1.181.562.17.085.284.128.326.199.043.071.043.413-.101.818z"/>
           </svg>
         </div>
-        <span style="padding:0 15px;flex-grow:1;text-align:center">ابدأي استشارتك الآن</span>
+        <span style="padding:0 15px;flex-grow:1;text-align:center">استشارة مجانية الآن </span>
       </a>
     </div>
 
-    <button class="retake" onclick="restart()">فاتك شيء!.. أعيدي الاختبار</button>
+    <button class="retake" onclick="restart()">فاتكِ شيء؟ أعيدي الاختبار</button>
   </div>
 </div>
 
@@ -866,6 +866,7 @@ const RESULTS = {
     explain:"بشرتكِ تُنتج دهوناً زائدة لأن غسولكِ يُجففها — فتُعوّض بإنتاج دهون أكثر. دوامة لا تنتهي بدون التدخل الصحيح.",
     painH:"وجهكِ يلمع بعد ساعة من الغسيل. تنظّفين وتنظّفين والحبوب لا تختفي. جربتِ منتجات كثيرة — وكل واحد وعدكِ وخذّلكِ.",
     painTip:"الصدمة الحقيقية: كل غسول قوي استخدمتِه كان يُضاعف الدهون لا يُقللها. جلدكِ يُجفَّف فيُعوّض بإنتاج أكثر. هذا هو السبب الفعلي لفشل كل ما جربتِه.",
+    ctaTitle:"أوقفي دوامة الحبوب — ابدئي اليوم",
     timeline:[
       {week:"اليوم 1",result:"تنظيف عميق لأول مرة",detail:"المسامات تتنفس — تشعرين بخفة لم تشعري بها من قبل"},
       {week:"بعد 3 أيام",result:"لمعان أقل بشكل ملحوظ",detail:"الدهون تنضبط — بشرتكِ لم تعد تُعوّض بإنتاج مفرط"},
@@ -889,6 +890,7 @@ const RESULTS = {
     explain:"حاجزكِ المائي ضعيف — الرطوبة تتبخر قبل أن يستفيد منها جلدكِ. نتيجة: بشرة باهتة متعبة حتى بعد وضع الكريم.",
     painH:"تضعين الكريم — تشعرين بالراحة لساعة — ثم يعود الجفاف والشد. الكريمات العادية تعالج السطح فقط. جذر المشكلة أعمق.",
     painTip:"الصدمة الحقيقية: الكريمات الغنية التي استخدمتِها لا ترطب — تُغلق فقط. الرطوبة الحقيقية تأتي من الداخل بمكوّنات تجذب الماء وتحتبسه.",
+    ctaTitle:"ابدئي ترطيباً يدوم — اليوم",
     timeline:[
       {week:"اليوم 1",result:"نعومة فورية لم تشعري بها من قبل",detail:"الحلزون يضخ الرطوبة في الطبقات العميقة — لا السطح فقط"},
       {week:"بعد 3 أيام",result:"شد الجفاف يختفي تدريجياً",detail:"الحاجز المائي يبدأ بالتقوي"},
@@ -911,6 +913,7 @@ const RESULTS = {
     explain:"جلدكِ يُنتج ميلانين زائداً في مناطق معينة — وكل يوم شمس بدون حماية يُضيف طبقة جديدة. البقع لا تختفي وحدها.",
     painH:"البقع الداكنة واضحة حتى تحت المكياج. جربتِ كريمات التفتيح — تحسنت مؤقتاً ثم عادت. أغلب منتجات التفتيح تعمل على السطح فقط.",
     painTip:"الصدمة الحقيقية: كريمات التفتيح لا تصل للخلايا المصطبغة في عمق الجلد. الريتينول هو الوحيد المُثبت علمياً للوصول لجذر المشكلة — لكن بدون واقٍ شمسي يومي تعود البقع أسرع مما تختفي.",
+    ctaTitle:"أوقفي تراكم البقع — ابدئي اليوم",
     timeline:[
       {week:"اليوم 1",result:"الحلزون يُرطب ويحمي",detail:"البشرة تستعد لتلقّي العلاج الحقيقي"},
       {week:"بعد 3 أيام",result:"إشراقة أولية ملموسة",detail:"التجديد الخلوي يبدأ — البشرة تبدو أكثر حيوية"},
@@ -933,6 +936,7 @@ const RESULTS = {
     explain:"جلد حول العين أرق بعشر مرات — الأوعية الدقيقة تحته مرئية. أي كريم وجه عادي لن يصل لهذا العمق ولن يُغير شيئاً.",
     painH:"تنامين 8 ساعات وتستيقظين وعيونكِ تبدو منتفخة ومتعبة. تضعين مؤسساً ثقيلاً ليخفي الهالات. هذا ليس قدركِ — هذا غياب المنتج الصح.",
     painTip:"الصدمة الحقيقية: كريمات الوجه مُصمَّمة لجلد سميك — لا لرقة جلد العين. وضعكِ كريماً عادياً حول عينيكِ ربما أثار تهيجاً خفياً زاد الانتفاخ.",
+    ctaTitle:"أعيدي إشراقة عينيكِ — ابدئي اليوم",
     timeline:[
       {week:"اليوم 1",result:"ترطيب لطيف فوري حول العين",detail:"المنطقة تستقبل عناية مخصصة لأول مرة"},
       {week:"بعد 3 أيام",result:"انتفاخ صباحي أقل",detail:"الأوعية الدقيقة تبدأ بالاستجابة للمكونات المخصصة"},
@@ -955,6 +959,7 @@ const RESULTS = {
     explain:"بعد سن الـ25 ينخفض إنتاج الكولاجين 1% سنوياً. الكريمات السطحية تخفي — لكنها لا تُحفّز إنتاج كولاجين جديد.",
     painH:"الخطوط الدقيقة ظهرت فجأة. البشرة فقدت نضارتها. تضعين كريماً غنياً — يملأ الخطوط لساعات ثم يعود كل شيء. هذا حل مؤقت لمشكلة دائمة.",
     painTip:"الصدمة الحقيقية: كريم الترطيب يعطيكِ وهم التحسن. لكنه لا يُحفّز خلية واحدة لإنتاج كولاجين. الريتينول هو الوحيد المُثبت علمياً الذي يعمل من الداخل — وكل سنة تأخير تعني تجاعيد أعمق.",
+    ctaTitle:"ابدئي مكافحة التجاعيد — اليوم",
     timeline:[
       {week:"اليوم 1",result:"سيروم الكولاجين يُرطب ويُشد فوراً",detail:"بشرتكِ تشعر بالامتلاء من أول تطبيق"},
       {week:"بعد 3 أيام",result:"نعومة ملحوظة وإشراقة أولية",detail:"التجديد الخلوي يبدأ — البشرة تبدو أكثر حيوية"},
@@ -977,6 +982,7 @@ const RESULTS = {
     explain:"حاجزكِ الطبيعي ضعيف — المهيجات تدخل بسهولة والرطوبة تخرج سريعاً. نتيجة: احمرار وتهيج يتكرران من أبسط منتج.",
     painH:"كل منتج جديد يُهيج بشرتكِ. جربتِ منتجات للبشرة الحساسة — ومازالت تتفاعل. المشكلة ليست في حساسيتكِ — في المكونات الخاطئة داخل هذه المنتجات.",
     painTip:"الصدمة الحقيقية: أغلب منتجات البشرة الحساسة تحتوي على عطور وكحول خفية تكسر الحاجز أكثر. كل منتج خاطئ استخدمتِه كان يُضعف دفاعكِ الطبيعي.",
+    ctaTitle:"أعيدي بناء حاجزكِ — ابدئي اليوم",
     timeline:[
       {week:"اليوم 1",result:"هدوء فوري — بشرتكِ تتنفس",detail:"أول مرة تشعر بشرتكِ بالأمان مع منتج"},
       {week:"بعد 3 أيام",result:"احمرار أقل — مقاومة أعلى",detail:"الحاجز يبدأ بالتقوي — تهيج أقل من العوامل الخارجية"},
@@ -1112,7 +1118,12 @@ function renderResult(key){
   const fc=document.getElementById('r-faq');
   if(fc)fc.innerHTML=r.faq.map(f=>`<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">${f.q}<span class="faq-arr">↓</span></div><div class="faq-a">${f.a}</div></div>`).join('');
   const lc=document.getElementById('r-loss');
-  if(lc)lc.innerHTML=r.loss.map(l=>`<li style="font-size:14px;color:#78350f;font-weight:300;line-height:1.75;padding-right:16px;position:relative"><span style="position:absolute;right:0;color:#d97706;font-weight:800">→</span>${l}</li>`).join('');
+  if(lc)lc.innerHTML=r.loss.map(l=>`<li style="font-size:14px;color:#78350f;font-weight:500;line-height:1.75;padding-right:16px;position:relative"><span style="position:absolute;right:0;color:#d97706;font-weight:800">→</span>${l}</li>`).join('');
+
+    // Dynamic CTA title
+  const ft=document.getElementById('final-cta-title');
+  if(ft&&r.ctaTitle)ft.textContent=r.ctaTitle;
+  
   renderCards(key);
   showRoutinePanel('essential',key);
   show('s-result');
