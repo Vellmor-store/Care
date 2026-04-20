@@ -58,7 +58,7 @@ body{font-family:"Almarai",sans-serif;direction:rtl;background:var(--bg);color:v
 .hero-stat{display:inline-flex;align-items:center;gap:6px;background:var(--warn-bg);border:1px solid var(--warn-b);border-radius:30px;padding:5px 14px;font-size:12px;font-weight:700;color:var(--warn-t);margin-bottom:18px}
 .hero h1{font-size:clamp(22px,6vw,32px);font-weight:800;color:var(--o);line-height:1.3;margin-bottom:12px}
 .hero h1 span{color:#c0392b;display:block}
-.hero-sub{font-size:14px;color:var(--s);font-weight:300;max-width:360px;margin:0 auto 24px;line-height:1.9}
+.hero-sub{font-size:14px;color:#000000;font-weight:400;max-width:360px;margin:0 auto 24px;line-height:1.9}
 .hero-sub strong{color:var(--o);font-weight:700}
 .btn-hero{display:block;background:var(--o);color:#fff;font-family:"Almarai",sans-serif;font-size:16px;font-weight:800;padding:18px 28px;border-radius:var(--rb);border:none;cursor:pointer;transition:all .25s;text-align:center;max-width:360px;margin:0 auto 12px;box-shadow:0 8px 24px rgba(61,74,48,.28)}
 .btn-hero:hover{background:var(--ol);transform:translateY(-2px)}
@@ -101,13 +101,13 @@ body{font-family:"Almarai",sans-serif;direction:rtl;background:var(--bg);color:v
 /* Identity */
 .id-block{background:var(--o);border-radius:20px;padding:26px 20px;margin-bottom:20px;text-align:center;position:relative;overflow:hidden}
 .id-block::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(200,184,154,.12) 0%,transparent 70%);pointer-events:none}
-.id-ey{font-size:14px;font-weight:800;color:#FAAB00;letter-spacing:0px;text-transform:uppercase;display:block;margin-bottom:10px}
+.id-ey{font-size:16px;font-weight:500;color:#FAAB00;letter-spacing:0px;text-transform:uppercase;display:block;margin-bottom:10px}
 .id-type{font-size:clamp(20px,5.5vw,26px);font-weight:800;color:#fff;line-height:1.25;margin-bottom:10px}
-.id-explain{font-size:14px;color:rgba(210,196,172,.9);font-weight:500;line-height:1.85;max-width:380px;margin:0 auto}
+.id-explain{font-size:15px;color:rgba(210,196,172,.9);font-weight:600;line-height:1.85;max-width:380px;margin:0 auto}
 
 /* Pain — compact */
 .pain-block{background:var(--warn-bg);border:1px solid var(--warn-b);border-right:4px solid #d97706;border-radius:0 14px 14px 0;padding:18px;margin-bottom:20px}
-.pain-label{font-size:14px;font-weight:800;color:#92400E;letter-spacing:0px;text-transform:uppercase;display:block;margin-bottom:8px}
+.pain-label{font-size:16px;font-weight:800;color:#92400E;letter-spacing:0px;text-transform:uppercase;display:block;margin-bottom:8px}
 .pain-h{font-size:15px;font-weight:700;color:var(--warn-t);margin-bottom:8px;line-height:1.5}
 .pain-tip{font-size:14px;color:#78350f;font-weight:400;line-height:1.75;border-top:1px solid var(--warn-b);padding-top:8px;margin-top:4px}
 
@@ -332,6 +332,7 @@ body{font-family:"Almarai",sans-serif;direction:rtl;background:var(--bg);color:v
      <p class="hero-sub">
        <br>
       المنتجات لم تفشل — لكنها استُخدمت على النوع الخطأ من البشرة.
+       <strong>  </strong>
        <br>
       <strong>7 أسئلة فقط تكشف لكِ نوع بشرتكِ الحقيقي - وتعطيكِ روتيناً مُصمماً لكِ تحديداً، وخاص ببشرتكِ </strong>
     </p>
@@ -635,14 +636,14 @@ body{font-family:"Almarai",sans-serif;direction:rtl;background:var(--bg);color:v
 
     <!-- Identity -->
     <div class="id-block">
-      <span class="id-ey">تشخيص بشرتكِ اكتمل</span>
+      <span class="id-ey">التشخيص اكتمل — هذا ما لم يخبركِ به أحد</span>
       <div class="id-type" id="r-type">—</div>
       <p class="id-explain" id="r-explain">—</p>
     </div>
 
     <!-- PAIN — emotional hook -->
     <div class="pain-block" style="border-right:4px solid #d97706;padding:20px 18px">
-      <span class="pain-label" style="font-size:13px;margin-bottom:10px">هذا هو سبب فشل كل منتجاتكِ السابقة</span>
+      <span class="pain-label" style="font-size:13px;margin-bottom:10px">لماذا فشلت كل منتجاتكِ السابقة؟</span>
       <p class="pain-h" id="r-pain-h" style="font-size:16px;line-height:1.65;margin-bottom:10px">—</p>
       <p class="pain-tip" id="r-pain-tip" style="font-size:14px;padding-top:10px;border-top:1px solid var(--warn-b)">—</p>
     </div>
