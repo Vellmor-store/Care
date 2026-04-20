@@ -47,7 +47,7 @@ body{font-family:"Almarai",sans-serif;direction:rtl;background:var(--bg);color:v
 .mc-wrap{padding:52px 0 36px;text-align:center}
 .mc-badge{display:inline-block;background:var(--soft-g);border:1px solid rgba(61,74,48,.15);border-radius:30px;padding:5px 16px;font-size:13px;font-weight:700;color:var(--o);letter-spacing:0px;text-transform:uppercase;margin-bottom:18px}
 .mc-h{font-size:clamp(20px,5.5vw,26px);font-weight:800;color:var(--o);line-height:1.35;margin-bottom:12px}
-.mc-sub{font-size:14px;color:var(--s);font-weight:300;max-width:320px;margin:0 auto 28px;line-height:1.85}
+.mc-sub{font-size:14px;color:#000000;font-weight:500;max-width:320px;margin:0 auto 28px;line-height:1.85}
 .mc-opts{display:flex;flex-direction:column;gap:10px;max-width:340px;margin:0 auto}
 .mc-opt{background:var(--w);border:2px solid var(--border);border-radius:var(--r);padding:16px 20px;cursor:pointer;transition:all .2s;font-family:"Almarai",sans-serif;font-size:15px;font-weight:700;color:var(--t);text-align:center;display:flex;align-items:center;justify-content:space-between}
 .mc-opt:hover{border-color:var(--o);background:var(--soft-g);transform:translateY(-1px)}
@@ -69,7 +69,7 @@ body{font-family:"Almarai",sans-serif;direction:rtl;background:var(--bg);color:v
 .qwrap{padding:32px 0 16px}
 .qnum{font-size:12px;font-weight:700;color:var(--op);letter-spacing:0px;text-transform:uppercase;margin-bottom:10px;display:block}
 .qtitle{font-size:clamp(18px,4.5vw,22px);font-weight:800;color:var(--o);line-height:1.4;margin-bottom:4px}
-.qsub{font-size:14px;color:var(--m);font-weight:300;margin-bottom:22px}
+.qsub{font-size:14px;color:#000000;font-weight:500;margin-bottom:22px}
 .opts{display:flex;flex-direction:column;gap:10px}
 .opt{background:var(--w);border:2px solid var(--border);border-radius:var(--r);padding:14px 16px;cursor:pointer;transition:all .18s;display:flex;align-items:center;gap:12px}
 .opt:hover{border-color:var(--op);background:var(--soft-g);transform:translateX(-2px)}
@@ -78,7 +78,7 @@ body{font-family:"Almarai",sans-serif;direction:rtl;background:var(--bg);color:v
 .opt.sel .opt-ic{background:var(--o)}
 .opt-b{flex:1;text-align:right}
 .opt-lbl{font-size:15px;font-weight:700;color:var(--t);display:block;margin-bottom:1px}
-.opt-dsc{font-size:13px;color:var(--m);font-weight:300}
+.opt-dsc{font-size:13px;color:#000000;font-weight:500}
 .opt-ck{width:22px;height:22px;border:2px solid var(--border);border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:12px;transition:all .18s;color:#fff}
 .opt.sel .opt-ck{background:var(--o);border-color:var(--o)}
 .btn-back{background:none;border:none;font-family:"Almarai",sans-serif;font-size:13px;color:var(--m);cursor:pointer;font-weight:300;margin-top:14px;display:block;width:100%;text-align:center;padding:6px}
@@ -303,7 +303,7 @@ body{font-family:"Almarai",sans-serif;direction:rtl;background:var(--bg);color:v
   <div class="mc-wrap">
     <div class="mc-badge">تحليل بشرة مجاني — 60 ثانية</div>
     <h1 class="mc-h">هل جربتِ منتجات كثيرة<br>والمشكلة لا تزال موجودة؟</h1>
-    <p class="mc-sub">المشكلة ليست في المنتج — بل في مدى ملائمته لاحتياجات بشرتكِ</p>
+    <p class="mc-sub">المشكلة ليست في المنتج - بل في مدى ملائمته لاحتياجات بشرتكِ</p>
     <div class="mc-opts">
       <button class="mc-opt" onclick="mcPick('yes')">
         <span>نعم، جربت كثيراً ولا نتيجة</span>
@@ -326,12 +326,14 @@ body{font-family:"Almarai",sans-serif;direction:rtl;background:var(--bg);color:v
   <div class="hero">
     <div class="hero-stat">9 من كل 10 نساء يستخدمن منتجاً أو أكثر لا يناسب بشرتهن — هل أنتِ منهنَّ؟</div>
     <h1>
-      مشكلتك لا تختفي رغم كل شيء جربتيه
+      مشكلتك لا تختفي رغم كل شيء جربتيه ؟
       <br><span>هذا هو السبب الحقيقي</span>
     </h1>
      <p class="hero-sub">
-      المنتجات لم تفشل — لكنها استُخدمت على النوع الخطأ من البشرة.<br>
-      <strong>7 أسئلة فقط تكشف لكِ نوع بشرتكِ الحقيقي — وتعطيكِ روتيناً مُصمماً لكِ تحديداً، وخاص ببشرتكِ </strong>
+       <br>
+      المنتجات لم تفشل — لكنها استُخدمت على النوع الخطأ من البشرة.
+       <br>
+      <strong>7 أسئلة فقط تكشف لكِ نوع بشرتكِ الحقيقي - وتعطيكِ روتيناً مُصمماً لكِ تحديداً، وخاص ببشرتكِ </strong>
     </p>
     <button class="btn-hero" onclick="startQuiz()">
       اكتشفي السبب الحقيقي الآن ←
@@ -345,13 +347,11 @@ body{font-family:"Almarai",sans-serif;direction:rtl;background:var(--bg);color:v
   <div class="qwrap">
     <span class="qnum">1 من 7</span>
     <div class="qtitle">بعد غسل وجهك… ما أول شيء يزعجكِ فعلاً؟</div>
-    <div class="qsub">اختاري الأقرب لواقعكِ اليومي</div>
     <div class="opts">
       <div class="opt" onclick="autoNext(this,'q1','oily',2)">
         <div class="opt-ic">💦</div>
         <div class="opt-b">
           <span class="opt-lbl">يلمع بسرعة وكأن الغسيل لم يفد</span>
-          <span class="opt-dsc">دهون تعود خلال ساعات</span>
         </div>
         <div class="opt-ck"></div>
       </div>
@@ -359,7 +359,6 @@ body{font-family:"Almarai",sans-serif;direction:rtl;background:var(--bg);color:v
         <div class="opt-ic">🏜️</div>
         <div class="opt-b">
           <span class="opt-lbl">شد وجفاف غير مريح</span>
-          <span class="opt-dsc">أحتاج كريم فوراً</span>
         </div>
         <div class="opt-ck"></div>
       </div>
@@ -367,7 +366,6 @@ body{font-family:"Almarai",sans-serif;direction:rtl;background:var(--bg);color:v
         <div class="opt-ic">⚖️</div>
         <div class="opt-b">
           <span class="opt-lbl">مناطق دهنية وأخرى جافة</span>
-          <span class="opt-dsc">هذا يربكني كثيراً</span>
         </div>
         <div class="opt-ck"></div>
       </div>
@@ -375,7 +373,6 @@ body{font-family:"Almarai",sans-serif;direction:rtl;background:var(--bg);color:v
         <div class="opt-ic">🌸</div>
         <div class="opt-b">
           <span class="opt-lbl">تتهيج وتحمر بسهولة</span>
-          <span class="opt-dsc">حتى من الماء أحياناً</span>
         </div>
         <div class="opt-ck"></div>
       </div>
@@ -549,7 +546,7 @@ body{font-family:"Almarai",sans-serif;direction:rtl;background:var(--bg);color:v
   <div class="qwrap">
     <span class="qnum">6 من 7</span>
     <div class="qtitle">لو اختفت المشكلة… كيف تريدين بشرتكِ؟</div>
-    <div class="qsub">تخيّلي النتيجة التي تحلمين بها</div>
+    <div class="qsub">تخيّلي النتيجة التي تريدينها</div>
     <div class="opts">
       <div class="opt" onclick="autoNext(this,'q6','strong',7)">
         <div class="opt-ic">✨</div>
@@ -562,7 +559,7 @@ body{font-family:"Almarai",sans-serif;direction:rtl;background:var(--bg);color:v
       <div class="opt" onclick="autoNext(this,'q6','sensitive',7)">
         <div class="opt-ic">🌟</div>
         <div class="opt-b">
-          <span class="opt-lbl">ناعمة بمسام غير ظاهرة</span>
+          <span class="opt-lbl">ناعمة من غير مسام أو رؤوس سوداء</span>
           <span class="opt-dsc">ملمس حرير يُشعر بالثقة</span>
         </div>
         <div class="opt-ck"></div>
