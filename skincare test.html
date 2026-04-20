@@ -754,15 +754,10 @@ body{font-family:"Almarai",sans-serif;direction:rtl;background:var(--bg);color:v
       <div class="acc-body" id="r-faq"></div>
     </div>
 
-    <!-- Loss Aversion Accordion -->
-    <div class="acc" id="acc-loss">
-      <div class="acc-head" onclick="toggleAcc('acc-loss')">
-        ماذا يحدث إذا أجّلتِ القرار؟
-        <span class="acc-arr">↓</span>
-      </div>
-      <div class="acc-body">
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;padding-top:4px" id="r-loss"></ul>
-      </div>
+     <!-- Loss aversion — open by default -->
+    <div style="background:var(--warn-bg);border:1px solid var(--warn-b);border-radius:14px;padding:18px;margin-bottom:16px">
+      <div style="font-size:14px;font-weight:800;color:#92400e;margin-bottom:12px">ماذا يحدث إذا أجّلتِ القرار؟</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px" id="r-loss"></ul>
     </div>
 
     <!-- Final CTA -->
